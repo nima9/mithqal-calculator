@@ -107,7 +107,7 @@
 			type="text"
 			bind:value={mithqalAmount}
 			oninput={handleInput}
-			class="my-1 w-14 appearance-none flex-wrap items-center justify-center border-b-4 border-green-800 bg-zinc-800 text-center text-green-50 outline-none focus:border-green-500 focus:ring-green-500 sm:w-14 md:w-20 md:border-b-8 lg:w-24"
+			class="my-1 w-14 appearance-none flex-wrap items-center justify-center border-b-4 border-green-800 bg-zinc-800 text-center text-green-50 outline-hidden focus:border-green-500 focus:ring-green-500 sm:w-14 md:w-20 md:border-b-8 lg:w-24"
 			id="mithqalAmount"
 			name="mithqalAmount"
 		/>
@@ -123,7 +123,7 @@
 
 	<button
 		autocomplete="off"
-		class="appearance-none border-b-4 border-green-800 bg-zinc-800 px-4 text-center text-green-50 outline-none active:border-green-500 active:ring-green-500 md:border-b-8"
+		class="appearance-none border-b-4 border-green-800 bg-zinc-800 px-4 text-center text-green-50 outline-hidden active:border-green-500 active:ring-green-500 md:border-b-8"
 		onclick={switchSelectedMetal}
 	>
 		<div class="my-1">{selectedMetal}</div>

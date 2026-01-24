@@ -65,7 +65,7 @@
 				size="sentence"
 				role="combobox"
 				aria-expanded={open}
-				class="tooltip tooltip-top appearance-none border-b-4 border-green-800 bg-zinc-800 px-4 text-center text-green-50 outline-none active:border-green-500 active:ring-green-500 md:border-b-8"
+				class="tooltip tooltip-top appearance-none border-b-4 border-green-800 bg-zinc-800 px-4 text-center text-green-50 outline-hidden active:border-green-500 active:ring-green-500 md:border-b-8"
 				data-tip={currFullName}
 				aria-label={displayValue}
 			>

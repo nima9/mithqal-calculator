@@ -9,7 +9,7 @@
 	</a>
 	<!-- <a
 		href="/about"
-		class="rounded border border-green-800 bg-green-800 p-1 text-sm text-white hover:border-white hover:bg-green-700 sm:px-2 sm:py-1 sm:text-base md:px-3 md:py-2 md:text-lg"
+		class="rounded-sm border border-green-800 bg-green-800 p-1 text-sm text-white hover:border-white hover:bg-green-700 sm:px-2 sm:py-1 sm:text-base md:px-3 md:py-2 md:text-lg"
 		>About</a
 	> -->
 </nav>

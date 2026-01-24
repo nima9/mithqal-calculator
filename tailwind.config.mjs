@@ -1,9 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-	plugins: [require('daisyui')],
-	daisyui: {
-		themes: ['forest'],
-	},
 	darkMode: ['class'],
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	safelist: ['dark'],

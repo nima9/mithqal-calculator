@@ -5,7 +5,7 @@
 	import { cn } from '$lib/utils';
 	import { buttonVariants } from '.';
 
-	type Variant = 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link' | 'sentence';
+	type Variant = 'default' | 'destructive' | 'outline-solid' | 'secondary' | 'ghost' | 'link' | 'sentence';
 	type Size = 'default' | 'sm' | 'lg' | 'icon' | 'sentence';
 
 	interface Props extends HTMLButtonAttributes {
