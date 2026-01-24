@@ -1,21 +1,33 @@
-<script>
-	import { Button as ButtonPrimitive } from 'bits-ui'
-	import { cn } from '$lib/utils'
-	import { buttonVariants } from '.'
-	let className = undefined
-	export let variant = 'default'
-	export let size = 'default'
-	export let builders = []
-	export { className as class }
+<script lang="ts">
+	import type { Snippet } from 'svelte';
+	import type { HTMLButtonAttributes } from 'svelte/elements';
+	import { Button as ButtonPrimitive } from 'bits-ui';
+	import { cn } from '$lib/utils';
+	import { buttonVariants } from '.';
+
+	type Variant = 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link' | 'sentence';
+	type Size = 'default' | 'sm' | 'lg' | 'icon' | 'sentence';
+
+	interface Props extends HTMLButtonAttributes {
+		variant?: Variant;
+		size?: Size;
+		children?: Snippet;
+		class?: string;
+	}
+
+	let {
+		variant = 'default',
+		size = 'default',
+		children,
+		class: className,
+		...restProps
+	}: Props = $props();
 </script>
 
 <ButtonPrimitive.Root
-	{builders}
 	class={cn(buttonVariants({ variant, size, className }))}
 	type="button"
-	{...$$restProps}
-	on:click
-	on:keydown
+	{...restProps}
 >
-	<slot />
+	{@render children?.()}
 </ButtonPrimitive.Root>

@@ -1,10 +1,15 @@
-<script>
-	import { Command as CommandPrimitive } from 'cmdk-sv'
-	import Search from 'lucide-svelte/icons/search'
-	import { cn } from '$lib/utils'
-	let className = undefined
-	export { className as class }
-	export let value = ''
+<script lang="ts">
+	import { Command as CommandPrimitive } from 'cmdk-sv';
+	import Search from 'lucide-svelte/icons/search';
+	import { cn } from '$lib/utils';
+
+	interface Props {
+		value?: string;
+		class?: string;
+		[key: string]: unknown;
+	}
+
+	let { value = $bindable(''), class: className, ...restProps }: Props = $props();
 </script>
 
 <div class="flex items-center border-b px-2" data-cmdk-input-wrapper="">
@@ -14,7 +19,7 @@
 			'flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50',
 			className
 		)}
-		{...$$restProps}
+		{...restProps}
 		bind:value
 	/>
 </div>

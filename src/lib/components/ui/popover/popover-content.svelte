@@ -1,20 +1,35 @@
-<script>
-	import { Popover as PopoverPrimitive } from 'bits-ui'
-	import { cn, flyAndScale } from '$lib/utils'
-	let className = undefined
-	export let transition = flyAndScale
-	export let transitionConfig = undefined
-	export { className as class }
+<script lang="ts">
+	import { Popover as PopoverPrimitive } from 'bits-ui';
+	import { cn } from '$lib/utils.js';
+	import type { Snippet } from 'svelte';
+
+	interface PopoverContentProps {
+		class?: string;
+		children?: Snippet;
+		align?: 'start' | 'center' | 'end';
+		side?: 'top' | 'right' | 'bottom' | 'left';
+		sideOffset?: number;
+		alignOffset?: number;
+		[key: string]: unknown;
+	}
+
+	let {
+		class: className,
+		children,
+		align = 'center',
+		sideOffset = 4,
+		...restProps
+	}: PopoverContentProps = $props();
 </script>
 
 <PopoverPrimitive.Content
-	{transition}
-	{transitionConfig}
+	{align}
+	{sideOffset}
 	class={cn(
 		'z-50 w-72 rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-none',
 		className
 	)}
-	{...$$restProps}
+	{...restProps}
 >
-	<slot />
+	{@render children?.()}
 </PopoverPrimitive.Content>

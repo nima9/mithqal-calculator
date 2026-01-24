@@ -26,3 +26,5 @@ pnpm-debug.log*
 # ignore files in src folder starting with _
 src/unused/**
 src/unused
+.svelte-kit/
+.claude/

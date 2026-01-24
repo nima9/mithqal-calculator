@@ -1,9 +1,16 @@
-<script>
-	import { Command as CommandPrimitive } from 'cmdk-sv'
-	import { cn } from '$lib/utils'
-	export let value = undefined
-	let className = undefined
-	export { className as class }
+<script lang="ts">
+	import { Command as CommandPrimitive } from 'cmdk-sv';
+	import { cn } from '$lib/utils';
+	import type { Snippet } from 'svelte';
+
+	interface Props {
+		value?: string;
+		class?: string;
+		children?: Snippet;
+		[key: string]: unknown;
+	}
+
+	let { value = $bindable(), class: className, children, ...restProps }: Props = $props();
 </script>
 
 <CommandPrimitive.Root
@@ -12,7 +19,7 @@
 		className
 	)}
 	bind:value
-	{...$$restProps}
+	{...restProps}
 >
-	<slot />
+	{@render children?.()}
 </CommandPrimitive.Root>

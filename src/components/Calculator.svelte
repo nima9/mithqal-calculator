@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import metalData from '../api/metals.json'
 	import currencyData from '../api/currencies.json'
 	import CurrencyCombobox from './Combobox.svelte'
@@ -23,16 +23,25 @@
 
 	const calculateValue = () => {
 		const currencyCode = selectedCurrency.slice(-3).toUpperCase().trim()
-		const currencySymbol = currencyData[currencyCode].symbol_native
-		const metalRate = metalData.metals[selectedMetal.toLowerCase().trim()]
-		const currencyRate = metalData.currencies[currencyCode]
-		const calculation = mithqalWeightInOunces * mithqalAmount * (metalRate / currencyRate)
-		calculatedValue = calculation
+		const currencyDataEntry = currencyData[currencyCode as keyof typeof currencyData]
+		const currencySymbol = currencyDataEntry ? currencyDataEntry.symbol_native : ''
+		const metalKey = selectedMetal.toLowerCase().trim() as keyof typeof metalData.metals
+		const metalRate = metalData.metals[metalKey] ?? 0
+		const currencyRate =
+			metalData.currencies[currencyCode as keyof typeof metalData.currencies] ?? 1
+		const parsedMithqalAmount = parseFloat(mithqalAmount)
+		const calculation =
+			mithqalWeightInOunces *
+			(isNaN(parsedMithqalAmount) ? 0 : parsedMithqalAmount) *
+			(currencyRate !== 0 ? metalRate / currencyRate : 0)
+		calculatedValue = Number.isFinite(calculation) ? calculation : 0
+
+		const formattedValue = calculatedValue
 			.toFixed(2)
 			.toString()
 			.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 
-		displayCalculatedValue = isNaN(calculation) ? '' : currencySymbol + ' ' + calculatedValue
+		displayCalculatedValue = isNaN(calculation) ? '' : currencySymbol + ' ' + formattedValue
 	}
 
 	const dateDisplayOptions = {
@@ -51,12 +60,31 @@
 	}
 	calculateValue()
 
-	const readableMetalRateDate = new Intl.DateTimeFormat('en-US', dateDisplayOptions).format(
-		metalRateDate
-	)
-	const readableCurrencyRateDate = new Intl.DateTimeFormat('en-US', dateDisplayOptions).format(
-		currencyRateDate
-	)
+	const readableMetalRateDate = new Intl.DateTimeFormat('en-US', {
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric',
+		hour: 'numeric',
+		minute: 'numeric',
+		second: 'numeric',
+		timeZone: 'America/Los_Angeles',
+		timeZoneName: 'short',
+	}).format(metalRateDate)
+
+	const readableCurrencyRateDate = new Intl.DateTimeFormat('en-US', {
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric',
+		hour: 'numeric',
+		minute: 'numeric',
+		second: 'numeric',
+		timeZone: 'America/Los_Angeles',
+		timeZoneName: 'short',
+	}).format(currencyRateDate)
+
+	function toFixed(arg0: number) {
+		throw new Error('Function not implemented.')
+	}
 </script>
 
 <div
@@ -72,28 +100,35 @@
 			class="my-1 w-14 appearance-none flex-wrap items-center justify-center border-b-4 border-green-800 bg-zinc-800 text-center text-green-50 outline-none focus:border-green-500 focus:ring-green-500 sm:w-14 md:w-20 md:border-b-8 lg:w-24"
 			id="mithqalAmount"
 			name="mithqalAmount"
-			on:input={(e) => (e.target.style.width = e.target.value.length + 1 + 'ch')}
+			on:input={(e) => {
+				const target = e.target as HTMLInputElement;
+				if (target) {
+					target.style.width = (target.value.length + 1) + 'ch';
+				}
+			}}
 		/>
 
 		<label
 			for="mithqalAmount"
-			class="flex-warp tooltip pr-4 font-medium text-green-50"
+			class="tooltip flex-wrap pr-4 font-medium text-green-50"
 			data-tip="1 Mithqál = 3.642g"
-			>{#if mithqalAmount > 1}
+			>{#if Number(mithqalAmount) > 1}
 				Mithqáls
 			{:else}
 				Mithqál
-			{/if}of
+			{/if} of
 		</label>
 	</form>
 
 	<button
-		autocomplete="off"
 		class="appearance-none border-b-4 border-green-800 bg-zinc-800 px-4 text-center text-green-50 outline-none active:border-green-500 active:ring-green-500 md:border-b-8"
-		required
-		on:click={switchSelectedMetal}
-		on:click={calculateValue}
+		type="button"
+		on:click={() => {
+			switchSelectedMetal()
+			calculateValue()
+		}}
 	>
+		>
 		<div class="my-1">{selectedMetal}</div>
 	</button>
 	<div class="px-4">in</div>
@@ -112,9 +147,7 @@
 		class="tooltip tooltip-bottom hover:bg-transparent"
 		data-tip={copyTooltipText}
 		on:click={() => {
-			navigator.clipboard.writeText(calculatedValue)
-		}}
-		on:click={() => {
+			navigator.clipboard.writeText(String(calculatedValue))
 			copyTooltipText = 'Copied!'
 		}}
 		on:mouseleave={() => {
