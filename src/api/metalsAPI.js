@@ -31,7 +31,7 @@ export default async () => {
 	}
 
 	const result = await response.json()
-	const path = Bun.file('src/api/metals.json')
+	const path = Bun.file('src/lib/data/metals.json')
 	Bun.write(path, JSON.stringify(result))
 
 	//FOR TESTING

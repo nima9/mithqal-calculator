@@ -25,7 +25,7 @@
 		minute: 'numeric',
 		second: 'numeric',
 		timeZone: 'America/Los_Angeles',
-		timeZoneName: 'short'
+		timeZoneName: 'short',
 	}
 
 	const readableMetalRateDate = new Intl.DateTimeFormat('en-US', dateDisplayOptions).format(
@@ -38,7 +38,8 @@
 	// Derived values for calculation
 	let calculatedValue = $derived.by(() => {
 		const currencyCode = selectedCurrency.slice(-3).toUpperCase().trim()
-		const metalRate = metalData.metals[selectedMetal.toLowerCase().trim() as keyof typeof metalData.metals]
+		const metalRate =
+			metalData.metals[selectedMetal.toLowerCase().trim() as keyof typeof metalData.metals]
 		const currencyRate = metalData.currencies[currencyCode as keyof typeof metalData.currencies]
 		const amount = parseFloat(mithqalAmount) || 0
 		const calculation = mithqalWeightInOunces * amount * (metalRate / currencyRate)
@@ -114,7 +115,7 @@
 
 		<label
 			for="mithqalAmount"
-			class="flex-warp tooltip pr-4 font-medium text-green-50"
+			class="flex-warp tooltip tooltip-green-500 pr-4 font-medium text-green-50"
 			data-tip="1 Mithqal = 3.642g"
 		>
 			{mithqalLabel} of
@@ -122,7 +123,7 @@
 	</form>
 
 	<button
-		autocomplete="off"
+		type="button"
 		class="appearance-none border-b-4 border-green-800 bg-zinc-800 px-4 text-center text-green-50 outline-hidden active:border-green-500 active:ring-green-500 md:border-b-8"
 		onclick={switchSelectedMetal}
 	>
@@ -138,7 +139,7 @@
 
 <br />
 <div
-	class="flex flex-wrap items-center justify-center pb-9 pt-16 text-6xl text-green-300 sm:text-7xl md:text-8xl lg:text-9xl"
+	class="flex flex-wrap items-center justify-center pt-16 pb-9 text-6xl text-green-300 sm:text-7xl md:text-8xl lg:text-9xl"
 >
 	<button
 		class="tooltip tooltip-bottom hover:bg-transparent"
@@ -151,7 +152,7 @@
 </div>
 
 <div
-	class="flex flex-wrap items-center justify-end px-7 pb-1 pt-24 text-gray-400 sm:mr-48 md:mr-24 lg:mr-12"
+	class="flex flex-wrap items-center justify-end px-7 pt-24 pb-1 text-gray-400 sm:mr-48 md:mr-24 lg:mr-12"
 >
 	Metal rates as of: {readableMetalRateDate}
 </div>
