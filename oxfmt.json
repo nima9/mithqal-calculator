@@ -1,0 +1,13 @@
+{
+  "$schema": "https://raw.githubusercontent.com/nicholasio/oxc-config/main/oxfmt.schema.json",
+  "useTabs": true,
+  "singleQuote": true,
+  "trailingComma": "none",
+  "printWidth": 100,
+  "semi": false,
+  "bracketSpacing": true,
+  "arrowParens": "always",
+  "endOfLine": "lf",
+  "insertFinalNewline": true,
+  "experimentalTailwindcss": {}
+}

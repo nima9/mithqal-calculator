@@ -1,0 +1,32 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oxc-project/oxc/main/npm/oxlint/configuration_schema.json",
+  "plugins": ["typescript"],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2024": true
+  },
+  "globals": {
+    "$state": "readonly",
+    "$derived": "readonly",
+    "$effect": "readonly",
+    "$props": "readonly",
+    "$bindable": "readonly",
+    "$inspect": "readonly"
+  },
+  "ignorePatterns": [
+    "node_modules/",
+    ".svelte-kit/",
+    "build/",
+    "dist/",
+    ".wrangler/",
+    "src/convex/_generated/"
+  ],
+  "rules": {
+    "no-unused-vars": "warn",
+    "no-undef": "off",
+    "eqeqeq": "warn",
+    "no-var": "error",
+    "prefer-const": "warn"
+  }
+}

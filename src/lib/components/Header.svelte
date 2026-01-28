@@ -24,8 +24,8 @@
 	}
 
 	.link-underline-green {
-		background-image: linear-gradient(transparent, transparent),
-			linear-gradient(rgb(22 101 52), rgb(22 101 52));
+		background-image:
+			linear-gradient(transparent, transparent), linear-gradient(rgb(22 101 52), rgb(22 101 52));
 	}
 
 	.link-underline:hover {

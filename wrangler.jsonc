@@ -1,0 +1,7 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "sveltekit-test",
+  "compatibility_date": "2026-01-25",
+  "compatibility_flags": ["nodejs_als"],
+  "pages_build_output_dir": ".svelte-kit/cloudflare",
+}

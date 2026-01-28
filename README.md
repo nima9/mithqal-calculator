@@ -57,7 +57,7 @@ bun run dev
 
 ## API
 
-The application uses an API to get the current values of gold and silver (from [Metals.dev](https://metals.dev/)). The API is called in the [`runMetalsAPI.js`](command:_github.copilot.openRelativePath?%5B%22runMetalsAPI.js%22%5D 'runMetalsAPI.js') script.
+The application uses an API to get the current values of gold and silver (from [Metals.dev](https://metals.dev/)). The API is called in the [`runMetalsAPI.js`](command:_github.copilot.openRelativePath?%5B%22runMetalsAPI.js%22%5D "runMetalsAPI.js") script.
 
 ## The Tools used:
 

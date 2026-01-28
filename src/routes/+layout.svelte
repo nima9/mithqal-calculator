@@ -1,6 +1,14 @@
 <script lang="ts">
-	import '../app.css';
+	import './layout.css';
 	import Header from '$lib/components/Header.svelte';
+	import { setupConvex } from 'convex-svelte';
+	import { PUBLIC_CONVEX_URL } from '$env/static/public';
+	import { browser } from '$app/environment';
+
+	// Initialize Convex client only in browser
+	if (browser) {
+		setupConvex(PUBLIC_CONVEX_URL);
+	}
 
 	let { children } = $props();
 </script>

@@ -1,105 +1,134 @@
 <script lang="ts">
-	import { tick } from 'svelte'
-	import Check from 'lucide-svelte/icons/check'
-	import * as Command from '$lib/components/ui/command'
-	import * as Popover from '$lib/components/ui/popover'
-	import { Button } from '$lib/components/ui/button'
-	import { ScrollArea } from '$lib/components/ui/scroll-area/index.js'
-	import { cn } from '$lib/utils'
+	import { Combobox } from 'bits-ui';
+	import Check from 'lucide-svelte/icons/check';
+	import ChevronDown from 'lucide-svelte/icons/chevron-down';
 
 	interface Currency {
-		code: string
-		name: string
-		symbol_native: string
+		code: string;
+		name: string;
+		symbol_native: string;
 	}
 
 	interface Props {
-		currJson?: { [key: string]: Currency }
-		selectedValue?: string
-		onCurrencyChange?: () => void
+		currJson?: { [key: string]: Currency };
+		selectedValue?: string;
+		onCurrencyChange?: () => void;
 	}
 
-	let { currJson = {}, selectedValue = $bindable(''), onCurrencyChange }: Props = $props()
+	let { currJson = {}, selectedValue = $bindable(''), onCurrencyChange }: Props = $props();
 
-	let open = $state(false)
-	let value = $state('')
+	let open = $state(false);
+	let searchValue = $state('');
+	let comboboxValue = $state<string>('');
 
-	let foundCurrency = $derived(
-		Object.values(currJson).find(
-			(c) => c.symbol_native + ' ' + c.code + ' ' + c.name === value
-		)
-	)
+	// Convert currJson to array for easier filtering
+	let currencies = $derived(Object.values(currJson));
 
+	// Filter currencies based on search - searches symbol, code, name, and symbol+code
+	let filteredCurrencies = $derived.by(() => {
+		if (!searchValue) return currencies;
+		const search = searchValue.toLowerCase().trim();
+		return currencies.filter((c) => {
+			const symbol = c.symbol_native.toLowerCase();
+			const code = c.code.toLowerCase();
+			const name = c.name.toLowerCase();
+			const symbolCode = `${symbol} ${code}`;
+			return (
+				symbol.includes(search) ||
+				code.includes(search) ||
+				name.includes(search) ||
+				symbolCode.includes(search)
+			);
+		});
+	});
+
+	// Find selected currency from selectedValue prop
+	let selectedCurrency = $derived.by(() => {
+		if (!selectedValue) return null;
+		const code = selectedValue.slice(-3).toUpperCase().trim();
+		return currencies.find((c) => c.code === code) || null;
+	});
+
+	// Display value for the trigger button
 	let displayValue = $derived(
-		foundCurrency
-			? `${foundCurrency.symbol_native} ${foundCurrency.code}`
-			: selectedValue || ''
-	)
+		selectedCurrency
+			? `${selectedCurrency.symbol_native} ${selectedCurrency.code}`
+			: selectedValue || 'Select...'
+	);
 
-	let currFullName = $derived(
-		foundCurrency ? foundCurrency.name.toString() : selectedValue || ''
-	)
+	// Full name for tooltip
+	let currFullName = $derived(selectedCurrency?.name || '');
 
-	// Update the bindable selectedValue when a currency is found
+	// Sync comboboxValue with selectedValue on init
 	$effect(() => {
-		if (foundCurrency) {
-			selectedValue = `${foundCurrency.symbol_native} ${foundCurrency.code}`
+		if (selectedCurrency && !comboboxValue) {
+			comboboxValue = selectedCurrency.code;
 		}
-	})
+	});
 
-	function closeAndFocusTrigger(triggerId: string) {
-		open = false
-		tick().then(() => {
-			document.getElementById(triggerId)?.focus()
-			onCurrencyChange?.()
-		})
+	// Update selectedValue when combobox selection changes
+	$effect(() => {
+		if (comboboxValue) {
+			const currency = currencies.find((c) => c.code === comboboxValue);
+			if (currency) {
+				const newValue = `${currency.symbol_native} ${currency.code}`;
+				if (newValue !== selectedValue) {
+					selectedValue = newValue;
+					onCurrencyChange?.();
+				}
+			}
+		}
+	});
+
+	function handleOpenChange(isOpen: boolean) {
+		open = isOpen;
+		if (!isOpen) {
+			searchValue = '';
+		}
+	}
+
+	function handleInput(e: Event & { currentTarget: HTMLInputElement }) {
+		searchValue = e.currentTarget.value;
 	}
 </script>
 
-<Popover.Root bind:open>
-	<Popover.Trigger>
-		{#snippet child({ props })}
-			<Button
-				{...props}
-				variant="sentence"
-				size="sentence"
-				role="combobox"
-				aria-expanded={open}
-				class="tooltip tooltip-top appearance-none border-b-4 border-green-800 bg-zinc-800 px-4 text-center text-green-50 outline-hidden active:border-green-500 active:ring-green-500 md:border-b-8"
-				data-tip={currFullName}
-				aria-label={displayValue}
-			>
-				<div class="my-1 text-green-50">
-					{displayValue}
-				</div>
-			</Button>
-		{/snippet}
-	</Popover.Trigger>
-	<Popover.Content class="container w-[200px] p-0">
-		<Command.Root>
-			<Command.Input placeholder="Search currency..." />
-			<ScrollArea class="h-72 w-48 rounded-md border">
-				<Command.Empty>No currencies found.</Command.Empty>
-				<Command.Group>
-					{#each Object.values(currJson) as c (c.code)}
-						<Command.Item
-							value={c.symbol_native + ' ' + c.code + ' ' + c.name}
-							onSelect={(currentValue) => {
-								value = currentValue
-								closeAndFocusTrigger('popover-trigger')
-							}}
-						>
-							<Check
-								class={cn(
-									'mr-2 h-4 w-4 ',
-									value !== c.symbol_native + ' ' + c.code + ' ' + c.name && 'text-transparent'
-								)}
-							/>
-							{c.symbol_native + ' ' + c.code}
-						</Command.Item>
-					{/each}
-				</Command.Group>
-			</ScrollArea>
-		</Command.Root>
-	</Popover.Content>
-</Popover.Root>
+<Combobox.Root type="single" bind:open bind:value={comboboxValue} onOpenChange={handleOpenChange}>
+	<div class="relative">
+		<Combobox.Input
+			onclick={() => (open = true)}
+			oninput={handleInput}
+			placeholder={open ? '' : displayValue}
+			class="tooltip tooltip-top my-1 w-28 cursor-pointer appearance-none border-b-4 border-green-800 bg-zinc-800 px-2 text-center text-3xl font-medium text-green-50 outline-hidden placeholder:text-green-50 focus:border-green-500 focus:placeholder:text-green-50/50 sm:w-32 sm:text-4xl md:w-40 md:border-b-8 md:text-5xl lg:w-48 lg:text-6xl"
+			data-tip={currFullName}
+			aria-label={displayValue}
+		/>
+		<Combobox.Trigger
+			class="absolute right-1 top-1/2 -translate-y-1/2 text-green-50 hover:text-green-300"
+		></Combobox.Trigger>
+	</div>
+
+	<Combobox.Portal>
+		<Combobox.Content
+			class="z-50 max-h-72 w-52 overflow-y-auto rounded-md border border-green-800 bg-zinc-800 p-1 shadow-lg"
+			sideOffset={8}
+		>
+			{#if filteredCurrencies.length === 0}
+				<div class="px-3 py-2 text-sm text-green-50/60">No currencies found.</div>
+			{:else}
+				{#each filteredCurrencies as currency (currency.code)}
+					<Combobox.Item
+						value={currency.code}
+						label={`${currency.symbol_native} ${currency.code}`}
+						class="flex cursor-pointer items-center rounded px-3 py-2 text-sm text-green-50 outline-hidden data-[highlighted]:bg-green-800 data-[highlighted]:text-green-50"
+					>
+						{#snippet children({ selected })}
+							<Check class="mr-2 h-4 w-4 {selected ? 'text-green-400' : 'text-transparent'}" />
+							<span>{currency.symbol_native} {currency.code}</span>
+							<span class="ml-2 text-xs text-green-50/60">{currency.name}</span>
+						{/snippet}
+					</Combobox.Item>
+				{/each}
+			{/if}
+		</Combobox.Content>
+	</Combobox.Portal>
+</Combobox.Root>
