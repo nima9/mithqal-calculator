@@ -1,24 +1,45 @@
-import type { PageServerLoad } from "./$types";
-import { countryToCurrency } from "$lib/utils/countryToCurrency";
+/**
+ * +page.server.ts
+ * Server-side load function for the home page.
+ * Uses Cloudflare's geolocation headers for country and timezone detection.
+ *
+ * @see https://developers.cloudflare.com/rules/transform/managed-transforms/reference/
+ */
 
-export const load: PageServerLoad = async ({ getClientAddress }) => {
-  let usersCountry = "";
-  let defaultCurrency = "$ USD";
+import type { PageServerLoad } from './$types';
+import { countryToCurrency } from '$lib/utils/countryToCurrency';
 
-  try {
-    const ip = getClientAddress();
-    const response = await fetch("https://api.country.is/" + ip);
-    const data = await response.json();
-    usersCountry = data.country || "";
-  } catch (error) {
-    console.log("Error fetching country:", error);
-  }
+export const load: PageServerLoad = async ({ request, platform }) => {
+	// Default values
+	let defaultCurrency = '$ USD';
+	let timezone = 'America/Los_Angeles';
 
-  if (usersCountry) {
-    defaultCurrency = countryToCurrency(usersCountry);
-  }
+	// Try Cloudflare headers first (from Managed Transforms)
+	const cfCountry = request.headers.get('cf-ipcountry');
+	const cfTimezone = request.headers.get('cf-timezone');
 
-  return {
-    defaultCurrency,
-  };
+	if (cfCountry) {
+		defaultCurrency = countryToCurrency(cfCountry);
+	}
+
+	if (cfTimezone) {
+		timezone = cfTimezone;
+	}
+
+	// Fallback: Try platform.cf object (Cloudflare Workers/Pages)
+	// @ts-expect-error - platform.cf exists on Cloudflare but not typed by default
+	const cf = platform?.cf;
+	if (cf) {
+		if (!cfCountry && cf.country) {
+			defaultCurrency = countryToCurrency(cf.country);
+		}
+		if (!cfTimezone && cf.timezone) {
+			timezone = cf.timezone;
+		}
+	}
+
+	return {
+		defaultCurrency,
+		timezone
+	};
 };

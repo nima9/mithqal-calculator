@@ -1,189 +1,83 @@
 @import "tailwindcss";
-@import "tw-animate-css";
-@plugin 'daisyui';
+@plugin "daisyui";
 
-@custom-variant dark (&:is(.dark *));
+/* Custom Mithqal Calculator theme */
+@plugin "daisyui/theme" {
+	name: "mithqal";
+	default: true;
+	color-scheme: dark;
 
-/*
-  Border color compatibility for Tailwind CSS v4
-*/
-@layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
-  }
-}
+	/* Base surface colors (zinc palette) */
+	--color-base-100: oklch(0.274 0.006 286.033);
+	--color-base-200: oklch(0.21 0.006 285.885);
+	--color-base-300: oklch(0.37 0.013 285.805);
+	--color-base-content: oklch(0.982 0.018 155.826);
 
-:root {
-  --radius: 0.5rem;
-  --background: 240 4% 16%;
-  --foreground: 138 76% 97%;
+	/* Primary - green-800 */
+	--color-primary: oklch(0.448 0.119 151.328);
+	--color-primary-content: oklch(0.982 0.018 155.826);
 
-  --muted: 240 4.8% 95.9%;
-  --muted-foreground: 240 3.8% 46.1%;
+	/* Secondary - green-300 (bright result text) */
+	--color-secondary: oklch(0.871 0.178 152.163);
+	--color-secondary-content: oklch(0.21 0.006 285.885);
 
-  --popover: 240 4% 16%;
-  --popover-foreground: 138 76% 97%;
+	/* Accent - green-500 (focus states) */
+	--color-accent: oklch(0.723 0.219 149.579);
+	--color-accent-content: oklch(0.21 0.006 285.885);
 
-  --card: 0 0% 100%;
-  --card-foreground: 240 10% 3.9%;
+	/* Neutral - zinc-700 */
+	--color-neutral: oklch(0.37 0.013 285.805);
+	--color-neutral-content: oklch(0.982 0.018 155.826);
 
-  --border: 240 4% 16%;
-  --input: 143 64% 24%;
+	/* Status colors */
+	--color-info: oklch(0.746 0.16 232.661);
+	--color-info-content: oklch(0.21 0.006 285.885);
+	--color-success: oklch(0.792 0.209 151.711);
+	--color-success-content: oklch(0.21 0.006 285.885);
+	--color-warning: oklch(0.828 0.189 84.429);
+	--color-warning-content: oklch(0.21 0.006 285.885);
+	--color-error: oklch(0.704 0.191 22.216);
+	--color-error-content: oklch(0.21 0.006 285.885);
 
-  --primary: 143 64% 24%;
-  --primary-foreground: 0 0% 98%;
-
-  --secondary: 240 4.8% 95.9%;
-  --secondary-foreground: 240 5.9% 10%;
-
-  --accent: 143 64% 24%;
-  --accent-foreground: 138 76% 97%;
-
-  --destructive: 0 72.2% 50.6%;
-  --destructive-foreground: 0 0% 98%;
-
-  --ring: 240 10% 3.9%;
-
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-
-  --sidebar: 0 0% 98%;
-  --sidebar-foreground: 240 5.3% 26.1%;
-  --sidebar-primary: 240 5.9% 10%;
-  --sidebar-primary-foreground: 0 0% 98%;
-  --sidebar-accent: 240 4.8% 95.9%;
-  --sidebar-accent-foreground: 240 5.9% 10%;
-  --sidebar-border: 240 5.9% 90%;
-  --sidebar-ring: 240 5.9% 10%;
-}
-
-.dark {
-  --background: 240 10% 3.9%;
-  --foreground: 0 0% 98%;
-
-  --muted: 240 3.7% 15.9%;
-  --muted-foreground: 240 5% 64.9%;
-
-  --popover: 240 10% 3.9%;
-  --popover-foreground: 0 0% 98%;
-
-  --card: 240 10% 3.9%;
-  --card-foreground: 0 0% 98%;
-
-  --border: 240 3.7% 15.9%;
-  --input: 240 3.7% 15.9%;
-
-  --primary: 0 0% 98%;
-  --primary-foreground: 240 5.9% 10%;
-
-  --secondary: 240 3.7% 15.9%;
-  --secondary-foreground: 0 0% 98%;
-
-  --accent: 240 3.7% 15.9%;
-  --accent-foreground: 0 0% 98%;
-
-  --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 0 0% 98%;
-
-  --ring: 240 4.9% 83.9%;
-
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-
-  --sidebar: 240 5.9% 10%;
-  --sidebar-foreground: 240 4.8% 95.9%;
-  --sidebar-primary: 224.3 76.3% 48%;
-  --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 240 3.7% 15.9%;
-  --sidebar-accent-foreground: 240 4.8% 95.9%;
-  --sidebar-border: 240 3.7% 15.9%;
-  --sidebar-ring: 217.2 91.2% 59.8%;
-}
-
-@theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --color-background: hsl(var(--background));
-  --color-foreground: hsl(var(--foreground));
-  --color-card: hsl(var(--card));
-  --color-card-foreground: hsl(var(--card-foreground));
-  --color-popover: hsl(var(--popover));
-  --color-popover-foreground: hsl(var(--popover-foreground));
-  --color-primary: hsl(var(--primary));
-  --color-primary-foreground: hsl(var(--primary-foreground));
-  --color-secondary: hsl(var(--secondary));
-  --color-secondary-foreground: hsl(var(--secondary-foreground));
-  --color-muted: hsl(var(--muted));
-  --color-muted-foreground: hsl(var(--muted-foreground));
-  --color-accent: hsl(var(--accent));
-  --color-accent-foreground: hsl(var(--accent-foreground));
-  --color-destructive: hsl(var(--destructive));
-  --color-destructive-foreground: hsl(var(--destructive-foreground));
-  --color-border: hsl(var(--border));
-  --color-input: hsl(var(--input));
-  --color-ring: hsl(var(--ring));
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: hsl(var(--sidebar));
-  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
-  --color-sidebar-primary: hsl(var(--sidebar-primary));
-  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
-  --color-sidebar-accent: hsl(var(--sidebar-accent));
-  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
-  --color-sidebar-border: hsl(var(--sidebar-border));
-  --color-sidebar-ring: hsl(var(--sidebar-ring));
-  --font-family-karla: "Karla", sans-serif;
+	/* Design tokens */
+	--radius-selector: 0.5rem;
+	--radius-field: 0.25rem;
+	--radius-box: 0.5rem;
+	--border: 1px;
+	--depth: 1;
+	--noise: 0;
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-  html {
-    font-family: Karla, system-ui, sans-serif;
-  }
+	html {
+		font-family: Karla, system-ui, sans-serif;
+	}
 
-  /* Hide number input spinners */
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-    -moz-appearance: textfield !important;
-    appearance: textfield !important;
-  }
-  input::-webkit-calendar-picker-indicator {
-    display: none !important;
-  }
+	/* Hide number input spinners */
+	input[type="number"]::-webkit-inner-spin-button,
+	input[type="number"]::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+	input[type="number"] {
+		-moz-appearance: textfield;
+		appearance: textfield;
+	}
+	input::-webkit-calendar-picker-indicator {
+		display: none !important;
+	}
 
-  @font-face {
-    font-family: "Karla";
-    src: url("/fonts/karla-latin-500-normal.woff2") format("woff2");
-    font-weight: 500;
-    font-style: normal;
-  }
+	@font-face {
+		font-family: "Karla";
+		src: url("/fonts/karla-latin-500-normal.woff2") format("woff2");
+		font-weight: 500;
+		font-style: normal;
+	}
 }
 
-/* DaisyUI tooltip styling */
-.tooltip::before,
-.tooltip::after {
-  --tooltip-color: rgb(22 101 52);
-  --tooltip-tail: rgb(22 101 52);
+/* DaisyUI tooltip styling using theme colors */
+.tooltip {
+	--tooltip-color: var(--color-primary);
+	--tooltip-text-color: var(--color-primary-content);
+	--tooltip-tail: var(--color-primary);
 }
