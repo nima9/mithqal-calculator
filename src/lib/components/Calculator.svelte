@@ -15,7 +15,7 @@
 	// Constants
 	// ============================================
 
-	const MITHQAL_IN_TROY_OZ = 0.11708222222;
+	const MITHQAL_IN_TROY_OZ = 0.11708228065358918;
 	const CACHE_KEY = 'mithqal_rates_cache';
 
 	// ============================================
@@ -49,10 +49,7 @@
 		timezone?: string;
 	}
 
-	let {
-		selectedCurrency = $bindable('$ USD'),
-		timezone = 'America/Los_Angeles'
-	}: Props = $props();
+	let { selectedCurrency = $bindable('$ USD'), timezone = 'America/Los_Angeles' }: Props = $props();
 
 	// ============================================
 	// State
@@ -150,7 +147,10 @@
 			return new Map<string, { symbol: string; rateToUSD: number; name: string }>();
 		}
 		return new Map(
-			displayCurrencies.map((c) => [c.code, { symbol: c.symbol, rateToUSD: c.rateToUSD, name: c.name }])
+			displayCurrencies.map((c) => [
+				c.code,
+				{ symbol: c.symbol, rateToUSD: c.rateToUSD, name: c.name }
+			])
 		);
 	});
 
@@ -187,9 +187,7 @@
 	});
 
 	let formattedCalculatedValue = $derived(
-		calculatedValue
-			.toFixed(2)
-			.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+		calculatedValue.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 	);
 
 	let displayCalculatedValue = $derived.by(() => {
@@ -208,7 +206,7 @@
 
 	// Format the rate timestamp in the user's timezone
 	let readableRateDate = $derived.by(() => {
-		if (!displayLastFetch) return 'Loading...';
+		if (!displayLastFetch) return '...';
 
 		const options: Intl.DateTimeFormatOptions = {
 			year: 'numeric',
@@ -300,6 +298,7 @@
 
 	<!-- Currency Selector -->
 	<CurrencyCombobox currJson={currencyJson} bind:selectedValue={selectedCurrency} />
+	<div class="px-4">is:</div>
 </div>
 
 <br />
@@ -314,7 +313,7 @@
 		onclick={handleCopyClick}
 		onmouseleave={handleCopyMouseLeave}
 	>
-		{displayCalculatedValue || 'Loading...'}
+		{displayCalculatedValue || '...'}
 	</button>
 </div>
 

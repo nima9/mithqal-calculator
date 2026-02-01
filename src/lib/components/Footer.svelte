@@ -6,16 +6,20 @@
 <footer class="mt-12 text-center">
 	<!-- Sponsor Section -->
 	<div class="text-neutral-content/60">
-		<p class="text-lg font-medium text-secondary">Special Sponsor</p>
-		<p class="mt-2 text-sm">
-			We're looking for sponsors to keep this project alive and perhaps ad-free
-		</p>
-		<a
-			href="https://github.com/nima9/mithqal-culator"
-			class="mt-2 inline-block text-accent transition-colors duration-200 hover:text-secondary hover:underline"
+		<div
+			class="mx-auto mt-4 w-full max-w-xl rounded-2xl border-2 border-dashed border-secondary/50 bg-base-200/20 px-6 py-5"
 		>
-			Support the project
-		</a>
+			<p class="text-lg font-medium text-secondary">Special Sponsor</p>
+			<p class="mt-2 text-sm">
+				We're looking for sponsors to keep this project alive and perhaps ad-free
+			</p>
+			<a
+				href="https://github.com/nima9/mithqal-culator"
+				class="mt-2 inline-block text-accent transition-colors duration-200 hover:text-secondary hover:underline"
+			>
+				Support the project
+			</a>
+		</div>
 	</div>
 
 	<!-- Attribution -->

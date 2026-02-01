@@ -14,5 +14,5 @@
 	<Calculator selectedCurrency={data.defaultCurrency} timezone={data.timezone} />
 {:else}
 	<!-- SSR placeholder while hydrating -->
-	<div class="flex items-center justify-center pt-32 text-4xl text-secondary">Loading...</div>
+	<div class="flex items-center justify-center pt-32 text-4xl text-secondary">...</div>
 {/if}
