@@ -10,6 +10,7 @@
 	import { api } from '../../convex/_generated/api';
 	import CurrencyCombobox from './Combobox.svelte';
 	import Footer from './Footer.svelte';
+	import RatesTimestamp from './RatesTimestamp.svelte';
 
 	// ============================================
 	// Constants
@@ -204,23 +205,6 @@
 
 	let mithqalLabel = $derived(parseFloat(mithqalAmount) > 1 ? 'Mithqals' : 'Mithqal');
 
-	// Format the rate timestamp in the user's timezone
-	let readableRateDate = $derived.by(() => {
-		if (!displayLastFetch) return '...';
-
-		const options: Intl.DateTimeFormatOptions = {
-			year: 'numeric',
-			month: 'long',
-			day: 'numeric',
-			hour: 'numeric',
-			minute: 'numeric',
-			timeZone: timezone,
-			timeZoneName: 'short'
-		};
-
-		return new Intl.DateTimeFormat('en-US', options).format(new Date(displayLastFetch));
-	});
-
 	// ============================================
 	// Event Handlers
 	// ============================================
@@ -247,9 +231,13 @@
 	}
 
 	/** Copy calculated value to clipboard */
-	function handleCopyClick() {
-		navigator.clipboard.writeText(formattedCalculatedValue);
-		copyTooltipText = 'Copied!';
+	async function handleCopyClick() {
+		try {
+			await navigator.clipboard.writeText(formattedCalculatedValue);
+			copyTooltipText = 'Copied!';
+		} catch {
+			copyTooltipText = 'Failed to copy';
+		}
 	}
 
 	/** Reset tooltip text after mouse leaves */
@@ -317,9 +305,6 @@
 	</button>
 </div>
 
-<!-- Rate Timestamp -->
-<div class="flex flex-wrap items-center justify-center px-7 pt-24 pb-1 text-neutral-content/60">
-	Rates as of: {readableRateDate}
-</div>
+<RatesTimestamp lastFetchTime={displayLastFetch} {timezone} />
 
 <Footer />

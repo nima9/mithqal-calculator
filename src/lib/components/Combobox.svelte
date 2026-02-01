@@ -132,7 +132,7 @@
 			oninput={handleInput}
 			placeholder={open ? '' : displayValue}
 			style="width: {inputWidth}ch;"
-			class="tooltip tooltip-top my-1 cursor-pointer appearance-none border-b-4 border-primary bg-base-100 px-2 text-center text-3xl font-medium text-base-content outline-hidden transition-colors duration-200 placeholder:text-base-content hover:border-accent focus:border-accent focus:placeholder:text-base-content/50 sm:text-4xl md:border-b-8 md:text-5xl lg:text-6xl"
+			class="input-underline tooltip tooltip-top my-1 cursor-pointer appearance-none bg-base-100 px-2 pb-1 text-center text-3xl font-medium text-base-content outline-hidden placeholder:text-base-content focus:placeholder:text-base-content/50 sm:text-4xl md:pb-2 md:text-5xl lg:text-6xl"
 			data-tip={currFullName}
 			aria-label={displayValue}
 		/>
@@ -158,7 +158,10 @@
 						class="flex cursor-pointer items-center rounded px-3 py-2 text-sm text-base-content outline-hidden data-highlighted:bg-primary data-highlighted:text-primary-content"
 					>
 						{#snippet children({ selected })}
-							<Check class="mr-2 h-4 w-4 {selected ? 'text-accent' : 'text-transparent'}" />
+							<Check
+								strokeWidth={4}
+								class="mr-2 h-4 w-4 {selected ? 'text-accent' : 'text-transparent'}"
+							/>
 							<span>{currency.symbol_native} {currency.code}</span>
 							<span class="ml-2 text-xs text-base-content/60">{currency.name}</span>
 						{/snippet}

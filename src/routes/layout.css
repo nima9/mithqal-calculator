@@ -81,3 +81,22 @@
 	--tooltip-text-color: var(--color-primary-content);
 	--tooltip-tail: var(--color-primary);
 }
+
+/* Underline input effect - renders behind text */
+.input-underline {
+	box-shadow: inset 0 -4px 0 0 var(--color-primary);
+	transition: box-shadow 0.2s;
+}
+.input-underline:hover,
+.input-underline:focus {
+	box-shadow: inset 0 -4px 0 0 var(--color-accent);
+}
+@media (min-width: 768px) {
+	.input-underline {
+		box-shadow: inset 0 -8px 0 0 var(--color-primary);
+	}
+	.input-underline:hover,
+	.input-underline:focus {
+		box-shadow: inset 0 -8px 0 0 var(--color-accent);
+	}
+}

@@ -10,14 +10,15 @@
 		href="/"
 		class="font-karla text-xl font-medium text-base-content sm:text-4xl md:text-5xl lg:text-6xl"
 	>
-		<span class="link-underline">Mithqal Calculator</span>
+		<span class="link-underline">Mithqál Calculator</span>
 	</a>
 </nav>
 
 <style>
 	/* Animated underline that expands on hover */
 	.link-underline {
-		background-image: linear-gradient(transparent, transparent),
+		background-image:
+			linear-gradient(transparent, transparent),
 			linear-gradient(var(--color-primary), var(--color-primary));
 		background-size: 0 4px;
 		background-position: 0 100%;

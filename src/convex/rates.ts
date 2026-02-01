@@ -164,8 +164,18 @@ export const fetchAllRates = internalAction({
       }
 
       // Fetch currency rates from fxratesapi
-      const currencyResponse = await fetch("https://api.fxratesapi.com/latest");
-      const currencyData = await currencyResponse.json();
+      const currencyController = new AbortController();
+      const currencyTimeoutId = setTimeout(() => currencyController.abort(), 10000);
+
+      let currencyData: { success?: boolean; rates?: Record<string, number> } = {};
+      try {
+        const apiKey = process.env.fxratesapi_api;
+        const url = `https://api.fxratesapi.com/latest${apiKey ? `?api_key=${apiKey}` : ''}`;
+        const currencyResponse = await fetch(url, { signal: currencyController.signal });
+        currencyData = await currencyResponse.json();
+      } finally {
+        clearTimeout(currencyTimeoutId);
+      }
 
       if (currencyData.success && currencyData.rates) {
         // Update rates for existing currencies

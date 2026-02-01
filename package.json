@@ -20,7 +20,7 @@
 	},
 	"dependencies": {
 		"bits-ui": "^2.15.4",
-		"convex": "^1.31.6",
+		"convex": "^1.31.7",
 		"convex-svelte": "^0.0.12",
 		"lucide-svelte": "^0.563.0"
 	},
