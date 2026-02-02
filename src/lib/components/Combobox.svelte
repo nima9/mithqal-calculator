@@ -132,7 +132,7 @@
 			oninput={handleInput}
 			placeholder={open ? '' : displayValue}
 			style="width: {inputWidth}ch;"
-			class="input-underline tooltip tooltip-top my-1 cursor-pointer appearance-none bg-base-100 px-2 pb-1 text-center text-3xl font-medium text-base-content outline-hidden placeholder:text-base-content focus:placeholder:text-base-content/50 sm:text-4xl md:pb-2 md:text-5xl lg:text-6xl"
+			class="input-underline tooltip tooltip-top mb-1 cursor-pointer appearance-none bg-base-100 px-2 pb-1 text-center text-3xl font-medium text-base-content outline-hidden placeholder:text-base-content focus:placeholder:text-base-content/50 sm:text-4xl md:pb-2 md:text-5xl lg:text-6xl"
 			data-tip={currFullName}
 			aria-label={displayValue}
 		/>

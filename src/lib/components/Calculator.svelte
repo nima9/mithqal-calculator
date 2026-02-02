@@ -11,6 +11,7 @@
 	import CurrencyCombobox from './Combobox.svelte';
 	import Footer from './Footer.svelte';
 	import RatesTimestamp from './RatesTimestamp.svelte';
+	import Sentence from './Sentence.svelte';
 
 	// ============================================
 	// Constants
@@ -248,46 +249,60 @@
 	}
 </script>
 
-<!-- Calculator Input Row -->
-<div
-	class="flex appearance-none flex-wrap items-center justify-center space-x-0 bg-base-100 text-3xl font-medium text-base-content sm:text-4xl md:mx-auto md:text-5xl lg:text-6xl"
->
-	<form>
-		<!-- Mithqal Amount Input -->
-		<input
-			autocomplete="off"
-			type="text"
-			id="mithqalAmount"
-			name="mithqalAmount"
-			bind:value={mithqalAmount}
-			oninput={handleInput}
-			class="my-1 w-14 cursor-text appearance-none flex-wrap items-center justify-center border-b-4 border-primary bg-base-100 text-center text-base-content outline-hidden transition-colors duration-200 hover:border-accent focus:border-accent sm:w-14 md:w-20 md:border-b-8 lg:w-24"
-		/>
+{#snippet amount()}
+	<input
+		autocomplete="off"
+		type="text"
+		id="mithqalAmount"
+		name="mithqalAmount"
+		bind:value={mithqalAmount}
+		oninput={handleInput}
+		class="input-underline mb-1 w-14 cursor-text appearance-none bg-base-100 pb-1 text-center text-base-content outline-hidden sm:w-14 md:w-20 md:pb-2 lg:w-24"
+	/>
+{/snippet}
 
-		<label
-			for="mithqalAmount"
-			class="tooltip pr-4 font-medium text-base-content"
-			data-tip="1 Mithqál = 3.642g"
-		>
-			{mithqalLabel} of
-		</label>
-	</form>
+{#snippet mithqalLabelSnippet()}
+	<label
+		for="mithqalAmount"
+		class="tooltip pl-4 font-medium text-base-content"
+		data-tip="1 Mithqál = 3.642g"
+	>
+		{mithqalLabel}
+	</label>
+{/snippet}
 
-	<!-- Metal Toggle Button -->
+{#snippet metal()}
 	<button
 		type="button"
 		onclick={switchSelectedMetal}
-		class="cursor-pointer appearance-none border-b-4 border-primary bg-base-100 px-4 text-center text-base-content outline-hidden transition-colors duration-200 hover:border-accent active:border-accent md:border-b-8"
+		class="input-underline mb-1 cursor-pointer appearance-none bg-base-100 px-4 pb-1 text-center text-base-content outline-hidden md:pb-3 lg:pb-3"
 	>
-		<div class="my-1">{selectedMetal}</div>
+		{selectedMetal}
 	</button>
+{/snippet}
 
-	<div class="px-4">in</div>
-
-	<!-- Currency Selector -->
+{#snippet currency()}
 	<CurrencyCombobox currJson={currencyJson} bind:selectedValue={selectedCurrency} />
-	<div class="px-4">is:</div>
-</div>
+{/snippet}
+
+<!-- Calculator Input Row -->
+<Sentence
+	order={[
+		{ snippet: 'amount' },
+		{ snippet: 'mithqalLabel' },
+		'of',
+		{ snippet: 'metal' },
+		'in',
+		{ snippet: 'currency' },
+		'is:'
+	]}
+	snippets={{
+		amount,
+		mithqalLabel: mithqalLabelSnippet,
+		metal,
+		currency
+	}}
+/>
 
 <br />
 

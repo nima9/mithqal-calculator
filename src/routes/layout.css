@@ -48,6 +48,53 @@
 	--noise: 0;
 }
 
+/* Light mode theme - Gruvbox inspired */
+@plugin "daisyui/theme" {
+	name: "mithqal-light";
+	default: false;
+	color-scheme: light;
+
+	/* Base surface colors (Gruvbox light bg) */
+	--color-base-100: oklch(0.95 0.03 95);  /* #fbf1c7 warm cream */
+	--color-base-200: oklch(0.91 0.04 90);  /* #ebdbb2 darker cream */
+	--color-base-300: oklch(0.85 0.04 85);  /* #d5c4a1 tan */
+	--color-base-content: oklch(0.30 0.02 60);  /* #3c3836 dark brown */
+
+	/* Primary - Gruvbox green */
+	--color-primary: oklch(0.53 0.12 115);  /* #79740e dark green */
+	--color-primary-content: oklch(0.95 0.03 95);
+
+	/* Secondary - Gruvbox green for results */
+	--color-secondary: oklch(0.45 0.10 115);  /* #79740e darker for contrast */
+	--color-secondary-content: oklch(0.95 0.03 95);
+
+	/* Accent - Gruvbox aqua (focus states) */
+	--color-accent: oklch(0.55 0.10 165);  /* #427b58 aqua green */
+	--color-accent-content: oklch(0.95 0.03 95);
+
+	/* Neutral - Gruvbox gray */
+	--color-neutral: oklch(0.75 0.03 80);  /* #a89984 warm gray */
+	--color-neutral-content: oklch(0.30 0.02 60);
+
+	/* Status colors (Gruvbox palette) */
+	--color-info: oklch(0.50 0.10 230);  /* #076678 blue */
+	--color-info-content: oklch(0.95 0.03 95);
+	--color-success: oklch(0.53 0.12 115);  /* #79740e green */
+	--color-success-content: oklch(0.95 0.03 95);
+	--color-warning: oklch(0.65 0.15 70);  /* #b57614 yellow/orange */
+	--color-warning-content: oklch(0.95 0.03 95);
+	--color-error: oklch(0.50 0.18 25);  /* #9d0006 red */
+	--color-error-content: oklch(0.95 0.03 95);
+
+	/* Design tokens */
+	--radius-selector: 0.5rem;
+	--radius-field: 0.25rem;
+	--radius-box: 0.5rem;
+	--border: 1px;
+	--depth: 1;
+	--noise: 0;
+}
+
 @layer base {
 	html {
 		font-family: Karla, system-ui, sans-serif;
