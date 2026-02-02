@@ -9,6 +9,15 @@
 	import Moon from './icons/Moon.svelte';
 	import Monitor from './icons/Monitor.svelte';
 
+	interface Props {
+		size?: number;
+		color?: string;
+		label?: string;
+		class?: string;
+	}
+
+	let { size = 28, color, label, class: className }: Props = $props();
+
 	type ThemeMode = 'light' | 'system' | 'dark';
 
 	const STORAGE_KEY = 'theme-mode';
@@ -69,18 +78,21 @@
 <button
 	type="button"
 	onclick={cycleMode}
-	class="btn-pixel"
+	class={className ?? 'btn-pixel'}
 	aria-label={modeLabel}
 >
 	<div class="transition-transform duration-300 ease-out" class:animate-spin-once={isAnimating}>
 		{#if mode === 'light'}
-			<Sun size={28} />
+			<Sun {size} {color} />
 		{:else if mode === 'dark'}
-			<Moon size={28} />
+			<Moon {size} {color} />
 		{:else}
-			<Monitor size={28} />
+			<Monitor {size} {color} />
 		{/if}
 	</div>
+	{#if label}
+		<span class="font-karla text-lg font-medium">{label}</span>
+	{/if}
 </button>
 
 <style>
