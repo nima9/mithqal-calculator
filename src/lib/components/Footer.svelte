@@ -9,6 +9,7 @@
 	import { browser } from '$app/environment';
 
 	let showTurnstile = $state(false);
+	let turnstileReady = $state(false);
 	let email = $state<string | null>(null);
 	let isVerifying = $state(false);
 	let error = $state<string | null>(null);
@@ -19,6 +20,22 @@
 			return;
 		}
 		showTurnstile = true;
+		loadTurnstileScript();
+	}
+
+	function loadTurnstileScript() {
+		if (window.turnstile) {
+			turnstileReady = true;
+			return;
+		}
+
+		const script = document.createElement('script');
+		script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+		script.async = true;
+		script.onload = () => {
+			turnstileReady = true;
+		};
+		document.head.appendChild(script);
 	}
 
 	async function onTurnstileSuccess(token: string) {
@@ -49,7 +66,7 @@
 		}
 	}
 
-	// Turnstile callback for the widget
+	// Turnstile callback for the widget - waits for script to load
 	function setupTurnstile(node: HTMLElement) {
 		if (!browser || !window.turnstile) return;
 
@@ -67,16 +84,6 @@
 	}
 </script>
 
-<svelte:head>
-	{#if showTurnstile}
-		<script
-			src="https://challenges.cloudflare.com/turnstile/v0/api.js"
-			async
-			defer
-		></script>
-	{/if}
-</svelte:head>
-
 <footer class="mt-12 text-center">
 	<!-- Sponsor Section -->
 	<div class="px-8 text-neutral-content/60 sm:px-0">
@@ -92,8 +99,10 @@
 				<div class="mt-3 flex flex-col items-center gap-2">
 					{#if isVerifying}
 						<p class="text-sm text-accent">Verifying...</p>
-					{:else}
+					{:else if turnstileReady}
 						<div use:setupTurnstile></div>
+					{:else}
+						<p class="text-sm text-accent">Loading...</p>
 					{/if}
 					{#if error}
 						<p class="text-sm text-error">{error}</p>

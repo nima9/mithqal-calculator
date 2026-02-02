@@ -203,7 +203,7 @@
 	// Display Helpers
 	// ============================================
 
-	let mithqalLabel = $derived(parseFloat(mithqalAmount) > 1 ? 'Mithqals' : 'Mithqal');
+	let mithqalLabel = $derived(parseFloat(mithqalAmount) > 1 ? 'Mithqáls' : 'Mithqál');
 
 	// ============================================
 	// Event Handlers
@@ -267,7 +267,7 @@
 		<label
 			for="mithqalAmount"
 			class="tooltip pr-4 font-medium text-base-content"
-			data-tip="1 Mithqal = 3.642g"
+			data-tip="1 Mithqál = 3.642g"
 		>
 			{mithqalLabel} of
 		</label>
