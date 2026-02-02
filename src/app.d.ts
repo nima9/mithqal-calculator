@@ -6,7 +6,16 @@ declare global {
 		// interface Locals {}
 		// interface PageData {}
 		// interface PageState {}
-		// interface Platform {}
+		interface Platform {
+			env?: {
+				TURNSTILE_SECRET_KEY?: string;
+				CONTACT_EMAIL?: string;
+			};
+			context?: {
+				waitUntil(promise: Promise<unknown>): void;
+			};
+			caches?: CacheStorage & { default: Cache };
+		}
 	}
 
 	interface Window {
