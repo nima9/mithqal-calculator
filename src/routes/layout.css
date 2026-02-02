@@ -1,0 +1,102 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* Custom Mithqal Calculator theme */
+@plugin "daisyui/theme" {
+	name: "mithqal";
+	default: true;
+	color-scheme: dark;
+
+	/* Base surface colors (zinc palette) */
+	--color-base-100: oklch(0.274 0.006 286.033);
+	--color-base-200: oklch(0.21 0.006 285.885);
+	--color-base-300: oklch(0.37 0.013 285.805);
+	--color-base-content: oklch(0.982 0.018 155.826);
+
+	/* Primary - green-800 */
+	--color-primary: oklch(0.448 0.119 151.328);
+	--color-primary-content: oklch(0.982 0.018 155.826);
+
+	/* Secondary - green-300 (bright result text) */
+	--color-secondary: oklch(0.871 0.178 152.163);
+	--color-secondary-content: oklch(0.21 0.006 285.885);
+
+	/* Accent - green-500 (focus states) */
+	--color-accent: oklch(0.723 0.219 149.579);
+	--color-accent-content: oklch(0.21 0.006 285.885);
+
+	/* Neutral - zinc-700 */
+	--color-neutral: oklch(0.37 0.013 285.805);
+	--color-neutral-content: oklch(0.982 0.018 155.826);
+
+	/* Status colors */
+	--color-info: oklch(0.746 0.16 232.661);
+	--color-info-content: oklch(0.21 0.006 285.885);
+	--color-success: oklch(0.792 0.209 151.711);
+	--color-success-content: oklch(0.21 0.006 285.885);
+	--color-warning: oklch(0.828 0.189 84.429);
+	--color-warning-content: oklch(0.21 0.006 285.885);
+	--color-error: oklch(0.704 0.191 22.216);
+	--color-error-content: oklch(0.21 0.006 285.885);
+
+	/* Design tokens */
+	--radius-selector: 0.5rem;
+	--radius-field: 0.25rem;
+	--radius-box: 0.5rem;
+	--border: 1px;
+	--depth: 1;
+	--noise: 0;
+}
+
+@layer base {
+	html {
+		font-family: Karla, system-ui, sans-serif;
+	}
+
+	/* Hide number input spinners */
+	input[type="number"]::-webkit-inner-spin-button,
+	input[type="number"]::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+	input[type="number"] {
+		-moz-appearance: textfield;
+		appearance: textfield;
+	}
+	input::-webkit-calendar-picker-indicator {
+		display: none !important;
+	}
+
+	@font-face {
+		font-family: "Karla";
+		src: url("/fonts/karla-latin-500-normal.woff2") format("woff2");
+		font-weight: 500;
+		font-style: normal;
+	}
+}
+
+/* DaisyUI tooltip styling using theme colors */
+.tooltip {
+	--tooltip-color: var(--color-primary);
+	--tooltip-text-color: var(--color-primary-content);
+	--tooltip-tail: var(--color-primary);
+}
+
+/* Underline input effect - renders behind text */
+.input-underline {
+	box-shadow: inset 0 -4px 0 0 var(--color-primary);
+	transition: box-shadow 0.2s;
+}
+.input-underline:hover,
+.input-underline:focus {
+	box-shadow: inset 0 -4px 0 0 var(--color-accent);
+}
+@media (min-width: 768px) {
+	.input-underline {
+		box-shadow: inset 0 -8px 0 0 var(--color-primary);
+	}
+	.input-underline:hover,
+	.input-underline:focus {
+		box-shadow: inset 0 -8px 0 0 var(--color-accent);
+	}
+}

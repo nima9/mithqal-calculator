@@ -1,11 +1,7 @@
-# build output
-dist/
-# generated types
-.astro/
 
 # dependencies
 node_modules/
-.vscode/
+
 
 # logs
 npm-debug.log*
@@ -14,15 +10,29 @@ yarn-error.log*
 pnpm-debug.log*
 
 
+# Output
+.output
+.vercel
+.netlify
+.wrangler
+/.svelte-kit
+/build
+
+
 # environment variables
 .env
-.env.production
+.env.*
+!.env.example
+!.env.test
 
-# macOS-specific files
+# OS
 .DS_Store
+Thumbs.db
 
-# Local Netlify folder
-.netlify
-# ignore files in src folder starting with _
-src/unused/**
-src/unused
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# Cloudflare Types
+/worker-configuration.d.ts
+

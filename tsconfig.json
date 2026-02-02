@@ -1,20 +1,25 @@
 {
-	"compilerOptions": {
-		// ... other options
-		"paths": {
-			"$lib": ["./src/lib"],
-			"$lib/*": ["./src/lib/*"],
-		},
-	},
-	"extends": "astro/tsconfigs/base",
-	"exclude": [
-		"**/node_modules/**",
-		"**/.svelte-kit/**",
-		"**/dist/**",
-		"**/build/**",
-		"**/.svelte/**",
-		"**/.netlify/**",
-		"**/api/**",
-		"src/unused/**",
-	],
+  "extends": "./.svelte-kit/tsconfig.json",
+  "compilerOptions": {
+    "rewriteRelativeImportExtensions": true,
+    "allowJs": true,
+    "checkJs": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "moduleResolution": "bundler",
+    "types": ["./worker-configuration.d.ts"]
+  },
+  "exclude": [
+    "**/node_modules/**",
+    "**/.svelte-kit/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/.claude/**",
+    "**/.vscode/**",
+    "**/.wrangler/**"
+  ]
 }

@@ -1,10 +1,15 @@
-import { vitePreprocess } from '@astrojs/svelte'
+import adapter from "@sveltejs/adapter-cloudflare";
 
-export default {
-	preprocess: vitePreprocess(),
-	kit: {
-		alias: {
-			'@/*': './path/to/lib/*',
-		},
-	},
-}
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
+  kit: {
+    adapter: adapter({
+      edge: true,
+    }),
+    alias: {
+      "@/*": "./path/to/lib/*",
+    },
+  },
+};
+
+export default config;
