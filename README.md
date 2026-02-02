@@ -26,23 +26,26 @@ A Mithqál is a unit of weight used to measure gold and silver. One Mithqál is 
 ## Tech Stack
 
 ### Frontend
+
 - [SvelteKit](https://svelte.dev/) - Full-stack framework
 - [Svelte 5](https://svelte.dev/) - UI framework with runes
 - [Tailwind CSS v4](https://tailwindcss.com/) - Styling
 - [DaisyUI](https://daisyui.com/) - Component library
 - [bits-ui](https://bits-ui.com/) - Headless components
-- [Lucide](https://lucide.dev/) - Icons
 
 ### Backend
+
 - [Convex](https://convex.dev/) - Backend platform (database, functions, scheduling)
 - [Cloudflare Pages](https://pages.cloudflare.com/) - Hosting & edge functions
 - [Cloudflare Turnstile](https://www.cloudflare.com/products/turnstile/) - Bot protection
 
 ### Data Sources
+
 - [FX Rates API](https://fxratesapi.com/) - Currency exchange rates
 - [Swissquote](https://www.swissquote.com/) - Gold & silver prices
 
 ### Tooling
+
 - [Bun](https://bun.sh/) - Package manager & runtime
 - [Wrangler](https://developers.cloudflare.com/workers/wrangler/) - Cloudflare CLI
 - [OxLint](https://oxc.rs/) - Linter
@@ -70,8 +73,6 @@ bun run build
 # Preview production build locally
 bun run preview
 ```
-
-
 
 ## Contributing
 

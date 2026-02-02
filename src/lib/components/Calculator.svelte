@@ -12,6 +12,7 @@
 	import Footer from './Footer.svelte';
 	import RatesTimestamp from './RatesTimestamp.svelte';
 	import Sentence from './Sentence.svelte';
+	import { settingsStore } from '$lib/stores/settings.svelte';
 
 	// ============================================
 	// Constants
@@ -188,9 +189,12 @@
 		return MITHQAL_IN_TROY_OZ * amount * metalPrice * currencyRate;
 	});
 
-	let formattedCalculatedValue = $derived(
-		calculatedValue.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-	);
+	let formattedCalculatedValue = $derived.by(() => {
+		const fixed = calculatedValue.toFixed(2);
+		const withCommas = fixed.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+		// Remove .00 for whole numbers
+		return withCommas.endsWith('.00') ? withCommas.slice(0, -3) : withCommas;
+	});
 
 	let displayCalculatedValue = $derived.by(() => {
 		if (isNaN(calculatedValue) || calculatedValue === 0) return '';
@@ -231,10 +235,13 @@
 		selectedMetal = selectedMetal === 'Gold' ? 'Silver' : 'Gold';
 	}
 
-	/** Copy calculated value to clipboard */
+	/** Copy calculated value to clipboard (respects comma setting) */
 	async function handleCopyClick() {
 		try {
-			await navigator.clipboard.writeText(formattedCalculatedValue);
+			const valueToCopy = settingsStore.copyWithCommas
+				? formattedCalculatedValue
+				: formattedCalculatedValue.replace(/,/g, '');
+			await navigator.clipboard.writeText(valueToCopy);
 			copyTooltipText = 'Copied!';
 		} catch {
 			copyTooltipText = 'Failed to copy';

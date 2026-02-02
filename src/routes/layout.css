@@ -3,172 +3,213 @@
 
 /* Custom Mithqal Calculator theme */
 @plugin "daisyui/theme" {
-	name: "mithqal";
-	default: true;
-	color-scheme: dark;
+  name: "mithqal";
+  default: true;
+  color-scheme: dark;
 
-	/* Base surface colors (zinc palette) */
-	--color-base-100: oklch(0.274 0.006 286.033);
-	--color-base-200: oklch(0.21 0.006 285.885);
-	--color-base-300: oklch(0.37 0.013 285.805);
-	--color-base-content: oklch(0.982 0.018 155.826);
+  /* Base surface colors (zinc palette) */
+  --color-base-100: oklch(0.274 0.006 286.033);
+  --color-base-200: oklch(0.21 0.006 285.885);
+  --color-base-300: oklch(0.37 0.013 285.805);
+  --color-base-content: oklch(0.982 0.018 155.826);
 
-	/* Primary - green-800 */
-	--color-primary: oklch(0.448 0.119 151.328);
-	--color-primary-content: oklch(0.982 0.018 155.826);
+  /* Primary - green-800 */
+  --color-primary: oklch(0.448 0.119 151.328);
+  --color-primary-content: oklch(0.982 0.018 155.826);
 
-	/* Secondary - green-300 (bright result text) */
-	--color-secondary: oklch(0.871 0.178 152.163);
-	--color-secondary-content: oklch(0.21 0.006 285.885);
+  /* Secondary - green-300 (bright result text) */
+  --color-secondary: oklch(0.871 0.178 152.163);
+  --color-secondary-content: oklch(0.21 0.006 285.885);
 
-	/* Accent - green-500 (focus states) */
-	--color-accent: oklch(0.723 0.219 149.579);
-	--color-accent-content: oklch(0.21 0.006 285.885);
+  /* Accent - green-500 (focus states) */
+  --color-accent: oklch(0.723 0.219 149.579);
+  --color-accent-content: oklch(0.21 0.006 285.885);
 
-	/* Neutral - zinc-700 */
-	--color-neutral: oklch(0.37 0.013 285.805);
-	--color-neutral-content: oklch(0.982 0.018 155.826);
+  /* Neutral - zinc-700 */
+  --color-neutral: oklch(0.37 0.013 285.805);
+  --color-neutral-content: oklch(0.982 0.018 155.826);
 
-	/* Status colors */
-	--color-info: oklch(0.746 0.16 232.661);
-	--color-info-content: oklch(0.21 0.006 285.885);
-	--color-success: oklch(0.792 0.209 151.711);
-	--color-success-content: oklch(0.21 0.006 285.885);
-	--color-warning: oklch(0.828 0.189 84.429);
-	--color-warning-content: oklch(0.21 0.006 285.885);
-	--color-error: oklch(0.704 0.191 22.216);
-	--color-error-content: oklch(0.21 0.006 285.885);
+  /* Status colors */
+  --color-info: oklch(0.746 0.16 232.661);
+  --color-info-content: oklch(0.21 0.006 285.885);
+  --color-success: oklch(0.792 0.209 151.711);
+  --color-success-content: oklch(0.21 0.006 285.885);
+  --color-warning: oklch(0.828 0.189 84.429);
+  --color-warning-content: oklch(0.21 0.006 285.885);
+  --color-error: oklch(0.704 0.191 22.216);
+  --color-error-content: oklch(0.21 0.006 285.885);
 
-	/* Design tokens */
-	--radius-selector: 0.5rem;
-	--radius-field: 0.25rem;
-	--radius-box: 0.5rem;
-	--border: 1px;
-	--depth: 1;
-	--noise: 0;
+  /* Design tokens */
+  --radius-selector: 0.5rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.5rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
 }
 
 /* Light mode theme - Gruvbox inspired */
 @plugin "daisyui/theme" {
-	name: "mithqal-light";
-	default: false;
-	color-scheme: light;
+  name: "mithqal-light";
+  default: false;
+  color-scheme: light;
 
-	/* Base surface colors (Gruvbox light bg) */
-	--color-base-100: oklch(0.95 0.03 95);  /* #fbf1c7 warm cream */
-	--color-base-200: oklch(0.91 0.04 90);  /* #ebdbb2 darker cream */
-	--color-base-300: oklch(0.85 0.04 85);  /* #d5c4a1 tan */
-	--color-base-content: oklch(0.30 0.02 60);  /* #3c3836 dark brown */
+  /* Base surface colors (Gruvbox light bg) */
+  --color-base-100: oklch(0.95 0.03 95); /* #fbf1c7 warm cream */
+  --color-base-200: oklch(0.91 0.04 90); /* #ebdbb2 darker cream */
+  --color-base-300: oklch(0.85 0.04 85); /* #d5c4a1 tan */
+  --color-base-content: oklch(0.3 0.02 60); /* #3c3836 dark brown */
 
-	/* Primary - Gruvbox green */
-	--color-primary: oklch(0.53 0.12 115);  /* #79740e dark green */
-	--color-primary-content: oklch(0.95 0.03 95);
+  /* Primary - Gruvbox green */
+  --color-primary: oklch(0.53 0.12 115); /* #79740e dark green */
+  --color-primary-content: oklch(0.95 0.03 95);
 
-	/* Secondary - Gruvbox green for results */
-	--color-secondary: oklch(0.45 0.10 115);  /* #79740e darker for contrast */
-	--color-secondary-content: oklch(0.95 0.03 95);
+  /* Secondary - Gruvbox green for results */
+  --color-secondary: oklch(0.45 0.1 115); /* #79740e darker for contrast */
+  --color-secondary-content: oklch(0.95 0.03 95);
 
-	/* Accent - Gruvbox aqua (focus states) */
-	--color-accent: oklch(0.55 0.10 165);  /* #427b58 aqua green */
-	--color-accent-content: oklch(0.95 0.03 95);
+  /* Accent - Gruvbox aqua (focus states) */
+  --color-accent: oklch(0.55 0.1 165); /* #427b58 aqua green */
+  --color-accent-content: oklch(0.95 0.03 95);
 
-	/* Neutral - Gruvbox gray */
-	--color-neutral: oklch(0.75 0.03 80);  /* #a89984 warm gray */
-	--color-neutral-content: oklch(0.30 0.02 60);
+  /* Neutral - Gruvbox gray */
+  --color-neutral: oklch(0.75 0.03 80); /* #a89984 warm gray */
+  --color-neutral-content: oklch(0.3 0.02 60);
 
-	/* Status colors (Gruvbox palette) */
-	--color-info: oklch(0.55 0.10 165);  /* #427b58 aqua */
-	--color-info-content: oklch(0.95 0.03 95);
-	--color-success: oklch(0.53 0.12 115);  /* #79740e green */
-	--color-success-content: oklch(0.95 0.03 95);
-	--color-warning: oklch(0.65 0.15 70);  /* #b57614 yellow/orange */
-	--color-warning-content: oklch(0.95 0.03 95);
-	--color-error: oklch(0.50 0.18 25);  /* #9d0006 red */
-	--color-error-content: oklch(0.95 0.03 95);
+  /* Status colors (Gruvbox palette) */
+  --color-info: oklch(0.55 0.1 165); /* #427b58 aqua */
+  --color-info-content: oklch(0.95 0.03 95);
+  --color-success: oklch(0.53 0.12 115); /* #79740e green */
+  --color-success-content: oklch(0.95 0.03 95);
+  --color-warning: oklch(0.65 0.15 70); /* #b57614 yellow/orange */
+  --color-warning-content: oklch(0.95 0.03 95);
+  --color-error: oklch(0.5 0.18 25); /* #9d0006 red */
+  --color-error-content: oklch(0.95 0.03 95);
 
-	/* Design tokens */
-	--radius-selector: 0.5rem;
-	--radius-field: 0.25rem;
-	--radius-box: 0.5rem;
-	--border: 1px;
-	--depth: 1;
-	--noise: 0;
+  /* Design tokens */
+  --radius-selector: 0.5rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.5rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
 }
 
 @layer base {
-	/* 60fps animation optimizations */
-	*,
-	*::before,
-	*::after {
-		/* Use GPU-accelerated transitions */
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-	}
+  /* 60fps animation optimizations */
+  *,
+  *::before,
+  *::after {
+    /* Use GPU-accelerated transitions */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-	html {
-		font-family: Karla, system-ui, sans-serif;
-		/* Smooth scrolling at 60fps */
-		scroll-behavior: smooth;
-	}
+  html {
+    font-family: Karla, system-ui, sans-serif;
+    /* Smooth scrolling at 60fps */
+    scroll-behavior: smooth;
+  }
 
-	/* Reduce motion for users who prefer it */
-	@media (prefers-reduced-motion: reduce) {
-		*,
-		*::before,
-		*::after {
-			animation-duration: 0.01ms !important;
-			animation-iteration-count: 1 !important;
-			transition-duration: 0.01ms !important;
-			scroll-behavior: auto !important;
-		}
-	}
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 
-	/* Hide number input spinners */
-	input[type="number"]::-webkit-inner-spin-button,
-	input[type="number"]::-webkit-outer-spin-button {
-		-webkit-appearance: none;
-		margin: 0;
-	}
-	input[type="number"] {
-		-moz-appearance: textfield;
-		appearance: textfield;
-	}
-	input::-webkit-calendar-picker-indicator {
-		display: none !important;
-	}
+  /* Hide number input spinners */
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+  input::-webkit-calendar-picker-indicator {
+    display: none !important;
+  }
 
-	@font-face {
-		font-family: "Karla";
-		src: url("/fonts/karla-latin-500-normal.woff2") format("woff2");
-		font-weight: 500;
-		font-style: normal;
-	}
+  @font-face {
+    font-family: "Karla";
+    src: url("/fonts/karla-latin-500-normal.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+  }
 }
 
 /* DaisyUI tooltip styling using theme colors */
 .tooltip {
-	--tooltip-color: var(--color-primary);
-	--tooltip-text-color: var(--color-primary-content);
-	--tooltip-tail: var(--color-primary);
+  --tooltip-color: var(--color-primary);
+  --tooltip-text-color: var(--color-primary-content);
+  --tooltip-tail: var(--color-primary);
 }
 
 /* Underline input effect - renders behind text */
 .input-underline {
-	box-shadow: inset 0 -4px 0 0 var(--color-primary);
-	transition: box-shadow 0.2s ease-out;
-	will-change: box-shadow;
-	transform: translateZ(0);
+  box-shadow: inset 0 -4px 0 0 var(--color-primary);
+  transition: box-shadow 0.2s ease-out;
+  will-change: box-shadow;
+  transform: translateZ(0);
 }
 .input-underline:hover,
 .input-underline:focus {
-	box-shadow: inset 0 -4px 0 0 var(--color-accent);
+  box-shadow: inset 0 -4px 0 0 var(--color-accent);
 }
 @media (min-width: 768px) {
-	.input-underline {
-		box-shadow: inset 0 -8px 0 0 var(--color-primary);
-	}
-	.input-underline:hover,
-	.input-underline:focus {
-		box-shadow: inset 0 -8px 0 0 var(--color-accent);
-	}
+  .input-underline {
+    box-shadow: inset 0 -8px 0 0 var(--color-primary);
+  }
+  .input-underline:hover,
+  .input-underline:focus {
+    box-shadow: inset 0 -8px 0 0 var(--color-accent);
+  }
+}
+
+/* Pixelated button hover effect - 8-bit style */
+.btn-pixel {
+  position: relative;
+  padding: 0.5rem;
+  color: oklch(from var(--color-base-content) l c h / 0.7);
+  transition: color 0.15s ease-out;
+}
+.btn-pixel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-base-300);
+  opacity: 0;
+  transition: opacity 0.15s ease-out;
+  /* Pixelated circle using clip-path polygon */
+  clip-path: polygon(
+    /* Top edge */
+    30% 0%, 70% 0%,
+    /* Top-right corner */
+    70% 5%, 85% 5%, 85% 15%, 95% 15%, 95% 30%, 100% 30%,
+    /* Right edge */
+    100% 70%,
+    /* Bottom-right corner */
+    95% 70%, 95% 85%, 85% 85%, 85% 95%, 70% 95%, 70% 100%,
+    /* Bottom edge */
+    30% 100%,
+    /* Bottom-left corner */
+    30% 95%, 15% 95%, 15% 85%, 5% 85%, 5% 70%, 0% 70%,
+    /* Left edge */
+    0% 30%,
+    /* Top-left corner */
+    5% 30%, 5% 15%, 15% 15%, 15% 5%, 30% 5%
+  );
+}
+.btn-pixel:hover::before {
+  opacity: 0.5;
+}
+.btn-pixel:hover {
+  color: var(--color-base-content);
 }

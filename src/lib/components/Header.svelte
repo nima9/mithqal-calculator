@@ -1,10 +1,12 @@
 <!--
 	Header.svelte
-	Site header with logo/title, navigation, theme switcher, and animated underline effect.
+	Site header with logo/title, navigation, theme switcher, settings, and animated underline effect.
 -->
 
 <script lang="ts">
 	import ThemeSwitcher from './ThemeSwitcher.svelte';
+	import SettingsModal from './SettingsModal.svelte';
+	import Settings from './icons/Settings.svelte';
 
 	interface Props {
 		currentPath?: string;
@@ -13,6 +15,7 @@
 	let { currentPath = '/' }: Props = $props();
 
 	let isAboutPage = $derived(currentPath === '/about');
+	let settingsOpen = $state(false);
 </script>
 
 <nav
@@ -30,12 +33,24 @@
 			href="/about"
 			class="font-karla text-lg font-medium text-base-content sm:text-xl md:text-2xl"
 		>
-			<span class="link-underline" class:link-active={isAboutPage}>About</span>
+			<span class="link-underline pb-1" class:link-active={isAboutPage}>About</span>
 		</a>
 
-		<ThemeSwitcher />
+		<div class="flex flex-col items-center gap-1">
+			<ThemeSwitcher />
+			<button
+				type="button"
+				onclick={() => (settingsOpen = true)}
+				class="btn-pixel"
+				aria-label="Open settings"
+			>
+				<Settings size={28} />
+			</button>
+		</div>
 	</div>
 </nav>
+
+<SettingsModal bind:open={settingsOpen} onClose={() => (settingsOpen = false)} />
 
 <style>
 	/* Animated underline that expands on hover - GPU accelerated */

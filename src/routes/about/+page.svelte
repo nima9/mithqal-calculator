@@ -6,6 +6,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { PUBLIC_TURNSTILE_SITE_KEY } from '$env/static/public';
+	import { loadTurnstileScript } from '$lib/utils/turnstile';
 
 	const VERIFIED_KEY = 'about_verified';
 
@@ -15,30 +16,15 @@
 	let isVerifying = $state(false);
 	let error = $state<string | null>(null);
 
-	onMount(() => {
-		// Check if already verified this session
+	onMount(async () => {
 		if (sessionStorage.getItem(VERIFIED_KEY) === 'true') {
 			isVerified = true;
 		} else {
 			showTurnstile = true;
-			loadTurnstileScript();
+			await loadTurnstileScript();
+			turnstileReady = true;
 		}
 	});
-
-	function loadTurnstileScript() {
-		if (window.turnstile) {
-			turnstileReady = true;
-			return;
-		}
-
-		const script = document.createElement('script');
-		script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
-		script.async = true;
-		script.onload = () => {
-			turnstileReady = true;
-		};
-		document.head.appendChild(script);
-	}
 
 	async function onTurnstileSuccess(token: string) {
 		isVerifying = true;
@@ -89,13 +75,11 @@
 </svelte:head>
 
 {#if isVerified}
-	<!-- About Page Content -->
 	<div class="flex flex-col items-center justify-center p-8 text-base-content">
 		<h1 class="text-4xl font-medium">About</h1>
 		<p class="mt-4 text-lg">A Mithqal Calculator.</p>
 	</div>
 {:else}
-	<!-- Turnstile Verification Gate -->
 	<div class="flex min-h-[60vh] flex-col items-center justify-center p-8 text-base-content">
 		<h1 class="text-2xl font-medium">Verify you're human</h1>
 		<p class="mt-2 text-base-content/70">Please complete the challenge to view this page.</p>

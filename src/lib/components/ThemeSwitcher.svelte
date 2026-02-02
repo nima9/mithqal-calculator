@@ -25,7 +25,8 @@
 	}
 
 	function applyTheme(themeMode: ThemeMode) {
-		const theme = themeMode === 'system' ? getSystemTheme() : themeMode === 'dark' ? DARK_THEME : LIGHT_THEME;
+		const theme =
+			themeMode === 'system' ? getSystemTheme() : themeMode === 'dark' ? DARK_THEME : LIGHT_THEME;
 		document.documentElement.setAttribute('data-theme', theme);
 	}
 
@@ -68,19 +69,16 @@
 <button
 	type="button"
 	onclick={cycleMode}
-	class="rounded-full p-2 text-base-content/70 transition-colors hover:bg-base-300/50 hover:text-base-content"
+	class="btn-pixel"
 	aria-label={modeLabel}
 >
-	<div
-		class="transition-transform duration-300 ease-out"
-		class:animate-spin-once={isAnimating}
-	>
+	<div class="transition-transform duration-300 ease-out" class:animate-spin-once={isAnimating}>
 		{#if mode === 'light'}
-			<Sun size={22} />
+			<Sun size={28} />
 		{:else if mode === 'dark'}
-			<Moon size={22} />
+			<Moon size={28} />
 		{:else}
-			<Monitor size={22} />
+			<Monitor size={28} />
 		{/if}
 	</div>
 </button>

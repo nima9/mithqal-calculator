@@ -4,8 +4,8 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
+		"dev": "bun run --bun vite dev",
+		"build": "bun run --bun vite build",
 		"preview": "wrangler pages dev .svelte-kit/cloudflare --port 4173",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -19,10 +19,10 @@
 		"gen": "wrangler types"
 	},
 	"dependencies": {
+		"@js-temporal/polyfill": "^0.5.1",
 		"bits-ui": "^2.15.5",
 		"convex": "^1.31.7",
-		"convex-svelte": "^0.0.12",
-		"lucide-svelte": "^0.563.0"
+		"convex-svelte": "^0.0.12"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-cloudflare": "^7.2.6",

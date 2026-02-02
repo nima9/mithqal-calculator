@@ -7,6 +7,7 @@
 <script lang="ts">
 	import { PUBLIC_TURNSTILE_SITE_KEY } from '$env/static/public';
 	import { browser } from '$app/environment';
+	import { loadTurnstileScript } from '$lib/utils/turnstile';
 
 	let showTurnstile = $state(false);
 	let turnstileReady = $state(false);
@@ -14,28 +15,14 @@
 	let isVerifying = $state(false);
 	let error = $state<string | null>(null);
 
-	function handleReachOutClick() {
+	async function handleReachOutClick() {
 		if (email) {
 			window.location.href = `mailto:${email}`;
 			return;
 		}
 		showTurnstile = true;
-		loadTurnstileScript();
-	}
-
-	function loadTurnstileScript() {
-		if (window.turnstile) {
-			turnstileReady = true;
-			return;
-		}
-
-		const script = document.createElement('script');
-		script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
-		script.async = true;
-		script.onload = () => {
-			turnstileReady = true;
-		};
-		document.head.appendChild(script);
+		await loadTurnstileScript();
+		turnstileReady = true;
 	}
 
 	async function onTurnstileSuccess(token: string) {
@@ -54,7 +41,6 @@
 			if (data.success && data.email) {
 				email = data.email;
 				showTurnstile = false;
-				// Auto-open mailto after verification
 				window.location.href = `mailto:${email}`;
 			} else {
 				error = 'Verification failed. Please try again.';
@@ -66,7 +52,6 @@
 		}
 	}
 
-	// Turnstile callback for the widget - waits for script to load
 	function setupTurnstile(node: HTMLElement) {
 		if (!browser || !window.turnstile) return;
 
@@ -85,7 +70,6 @@
 </script>
 
 <footer class="mt-12 text-center">
-	<!-- Sponsor Section -->
 	<div class="px-8 text-neutral-content/60 sm:px-0">
 		<div
 			class="mx-auto mt-4 max-w-xs rounded-xl border-2 border-dashed border-secondary/50 bg-base-200/20 px-4 py-3 sm:max-w-xl sm:rounded-2xl sm:px-6 sm:py-5"
@@ -120,6 +104,5 @@
 		</div>
 	</div>
 
-	<!-- Attribution -->
 	<p class="mt-8 pb-8 text-neutral-content/50">Made by Nima</p>
 </footer>

@@ -4,6 +4,8 @@
 -->
 
 <script lang="ts">
+	import { Temporal } from '@js-temporal/polyfill';
+
 	interface Props {
 		lastFetchTime: number;
 		timezone?: string;
@@ -14,17 +16,20 @@
 	let readableRateDate = $derived.by(() => {
 		if (!lastFetchTime) return '...';
 
-		const options: Intl.DateTimeFormatOptions = {
+		// Convert epoch milliseconds to Temporal.ZonedDateTime
+		const zonedDateTime = Temporal.Instant.fromEpochMilliseconds(lastFetchTime).toZonedDateTimeISO(
+			timezone
+		);
+
+		// Format with Temporal's toLocaleString
+		return zonedDateTime.toLocaleString('en-US', {
 			year: 'numeric',
 			month: 'long',
 			day: 'numeric',
 			hour: 'numeric',
 			minute: 'numeric',
-			timeZone: timezone,
 			timeZoneName: 'long'
-		};
-
-		return new Intl.DateTimeFormat('en-US', options).format(new Date(lastFetchTime));
+		});
 	});
 </script>
 

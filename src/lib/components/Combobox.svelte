@@ -6,7 +6,7 @@
 
 <script lang="ts">
 	import { Combobox } from 'bits-ui';
-	import Check from 'lucide-svelte/icons/check';
+	import Check from './icons/Check.svelte';
 
 	// ============================================
 	// Types
@@ -158,10 +158,7 @@
 						class="flex cursor-pointer items-center rounded px-3 py-2 text-sm text-base-content outline-hidden data-highlighted:bg-primary data-highlighted:text-primary-content"
 					>
 						{#snippet children({ selected })}
-							<Check
-								strokeWidth={4}
-								class="mr-2 h-4 w-4 {selected ? 'text-accent' : 'text-transparent'}"
-							/>
+							<Check class="mr-2 h-6 w-6 {selected ? 'text-accent' : 'text-transparent'}" />
 							<span>{currency.symbol_native} {currency.code}</span>
 							<span class="ml-2 text-xs text-base-content/60">{currency.name}</span>
 						{/snippet}

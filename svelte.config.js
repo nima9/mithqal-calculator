@@ -7,7 +7,7 @@ const config = {
       edge: true,
     }),
     alias: {
-      "@/*": "./path/to/lib/*",
+      "@/*": "./src/lib/*",
     },
   },
 };
