@@ -1,11 +1,11 @@
 {
-  "name": "mithqal-calculator",
-  
-  "compatibility_date": "2026-01-25",
-  "compatibility_flags": ["nodejs_als"],
-  "main": ".svelte-kit/cloudflare/worker.js",
-  "assets": {
-    "binding": "ASSETS",
-    "directory": ".svelte-kit/cloudflare"
-  }
+	"name": "mithqal-calculator",
+	"account_id": "f2bcc8def8608fd9f1009912570164ce",
+	"compatibility_date": "2026-01-25",
+	"compatibility_flags": ["nodejs_als"],
+	"main": ".svelte-kit/cloudflare/worker.js",
+	"assets": {
+		"binding": "ASSETS",
+		"directory": ".svelte-kit/cloudflare"
+	}
 }
