@@ -16,6 +16,7 @@ pnpm-debug.log*
 .netlify
 .wrangler
 /.svelte-kit
+.svelte-kit/
 /build
 
 

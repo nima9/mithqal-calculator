@@ -1,7 +1,11 @@
 {
-  "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "mithqal-calculator",
+  
   "compatibility_date": "2026-01-25",
   "compatibility_flags": ["nodejs_als"],
-  "pages_build_output_dir": ".svelte-kit/cloudflare"
+  "main": ".svelte-kit/cloudflare/worker.js",
+  "assets": {
+    "binding": "ASSETS",
+    "directory": ".svelte-kit/cloudflare"
+  }
 }
