@@ -87,18 +87,20 @@
 
 <style>
 	.animate-spin-once {
-		animation: spin-once 0.3s ease-out;
+		animation: spin-once 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+		will-change: transform;
+		backface-visibility: hidden;
 	}
 
 	@keyframes spin-once {
 		0% {
-			transform: rotate(0deg) scale(1);
+			transform: rotate(0deg) scale(1) translateZ(0);
 		}
 		50% {
-			transform: rotate(180deg) scale(0.8);
+			transform: rotate(180deg) scale(0.8) translateZ(0);
 		}
 		100% {
-			transform: rotate(360deg) scale(1);
+			transform: rotate(360deg) scale(1) translateZ(0);
 		}
 	}
 </style>
