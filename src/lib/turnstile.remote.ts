@@ -1,12 +1,14 @@
 /**
  * turnstile.remote.ts
- * Remote functions for Turnstile verification.
- * Replaces /api/verify and /api/contact endpoints.
+ * Remote functions for Turnstile verification and contact email.
+ *
+ * Verification is shared across About, Support pages, and Footer.
+ * Once verified (stored in sessionStorage), Turnstile is skipped.
  *
  * Used by:
  * - about/+page.svelte (verifyToken)
  * - support/+page.svelte (verifyToken)
- * - Footer.svelte (getContactEmail)
+ * - Footer.svelte (verifyToken, getEmail)
  */
 
 import { command } from "$app/server";
@@ -22,6 +24,9 @@ const TokenSchema = z.object({
   token: z.string().min(1, "Token is required"),
 });
 
+// Empty schema for functions that don't need arguments
+const EmptySchema = z.object({});
+
 // ============================================
 // Response Types
 // ============================================
@@ -30,7 +35,7 @@ type VerifyResult =
   | { success: true }
   | { success: false; error: string };
 
-type ContactResult =
+type EmailResult =
   | { success: true; email: string }
   | { success: false; error: string };
 
@@ -40,7 +45,8 @@ type ContactResult =
 
 /**
  * Verify a Turnstile token.
- * Used for page gates (About, Support pages).
+ * Used for human verification on About, Support pages, and Footer.
+ * On success, client stores verification in sessionStorage.
  */
 export const verifyToken = command(TokenSchema, async ({ token }): Promise<VerifyResult> => {
   const event = getRequestEvent();
@@ -59,22 +65,17 @@ export const verifyToken = command(TokenSchema, async ({ token }): Promise<Verif
 });
 
 /**
- * Verify a Turnstile token and return contact email.
- * Used by Footer "Reach out" button.
+ * Get contact email from server.
+ * Called after verification is confirmed (via sessionStorage).
+ * No Turnstile token required - verification already done.
  */
-export const getContactEmail = command(TokenSchema, async ({ token }): Promise<ContactResult> => {
+export const getEmail = command(EmptySchema, async (): Promise<EmailResult> => {
   const event = getRequestEvent();
-  const secretKey = event.platform?.env?.TURNSTILE_SECRET_KEY;
   const contactEmail = event.platform?.env?.CONTACT_EMAIL;
 
-  if (!secretKey || !contactEmail) {
+  if (!contactEmail) {
     return { success: false, error: "Server misconfigured" };
   }
 
-  const result = await verifyTurnstileToken(token, secretKey);
-
-  return result.match(
-    () => ({ success: true, email: contactEmail }),
-    (error) => ({ success: false, error: error.message })
-  );
+  return { success: true, email: contactEmail };
 });
