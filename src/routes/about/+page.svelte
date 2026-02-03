@@ -234,6 +234,10 @@
 				<strong class="text-base-content">Huqúqu'lláh</strong> calculations in the Bahá'í Faith.
 			</p>
 			<p class="mt-4 text-lg leading-relaxed text-base-content/80">
+				I am working on a website to showcase all the great Bahai tools people have made online. The
+				domain of the site is bahaitools.app!
+			</p>
+			<p class="mt-4 text-lg leading-relaxed text-base-content/80">
 				Simply enter the weight in mithqáls, select your preferred currency, and get an instant
 				conversion based on current market rates. The calculator supports over 150 currencies
 				worldwide.

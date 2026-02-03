@@ -8,6 +8,8 @@ import {
 } from './_generated/server';
 import { internal } from './_generated/api';
 
+const ONE_MONTH_MS = 30 * 24 * 60 * 60 * 1000;
+
 // ============ QUERIES ============
 
 // Get all currencies for the combobox
@@ -57,6 +59,7 @@ export const getLastFetchTime = query({
 	}
 });
 
+// Get the current daily quote (same for all users)
 // ============ MUTATIONS ============
 
 // Seed a single currency (used by seedAllCurrencies action)
@@ -119,6 +122,21 @@ export const logRateFetch = internalMutation({
 	},
 	handler: async (ctx, args) => {
 		await ctx.db.insert('rateFetchLog', args);
+	}
+});
+
+// Delete rate fetch logs older than a month
+export const pruneRateFetchLog = internalMutation({
+	args: { cutoff: v.number() },
+	handler: async (ctx, args) => {
+		const oldLogs = await ctx.db
+			.query('rateFetchLog')
+			.filter((q) => q.lt(q.field('fetchedAt'), args.cutoff))
+			.collect();
+
+		for (const log of oldLogs) {
+			await ctx.db.delete(log._id);
+		}
 	}
 });
 
@@ -203,6 +221,12 @@ export const fetchAllRates = internalAction({
 			currencySource: 'fxratesapi',
 			success
 		});
+
+		// Prune logs older than 1 month
+		await ctx.runMutation(internal.rates.pruneRateFetchLog, {
+			cutoff: now - ONE_MONTH_MS
+		});
+
 	}
 });
 

@@ -16,7 +16,7 @@
 	import { loadTurnstileScript } from '$lib/utils/turnstile';
 	import { verifyToken } from '$lib/turnstile.remote';
 	import Coffee from '$lib/components/icons/Coffee.svelte';
-	import Wallet from '$lib/components/icons/Wallet.svelte';
+	import PayPal from '$lib/components/icons/PayPal.svelte';
 
 	// ============================================
 	// Constants
@@ -167,7 +167,7 @@
 					rel="noopener noreferrer"
 					class="group flex flex-col items-center rounded-xl border-2 border-base-300 bg-base-200/30 p-6 transition-all hover:border-primary hover:bg-base-200/60"
 				>
-					<Wallet size={40} />
+					<PayPal size={40} />
 					<span
 						class="mt-3 font-karla text-xl font-medium text-base-content group-hover:text-primary"
 						>PayPal</span
