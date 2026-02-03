@@ -87,7 +87,7 @@
 	<button
 		type="button"
 		onclick={() => (mobileMenuOpen = true)}
-		class="btn-pixel text-base-content sm:hidden {mobileMenuOpen ? 'invisible' : ''}"
+		class="btn-pixel !text-base-content sm:hidden {mobileMenuOpen ? 'invisible' : ''}"
 		aria-label="Open menu"
 		aria-expanded={mobileMenuOpen}
 	>
@@ -97,11 +97,11 @@
 
 <!-- Fixed Close Button (above overlay when menu is open) -->
 {#if mobileMenuOpen}
-	<div class="fixed right-4 top-4 z-[60] sm:hidden">
+	<div class="fixed right-4 top-4 z-60 sm:hidden">
 		<button
 			type="button"
 			onclick={() => (mobileMenuOpen = false)}
-			class="btn-pixel text-base-content"
+			class="btn-pixel !text-base-content"
 			aria-label="Close menu"
 		>
 			<Close size={28} color="currentColor" />
@@ -114,14 +114,14 @@
 	<!-- Pixelated Overlay -->
 	<button
 		type="button"
-		class="pixel-overlay fixed inset-0 z-[55] sm:hidden"
+		class="pixel-overlay fixed inset-0 z-55 sm:hidden"
 		onclick={closeMobileMenu}
 		aria-label="Close menu"
 	></button>
 
 	<!-- Menu Panel -->
 	<div
-		class="fixed right-4 top-16 z-[60] w-48 overflow-hidden border-2 border-primary bg-base-100 sm:hidden"
+		class="fixed right-4 top-16 z-60 w-48 overflow-hidden border-2 border-primary bg-base-100 sm:hidden"
 		style="clip-path: polygon(
 			0% 8px, 8px 8px, 8px 0%, calc(100% - 8px) 0%, calc(100% - 8px) 8px, 100% 8px,
 			100% calc(100% - 8px), calc(100% - 8px) calc(100% - 8px), calc(100% - 8px) 100%,
@@ -134,7 +134,9 @@
 			<a
 				href="/about"
 				onclick={closeMobileMenu}
-				class="flex items-center gap-3 px-4 py-3 text-base-content transition-colors hover:bg-base-300/50 {isAboutPage ? 'bg-primary/20' : ''}"
+				class="flex items-center gap-3 px-4 py-3 text-base-content transition-colors hover:bg-base-300/50 {isAboutPage
+					? 'bg-primary/20'
+					: ''}"
 			>
 				<span class="font-karla text-lg font-medium">About</span>
 				{#if isAboutPage}
