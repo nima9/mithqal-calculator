@@ -217,6 +217,13 @@
 
 	let mithqalLabel = $derived(parseFloat(mithqalAmount) > 1 ? 'Mithqáls' : 'Mithqál');
 
+	/** Font size class - large by default, smaller only for long values on mobile */
+	let resultSizeClass = $derived.by(() => {
+		const len = displayCalculatedValue.length;
+		if (len > 18) return 'text-5xl sm:text-6xl md:text-7xl lg:text-8xl';
+		return 'text-6xl sm:text-7xl md:text-8xl lg:text-9xl';
+	});
+
 	// ============================================
 	// Event Handlers
 	// ============================================
@@ -321,11 +328,9 @@
 <br />
 
 <!-- Calculated Result -->
-<div
-	class="flex flex-wrap items-center justify-center pt-16 pb-9 text-6xl text-secondary sm:text-7xl md:text-8xl lg:text-9xl"
->
+<div class="flex w-full items-center justify-center overflow-hidden pt-16 pb-9">
 	<button
-		class="tooltip tooltip-bottom hover:bg-transparent"
+		class="tooltip tooltip-bottom text-center text-secondary hover:bg-transparent {resultSizeClass}"
 		data-tip={copyTooltipText}
 		onclick={handleCopyClick}
 		onmouseleave={handleCopyMouseLeave}

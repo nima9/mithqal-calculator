@@ -62,7 +62,7 @@
 	</a>
 
 	<!-- Desktop Navigation (hidden on mobile) -->
-	<div class="hidden items-end gap-6 sm:flex lg:gap-10">
+	<div class="hidden items-center gap-6 sm:flex lg:gap-10">
 		<a
 			href="/about"
 			class="font-karla text-2xl font-medium text-base-content transition-colors hover:text-primary md:text-3xl lg:text-4xl"
@@ -70,7 +70,7 @@
 			<span class="link-underline pb-1" class:link-active={isAboutPage}>About</span>
 		</a>
 
-		<div class="mb-1 flex items-center gap-2">
+		<div class="flex items-center gap-2">
 			<ThemeSwitcher />
 			<button
 				type="button"
