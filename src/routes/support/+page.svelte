@@ -122,7 +122,7 @@
 		<section class="mt-10">
 			<h2 class="font-karla text-2xl font-medium md:text-3xl">Ways to Support</h2>
 
-			<div class="mt-6 grid gap-4 sm:grid-cols-2">
+			<div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
 				<!-- Ko-fi -->
 				<a
 					href="https://ko-fi.com/nima999"
@@ -136,6 +136,28 @@
 						>Ko-fi</span
 					>
 					<span class="mt-1 text-sm text-base-content/60">Buy me a coffee</span>
+				</a>
+
+				<!-- World Citizen Sticker -->
+				<a
+					href="https://itsidempotent.com/products/world-citizen-sticker?utm_campaign=eb9a4c&utm_source=shareable_link"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="group flex flex-col items-center rounded-xl border-2 border-base-300 bg-base-200/30 p-6 transition-all hover:border-primary hover:bg-base-200/60"
+				>
+					<div class="mt-3 w-52 md:mt-1 lg:w-60">
+						<enhanced:img
+							src="$lib/assets/world_citizen_sticker.webp?w=480;360;256;208"
+							sizes="(min-width: 1024px) 240px, 208px"
+							alt="World Citizen sticker"
+							class="h-auto w-full"
+						/>
+					</div>
+					<span
+						class="mt-3 font-karla text-xl font-medium text-base-content group-hover:text-primary"
+						>World Citizen Sticker</span
+					>
+					<span class="mt-1 text-sm text-base-content/60">Buy a sticker</span>
 				</a>
 
 				<!-- PayPal -->
