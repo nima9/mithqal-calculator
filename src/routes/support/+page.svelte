@@ -15,6 +15,8 @@
 	import { PUBLIC_TURNSTILE_SITE_KEY } from '$env/static/public';
 	import { loadTurnstileScript } from '$lib/utils/turnstile';
 	import { verifyToken } from '$lib/turnstile.remote';
+	import Coffee from '$lib/components/icons/Coffee.svelte';
+	import Wallet from '$lib/components/icons/Wallet.svelte';
 
 	// ============================================
 	// Constants
@@ -111,9 +113,9 @@
 
 		<section class="mt-8">
 			<p class="text-lg leading-relaxed text-base-content/80">
-				The <strong class="text-base-content">Mithqal Calculator</strong> is a free, ad-free tool
-				built to serve the community. If you find it useful and would like to help keep it running,
-				consider supporting the project.
+				The <strong class="text-base-content">Mithqal Calculator</strong> is a free, ad-free tool built
+				to serve the community. If you find it useful and would like to help keep it running, consider
+				supporting the project.
 			</p>
 		</section>
 
@@ -123,13 +125,14 @@
 			<div class="mt-6 grid gap-4 sm:grid-cols-2">
 				<!-- Ko-fi -->
 				<a
-					href="https://ko-fi.com/nima9"
+					href="https://ko-fi.com/nima999"
 					target="_blank"
 					rel="noopener noreferrer"
 					class="group flex flex-col items-center rounded-xl border-2 border-base-300 bg-base-200/30 p-6 transition-all hover:border-primary hover:bg-base-200/60"
 				>
-					<span class="text-4xl">&#9749;</span>
-					<span class="mt-3 font-karla text-xl font-medium text-base-content group-hover:text-primary"
+					<Coffee size={40} />
+					<span
+						class="mt-3 font-karla text-xl font-medium text-base-content group-hover:text-primary"
 						>Ko-fi</span
 					>
 					<span class="mt-1 text-sm text-base-content/60">Buy me a coffee</span>
@@ -137,13 +140,14 @@
 
 				<!-- PayPal -->
 				<a
-					href="https://paypal.me/nima9"
+					href="https://paypal.me/jpnima999"
 					target="_blank"
 					rel="noopener noreferrer"
 					class="group flex flex-col items-center rounded-xl border-2 border-base-300 bg-base-200/30 p-6 transition-all hover:border-primary hover:bg-base-200/60"
 				>
-					<span class="text-4xl">&#128179;</span>
-					<span class="mt-3 font-karla text-xl font-medium text-base-content group-hover:text-primary"
+					<Wallet size={40} />
+					<span
+						class="mt-3 font-karla text-xl font-medium text-base-content group-hover:text-primary"
 						>PayPal</span
 					>
 					<span class="mt-1 text-sm text-base-content/60">One-time donation</span>
