@@ -157,8 +157,8 @@
 
 		<section class="mt-10">
 			<p class="text-base leading-relaxed text-base-content/60">
-				Your support helps cover hosting costs and allows me to continue improving the calculator.
-				Thank you for being part of this community!
+				Your support helps cover hosting and domain costs and allows me to continue improving the
+				calculator.
 			</p>
 		</section>
 	</div>
