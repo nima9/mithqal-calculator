@@ -203,6 +203,14 @@
 									Twitter (X)
 								</a>
 								<a
+									href="https://bsky.app/profile/mohajeri.dev"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="flex items-center gap-2 rounded px-3 py-2 text-sm text-base-content transition-colors hover:bg-base-200"
+								>
+									Bluesky
+								</a>
+								<a
 									href="https://linkedin.com/in/nima9"
 									target="_blank"
 									rel="noopener noreferrer"
