@@ -15,6 +15,7 @@
 	import { PUBLIC_TURNSTILE_SITE_KEY } from '$env/static/public';
 	import { browser } from '$app/environment';
 	import { loadTurnstileScript } from '$lib/utils/turnstile';
+	import { getContactEmail } from '$lib/turnstile.remote';
 
 	// ============================================
 	// State
@@ -47,7 +48,7 @@
 
 	/**
 	 * Callback when Turnstile challenge is completed.
-	 * Sends token to /api/contact to get the protected email.
+	 * Gets contact email via remote function after verification.
 	 * @param token - Turnstile token from successful challenge
 	 */
 	async function onTurnstileSuccess(token: string) {
@@ -55,20 +56,14 @@
 		error = null;
 
 		try {
-			const response = await fetch('/api/contact', {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({ token })
-			});
+			const result = await getContactEmail({ token });
 
-			const data = await response.json();
-
-			if (data.success && data.email) {
-				email = data.email;
+			if (result.success) {
+				email = result.email;
 				showTurnstile = false;
 				window.location.href = `mailto:${email}`;
 			} else {
-				error = 'Verification failed. Please try again.';
+				error = result.error || 'Verification failed. Please try again.';
 			}
 		} catch {
 			error = 'Something went wrong. Please try again.';
@@ -102,7 +97,7 @@
 	}
 </script>
 
-<footer class="mt-12 text-center">
+<footer class="mt-12 pb-8 text-center">
 	<div class="px-8 text-neutral-content/60 sm:px-0">
 		<div
 			class="mx-auto mt-4 max-w-xs rounded-xl border-2 border-dashed border-secondary/50 bg-base-200/20 px-4 py-3 sm:max-w-xl sm:rounded-2xl sm:px-6 sm:py-5"
@@ -129,13 +124,11 @@
 				<button
 					type="button"
 					onclick={handleReachOutClick}
-					class="mt-1 inline-block cursor-pointer text-sm text-accent transition-colors duration-200 hover:text-secondary hover:underline sm:mt-2 sm:text-base"
+					class="btn btn-outline btn-accent mt-3 px-6 py-2 text-base"
 				>
 					{email ? `${email}` : 'Reach out!'}
 				</button>
 			{/if}
 		</div>
 	</div>
-
-	<p class="mt-8 pb-8 text-neutral-content/50">Made by Nima</p>
 </footer>

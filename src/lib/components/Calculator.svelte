@@ -2,6 +2,7 @@
 	Calculator.svelte
 	Main calculator component for converting mithqals of gold/silver to currency values.
 	Fetches rates from Convex and caches them in localStorage for performance.
+	Supports URL parameters for shareable state (q=quantity, m=metal, c=currency).
 
 	Flow:
 	1. Load cached rates from localStorage (if available)
@@ -9,10 +10,13 @@
 	3. If stale, fetch fresh metals and currencies from Convex
 	4. Cache new data in localStorage for future visits
 	5. Calculate: mithqals × troy_oz_per_mithqal × metal_price × currency_rate
+	6. Sync calculator state with URL parameters (debounced)
 -->
 
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { goto } from '$app/navigation';
+	import { page } from '$app/stores';
 	import { useQuery } from 'convex-svelte';
 	import { api } from '../../convex/_generated/api';
 	import CurrencyCombobox from './Combobox.svelte';
@@ -27,6 +31,13 @@
 
 	const MITHQAL_IN_TROY_OZ = 0.11708228065358918;
 	const CACHE_KEY = 'mithqal_rates_cache';
+	const URL_UPDATE_DEBOUNCE_MS = 300;
+
+	// Default values for URL param comparison
+	const DEFAULT_QUANTITY = '19';
+	const DEFAULT_METAL = 'Gold';
+	const DEFAULT_CURRENCY_CODE = 'USD';
+	const VALID_METALS = ['Gold', 'Silver'];
 
 	// ============================================
 	// Types
@@ -59,16 +70,48 @@
 		timezone?: string;
 	}
 
-	let { selectedCurrency = $bindable('$ USD'), timezone = 'America/Los_Angeles' }: Props = $props();
+	let { selectedCurrency = $bindable('$ USD'), timezone = 'America/Los_Angeles' }: Props =
+		$props();
+
+	// ============================================
+	// URL Params (read directly from $page store)
+	// ============================================
+
+	/** Parse and validate quantity from URL */
+	let urlQuantity = $derived.by(() => {
+		const q = $page.url.searchParams.get('q');
+		if (q) {
+			const parsed = parseFloat(q);
+			if (!isNaN(parsed) && parsed > 0) return q;
+		}
+		return DEFAULT_QUANTITY;
+	});
+
+	/** Parse and validate metal from URL */
+	let urlMetal = $derived.by(() => {
+		const m = $page.url.searchParams.get('m');
+		if (m) {
+			const normalized = m.charAt(0).toUpperCase() + m.slice(1).toLowerCase();
+			if (VALID_METALS.includes(normalized)) return normalized;
+		}
+		return DEFAULT_METAL;
+	});
+
+	/** Parse and validate currency code from URL */
+	let urlCurrencyCode = $derived($page.url.searchParams.get('c')?.toUpperCase() ?? null);
 
 	// ============================================
 	// State
 	// ============================================
 
-	// User inputs
-	let mithqalAmount = $state('19');
-	let selectedMetal = $state('Gold');
+	// User inputs (initialized from URL params)
+	let mithqalAmount = $state(DEFAULT_QUANTITY);
+	let selectedMetal = $state(DEFAULT_METAL);
 	let copyTooltipText = $state('Click to copy');
+
+	// URL sync state
+	let urlUpdateTimeout: ReturnType<typeof setTimeout> | null = null;
+	let isInitialized = $state(false);
 
 	// Cache state
 	let cachedMetals = $state<CachedMetal[]>([]);
@@ -88,19 +131,36 @@
 	// Cache Management
 	// ============================================
 
-	// Load cached data from localStorage on mount
+	// Load cached data from localStorage and initialize from URL params on mount
 	onMount(() => {
 		const cached = localStorage.getItem(CACHE_KEY);
-		if (!cached) return;
-
-		try {
-			const data: CacheData = JSON.parse(cached);
-			cachedMetals = data.metals || [];
-			cachedCurrencies = data.currencies || [];
-			cachedLastFetch = data.lastFetchTime || 0;
-		} catch {
-			// Invalid cache, will fetch fresh data
+		if (cached) {
+			try {
+				const data: CacheData = JSON.parse(cached);
+				cachedMetals = data.metals || [];
+				cachedCurrencies = data.currencies || [];
+				cachedLastFetch = data.lastFetchTime || 0;
+			} catch {
+				// Invalid cache, will fetch fresh data
+			}
 		}
+
+		// Initialize state from URL params
+		mithqalAmount = urlQuantity;
+		selectedMetal = urlMetal;
+
+		// Mark as initialized after a tick to allow currency data to load
+		// This prevents URL update on initial load
+		setTimeout(() => {
+			isInitialized = true;
+		}, 100);
+
+		return () => {
+			// Cleanup debounce timeout on unmount
+			if (urlUpdateTimeout) {
+				clearTimeout(urlUpdateTimeout);
+			}
+		};
 	});
 
 	// Check if server has newer data than our cache
@@ -139,6 +199,66 @@
 			needsFreshData = false;
 		}
 	});
+
+	// Apply currency code from URL params once currencies are loaded
+	$effect(() => {
+		if (urlCurrencyCode && displayCurrencies.length > 0 && !isInitialized) {
+			const currency = displayCurrencies.find((c) => c.code === urlCurrencyCode);
+			if (currency) {
+				selectedCurrency = `${currency.symbol} ${currency.code}`;
+			}
+		}
+	});
+
+	// Sync calculator state to URL (debounced)
+	$effect(() => {
+		// Only sync after initialization to avoid updating URL on initial load
+		if (!isInitialized) return;
+
+		// Track these values to trigger effect on change
+		const quantity = mithqalAmount;
+		const metal = selectedMetal;
+		const currencyCode = selectedCurrency.slice(-3).toUpperCase().trim();
+
+		// Clear existing timeout
+		if (urlUpdateTimeout) {
+			clearTimeout(urlUpdateTimeout);
+		}
+
+		// Debounce URL updates
+		urlUpdateTimeout = setTimeout(() => {
+			updateUrlParams(quantity, metal, currencyCode);
+		}, URL_UPDATE_DEBOUNCE_MS);
+	});
+
+	// ============================================
+	// URL Param Sync
+	// ============================================
+
+	/**
+	 * Update URL with current calculator state.
+	 * Only adds params when values differ from defaults.
+	 */
+	function updateUrlParams(quantity: string, metal: string, currencyCode: string) {
+		const params = new URLSearchParams();
+
+		// Only add params when different from defaults
+		if (quantity !== DEFAULT_QUANTITY) {
+			params.set('q', quantity);
+		}
+		if (metal !== DEFAULT_METAL) {
+			params.set('m', metal);
+		}
+		if (currencyCode !== DEFAULT_CURRENCY_CODE) {
+			params.set('c', currencyCode);
+		}
+
+		const paramString = params.toString();
+		const newUrl = paramString ? `/?${paramString}` : '/';
+
+		// Use replaceState to avoid polluting browser history
+		goto(newUrl, { replaceState: true, noScroll: true, keepFocus: true });
+	}
 
 	// ============================================
 	// Derived Values

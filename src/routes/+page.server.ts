@@ -3,6 +3,9 @@
  * Server-side load function for the home page.
  * Uses Cloudflare's geolocation headers for country and timezone detection.
  *
+ * URL parameters (q, m, c) are handled client-side via $page.url.searchParams
+ * following SvelteKit's recommended pattern for URL state.
+ *
  * @see https://developers.cloudflare.com/rules/transform/managed-transforms/reference/
  */
 

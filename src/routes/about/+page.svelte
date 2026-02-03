@@ -11,10 +11,11 @@
 
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { Accordion } from 'bits-ui';
-	import { slide } from 'svelte/transition';
+	import { Accordion, Popover } from 'bits-ui';
+	import { slide, fly } from 'svelte/transition';
 	import { PUBLIC_TURNSTILE_SITE_KEY } from '$env/static/public';
 	import { loadTurnstileScript } from '$lib/utils/turnstile';
+	import { verifyToken } from '$lib/turnstile.remote';
 
 	// ============================================
 	// Constants
@@ -108,7 +109,7 @@
 
 	/**
 	 * Callback when Turnstile challenge is completed.
-	 * Sends token to server for verification.
+	 * Sends token to server for verification via remote function.
 	 * @param token - Turnstile token from successful challenge
 	 */
 	async function onTurnstileSuccess(token: string) {
@@ -116,22 +117,15 @@
 		error = null;
 
 		try {
-			// Verify token with our backend (which calls Cloudflare's API)
-			const response = await fetch('/api/verify', {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({ token })
-			});
+			const result = await verifyToken({ token });
 
-			const data = await response.json();
-
-			if (data.success) {
+			if (result.success) {
 				// Store verification in sessionStorage (persists until tab closes)
 				sessionStorage.setItem(VERIFIED_KEY, 'true');
 				isVerified = true;
 				showTurnstile = false;
 			} else {
-				error = 'Verification failed. Please try again.';
+				error = result.error || 'Verification failed. Please try again.';
 			}
 		} catch {
 			error = 'Something went wrong. Please try again.';
@@ -171,6 +165,57 @@
 {#if isVerified}
 	<div class="mx-auto max-w-2xl px-6 py-8 text-base-content">
 		<h1 class="font-karla text-4xl font-medium md:text-5xl">About</h1>
+
+		<!-- Developer Intro -->
+		<section class="mt-8">
+			<p class="text-lg leading-relaxed text-base-content/80">
+				Hi, I'm <strong class="text-base-content">Nima</strong>, a software developer passionate
+				about building useful tools for the community.
+				<Popover.Root>
+					<Popover.Trigger
+						class="inline-flex cursor-pointer items-center gap-1 rounded border border-primary/50 px-2 py-0.5 text-primary transition-colors hover:border-primary hover:bg-primary/10"
+					>
+						Socials
+						<span class="text-xs">&#x25BC;</span>
+					</Popover.Trigger>
+					<Popover.Portal>
+						<Popover.Content
+							class="z-50 w-48 rounded-lg border border-base-300 bg-base-100 p-2 shadow-lg"
+							sideOffset={8}
+							transition={fly}
+							transitionConfig={{ y: -8, duration: 150 }}
+						>
+							<div class="flex flex-col gap-1">
+								<a
+									href="https://github.com/nima9"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="flex items-center gap-2 rounded px-3 py-2 text-sm text-base-content transition-colors hover:bg-base-200"
+								>
+									GitHub
+								</a>
+								<a
+									href="https://twitter.com/OhNoNima"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="flex items-center gap-2 rounded px-3 py-2 text-sm text-base-content transition-colors hover:bg-base-200"
+								>
+									Twitter
+								</a>
+								<a
+									href="https://linkedin.com/in/nima9"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="flex items-center gap-2 rounded px-3 py-2 text-sm text-base-content transition-colors hover:bg-base-200"
+								>
+									LinkedIn
+								</a>
+							</div>
+						</Popover.Content>
+					</Popover.Portal>
+				</Popover.Root>
+			</p>
+		</section>
 
 		<!-- Site Description -->
 		<section class="mt-8">

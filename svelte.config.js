@@ -1,15 +1,23 @@
-import adapter from "@sveltejs/adapter-cloudflare";
+import adapter from '@sveltejs/adapter-cloudflare';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-  kit: {
-    adapter: adapter({
-      edge: true,
-    }),
-    alias: {
-      "@/*": "./src/lib/*",
-    },
-  },
+	kit: {
+		experimental: {
+			remoteFunctions: true
+		},
+		adapter: adapter({
+			edge: true
+		}),
+		alias: {
+			'@/*': './src/lib/*'
+		}
+	},
+	compilerOptions: {
+		experimental: {
+			async: true
+		}
+	}
 };
 
 export default config;

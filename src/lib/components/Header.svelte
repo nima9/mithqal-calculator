@@ -32,6 +32,7 @@
 	// ============================================
 
 	let isAboutPage = $derived(currentPath === '/about');
+	let isSupportPage = $derived(currentPath === '/support');
 	let settingsOpen = $state(false);
 	let mobileMenuOpen = $state(false);
 
@@ -68,6 +69,13 @@
 			class="font-karla text-2xl font-medium text-base-content transition-colors hover:text-primary md:text-3xl lg:text-4xl"
 		>
 			<span class="link-underline pb-1" class:link-active={isAboutPage}>About</span>
+		</a>
+
+		<a
+			href="/support"
+			class="font-karla text-2xl font-medium text-base-content transition-colors hover:text-primary md:text-3xl lg:text-4xl"
+		>
+			<span class="link-underline pb-1" class:link-active={isSupportPage}>Support</span>
 		</a>
 
 		<div class="flex items-center gap-2">
@@ -140,6 +148,22 @@
 			>
 				<span class="font-karla text-lg font-medium">About</span>
 				{#if isAboutPage}
+					<span class="ml-auto h-2 w-2 bg-primary"></span>
+				{/if}
+			</a>
+
+			<div class="mx-3 h-px bg-base-300"></div>
+
+			<!-- Support Link -->
+			<a
+				href="/support"
+				onclick={closeMobileMenu}
+				class="flex items-center gap-3 px-4 py-3 text-base-content transition-colors hover:bg-base-300/50 {isSupportPage
+					? 'bg-primary/20'
+					: ''}"
+			>
+				<span class="font-karla text-lg font-medium">Support</span>
+				{#if isSupportPage}
 					<span class="ml-auto h-2 w-2 bg-primary"></span>
 				{/if}
 			</a>
