@@ -195,12 +195,12 @@
 									GitHub
 								</a>
 								<a
-									href="https://twitter.com/OhNoNima"
+									href="https://x.com/OhNoNima"
 									target="_blank"
 									rel="noopener noreferrer"
 									class="flex items-center gap-2 rounded px-3 py-2 text-sm text-base-content transition-colors hover:bg-base-200"
 								>
-									Twitter
+									Twitter (X)
 								</a>
 								<a
 									href="https://linkedin.com/in/nima9"
