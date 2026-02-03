@@ -1,3 +1,4 @@
+<!-- Monitor.svelte - Pixelated monitor icon for system theme mode -->
 <script lang="ts">
 	interface Props {
 		color?: string;

@@ -2,6 +2,13 @@
 	Calculator.svelte
 	Main calculator component for converting mithqals of gold/silver to currency values.
 	Fetches rates from Convex and caches them in localStorage for performance.
+
+	Flow:
+	1. Load cached rates from localStorage (if available)
+	2. Query Convex for latest lastFetchTime to check if cache is stale
+	3. If stale, fetch fresh metals and currencies from Convex
+	4. Cache new data in localStorage for future visits
+	5. Calculate: mithqals × troy_oz_per_mithqal × metal_price × currency_rate
 -->
 
 <script lang="ts">
@@ -271,7 +278,7 @@
 {#snippet mithqalLabelSnippet()}
 	<label
 		for="mithqalAmount"
-		class="tooltip pl-4 font-medium text-base-content"
+		class="tooltip tooltip-top pl-4 font-medium text-base-content"
 		data-tip="1 Mithqál = 3.642g"
 	>
 		{mithqalLabel}

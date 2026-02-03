@@ -1,3 +1,4 @@
+<!-- Settings.svelte - Pixelated sliders icon for settings button -->
 <script lang="ts">
 	interface Props {
 		color?: string;

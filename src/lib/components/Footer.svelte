@@ -2,6 +2,13 @@
 	Footer.svelte
 	Site footer with sponsor callout and attribution.
 	Email is protected by Cloudflare Turnstile verification.
+
+	Flow:
+	1. User clicks "Reach out!" button
+	2. Turnstile challenge loads and displays
+	3. On successful verification, email is fetched from /api/contact
+	4. Email is cached and mailto: link opens
+	5. Subsequent clicks skip Turnstile and go directly to mailto:
 -->
 
 <script lang="ts">
@@ -9,12 +16,25 @@
 	import { browser } from '$app/environment';
 	import { loadTurnstileScript } from '$lib/utils/turnstile';
 
+	// ============================================
+	// State
+	// ============================================
+
 	let showTurnstile = $state(false);
 	let turnstileReady = $state(false);
 	let email = $state<string | null>(null);
 	let isVerifying = $state(false);
 	let error = $state<string | null>(null);
 
+	// ============================================
+	// Event Handlers
+	// ============================================
+
+	/**
+	 * Handle "Reach out!" button click.
+	 * If email already verified, opens mailto directly.
+	 * Otherwise, shows Turnstile challenge.
+	 */
 	async function handleReachOutClick() {
 		if (email) {
 			window.location.href = `mailto:${email}`;
@@ -25,6 +45,11 @@
 		turnstileReady = true;
 	}
 
+	/**
+	 * Callback when Turnstile challenge is completed.
+	 * Sends token to /api/contact to get the protected email.
+	 * @param token - Turnstile token from successful challenge
+	 */
 	async function onTurnstileSuccess(token: string) {
 		isVerifying = true;
 		error = null;
@@ -52,6 +77,14 @@
 		}
 	}
 
+	// ============================================
+	// Turnstile Setup
+	// ============================================
+
+	/**
+	 * Svelte action to render Turnstile widget.
+	 * Automatically cleans up on component destroy.
+	 */
 	function setupTurnstile(node: HTMLElement) {
 		if (!browser || !window.turnstile) return;
 

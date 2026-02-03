@@ -1,3 +1,4 @@
+<!-- Moon.svelte - Pixelated moon icon for dark theme mode -->
 <script lang="ts">
 	interface Props {
 		color?: string;

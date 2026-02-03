@@ -1,10 +1,15 @@
 <!--
 	RatesTimestamp.svelte
-	Displays the timestamp of when rates were last fetched.
+	Displays the timestamp of when metal/currency rates were last fetched.
+	Uses Temporal API for timezone-aware date formatting.
 -->
 
 <script lang="ts">
 	import { Temporal } from '@js-temporal/polyfill';
+
+	// ============================================
+	// Props
+	// ============================================
 
 	interface Props {
 		lastFetchTime: number;
@@ -13,6 +18,11 @@
 
 	let { lastFetchTime, timezone = 'America/Los_Angeles' }: Props = $props();
 
+	// ============================================
+	// Derived Values
+	// ============================================
+
+	/** Format the timestamp in the user's timezone with full date/time */
 	let readableRateDate = $derived.by(() => {
 		if (!lastFetchTime) return '...';
 

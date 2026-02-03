@@ -1,3 +1,4 @@
+<!-- Close.svelte - Pixelated X icon for closing menus/modals -->
 <script lang="ts">
 	interface Props {
 		color?: string;

@@ -1,6 +1,7 @@
 <!--
 	ThemeSwitcher.svelte
-	Single button that cycles through light/system/dark theme modes.
+	Single button that cycles through light → system → dark theme modes.
+	Persists preference in localStorage and respects system preference when in "system" mode.
 -->
 
 <script lang="ts">
@@ -8,6 +9,10 @@
 	import Sun from './icons/Sun.svelte';
 	import Moon from './icons/Moon.svelte';
 	import Monitor from './icons/Monitor.svelte';
+
+	// ============================================
+	// Props
+	// ============================================
 
 	interface Props {
 		size?: number;
@@ -18,6 +23,10 @@
 
 	let { size = 28, color, label, class: className }: Props = $props();
 
+	// ============================================
+	// Constants
+	// ============================================
+
 	type ThemeMode = 'light' | 'system' | 'dark';
 
 	const STORAGE_KEY = 'theme-mode';
@@ -25,20 +34,39 @@
 	const DARK_THEME = 'mithqal';
 	const MODES: ThemeMode[] = ['light', 'system', 'dark'];
 
+	// ============================================
+	// State
+	// ============================================
+
 	let mode = $state<ThemeMode>('system');
 	let isAnimating = $state(false);
 
+	// ============================================
+	// Derived Values
+	// ============================================
+
+	let modeLabel = $derived(
+		mode === 'light' ? 'Light mode' : mode === 'dark' ? 'Dark mode' : 'System mode'
+	);
+
+	// ============================================
+	// Theme Functions
+	// ============================================
+
+	/** Get the appropriate theme based on system preference */
 	function getSystemTheme(): string {
 		const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 		return prefersDark ? DARK_THEME : LIGHT_THEME;
 	}
 
+	/** Apply the selected theme to the document */
 	function applyTheme(themeMode: ThemeMode) {
 		const theme =
 			themeMode === 'system' ? getSystemTheme() : themeMode === 'dark' ? DARK_THEME : LIGHT_THEME;
 		document.documentElement.setAttribute('data-theme', theme);
 	}
 
+	/** Cycle to next theme mode: light → system → dark → light */
 	function cycleMode() {
 		isAnimating = true;
 		const currentIndex = MODES.indexOf(mode);
@@ -52,17 +80,19 @@
 		}, 300);
 	}
 
-	let modeLabel = $derived(
-		mode === 'light' ? 'Light mode' : mode === 'dark' ? 'Dark mode' : 'System mode'
-	);
+	// ============================================
+	// Lifecycle
+	// ============================================
 
 	onMount(() => {
+		// Load saved preference from localStorage
 		const stored = localStorage.getItem(STORAGE_KEY) as ThemeMode | null;
 		if (stored && MODES.includes(stored)) {
 			mode = stored;
 		}
 		applyTheme(mode);
 
+		// Listen for system preference changes (only affects "system" mode)
 		const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 		const handler = () => {
 			if (mode === 'system') {

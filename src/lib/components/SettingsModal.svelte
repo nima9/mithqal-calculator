@@ -1,11 +1,18 @@
 <!--
 	SettingsModal.svelte
 	Modal dialog for user settings.
-	Settings are persisted in localStorage.
+	Settings are persisted in localStorage via settingsStore.
+
+	Available Settings:
+	- Copy format: With commas (1,234.56) or without (1234.56)
 -->
 
 <script lang="ts">
 	import { settingsStore } from '$lib/stores/settings.svelte';
+
+	// ============================================
+	// Props
+	// ============================================
 
 	interface Props {
 		open: boolean;
@@ -14,18 +21,25 @@
 
 	let { open = $bindable(), onClose }: Props = $props();
 
+	// ============================================
+	// Event Handlers
+	// ============================================
+
+	/** Close modal when clicking the backdrop (not the modal itself) */
 	function handleBackdropClick(e: MouseEvent) {
 		if (e.target === e.currentTarget) {
 			onClose();
 		}
 	}
 
+	/** Close modal on Escape or Enter key on backdrop */
 	function handleBackdropKeydown(e: KeyboardEvent) {
 		if (e.key === 'Escape' || e.key === 'Enter') {
 			onClose();
 		}
 	}
 
+	/** Global Escape key handler */
 	function handleKeydown(e: KeyboardEvent) {
 		if (e.key === 'Escape') {
 			onClose();

@@ -1,7 +1,11 @@
 <!--
 	Header.svelte
 	Site header with logo/title, navigation, theme switcher, settings, and animated underline effect.
-	Includes responsive mobile menu.
+	Includes responsive mobile menu with pixelated overlay.
+
+	Structure:
+	- Desktop: Logo | About link | Theme switcher | Settings button
+	- Mobile: Logo | Menu button → Dropdown with About, Theme, Settings
 -->
 
 <script lang="ts">
@@ -13,20 +17,34 @@
 	import Menu from './icons/Menu.svelte';
 	import Close from './icons/Close.svelte';
 
+	// ============================================
+	// Props
+	// ============================================
+
 	interface Props {
 		currentPath?: string;
 	}
 
 	let { currentPath = '/' }: Props = $props();
 
+	// ============================================
+	// State
+	// ============================================
+
 	let isAboutPage = $derived(currentPath === '/about');
 	let settingsOpen = $state(false);
 	let mobileMenuOpen = $state(false);
 
+	// ============================================
+	// Event Handlers
+	// ============================================
+
+	/** Close mobile menu dropdown */
 	function closeMobileMenu() {
 		mobileMenuOpen = false;
 	}
 
+	/** Open settings modal (closes mobile menu first if open) */
 	function openSettings() {
 		closeMobileMenu();
 		settingsOpen = true;
@@ -44,15 +62,15 @@
 	</a>
 
 	<!-- Desktop Navigation (hidden on mobile) -->
-	<div class="hidden items-center gap-4 sm:flex sm:gap-6">
+	<div class="hidden items-end gap-6 sm:flex lg:gap-10">
 		<a
 			href="/about"
-			class="font-karla text-lg font-medium text-base-content sm:text-xl md:text-2xl"
+			class="font-karla text-2xl font-medium text-base-content transition-colors hover:text-primary md:text-3xl lg:text-4xl"
 		>
 			<span class="link-underline pb-1" class:link-active={isAboutPage}>About</span>
 		</a>
 
-		<div class="flex flex-col items-center gap-1">
+		<div class="mb-1 flex items-center gap-2">
 			<ThemeSwitcher />
 			<button
 				type="button"
@@ -69,11 +87,11 @@
 	<button
 		type="button"
 		onclick={() => (mobileMenuOpen = true)}
-		class="btn-pixel sm:hidden {mobileMenuOpen ? 'invisible' : ''}"
+		class="btn-pixel text-base-content sm:hidden {mobileMenuOpen ? 'invisible' : ''}"
 		aria-label="Open menu"
 		aria-expanded={mobileMenuOpen}
 	>
-		<Menu size={28} />
+		<Menu size={28} color="currentColor" />
 	</button>
 </nav>
 
@@ -83,10 +101,10 @@
 		<button
 			type="button"
 			onclick={() => (mobileMenuOpen = false)}
-			class="btn-pixel"
+			class="btn-pixel text-base-content"
 			aria-label="Close menu"
 		>
-			<Close size={28} />
+			<Close size={28} color="currentColor" />
 		</button>
 	</div>
 {/if}

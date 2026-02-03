@@ -1,3 +1,4 @@
+<!-- Menu.svelte - Pixelated hamburger menu icon for mobile navigation -->
 <script lang="ts">
 	interface Props {
 		color?: string;

@@ -1,3 +1,4 @@
+<!-- Check.svelte - Pixelated checkmark icon for selected items -->
 <script lang="ts">
 	interface Props {
 		color?: string;

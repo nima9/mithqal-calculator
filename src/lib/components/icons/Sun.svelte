@@ -1,3 +1,4 @@
+<!-- Sun.svelte - Pixelated sun icon for light theme mode -->
 <script lang="ts">
 	interface Props {
 		color?: string;
