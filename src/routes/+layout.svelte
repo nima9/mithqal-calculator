@@ -12,6 +12,8 @@
 	import { browser } from '$app/environment';
 	import { fly } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
+	import { onMount } from 'svelte';
+	import type { Component } from 'svelte';
 
 	// Initialize Convex client only in browser (not during SSR)
 	if (browser) {
@@ -19,6 +21,16 @@
 	}
 
 	let { children, data } = $props();
+
+	// Dynamically load GoogleAds component to prevent adblockers from breaking the app
+	let GoogleAds: Component | null = $state(null);
+	onMount(async () => {
+		try {
+			GoogleAds = (await import('$lib/components/GoogleAds.svelte')).default;
+		} catch {
+			// Silently fail if blocked by adblocker
+		}
+	});
 </script>
 
 <svelte:head>
@@ -61,6 +73,11 @@
 		{@render children()}
 	</main>
 {/key}
+
+<!-- Google AdSense - loaded dynamically to prevent adblockers from breaking the app -->
+{#if GoogleAds}
+	<GoogleAds />
+{/if}
 
 <style>
 	/* Smooth out fly() page transitions applied to <main> above */
