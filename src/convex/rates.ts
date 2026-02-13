@@ -59,6 +59,29 @@ export const getLastFetchTime = query({
 	}
 });
 
+// Get all calculator rate data in one snapshot query
+export const getRatesSnapshot = query({
+	args: {},
+	handler: async (ctx) => {
+		const [lastLog, metals, currencies] = await Promise.all([
+			ctx.db.query('rateFetchLog').order('desc').first(),
+			ctx.db.query('metals').collect(),
+			ctx.db.query('currencies').collect()
+		]);
+
+		return {
+			lastFetchTime: lastLog?.fetchedAt ?? null,
+			metals: metals.map((m) => ({ name: m.name, priceUSD: m.priceUSD })),
+			currencies: currencies.map((c) => ({
+				code: c.code,
+				name: c.name,
+				symbol: c.symbol,
+				rateToUSD: c.rateToUSD
+			}))
+		};
+	}
+});
+
 // Get the current daily quote (same for all users)
 // ============ MUTATIONS ============
 

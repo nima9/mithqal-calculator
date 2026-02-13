@@ -11,6 +11,9 @@
 
 import type { PageServerLoad } from "./$types";
 import { countryToCurrency } from "$lib/utils/countryToCurrency";
+import { ConvexHttpClient } from "convex/browser";
+import { PUBLIC_CONVEX_URL } from "$env/static/public";
+import { api } from "../convex/_generated/api";
 
 export const load: PageServerLoad = async ({ request, platform }) => {
   // Default values
@@ -41,8 +44,17 @@ export const load: PageServerLoad = async ({ request, platform }) => {
     }
   }
 
+  let initialRates = null;
+  try {
+    const client = new ConvexHttpClient(PUBLIC_CONVEX_URL);
+    initialRates = await client.query(api.rates.getRatesSnapshot, {});
+  } catch {
+    // Fall back to client-side cache/fetch if Convex snapshot is unavailable.
+  }
+
   return {
     defaultCurrency,
     timezone,
+    initialRates,
   };
 };

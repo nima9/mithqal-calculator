@@ -15,9 +15,10 @@
 
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { goto } from '$app/navigation';
-	import { page } from '$app/stores';
-	import { useQuery } from 'convex-svelte';
+	import { replaceState } from '$app/navigation';
+	import { resolve } from '$app/paths';
+	import { page } from '$app/state';
+	import { useConvexClient } from 'convex-svelte';
 	import { api } from '../../convex/_generated/api';
 	import CurrencyCombobox from './Combobox.svelte';
 	import Footer from './Footer.svelte';
@@ -31,6 +32,7 @@
 
 	const MITHQAL_IN_TROY_OZ = 0.11708228065358918;
 	const CACHE_KEY = 'mithqal_rates_cache';
+	const CACHE_TTL_MS = 6 * 60 * 60 * 1000;
 	const URL_UPDATE_DEBOUNCE_MS = 300;
 
 	// Default values for URL param comparison
@@ -61,6 +63,12 @@
 		currencies: CachedCurrency[];
 	}
 
+	interface RatesSnapshot {
+		lastFetchTime: number | null;
+		metals: CachedMetal[];
+		currencies: CachedCurrency[];
+	}
+
 	// ============================================
 	// Props
 	// ============================================
@@ -68,18 +76,22 @@
 	interface Props {
 		selectedCurrency?: string;
 		timezone?: string;
+		initialRates?: RatesSnapshot | null;
 	}
 
-	let { selectedCurrency = $bindable('$ USD'), timezone = 'America/Los_Angeles' }: Props =
-		$props();
+	let {
+		selectedCurrency = $bindable('$ USD'),
+		timezone = 'America/Los_Angeles',
+		initialRates = null
+	}: Props = $props();
 
 	// ============================================
-	// URL Params (read directly from $page store)
+	// URL Params (read directly from page state)
 	// ============================================
 
 	/** Parse and validate quantity from URL */
 	let urlQuantity = $derived.by(() => {
-		const q = $page.url.searchParams.get('q');
+		const q = page.url.searchParams.get('q');
 		if (q) {
 			const parsed = parseFloat(q);
 			if (!isNaN(parsed) && parsed > 0) return q;
@@ -89,7 +101,7 @@
 
 	/** Parse and validate metal from URL */
 	let urlMetal = $derived.by(() => {
-		const m = $page.url.searchParams.get('m');
+		const m = page.url.searchParams.get('m');
 		if (m) {
 			const normalized = m.charAt(0).toUpperCase() + m.slice(1).toLowerCase();
 			if (VALID_METALS.includes(normalized)) return normalized;
@@ -98,7 +110,7 @@
 	});
 
 	/** Parse and validate currency code from URL */
-	let urlCurrencyCode = $derived($page.url.searchParams.get('c')?.toUpperCase() ?? null);
+	let urlCurrencyCode = $derived(page.url.searchParams.get('c')?.toUpperCase() ?? null);
 
 	// ============================================
 	// State
@@ -117,22 +129,51 @@
 	let cachedMetals = $state<CachedMetal[]>([]);
 	let cachedCurrencies = $state<CachedCurrency[]>([]);
 	let cachedLastFetch = $state<number>(0);
-	let needsFreshData = $state(true);
-
-	// ============================================
-	// Convex Queries
-	// ============================================
-
-	const lastFetchQuery = useQuery(api.rates.getLastFetchTime, {});
-	const metalsQuery = useQuery(api.rates.getMetals, {});
-	const currenciesQuery = useQuery(api.rates.getCurrencies, {});
+	const convex = useConvexClient();
 
 	// ============================================
 	// Cache Management
 	// ============================================
 
-	// Load cached data from localStorage and initialize from URL params on mount
-	onMount(() => {
+	function isCacheStale(lastFetchTime: number): boolean {
+		if (!lastFetchTime) return true;
+		return Date.now() - lastFetchTime > CACHE_TTL_MS;
+	}
+
+	function applyRatesSnapshot(snapshot: RatesSnapshot, persistToCache: boolean) {
+		if (
+			!snapshot.lastFetchTime ||
+			snapshot.metals.length === 0 ||
+			snapshot.currencies.length === 0
+		) {
+			return;
+		}
+
+		cachedMetals = snapshot.metals;
+		cachedCurrencies = snapshot.currencies;
+		cachedLastFetch = snapshot.lastFetchTime;
+
+		if (persistToCache) {
+			const cacheData: CacheData = {
+				lastFetchTime: snapshot.lastFetchTime,
+				metals: snapshot.metals,
+				currencies: snapshot.currencies
+			};
+			localStorage.setItem(CACHE_KEY, JSON.stringify(cacheData));
+		}
+	}
+
+	async function fetchRatesSnapshot() {
+		try {
+			const snapshot = await convex.query(api.rates.getRatesSnapshot, {});
+			applyRatesSnapshot(snapshot, true);
+		} catch {
+			// Keep using current cache state on query failures
+		}
+	}
+
+	// Load cached data and initialize state on mount
+	onMount(async () => {
 		const cached = localStorage.getItem(CACHE_KEY);
 		if (cached) {
 			try {
@@ -149,11 +190,28 @@
 		mithqalAmount = urlQuantity;
 		selectedMetal = urlMetal;
 
-		// Mark as initialized after a tick to allow currency data to load
-		// This prevents URL update on initial load
-		setTimeout(() => {
-			isInitialized = true;
-		}, 100);
+		const hasValidCache =
+			cachedMetals.length > 0 && cachedCurrencies.length > 0 && !isCacheStale(cachedLastFetch);
+		const hasNewerServerData =
+			!!initialRates?.lastFetchTime && initialRates.lastFetchTime > cachedLastFetch;
+
+		// Prefer server snapshot from SSR when it's newer than local cache.
+		if (initialRates && hasNewerServerData) {
+			applyRatesSnapshot(initialRates, true);
+		}
+
+		if (!hasValidCache && initialRates) {
+			applyRatesSnapshot(initialRates, true);
+		}
+
+		const needsSnapshotFetch =
+			cachedMetals.length === 0 || cachedCurrencies.length === 0 || isCacheStale(cachedLastFetch);
+
+		if (needsSnapshotFetch && !(initialRates && initialRates.lastFetchTime)) {
+			await fetchRatesSnapshot();
+		}
+
+		isInitialized = true;
 
 		return () => {
 			// Cleanup debounce timeout on unmount
@@ -161,43 +219,6 @@
 				clearTimeout(urlUpdateTimeout);
 			}
 		};
-	});
-
-	// Check if server has newer data than our cache
-	$effect(() => {
-		const serverLastFetch = lastFetchQuery.data;
-		if (serverLastFetch && serverLastFetch > cachedLastFetch) {
-			needsFreshData = true;
-		} else if (serverLastFetch && cachedMetals.length > 0 && cachedCurrencies.length > 0) {
-			needsFreshData = false;
-		}
-	});
-
-	// Update cache when fresh data arrives from Convex
-	$effect(() => {
-		const metals = metalsQuery.data;
-		const currencies = currenciesQuery.data;
-		const serverLastFetch = lastFetchQuery.data;
-
-		if (metals && currencies && serverLastFetch && needsFreshData) {
-			cachedMetals = metals.map((m) => ({ name: m.name, priceUSD: m.priceUSD }));
-			cachedCurrencies = currencies.map((c) => ({
-				code: c.code,
-				name: c.name,
-				symbol: c.symbol,
-				rateToUSD: c.rateToUSD
-			}));
-			cachedLastFetch = serverLastFetch;
-
-			// Persist to localStorage
-			const cacheData: CacheData = {
-				lastFetchTime: serverLastFetch,
-				metals: cachedMetals,
-				currencies: cachedCurrencies
-			};
-			localStorage.setItem(CACHE_KEY, JSON.stringify(cacheData));
-			needsFreshData = false;
-		}
 	});
 
 	// Apply currency code from URL params once currencies are loaded
@@ -219,6 +240,17 @@
 		const quantity = mithqalAmount;
 		const metal = selectedMetal;
 		const currencyCode = selectedCurrency.slice(-3).toUpperCase().trim();
+		const newUrl = buildUrlParams(quantity, metal, currencyCode);
+		const currentUrl = `${page.url.pathname}${page.url.search}`;
+
+		// No-op when URL is already in sync.
+		if (currentUrl === newUrl) {
+			if (urlUpdateTimeout) {
+				clearTimeout(urlUpdateTimeout);
+				urlUpdateTimeout = null;
+			}
+			return;
+		}
 
 		// Clear existing timeout
 		if (urlUpdateTimeout) {
@@ -239,7 +271,7 @@
 	 * Update URL with current calculator state.
 	 * Only adds params when values differ from defaults.
 	 */
-	function updateUrlParams(quantity: string, metal: string, currencyCode: string) {
+	function buildUrlParams(quantity: string, metal: string, currencyCode: string): string {
 		const params = new URLSearchParams();
 
 		// Only add params when different from defaults
@@ -254,22 +286,26 @@
 		}
 
 		const paramString = params.toString();
-		const newUrl = paramString ? `/?${paramString}` : '/';
+		return paramString ? `/?${paramString}` : '/';
+	}
 
-		// Use replaceState to avoid polluting browser history
-		goto(newUrl, { replaceState: true, noScroll: true, keepFocus: true });
+	function updateUrlParams(quantity: string, metal: string, currencyCode: string) {
+		const newUrl = buildUrlParams(quantity, metal, currencyCode);
+
+		const currentUrl = `${page.url.pathname}${page.url.search}`;
+		if (currentUrl === newUrl) return;
+
+		// Replace URL state without triggering route navigation work.
+		replaceState(resolve(newUrl), page.state); //not an error
 	}
 
 	// ============================================
 	// Derived Values
 	// ============================================
 
-	// Use cached data, falling back to Convex data if no cache
-	let displayMetals = $derived(cachedMetals.length > 0 ? cachedMetals : metalsQuery.data || []);
-	let displayCurrencies = $derived(
-		cachedCurrencies.length > 0 ? cachedCurrencies : currenciesQuery.data || []
-	);
-	let displayLastFetch = $derived(cachedLastFetch || lastFetchQuery.data || 0);
+	let displayMetals = $derived(cachedMetals);
+	let displayCurrencies = $derived(cachedCurrencies);
+	let displayLastFetch = $derived(cachedLastFetch);
 
 	// Lookup maps for fast access
 	let currencyMap = $derived.by(() => {
