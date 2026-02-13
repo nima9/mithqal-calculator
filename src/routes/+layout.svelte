@@ -7,6 +7,8 @@
 <script lang="ts">
 	import './layout.css';
 	import Header from '$lib/components/Header.svelte';
+	import CookieConsent from '$lib/components/CookieConsent.svelte';
+	import CookieModal from '$lib/components/CookieModal.svelte';
 	import { setupConvex } from 'convex-svelte';
 	import { PUBLIC_CONVEX_URL } from '$env/static/public';
 	import { browser } from '$app/environment';
@@ -14,7 +16,6 @@
 	import { cubicOut } from 'svelte/easing';
 	import { onMount } from 'svelte';
 	import type { Component } from 'svelte';
-
 	// Initialize Convex client only in browser (not during SSR)
 	if (browser) {
 		setupConvex(PUBLIC_CONVEX_URL);
@@ -22,8 +23,12 @@
 
 	let { children, data } = $props();
 
+	// Cookie modal state
+	let cookieModalOpen = $state(false);
+
 	// Dynamically load GoogleAds component to prevent adblockers from breaking the app
 	let GoogleAds: Component | null = $state(null);
+
 	onMount(async () => {
 		try {
 			GoogleAds = (await import('$lib/components/GoogleAds.svelte')).default;
@@ -77,6 +82,12 @@
 <!-- Google AdSense - loaded dynamically to prevent adblockers from breaking the app -->
 {#if GoogleAds}
 	<GoogleAds />
+{/if}
+
+<!-- Cookie consent banner - only shown to EU/UK/CH users who haven't decided -->
+{#if data.requiresConsent}
+	<CookieConsent onLearnMore={() => (cookieModalOpen = true)} />
+	<CookieModal bind:open={cookieModalOpen} onClose={() => (cookieModalOpen = false)} />
 {/if}
 
 <style>

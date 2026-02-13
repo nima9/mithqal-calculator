@@ -13,19 +13,19 @@
 
 import { command } from "$app/server";
 import { getRequestEvent } from "$app/server";
-import { z } from "zod";
+import * as v from "valibot";
 import { verifyTurnstileToken } from "$lib/utils/turnstile";
 
 // ============================================
 // Schemas
 // ============================================
 
-const TokenSchema = z.object({
-  token: z.string().min(1, "Token is required"),
+const TokenSchema = v.object({
+  token: v.pipe(v.string(), v.minLength(1, "Token is required")),
 });
 
 // Empty schema for functions that don't need arguments
-const EmptySchema = z.object({});
+const EmptySchema = v.object({});
 
 // ============================================
 // Response Types
