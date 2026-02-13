@@ -9,6 +9,7 @@
  */
 
 import type * as crons from "../crons.js";
+import type * as externalApi from "../externalApi.js";
 import type * as rates from "../rates.js";
 import type * as seed from "../seed.js";
 
@@ -20,6 +21,7 @@ import type {
 
 declare const fullApi: ApiFromModules<{
   crons: typeof crons;
+  externalApi: typeof externalApi;
   rates: typeof rates;
   seed: typeof seed;
 }>;

@@ -11,6 +11,7 @@
 <script lang="ts">
 	import { fly, fade } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
+	import { page } from '$app/state';
 	import ThemeSwitcher from './ThemeSwitcher.svelte';
 	import SettingsModal from './SettingsModal.svelte';
 	import Settings from './icons/Settings.svelte';
@@ -18,21 +19,11 @@
 	import Close from './icons/Close.svelte';
 
 	// ============================================
-	// Props
-	// ============================================
-
-	interface Props {
-		currentPath?: string;
-	}
-
-	let { currentPath = '/' }: Props = $props();
-
-	// ============================================
 	// State
 	// ============================================
 
-	let isAboutPage = $derived(currentPath === '/about');
-	let isSupportPage = $derived(currentPath === '/support');
+	let isAboutPage = $derived(page.url.pathname === '/about');
+	let isSupportPage = $derived(page.url.pathname === '/support');
 	let settingsOpen = $state(false);
 	let mobileMenuOpen = $state(false);
 
@@ -213,7 +204,6 @@
 		background-position: 0 100%;
 		background-repeat: no-repeat;
 		transition: background-size 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-		will-change: background-size;
 		transform: translateZ(0);
 		backface-visibility: hidden;
 	}

@@ -105,12 +105,7 @@
 	});
 </script>
 
-<button
-	type="button"
-	onclick={cycleMode}
-	class={className ?? 'btn-pixel'}
-	aria-label={modeLabel}
->
+<button type="button" onclick={cycleMode} class={className ?? 'btn-pixel'} aria-label={modeLabel}>
 	<div class="transition-transform duration-300 ease-out" class:animate-spin-once={isAnimating}>
 		{#if mode === 'light'}
 			<Sun {size} {color} />
@@ -128,7 +123,6 @@
 <style>
 	.animate-spin-once {
 		animation: spin-once 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-		will-change: transform;
 		backface-visibility: hidden;
 	}
 

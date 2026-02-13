@@ -45,9 +45,18 @@
 			onClose();
 		}
 	}
-</script>
 
-<svelte:window onkeydown={handleKeydown} />
+	$effect(() => {
+		if (!open) return;
+
+		const onWindowKeydown = (e: KeyboardEvent) => handleKeydown(e);
+		window.addEventListener('keydown', onWindowKeydown);
+
+		return () => {
+			window.removeEventListener('keydown', onWindowKeydown);
+		};
+	});
+</script>
 
 {#if open}
 	<!-- Backdrop -->

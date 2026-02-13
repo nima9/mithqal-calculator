@@ -1,5 +1,6 @@
 import { action } from "./_generated/server";
 import { internal } from "./_generated/api";
+import { parseFxRatesPayload, parseSwissquoteAsk } from "./externalApi";
 
 // Currency metadata - all fiat currencies from fxratesapi.com/latest
 const CURRENCIES = [
@@ -201,9 +202,9 @@ export const seedCurrencies = action({
       const apiKey = process.env.fxratesapi_api;
       const url = `https://api.fxratesapi.com/latest${apiKey ? `?api_key=${apiKey}` : ""}`;
       const response = await fetch(url, { signal: ratesController.signal });
-      const data = await response.json();
-      if (data.success && data.rates) {
-        rates = data.rates;
+      const parsedRates = parseFxRatesPayload(await response.json());
+      if (parsedRates) {
+        rates = parsedRates;
       }
     } catch (error) {
       console.error("Failed to fetch rates during seed:", error);
@@ -232,8 +233,7 @@ export const seedCurrencies = action({
         "https://forex-data-feed.swissquote.com/public-quotes/bboquotes/instrument/XAU/USD",
         { signal: goldController.signal },
       );
-      const goldData = await goldResponse.json();
-      const goldPrice = goldData[0]?.spreadProfilePrices?.[0]?.ask ?? 2750;
+      const goldPrice = parseSwissquoteAsk(await goldResponse.json()) ?? 2750;
 
       await ctx.runMutation(internal.rates.upsertMetal, {
         name: "gold",
@@ -262,8 +262,7 @@ export const seedCurrencies = action({
         "https://forex-data-feed.swissquote.com/public-quotes/bboquotes/instrument/XAG/USD",
         { signal: silverController.signal },
       );
-      const silverData = await silverResponse.json();
-      const silverPrice = silverData[0]?.spreadProfilePrices?.[0]?.ask ?? 30;
+      const silverPrice = parseSwissquoteAsk(await silverResponse.json()) ?? 30;
 
       await ctx.runMutation(internal.rates.upsertMetal, {
         name: "silver",

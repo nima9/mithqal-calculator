@@ -20,6 +20,17 @@
 		}
 	}
 
+	$effect(() => {
+		if (!open) return;
+
+		const onWindowKeydown = (e: KeyboardEvent) => handleKeydown(e);
+		window.addEventListener('keydown', onWindowKeydown);
+
+		return () => {
+			window.removeEventListener('keydown', onWindowKeydown);
+		};
+	});
+
 	function acceptAndClose() {
 		consentStore.accept();
 		onClose();
@@ -30,8 +41,6 @@
 		onClose();
 	}
 </script>
-
-<svelte:window onkeydown={handleKeydown} />
 
 {#if open}
 	<div

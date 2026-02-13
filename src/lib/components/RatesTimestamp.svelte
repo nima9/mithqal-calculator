@@ -1,12 +1,10 @@
 <!--
 	RatesTimestamp.svelte
 	Displays the timestamp of when metal/currency rates were last fetched.
-	Uses Temporal API for timezone-aware date formatting.
+	Uses Date + Intl.DateTimeFormat for timezone-aware date formatting.
 -->
 
 <script lang="ts">
-	import { Temporal } from '@js-temporal/polyfill';
-
 	// ============================================
 	// Props
 	// ============================================
@@ -26,20 +24,30 @@
 	let readableRateDate = $derived.by(() => {
 		if (!lastFetchTime) return '...';
 
-		// Convert epoch milliseconds to Temporal.ZonedDateTime
-		const zonedDateTime = Temporal.Instant.fromEpochMilliseconds(lastFetchTime).toZonedDateTimeISO(
-			timezone
-		);
-
-		// Format with Temporal's toLocaleString
-		return zonedDateTime.toLocaleString('en-US', {
+		// Date/Intl version (active)
+		const date = new Date(lastFetchTime);
+		return new Intl.DateTimeFormat('en-US', {
 			year: 'numeric',
 			month: 'long',
 			day: 'numeric',
 			hour: 'numeric',
 			minute: 'numeric',
+			timeZone: timezone,
 			timeZoneName: 'long'
-		});
+		}).format(date);
+
+		// Temporal version (for side-by-side reference)
+		// const zonedDateTime = Temporal.Instant.fromEpochMilliseconds(lastFetchTime).toZonedDateTimeISO(
+		// 	timezone
+		// );
+		// return zonedDateTime.toLocaleString('en-US', {
+		// 	year: 'numeric',
+		// 	month: 'long',
+		// 	day: 'numeric',
+		// 	hour: 'numeric',
+		// 	minute: 'numeric',
+		// 	timeZoneName: 'long'
+		// });
 	});
 </script>
 

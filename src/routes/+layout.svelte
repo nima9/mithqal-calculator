@@ -12,16 +12,18 @@
 	import { setupConvex } from 'convex-svelte';
 	import { PUBLIC_CONVEX_URL } from '$env/static/public';
 	import { browser } from '$app/environment';
+	import { page } from '$app/state';
 	import { fly } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
 	import { onMount } from 'svelte';
 	import type { Component } from 'svelte';
+	import type { LayoutProps } from './$types';
 	// Initialize Convex client only in browser (not during SSR)
 	if (browser) {
 		setupConvex(PUBLIC_CONVEX_URL);
 	}
 
-	let { children, data } = $props();
+	let { children, data }: LayoutProps = $props();
 
 	// Cookie modal state
 	let cookieModalOpen = $state(false);
@@ -66,10 +68,10 @@
 	<link rel="sitemap" href="/sitemap.xml" />
 </svelte:head>
 
-<Header currentPath={data.url} />
+<Header />
 
 <!-- Keyed block ensures main content remounts when the URL changes so fly transitions re-run -->
-{#key data.url}
+{#key page.url.pathname}
 	<main
 		in:fly={{ y: 20, duration: 300, delay: 300, easing: cubicOut }}
 		out:fly={{ y: -20, duration: 300, easing: cubicOut }}
@@ -92,9 +94,7 @@
 
 <style>
 	/* Smooth out fly() page transitions applied to <main> above */
-	/* `will-change` + `translateZ(0)` hint GPU compositing / own layer to reduce jank and flicker */
 	main {
-		will-change: transform, opacity;
 		transform: translateZ(0);
 	}
 </style>

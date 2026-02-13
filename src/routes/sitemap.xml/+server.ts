@@ -4,7 +4,7 @@
  * Accessed at: https://mithqal.app/sitemap.xml
  */
 
-import { Temporal } from "@js-temporal/polyfill";
+// import { Temporal } from "@js-temporal/polyfill";
 import type { RequestHandler } from "./$types";
 
 // ============================================
@@ -30,8 +30,10 @@ const PAGES = [
 // ============================================
 
 export const GET: RequestHandler = async () => {
-  // Use today's date as lastmod (YYYY-MM-DD format)
-  const lastmod = Temporal.Now.plainDateISO().toString();
+  // Use today's date as lastmod (YYYY-MM-DD format) via Date API.
+  const lastmod = new Date().toISOString().slice(0, 10);
+  // Temporal version (for side-by-side reference):
+  // const lastmod = Temporal.Now.plainDateISO().toString();
 
   // Generate <url> entries for each page
   const urls = PAGES.map(

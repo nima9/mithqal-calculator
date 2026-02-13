@@ -15,8 +15,8 @@
 
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
 	import { replaceState } from '$app/navigation';
-	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
 	import { useConvexClient } from 'convex-svelte';
 	import { api } from '../../convex/_generated/api';
@@ -129,7 +129,7 @@
 	let cachedMetals = $state<CachedMetal[]>([]);
 	let cachedCurrencies = $state<CachedCurrency[]>([]);
 	let cachedLastFetch = $state<number>(0);
-	const convex = useConvexClient();
+	const convex = browser ? useConvexClient() : null;
 
 	// ============================================
 	// Cache Management
@@ -138,6 +138,26 @@
 	function isCacheStale(lastFetchTime: number): boolean {
 		if (!lastFetchTime) return true;
 		return Date.now() - lastFetchTime > CACHE_TTL_MS;
+	}
+
+	function parseQuantityParam(q: string | null): string {
+		if (!q) return DEFAULT_QUANTITY;
+		const parsed = parseFloat(q);
+		return !isNaN(parsed) && parsed > 0 ? q : DEFAULT_QUANTITY;
+	}
+
+	function parseMetalParam(m: string | null): string {
+		if (!m) return DEFAULT_METAL;
+		const normalized = m.charAt(0).toUpperCase() + m.slice(1).toLowerCase();
+		return VALID_METALS.includes(normalized) ? normalized : DEFAULT_METAL;
+	}
+
+	function applyCurrencyCodeFromUrl(currencyCode: string | null): boolean {
+		if (!currencyCode || cachedCurrencies.length === 0) return false;
+		const currency = cachedCurrencies.find((c) => c.code === currencyCode);
+		if (!currency) return false;
+		selectedCurrency = `${currency.symbol} ${currency.code}`;
+		return true;
 	}
 
 	function applyRatesSnapshot(snapshot: RatesSnapshot, persistToCache: boolean) {
@@ -164,6 +184,8 @@
 	}
 
 	async function fetchRatesSnapshot() {
+		if (!convex) return;
+
 		try {
 			const snapshot = await convex.query(api.rates.getRatesSnapshot, {});
 			applyRatesSnapshot(snapshot, true);
@@ -173,45 +195,57 @@
 	}
 
 	// Load cached data and initialize state on mount
-	onMount(async () => {
-		const cached = localStorage.getItem(CACHE_KEY);
-		if (cached) {
-			try {
-				const data: CacheData = JSON.parse(cached);
-				cachedMetals = data.metals || [];
-				cachedCurrencies = data.currencies || [];
-				cachedLastFetch = data.lastFetchTime || 0;
-			} catch {
-				// Invalid cache, will fetch fresh data
+	onMount(() => {
+		void (async () => {
+			const initialSearchParams = new URLSearchParams(window.location.search);
+			const initialQuantity = parseQuantityParam(initialSearchParams.get('q'));
+			const initialMetal = parseMetalParam(initialSearchParams.get('m'));
+			const initialCurrencyCode = initialSearchParams.get('c')?.toUpperCase() ?? null;
+
+			const cached = localStorage.getItem(CACHE_KEY);
+			if (cached) {
+				try {
+					const data: CacheData = JSON.parse(cached);
+					cachedMetals = data.metals || [];
+					cachedCurrencies = data.currencies || [];
+					cachedLastFetch = data.lastFetchTime || 0;
+				} catch {
+					// Invalid cache, will fetch fresh data
+				}
 			}
-		}
 
-		// Initialize state from URL params
-		mithqalAmount = urlQuantity;
-		selectedMetal = urlMetal;
+			// Initialize state from URL params
+			mithqalAmount = initialQuantity;
+			selectedMetal = initialMetal;
 
-		const hasValidCache =
-			cachedMetals.length > 0 && cachedCurrencies.length > 0 && !isCacheStale(cachedLastFetch);
-		const hasNewerServerData =
-			!!initialRates?.lastFetchTime && initialRates.lastFetchTime > cachedLastFetch;
+			const hasValidCache =
+				cachedMetals.length > 0 && cachedCurrencies.length > 0 && !isCacheStale(cachedLastFetch);
+			const hasNewerServerData =
+				!!initialRates?.lastFetchTime && initialRates.lastFetchTime > cachedLastFetch;
 
-		// Prefer server snapshot from SSR when it's newer than local cache.
-		if (initialRates && hasNewerServerData) {
-			applyRatesSnapshot(initialRates, true);
-		}
+			// Prefer server snapshot from SSR when it's newer than local cache.
+			if (initialRates && hasNewerServerData) {
+				applyRatesSnapshot(initialRates, true);
+			}
 
-		if (!hasValidCache && initialRates) {
-			applyRatesSnapshot(initialRates, true);
-		}
+			if (!hasValidCache && initialRates) {
+				applyRatesSnapshot(initialRates, true);
+			}
 
-		const needsSnapshotFetch =
-			cachedMetals.length === 0 || cachedCurrencies.length === 0 || isCacheStale(cachedLastFetch);
+			const needsSnapshotFetch =
+				cachedMetals.length === 0 ||
+				cachedCurrencies.length === 0 ||
+				isCacheStale(cachedLastFetch);
 
-		if (needsSnapshotFetch && !(initialRates && initialRates.lastFetchTime)) {
-			await fetchRatesSnapshot();
-		}
+			if (needsSnapshotFetch && !(initialRates && initialRates.lastFetchTime)) {
+				await fetchRatesSnapshot();
+			}
 
-		isInitialized = true;
+			// Apply URL currency after rates are available, before URL sync starts.
+			applyCurrencyCodeFromUrl(initialCurrencyCode);
+
+			isInitialized = true;
+		})();
 
 		return () => {
 			// Cleanup debounce timeout on unmount
@@ -219,16 +253,6 @@
 				clearTimeout(urlUpdateTimeout);
 			}
 		};
-	});
-
-	// Apply currency code from URL params once currencies are loaded
-	$effect(() => {
-		if (urlCurrencyCode && displayCurrencies.length > 0 && !isInitialized) {
-			const currency = displayCurrencies.find((c) => c.code === urlCurrencyCode);
-			if (currency) {
-				selectedCurrency = `${currency.symbol} ${currency.code}`;
-			}
-		}
 	});
 
 	// Sync calculator state to URL (debounced)
@@ -273,6 +297,8 @@
 	 */
 	function buildUrlParams(quantity: string, metal: string, currencyCode: string): string {
 		const params = new URLSearchParams();
+		const normalizedCurrencyCode =
+			/^[A-Z]{3}$/.test(currencyCode) ? currencyCode : DEFAULT_CURRENCY_CODE;
 
 		// Only add params when different from defaults
 		if (quantity !== DEFAULT_QUANTITY) {
@@ -281,9 +307,8 @@
 		if (metal !== DEFAULT_METAL) {
 			params.set('m', metal);
 		}
-		if (currencyCode !== DEFAULT_CURRENCY_CODE) {
-			params.set('c', currencyCode);
-		}
+		// Always include currency so shared URLs preserve explicit currency choice.
+		params.set('c', normalizedCurrencyCode);
 
 		const paramString = params.toString();
 		return paramString ? `/?${paramString}` : '/';
@@ -296,7 +321,7 @@
 		if (currentUrl === newUrl) return;
 
 		// Replace URL state without triggering route navigation work.
-		replaceState(resolve(newUrl), page.state); //not an error
+		replaceState(newUrl, page.state);
 	}
 
 	// ============================================

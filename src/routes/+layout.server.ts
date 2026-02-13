@@ -1,12 +1,6 @@
-/**
- * +layout.server.ts
- * Server-side layout to detect user's country from Cloudflare headers.
- * Used for GDPR cookie consent banner targeting.
- */
-
 import type { LayoutServerLoad } from './$types';
 
-// EU countries + UK + Switzerland (require cookie consent)
+// EU + UK + Switzerland require an explicit consent prompt.
 const CONSENT_REQUIRED_COUNTRIES = new Set([
 	// EU Member States
 	'AT', // Austria
@@ -38,16 +32,15 @@ const CONSENT_REQUIRED_COUNTRIES = new Set([
 	'SE', // Sweden
 	// Non-EU but GDPR-like
 	'GB', // United Kingdom
-	'CH', // Switzerland
+	'CH' // Switzerland
 ]);
 
 export const load: LayoutServerLoad = async ({ request }) => {
-	// Cloudflare provides the country code in this header
 	const country = request.headers.get('cf-ipcountry') || '';
 	const requiresConsent = CONSENT_REQUIRED_COUNTRIES.has(country);
 
 	return {
 		requiresConsent,
-		country,
+		country
 	};
 };

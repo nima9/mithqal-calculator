@@ -23,7 +23,7 @@ export default defineSchema({
     metalsSource: v.string(), // "swissquote"
     currencySource: v.string(), // "fxratesapi"
     success: v.boolean(),
-  }),
+  }).index("by_fetchedAt", ["fetchedAt"]),
 
   // Right of God quotes
   rightOfGodQuotes: defineTable({

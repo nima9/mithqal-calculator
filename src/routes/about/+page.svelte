@@ -10,19 +10,9 @@
 -->
 
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { Accordion, Popover } from 'bits-ui';
 	import { slide, fly } from 'svelte/transition';
-	import { PUBLIC_TURNSTILE_SITE_KEY } from '$env/static/public';
-	import { loadTurnstileScript } from '$lib/utils/turnstile';
-	import { verifyToken } from '$lib/turnstile.remote';
-
-	// ============================================
-	// Constants
-	// ============================================
-
-	/** SessionStorage key for tracking verification status */
-	const VERIFIED_KEY = 'about_verified';
+	import TurnstileGate from '$lib/components/TurnstileGate.svelte';
 
 	// ============================================
 	// FAQ Data
@@ -65,13 +55,6 @@
 	// State
 	// ============================================
 
-	// Turnstile verification state
-	let isVerified = $state(false);
-	let showTurnstile = $state(false);
-	let turnstileReady = $state(false);
-	let isVerifying = $state(false);
-	let error = $state<string | null>(null);
-
 	// Accordion state - tracks which FAQ items are open
 	let openItems = $state<string[]>([]);
 	let allExpanded = $derived(openItems.length === faqs.length);
@@ -89,80 +72,13 @@
 		}
 	}
 
-	// ============================================
-	// Turnstile Verification
-	// ============================================
-
-	/**
-	 * On mount, check if user is already verified.
-	 * If not, load the Turnstile script and show the challenge.
-	 */
-	onMount(async () => {
-		if (sessionStorage.getItem(VERIFIED_KEY) === 'true') {
-			isVerified = true;
-		} else {
-			showTurnstile = true;
-			await loadTurnstileScript();
-			turnstileReady = true;
-		}
-	});
-
-	/**
-	 * Callback when Turnstile challenge is completed.
-	 * Sends token to server for verification via remote function.
-	 * @param token - Turnstile token from successful challenge
-	 */
-	async function onTurnstileSuccess(token: string) {
-		isVerifying = true;
-		error = null;
-
-		try {
-			const result = await verifyToken({ token });
-
-			if (result.success) {
-				// Store verification in sessionStorage (persists until tab closes)
-				sessionStorage.setItem(VERIFIED_KEY, 'true');
-				isVerified = true;
-				showTurnstile = false;
-			} else {
-				error = result.error || 'Verification failed. Please try again.';
-			}
-		} catch {
-			error = 'Something went wrong. Please try again.';
-		} finally {
-			isVerifying = false;
-		}
-	}
-
-	/**
-	 * Svelte action to render Turnstile widget.
-	 * Automatically cleans up on component destroy.
-	 */
-	function setupTurnstile(node: HTMLElement) {
-		if (!window.turnstile) return;
-
-		window.turnstile.render(node, {
-			sitekey: PUBLIC_TURNSTILE_SITE_KEY,
-			callback: onTurnstileSuccess,
-			theme: 'auto'
-		});
-
-		return {
-			destroy() {
-				window.turnstile?.remove(node);
-			}
-		};
-	}
 </script>
 
 <svelte:head>
 	<title>About - Mithqal Calculator</title>
 </svelte:head>
 
-<!-- ============================================ -->
-<!-- Verified Content: About page with FAQ       -->
-<!-- ============================================ -->
-{#if isVerified}
+<TurnstileGate storageKey="about_verified">
 	<div class="mx-auto max-w-2xl px-6 py-8 text-base-content">
 		<h1 class="font-karla text-4xl font-medium md:text-5xl">About</h1>
 
@@ -182,10 +98,8 @@
 						<Popover.Content
 							class="z-50 w-48 rounded-lg border border-base-300 bg-base-100 p-2 shadow-lg"
 							sideOffset={8}
-							transition={fly}
-							transitionConfig={{ y: -8, duration: 150 }}
 						>
-							<div class="flex flex-col gap-1">
+							<div class="flex flex-col gap-1" in:fly={{ y: -8, duration: 150 }}>
 								<a
 									href="https://github.com/nima9"
 									target="_blank"
@@ -215,9 +129,9 @@
 									target="_blank"
 									rel="noopener noreferrer"
 									class="flex items-center gap-2 rounded px-3 py-2 text-sm text-base-content transition-colors hover:bg-base-200"
-								>
-									LinkedIn
-								</a>
+									>
+										LinkedIn
+									</a>
 							</div>
 						</Popover.Content>
 					</Popover.Portal>
@@ -289,28 +203,4 @@
 			</Accordion.Root>
 		</section>
 	</div>
-
-	<!-- ============================================ -->
-	<!-- Unverified: Turnstile Challenge             -->
-	<!-- ============================================ -->
-{:else}
-	<div class="flex min-h-[60vh] flex-col items-center justify-center p-8 text-base-content">
-		<h1 class="text-2xl font-medium">Verify you're human</h1>
-		<p class="mt-2 text-base-content/70">Please complete the challenge to view this page.</p>
-
-		<div class="mt-8 flex flex-col items-center gap-4">
-			{#if isVerifying}
-				<p class="text-accent">Verifying...</p>
-			{:else if turnstileReady && showTurnstile}
-				<!-- Turnstile widget renders here via Svelte action -->
-				<div use:setupTurnstile></div>
-			{:else}
-				<p class="text-accent">Loading...</p>
-			{/if}
-
-			{#if error}
-				<p class="text-error">{error}</p>
-			{/if}
-		</div>
-	</div>
-{/if}
+</TurnstileGate>

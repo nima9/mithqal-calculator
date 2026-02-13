@@ -1,18 +1,14 @@
 import { v } from 'convex/values';
 import {
 	query,
-	mutation,
 	internalMutation,
-	internalAction,
-	internalQuery
+	internalAction
 } from './_generated/server';
 import { internal } from './_generated/api';
+import { parseFxRatesPayload, parseSwissquoteAsk } from './externalApi';
 
 const ONE_MONTH_MS = 30 * 24 * 60 * 60 * 1000;
 
-// ============ QUERIES ============
-
-// Get all currencies for the combobox
 export const getCurrencies = query({
 	args: {},
 	handler: async (ctx) => {
@@ -20,7 +16,6 @@ export const getCurrencies = query({
 	}
 });
 
-// Get metal rates for calculation
 export const getMetals = query({
 	args: {},
 	handler: async (ctx) => {
@@ -28,7 +23,6 @@ export const getMetals = query({
 	}
 });
 
-// Get a specific metal by name
 export const getMetalByName = query({
 	args: { name: v.string() },
 	handler: async (ctx, args) => {
@@ -39,7 +33,6 @@ export const getMetalByName = query({
 	}
 });
 
-// Get a specific currency by code
 export const getCurrencyByCode = query({
 	args: { code: v.string() },
 	handler: async (ctx, args) => {
@@ -50,21 +43,19 @@ export const getCurrencyByCode = query({
 	}
 });
 
-// Get latest fetch timestamp for display
 export const getLastFetchTime = query({
 	args: {},
 	handler: async (ctx) => {
-		const lastLog = await ctx.db.query('rateFetchLog').order('desc').first();
+		const lastLog = await ctx.db.query('rateFetchLog').withIndex('by_fetchedAt').order('desc').first();
 		return lastLog?.fetchedAt ?? null;
 	}
 });
 
-// Get all calculator rate data in one snapshot query
 export const getRatesSnapshot = query({
 	args: {},
 	handler: async (ctx) => {
 		const [lastLog, metals, currencies] = await Promise.all([
-			ctx.db.query('rateFetchLog').order('desc').first(),
+			ctx.db.query('rateFetchLog').withIndex('by_fetchedAt').order('desc').first(),
 			ctx.db.query('metals').collect(),
 			ctx.db.query('currencies').collect()
 		]);
@@ -82,10 +73,6 @@ export const getRatesSnapshot = query({
 	}
 });
 
-// Get the current daily quote (same for all users)
-// ============ MUTATIONS ============
-
-// Seed a single currency (used by seedAllCurrencies action)
 export const upsertCurrency = internalMutation({
 	args: {
 		code: v.string(),
@@ -111,7 +98,6 @@ export const upsertCurrency = internalMutation({
 	}
 });
 
-// Update metal price
 export const upsertMetal = internalMutation({
 	args: {
 		name: v.string(),
@@ -135,7 +121,6 @@ export const upsertMetal = internalMutation({
 	}
 });
 
-// Log a rate fetch
 export const logRateFetch = internalMutation({
 	args: {
 		fetchedAt: v.number(),
@@ -148,13 +133,12 @@ export const logRateFetch = internalMutation({
 	}
 });
 
-// Delete rate fetch logs older than a month
 export const pruneRateFetchLog = internalMutation({
 	args: { cutoff: v.number() },
 	handler: async (ctx, args) => {
 		const oldLogs = await ctx.db
 			.query('rateFetchLog')
-			.filter((q) => q.lt(q.field('fetchedAt'), args.cutoff))
+			.withIndex('by_fetchedAt', (q) => q.lt('fetchedAt', args.cutoff))
 			.collect();
 
 		for (const log of oldLogs) {
@@ -163,9 +147,6 @@ export const pruneRateFetchLog = internalMutation({
 	}
 });
 
-// ============ INTERNAL ACTIONS ============
-
-// Fetch all rates from external APIs
 export const fetchAllRates = internalAction({
 	args: {},
 	handler: async (ctx) => {
@@ -178,8 +159,7 @@ export const fetchAllRates = internalAction({
 				'https://forex-data-feed.swissquote.com/public-quotes/bboquotes/instrument/XAU/USD'
 			);
 			const goldData = await goldResponse.json();
-			// Use the first platform's standard profile ask price
-			const goldPrice = goldData[0]?.spreadProfilePrices?.[0]?.ask ?? 0;
+			const goldPrice = parseSwissquoteAsk(goldData) ?? 0;
 
 			if (goldPrice > 0) {
 				await ctx.runMutation(internal.rates.upsertMetal, {
@@ -194,7 +174,7 @@ export const fetchAllRates = internalAction({
 				'https://forex-data-feed.swissquote.com/public-quotes/bboquotes/instrument/XAG/USD'
 			);
 			const silverData = await silverResponse.json();
-			const silverPrice = silverData[0]?.spreadProfilePrices?.[0]?.ask ?? 0;
+			const silverPrice = parseSwissquoteAsk(silverData) ?? 0;
 
 			if (silverPrice > 0) {
 				await ctx.runMutation(internal.rates.upsertMetal, {
@@ -204,40 +184,31 @@ export const fetchAllRates = internalAction({
 				});
 			}
 
-			// Fetch currency rates from fxratesapi
 			const currencyController = new AbortController();
 			const currencyTimeoutId = setTimeout(() => currencyController.abort(), 10000);
 
-			let currencyData: { success?: boolean; rates?: Record<string, number> } = {};
+			let currencyRates: Record<string, number> | null = null;
 			try {
 				const apiKey = process.env.fxratesapi_api;
 				const url = `https://api.fxratesapi.com/latest${apiKey ? `?api_key=${apiKey}` : ''}`;
 				const currencyResponse = await fetch(url, { signal: currencyController.signal });
-				currencyData = await currencyResponse.json();
+				currencyRates = parseFxRatesPayload(await currencyResponse.json());
 			} finally {
 				clearTimeout(currencyTimeoutId);
 			}
 
-			if (currencyData.success && currencyData.rates) {
-				// Update rates for existing currencies
-				const existingCurrencies = await ctx.runQuery(internal.rates.getAllCurrencyCodes);
-
-				for (const code of existingCurrencies) {
-					const rate = currencyData.rates[code];
-					if (rate !== undefined) {
-						await ctx.runMutation(internal.rates.updateCurrencyRate, {
-							code,
-							rateToUSD: rate
-						});
-					}
-				}
+			if (currencyRates) {
+				const updates = Object.entries(currencyRates).map(([code, rateToUSD]) => ({
+					code,
+					rateToUSD
+				}));
+				await ctx.runMutation(internal.rates.batchUpdateCurrencyRates, { updates });
 			}
 		} catch (error) {
 			console.error('Error fetching rates:', error);
 			success = false;
 		}
 
-		// Log the fetch
 		await ctx.runMutation(internal.rates.logRateFetch, {
 			fetchedAt: now,
 			metalsSource: 'swissquote',
@@ -245,7 +216,6 @@ export const fetchAllRates = internalAction({
 			success
 		});
 
-		// Prune logs older than 1 month
 		await ctx.runMutation(internal.rates.pruneRateFetchLog, {
 			cutoff: now - ONE_MONTH_MS
 		});
@@ -253,35 +223,29 @@ export const fetchAllRates = internalAction({
 	}
 });
 
-// Helper query to get all currency codes
-export const getAllCurrencyCodes = internalQuery({
-	args: {},
-	handler: async (ctx) => {
-		const currencies = await ctx.db.query('currencies').collect();
-		return currencies.map((c) => c.code);
-	}
-});
-
-// Update just the rate for a currency
-export const updateCurrencyRate = internalMutation({
+export const batchUpdateCurrencyRates = internalMutation({
 	args: {
-		code: v.string(),
-		rateToUSD: v.number()
+		updates: v.array(
+			v.object({
+				code: v.string(),
+				rateToUSD: v.number()
+			})
+		)
 	},
 	handler: async (ctx, args) => {
-		const existing = await ctx.db
-			.query('currencies')
-			.withIndex('by_code', (q) => q.eq('code', args.code))
-			.first();
+		if (args.updates.length === 0) return;
 
-		if (existing) {
-			await ctx.db.patch(existing._id, { rateToUSD: args.rateToUSD });
+		const currencies = await ctx.db.query('currencies').collect();
+		const currencyIdByCode = new Map(currencies.map((currency) => [currency.code, currency._id]));
+
+		for (const update of args.updates) {
+			const currencyId = currencyIdByCode.get(update.code);
+			if (!currencyId) continue;
+			await ctx.db.patch(currencyId, { rateToUSD: update.rateToUSD });
 		}
 	}
 });
 
-// Internal mutation to manually trigger rate refresh
-// Use: bunx convex run rates:refreshRates (from CLI only)
 export const refreshRates = internalMutation({
 	args: {},
 	handler: async (ctx) => {
