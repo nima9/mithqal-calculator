@@ -8,7 +8,7 @@
 -->
 
 <script lang="ts">
-	import { settingsStore } from '$lib/stores/settings.svelte';
+	import { settingsStore, setCopyWithCommas } from '$lib/stores/settings.svelte';
 
 	// ============================================
 	// Props
@@ -113,8 +113,8 @@
 								type="radio"
 								name="copyFormat"
 								class="radio radio-primary"
-								checked={settingsStore.copyWithCommas}
-								onchange={() => (settingsStore.copyWithCommas = true)}
+								checked={$settingsStore.copyWithCommas}
+								onchange={() => setCopyWithCommas(true)}
 							/>
 							<span class="text-base-content">With commas (1,234.56)</span>
 						</label>
@@ -123,8 +123,8 @@
 								type="radio"
 								name="copyFormat"
 								class="radio radio-primary"
-								checked={!settingsStore.copyWithCommas}
-								onchange={() => (settingsStore.copyWithCommas = false)}
+								checked={!$settingsStore.copyWithCommas}
+								onchange={() => setCopyWithCommas(false)}
 							/>
 							<span class="text-base-content">Without commas (1234.56)</span>
 						</label>

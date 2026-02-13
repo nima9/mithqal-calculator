@@ -17,6 +17,7 @@
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
 	import { replaceState } from '$app/navigation';
+	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
 	import { useConvexClient } from 'convex-svelte';
 	import { api } from '../../convex/_generated/api';
@@ -84,33 +85,6 @@
 		timezone = 'America/Los_Angeles',
 		initialRates = null
 	}: Props = $props();
-
-	// ============================================
-	// URL Params (read directly from page state)
-	// ============================================
-
-	/** Parse and validate quantity from URL */
-	let urlQuantity = $derived.by(() => {
-		const q = page.url.searchParams.get('q');
-		if (q) {
-			const parsed = parseFloat(q);
-			if (!isNaN(parsed) && parsed > 0) return q;
-		}
-		return DEFAULT_QUANTITY;
-	});
-
-	/** Parse and validate metal from URL */
-	let urlMetal = $derived.by(() => {
-		const m = page.url.searchParams.get('m');
-		if (m) {
-			const normalized = m.charAt(0).toUpperCase() + m.slice(1).toLowerCase();
-			if (VALID_METALS.includes(normalized)) return normalized;
-		}
-		return DEFAULT_METAL;
-	});
-
-	/** Parse and validate currency code from URL */
-	let urlCurrencyCode = $derived(page.url.searchParams.get('c')?.toUpperCase() ?? null);
 
 	// ============================================
 	// State
@@ -321,7 +295,7 @@
 		if (currentUrl === newUrl) return;
 
 		// Replace URL state without triggering route navigation work.
-		replaceState(newUrl, page.state);
+		replaceState(resolve(newUrl), page.state);
 	}
 
 	// ============================================
@@ -433,7 +407,7 @@
 	/** Copy calculated value to clipboard (respects comma setting) */
 	async function handleCopyClick() {
 		try {
-			const valueToCopy = settingsStore.copyWithCommas
+			const valueToCopy = $settingsStore.copyWithCommas
 				? formattedCalculatedValue
 				: formattedCalculatedValue.replace(/,/g, '');
 			await navigator.clipboard.writeText(valueToCopy);

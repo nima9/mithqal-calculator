@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { consentStore } from '$lib/stores/consent.svelte';
+	import { acceptConsent, declineConsent } from '$lib/stores/consent.svelte';
 
 	interface Props {
 		open: boolean;
@@ -32,12 +32,12 @@
 	});
 
 	function acceptAndClose() {
-		consentStore.accept();
+		acceptConsent();
 		onClose();
 	}
 
 	function declineAndClose() {
-		consentStore.decline();
+		declineConsent();
 		onClose();
 	}
 </script>

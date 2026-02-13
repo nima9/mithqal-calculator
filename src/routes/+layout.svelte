@@ -9,13 +9,13 @@
 	import Header from '$lib/components/Header.svelte';
 	import CookieConsent from '$lib/components/CookieConsent.svelte';
 	import CookieModal from '$lib/components/CookieModal.svelte';
+	import { allowsTracking } from '$lib/stores/consent.svelte';
 	import { setupConvex } from 'convex-svelte';
 	import { PUBLIC_CONVEX_URL } from '$env/static/public';
 	import { browser } from '$app/environment';
 	import { page } from '$app/state';
 	import { fly } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
-	import { onMount } from 'svelte';
 	import type { Component } from 'svelte';
 	import type { LayoutProps } from './$types';
 	// Initialize Convex client only in browser (not during SSR)
@@ -30,13 +30,17 @@
 
 	// Dynamically load GoogleAds component to prevent adblockers from breaking the app
 	let GoogleAds: Component | null = $state(null);
+	let shouldLoadAds = $derived(!data.requiresConsent || $allowsTracking);
 
-	onMount(async () => {
-		try {
-			GoogleAds = (await import('$lib/components/GoogleAds.svelte')).default;
-		} catch {
-			// Silently fail if blocked by adblocker
-		}
+	$effect(() => {
+		if (!browser || GoogleAds || !shouldLoadAds) return;
+		void (async () => {
+			try {
+				GoogleAds = (await import('$lib/components/GoogleAds.svelte')).default;
+			} catch {
+				// Silently fail if blocked by adblocker
+			}
+		})();
 	});
 </script>
 
@@ -82,7 +86,7 @@
 {/key}
 
 <!-- Google AdSense - loaded dynamically to prevent adblockers from breaking the app -->
-{#if GoogleAds}
+{#if GoogleAds && shouldLoadAds}
 	<GoogleAds />
 {/if}
 

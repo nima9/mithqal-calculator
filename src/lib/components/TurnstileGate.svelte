@@ -17,14 +17,16 @@
 	let isVerifying = $state(false);
 	let error = $state<string | null>(null);
 
-	onMount(async () => {
-		if (sessionStorage.getItem(storageKey) === 'true') {
-			isVerified = true;
-			return;
-		}
+	onMount(() => {
+		void (async () => {
+			if (sessionStorage.getItem(storageKey) === 'true') {
+				isVerified = true;
+				return;
+			}
 
-		await loadTurnstileScript();
-		turnstileReady = true;
+			await loadTurnstileScript();
+			turnstileReady = true;
+		})();
 	});
 
 	async function onTurnstileSuccess(token: string) {
@@ -85,4 +87,3 @@
 		</div>
 	</div>
 {/if}
-

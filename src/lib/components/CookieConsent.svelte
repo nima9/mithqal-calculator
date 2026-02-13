@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { consentStore } from '$lib/stores/consent.svelte';
+	import { hasDecided, acceptConsent, declineConsent } from '$lib/stores/consent.svelte';
 	import { fly } from 'svelte/transition';
 
 	interface Props {
@@ -9,7 +9,7 @@
 	let { onLearnMore }: Props = $props();
 </script>
 
-{#if !consentStore.hasDecided}
+{#if !$hasDecided}
 	<div
 		class="fixed bottom-0 left-0 right-0 z-40 border-t border-base-300 bg-base-100/95 backdrop-blur-sm"
 		transition:fly={{ y: 100, duration: 300 }}
@@ -28,14 +28,14 @@
 			<div class="flex gap-2">
 				<button
 					type="button"
-					onclick={() => consentStore.decline()}
+					onclick={declineConsent}
 					class="btn btn-ghost btn-sm"
 				>
 					Decline
 				</button>
 				<button
 					type="button"
-					onclick={() => consentStore.accept()}
+					onclick={acceptConsent}
 					class="btn btn-primary btn-sm"
 				>
 					Accept
