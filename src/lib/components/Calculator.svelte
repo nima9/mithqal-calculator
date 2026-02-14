@@ -33,7 +33,7 @@
 
 	const MITHQAL_IN_TROY_OZ = 0.11708228065358918;
 	const CACHE_KEY = 'mithqal_rates_cache';
-	const CACHE_TTL_MS = 6 * 60 * 60 * 1000;
+	const CACHE_TTL_MS = 12 * 60 * 60 * 1000 + 5 * 60 * 1000;
 	const URL_UPDATE_DEBOUNCE_MS = 300;
 
 	// Default values for URL param comparison
