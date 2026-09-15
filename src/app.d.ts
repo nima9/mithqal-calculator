@@ -12,6 +12,9 @@ declare global {
 			env?: {
 				TURNSTILE_SECRET_KEY?: string;
 				CONTACT_EMAIL?: string;
+				PUBLIC_TURNSTILE_SITE_KEY?: string;
+				TURSO_DATABASE_URL?: string;
+				TURSO_AUTH_TOKEN?: string;
 			};
 			context?: {
 				waitUntil(promise: Promise<unknown>): void;

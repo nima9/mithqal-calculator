@@ -12,8 +12,8 @@
 -->
 
 <script lang="ts">
-	import { PUBLIC_TURNSTILE_SITE_KEY } from '$env/static/public';
-	import { browser } from '$app/environment';
+	import { env } from '$env/dynamic/public';
+	import { browser, dev } from '$app/environment';
 	import { loadTurnstileScript } from '$lib/utils/turnstile';
 	import { verifyToken, getEmail } from '$lib/turnstile.remote';
 
@@ -23,6 +23,8 @@
 
 	/** SessionStorage key for tracking verification status (shared with About/Support pages) */
 	const VERIFIED_KEY = 'about_verified';
+	const TURNSTILE_TEST_SITE_KEY = '1x00000000000000000000AA';
+	const TURNSTILE_SITE_KEY = env.PUBLIC_TURNSTILE_SITE_KEY || (dev ? TURNSTILE_TEST_SITE_KEY : undefined);
 
 	// ============================================
 	// State
@@ -87,6 +89,11 @@
 			return;
 		}
 
+		if (!TURNSTILE_SITE_KEY) {
+			error = 'Contact verification is not configured.';
+			return;
+		}
+
 		// Need to verify first
 		showTurnstile = true;
 		await loadTurnstileScript();
@@ -131,10 +138,10 @@
 	 * Automatically cleans up on component destroy.
 	 */
 	function setupTurnstile(node: HTMLElement) {
-		if (!browser || !window.turnstile) return;
+		if (!browser || !window.turnstile || !TURNSTILE_SITE_KEY) return;
 
 		window.turnstile.render(node, {
-			sitekey: PUBLIC_TURNSTILE_SITE_KEY,
+			sitekey: TURNSTILE_SITE_KEY,
 			callback: onTurnstileSuccess,
 			theme: 'dark'
 		});

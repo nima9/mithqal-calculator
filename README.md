@@ -1,6 +1,6 @@
 # Mithqál-Calculator
 
-A [Mithqál Calculator](https://mithqal.app/) web application built with SvelteKit and Convex that allows users to calculate the value of gold and silver in various currencies in Mithqáls.
+A [Mithqál Calculator](https://mithqal.app/) web application built with SvelteKit, Turso, Drizzle, and Cloudflare Workers. It calculates the value of gold and silver in various currencies in Mithqáls.
 
 ## What is a Mithqál?
 
@@ -9,7 +9,7 @@ A Mithqál is a unit of weight used to measure gold and silver. One Mithqál is 
 ## Features
 
 - **143 currencies** - Supports all major fiat currencies worldwide
-- **Real-time rates** - Metal prices and exchange rates updated via Convex backend
+- **Daily rates** - Metal prices and exchange rates refreshed by a Cloudflare Cron Trigger
 - **Geo-detection** - Auto-selects currency based on user's location (via Cloudflare)
 - **Timezone-aware** - Displays rate timestamps in user's local timezone
 - **Copy to clipboard** - Click the calculated value to copy
@@ -35,8 +35,9 @@ A Mithqál is a unit of weight used to measure gold and silver. One Mithqál is 
 
 ### Backend
 
-- [Convex](https://convex.dev/) - Backend platform (database, functions, scheduling)
-- [Cloudflare Pages](https://pages.cloudflare.com/) - Hosting & edge functions
+- [Turso](https://turso.tech/) - Hosted SQLite-compatible database
+- [Drizzle ORM](https://orm.drizzle.team/) - Type-safe database access and migrations
+- [Cloudflare Workers](https://workers.cloudflare.com/) - Hosting, edge functions, and cron scheduling
 - [Cloudflare Turnstile](https://www.cloudflare.com/products/turnstile/) - Bot protection
 
 ### Data Sources
@@ -58,20 +59,34 @@ A Mithqál is a unit of weight used to measure gold and silver. One Mithqál is 
 # Install dependencies
 bun install
 
+# Copy .env.example to .env and add your Turso credentials
+
+# Configure the same secrets in Cloudflare before the first deploy
+bunx wrangler secret put TURSO_DATABASE_URL
+bunx wrangler secret put TURSO_AUTH_TOKEN
+
+# Also configure PUBLIC_TURNSTILE_SITE_KEY as a Worker variable and
+# TURNSTILE_SECRET_KEY as a Worker secret in the Cloudflare dashboard.
+# Local development automatically uses Cloudflare's always-pass test keys.
+
+# Create/update the Turso schema, then seed the initial rates
+bun run db:migrate
+bun run db:seed
+
 # Start SvelteKit dev server
 bun run dev
-
-# Start Convex dev server (in another terminal)
-bun run convex:dev
-
-# Seed the database with currencies
-bunx convex run seed:seedCurrencies
 
 # Build for production
 bun run build
 
-# Preview production build locally
+# Preview the Worker locally
 bun run preview
+
+# In another terminal, invoke the 06:00 UTC cron handler locally
+curl "http://localhost:4173/cdn-cgi/local/scheduled"
+
+# Deploy the Worker and its Cron Trigger
+bun run deploy
 ```
 
 ## Contributing
