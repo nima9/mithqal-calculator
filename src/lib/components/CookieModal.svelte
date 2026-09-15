@@ -61,9 +61,7 @@
 			onkeydown={(e) => e.stopPropagation()}
 		>
 			<div class="flex items-center justify-between">
-				<h2 id="cookie-modal-title" class="text-xl font-medium text-base-content">
-					Cookie Policy
-				</h2>
+				<h2 id="cookie-modal-title" class="text-xl font-medium text-base-content">Cookie Policy</h2>
 				<button
 					type="button"
 					onclick={onClose}
@@ -91,25 +89,24 @@
 				<section>
 					<h3 class="font-medium text-base-content">Essential (Always Active)</h3>
 					<p class="mt-1">
-						These are required for the site to function. They store your preferences like theme
-						and currency settings in your browser's local storage. No data is sent to external
-						servers.
+						These are required for the site to function. They store your preferences like theme and
+						currency settings in your browser's local storage. No data is sent to external servers.
 					</p>
 				</section>
 
 				<section>
 					<h3 class="font-medium text-base-content">Analytics (Optional)</h3>
 					<p class="mt-1">
-						Google Analytics helps us understand how visitors use the site. It collects
-						anonymized data about page views and interactions. This data is processed by Google.
+						Google Analytics helps us understand how visitors use the site. It collects anonymized
+						data about page views and interactions. This data is processed by Google.
 					</p>
 				</section>
 
 				<section>
 					<h3 class="font-medium text-base-content">Advertising (Optional)</h3>
 					<p class="mt-1">
-						Google AdSense displays ads to support the site. It may use cookies to show
-						personalized ads based on your browsing history. If declined, ads will not be shown.
+						Google AdSense displays ads to support the site. It may use cookies to show personalized
+						ads based on your browsing history. If declined, ads will not be shown.
 					</p>
 				</section>
 
@@ -120,12 +117,8 @@
 			</div>
 
 			<div class="mt-6 flex justify-end gap-2">
-				<button type="button" onclick={declineAndClose} class="btn btn-ghost">
-					Decline All
-				</button>
-				<button type="button" onclick={acceptAndClose} class="btn btn-primary">
-					Accept All
-				</button>
+				<button type="button" onclick={declineAndClose} class="btn btn-ghost"> Decline All </button>
+				<button type="button" onclick={acceptAndClose} class="btn btn-primary"> Accept All </button>
 			</div>
 		</div>
 	</div>

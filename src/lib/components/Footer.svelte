@@ -24,7 +24,8 @@
 	/** SessionStorage key for tracking verification status (shared with About/Support pages) */
 	const VERIFIED_KEY = 'about_verified';
 	const TURNSTILE_TEST_SITE_KEY = '1x00000000000000000000AA';
-	const TURNSTILE_SITE_KEY = env.PUBLIC_TURNSTILE_SITE_KEY || (dev ? TURNSTILE_TEST_SITE_KEY : undefined);
+	const TURNSTILE_SITE_KEY =
+		env.PUBLIC_TURNSTILE_SITE_KEY || (dev ? TURNSTILE_TEST_SITE_KEY : undefined);
 
 	// ============================================
 	// State

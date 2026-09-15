@@ -71,7 +71,6 @@
 			openItems = faqs.map((f) => f.id);
 		}
 	}
-
 </script>
 
 <svelte:head>
@@ -129,9 +128,9 @@
 									target="_blank"
 									rel="noopener noreferrer"
 									class="flex items-center gap-2 rounded px-3 py-2 text-sm text-base-content transition-colors hover:bg-base-200"
-									>
-										LinkedIn
-									</a>
+								>
+									LinkedIn
+								</a>
 							</div>
 						</Popover.Content>
 					</Popover.Portal>

@@ -33,7 +33,7 @@ export interface TurnstileError {
  */
 export function verifyTurnstileToken(
   token: string,
-  secretKey: string
+  secretKey: string,
 ): ResultAsync<boolean, TurnstileError> {
   const formData = new FormData();
   formData.append("secret", secretKey);
@@ -47,7 +47,7 @@ export function verifyTurnstileToken(
     (): TurnstileError => ({
       kind: "NETWORK_ERROR",
       message: "Failed to connect to Turnstile verification service",
-    })
+    }),
   )
     .andThen((response) =>
       ResultAsync.fromPromise(
@@ -55,8 +55,8 @@ export function verifyTurnstileToken(
         (): TurnstileError => ({
           kind: "INVALID_RESPONSE",
           message: "Failed to parse Turnstile response",
-        })
-      )
+        }),
+      ),
     )
     .andThen((outcome: unknown) => {
       const result = outcome as { success?: boolean };

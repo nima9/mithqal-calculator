@@ -13,7 +13,8 @@
 
 	let { children, storageKey = 'about_verified' }: Props = $props();
 	const TURNSTILE_TEST_SITE_KEY = '1x00000000000000000000AA';
-	const TURNSTILE_SITE_KEY = env.PUBLIC_TURNSTILE_SITE_KEY || (dev ? TURNSTILE_TEST_SITE_KEY : undefined);
+	const TURNSTILE_SITE_KEY =
+		env.PUBLIC_TURNSTILE_SITE_KEY || (dev ? TURNSTILE_TEST_SITE_KEY : undefined);
 
 	let isVerified = $state(false);
 	let turnstileReady = $state(false);

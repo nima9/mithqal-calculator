@@ -26,18 +26,10 @@
 				</button>
 			</p>
 			<div class="flex gap-2">
-				<button
-					type="button"
-					onclick={declineConsent}
-					class="btn btn-ghost btn-sm"
-				>
+				<button type="button" onclick={declineConsent} class="btn btn-ghost btn-sm">
 					Decline
 				</button>
-				<button
-					type="button"
-					onclick={acceptConsent}
-					class="btn btn-primary btn-sm"
-				>
+				<button type="button" onclick={acceptConsent} class="btn btn-primary btn-sm">
 					Accept
 				</button>
 			</div>

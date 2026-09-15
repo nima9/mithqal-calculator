@@ -35,13 +35,9 @@ const EmptySchema = v.object({});
 // Response Types
 // ============================================
 
-type VerifyResult =
-  | { success: true }
-  | { success: false; error: string };
+type VerifyResult = { success: true } | { success: false; error: string };
 
-type EmailResult =
-  | { success: true; email: string }
-  | { success: false; error: string };
+type EmailResult = { success: true; email: string } | { success: false; error: string };
 
 // ============================================
 // Remote Functions
@@ -67,7 +63,7 @@ export const verifyToken = command(TokenSchema, async ({ token }): Promise<Verif
 
   return result.match(
     () => ({ success: true }),
-    (error) => ({ success: false, error: error.message })
+    (error) => ({ success: false, error: error.message }),
   );
 });
 
