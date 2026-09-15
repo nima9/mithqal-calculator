@@ -65,8 +65,8 @@ bun install
 bunx wrangler secret put TURSO_DATABASE_URL
 bunx wrangler secret put TURSO_AUTH_TOKEN
 
-# Also configure PUBLIC_TURNSTILE_SITE_KEY as a Worker variable and
-# TURNSTILE_SECRET_KEY as a Worker secret in the Cloudflare dashboard.
+# PUBLIC_TURNSTILE_SITE_KEY is committed as a public Worker variable in wrangler.jsonc.
+# Configure TURNSTILE_SECRET_KEY as a Worker secret in the Cloudflare dashboard.
 # Local development automatically uses Cloudflare's always-pass test keys.
 
 # Create/update the Turso schema, then seed the initial rates

@@ -4,6 +4,9 @@
   "compatibility_date": "2026-01-25",
   "compatibility_flags": ["nodejs_als"],
   "main": ".svelte-kit/cloudflare/worker.js",
+  "vars": {
+    "PUBLIC_TURNSTILE_SITE_KEY": "0x4AAAAAACWcvfZNahDXX8aD",
+  },
   "assets": {
     "binding": "ASSETS",
     "directory": ".svelte-kit/cloudflare",
