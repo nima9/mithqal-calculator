@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { PUBLIC_TURNSTILE_SITE_KEY } from '$env/static/public';
+	import { env } from '$env/dynamic/public';
+	import { dev } from '$app/environment';
 	import { loadTurnstileScript } from '$lib/utils/turnstile';
 	import { verifyToken } from '$lib/turnstile.remote';
 	import type { Snippet } from 'svelte';
@@ -11,6 +12,8 @@
 	}
 
 	let { children, storageKey = 'about_verified' }: Props = $props();
+	const TURNSTILE_TEST_SITE_KEY = '1x00000000000000000000AA';
+	const TURNSTILE_SITE_KEY = env.PUBLIC_TURNSTILE_SITE_KEY || (dev ? TURNSTILE_TEST_SITE_KEY : undefined);
 
 	let isVerified = $state(false);
 	let turnstileReady = $state(false);
@@ -21,6 +24,11 @@
 		void (async () => {
 			if (sessionStorage.getItem(storageKey) === 'true') {
 				isVerified = true;
+				return;
+			}
+
+			if (!TURNSTILE_SITE_KEY) {
+				error = 'Human verification is not configured.';
 				return;
 			}
 
@@ -49,10 +57,10 @@
 	}
 
 	function setupTurnstile(node: HTMLElement) {
-		if (!window.turnstile) return;
+		if (!window.turnstile || !TURNSTILE_SITE_KEY) return;
 
 		window.turnstile.render(node, {
-			sitekey: PUBLIC_TURNSTILE_SITE_KEY,
+			sitekey: TURNSTILE_SITE_KEY,
 			callback: onTurnstileSuccess,
 			theme: 'auto'
 		});
@@ -77,7 +85,7 @@
 				<p class="text-accent">Verifying...</p>
 			{:else if turnstileReady}
 				<div use:setupTurnstile></div>
-			{:else}
+			{:else if !error}
 				<p class="text-accent">Loading...</p>
 			{/if}
 

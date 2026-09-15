@@ -13,8 +13,12 @@
 
 import { command } from "$app/server";
 import { getRequestEvent } from "$app/server";
+import { dev } from "$app/environment";
+import { env } from "$env/dynamic/private";
 import * as v from "valibot";
 import { verifyTurnstileToken } from "$lib/utils/turnstile";
+
+const TURNSTILE_TEST_SECRET_KEY = "1x0000000000000000000000000000000AA";
 
 // ============================================
 // Schemas
@@ -50,7 +54,10 @@ type EmailResult =
  */
 export const verifyToken = command(TokenSchema, async ({ token }): Promise<VerifyResult> => {
   const event = getRequestEvent();
-  const secretKey = event.platform?.env?.TURNSTILE_SECRET_KEY;
+  const secretKey =
+    event.platform?.env?.TURNSTILE_SECRET_KEY ||
+    env.TURNSTILE_SECRET_KEY ||
+    (dev ? TURNSTILE_TEST_SECRET_KEY : undefined);
 
   if (!secretKey) {
     return { success: false, error: "Server misconfigured" };

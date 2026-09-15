@@ -8,4 +8,7 @@
     "binding": "ASSETS",
     "directory": ".svelte-kit/cloudflare",
   },
+  "triggers": {
+    "crons": ["0 6 * * *"],
+  },
 }
