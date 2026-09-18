@@ -6,26 +6,24 @@
 	Flow:
 	1. User clicks "Reach out!" button
 	2. Turnstile challenge loads and displays
-	3. On successful verification, email is fetched from /api/contact
-	4. Email is cached and mailto: link opens
-	5. Subsequent clicks skip Turnstile and go directly to mailto:
+	3. The fresh token is verified by the same server operation that returns the email
+	4. Email is cached for the browser tab and displayed with email and copy controls
+	5. The visitor explicitly chooses whether to open their email client or copy the address
 -->
 
 <script lang="ts">
+	import { onDestroy, onMount } from 'svelte';
 	import { env } from '$env/dynamic/public';
-	import { browser, dev } from '$app/environment';
+	import { browser } from '$app/environment';
 	import { loadTurnstileScript } from '$lib/utils/turnstile';
-	import { verifyToken, getEmail } from '$lib/turnstile.remote';
+	import { getEmail } from '$lib/turnstile.remote';
 
 	// ============================================
 	// Constants
 	// ============================================
 
-	/** SessionStorage key for tracking verification status (shared with About/Support pages) */
-	const VERIFIED_KEY = 'about_verified';
-	const TURNSTILE_TEST_SITE_KEY = '1x00000000000000000000AA';
-	const TURNSTILE_SITE_KEY =
-		env.PUBLIC_TURNSTILE_SITE_KEY || (dev ? TURNSTILE_TEST_SITE_KEY : undefined);
+	const EMAIL_CACHE_KEY = 'contact_email';
+	const TURNSTILE_SITE_KEY = env.PUBLIC_TURNSTILE_SITE_KEY;
 
 	// ============================================
 	// State
@@ -37,32 +35,42 @@
 	let isVerifying = $state(false);
 	let isLoading = $state(false);
 	let error = $state<string | null>(null);
+	let canRetry = $state(false);
+	let copyMessage = $state('click to copy');
+	let widgetId: string | null = null;
+	let copyResetTimer: ReturnType<typeof setTimeout> | null = null;
+
+	onMount(() => {
+		email = sessionStorage.getItem(EMAIL_CACHE_KEY);
+	});
+
+	onDestroy(() => {
+		if (copyResetTimer) clearTimeout(copyResetTimer);
+	});
 
 	// ============================================
 	// Helpers
 	// ============================================
 
-	/** Check if user is already verified via sessionStorage */
-	function isAlreadyVerified(): boolean {
-		return browser && sessionStorage.getItem(VERIFIED_KEY) === 'true';
-	}
-
-	/** Fetch email from server and open mailto */
-	async function fetchEmailAndOpen() {
+	/** Verify a fresh token and reveal the email address. */
+	async function fetchEmail(token: string) {
 		isLoading = true;
 		error = null;
+		canRetry = false;
 
 		try {
-			const result = await getEmail({});
+			const result = await getEmail({ token });
 
 			if (result.success) {
 				email = result.email;
-				window.location.href = `mailto:${email}`;
+				sessionStorage.setItem(EMAIL_CACHE_KEY, result.email);
 			} else {
 				error = result.error || 'Failed to get contact email.';
+				canRetry = true;
 			}
 		} catch {
 			error = 'Something went wrong. Please try again.';
+			canRetry = true;
 		} finally {
 			isLoading = false;
 		}
@@ -78,15 +86,9 @@
 	 * Otherwise, shows Turnstile challenge first.
 	 */
 	async function handleReachOutClick() {
-		// Already have email cached
-		if (email) {
-			window.location.href = `mailto:${email}`;
-			return;
-		}
-
-		// Already verified on About/Support page - skip Turnstile
-		if (isAlreadyVerified()) {
-			await fetchEmailAndOpen();
+		const cachedEmail = email || (browser ? sessionStorage.getItem(EMAIL_CACHE_KEY) : null);
+		if (cachedEmail) {
+			email = cachedEmail;
 			return;
 		}
 
@@ -97,8 +99,15 @@
 
 		// Need to verify first
 		showTurnstile = true;
-		await loadTurnstileScript();
-		turnstileReady = true;
+		error = null;
+		canRetry = false;
+		try {
+			await loadTurnstileScript();
+			turnstileReady = true;
+		} catch {
+			error = 'Human verification could not load. Please try again.';
+			canRetry = true;
+		}
 	}
 
 	/**
@@ -109,25 +118,54 @@
 	async function onTurnstileSuccess(token: string) {
 		isVerifying = true;
 		error = null;
+		canRetry = false;
 
 		try {
-			const result = await verifyToken({ token });
-
-			if (result.success) {
-				// Store verification (shared with About/Support pages)
-				sessionStorage.setItem(VERIFIED_KEY, 'true');
-				showTurnstile = false;
-
-				// Now fetch email and open mailto
-				await fetchEmailAndOpen();
-			} else {
-				error = result.error || 'Verification failed. Please try again.';
-			}
-		} catch {
-			error = 'Something went wrong. Please try again.';
+			await fetchEmail(token);
+			if (email) showTurnstile = false;
 		} finally {
 			isVerifying = false;
 		}
+	}
+
+	function onTurnstileError(errorCode: string) {
+		const code = /^\d{3,6}$/.test(errorCode) ? ` (error ${errorCode})` : '';
+		error = `Human verification could not run${code}. Please try again or use another browser.`;
+		canRetry = true;
+	}
+
+	function onTurnstileExpired() {
+		error = 'Human verification expired. Please try again.';
+		canRetry = true;
+	}
+
+	function retryTurnstile() {
+		error = null;
+		canRetry = false;
+		if (widgetId) {
+			window.turnstile?.reset(widgetId);
+			return;
+		}
+
+		void handleReachOutClick();
+	}
+
+	async function copyEmail() {
+		if (!email) return;
+
+		if (copyResetTimer) clearTimeout(copyResetTimer);
+
+		try {
+			await navigator.clipboard.writeText(email);
+			copyMessage = 'Copied!';
+		} catch {
+			copyMessage = 'Copy failed';
+		}
+
+		copyResetTimer = setTimeout(() => {
+			copyMessage = 'click to copy';
+			copyResetTimer = null;
+		}, 2000);
 	}
 
 	// ============================================
@@ -141,15 +179,22 @@
 	function setupTurnstile(node: HTMLElement) {
 		if (!browser || !window.turnstile || !TURNSTILE_SITE_KEY) return;
 
-		window.turnstile.render(node, {
+		const renderedWidgetId = window.turnstile.render(node, {
 			sitekey: TURNSTILE_SITE_KEY,
 			callback: onTurnstileSuccess,
-			theme: 'dark'
+			theme: 'dark',
+			action: 'contact_email',
+			retry: 'never',
+			'error-callback': onTurnstileError,
+			'expired-callback': onTurnstileExpired,
+			'timeout-callback': onTurnstileExpired
 		});
+		widgetId = renderedWidgetId;
 
 		return {
 			destroy() {
-				window.turnstile?.remove(node);
+				window.turnstile?.remove(renderedWidgetId);
+				if (widgetId === renderedWidgetId) widgetId = null;
 			}
 		};
 	}
@@ -167,16 +212,55 @@
 
 			{#if showTurnstile && !email}
 				<div class="mt-3 flex flex-col items-center gap-2">
+					{#if turnstileReady}
+						<div use:setupTurnstile></div>
+					{:else if !error}
+						<p class="text-sm text-accent">Loading...</p>
+					{/if}
 					{#if isVerifying}
 						<p class="text-sm text-accent">Verifying...</p>
-					{:else if turnstileReady}
-						<div use:setupTurnstile></div>
-					{:else}
-						<p class="text-sm text-accent">Loading...</p>
 					{/if}
 					{#if error}
 						<p class="text-sm text-error">{error}</p>
 					{/if}
+					{#if canRetry}
+						<button type="button" class="btn btn-sm btn-outline" onclick={retryTurnstile}>
+							Try again
+						</button>
+					{/if}
+				</div>
+			{:else if email}
+				<div class="mt-3 inline-flex items-center gap-2">
+					<a href={`mailto:${email}`} class="btn btn-outline btn-accent px-6 py-2 text-base">
+						Email {email}
+					</a>
+					<div
+						class:tooltip-open={copyMessage !== 'click to copy'}
+						class="tooltip tooltip-top"
+						data-tip={copyMessage}
+					>
+						<button
+							type="button"
+							class="btn btn-square btn-ghost btn-sm"
+							onclick={copyEmail}
+							aria-label="Copy email address"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								class="size-4"
+								aria-hidden="true"
+							>
+								<rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>
+								<path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+							</svg>
+						</button>
+					</div>
 				</div>
 			{:else}
 				<button
@@ -186,9 +270,9 @@
 					class="btn btn-outline btn-accent mt-3 px-6 py-2 text-base"
 				>
 					{#if isLoading}
-						<span class="loading loading-spinner loading-sm"></span>
+						<span class="loading loading-sm"></span>
 					{:else}
-						{email ? `${email}` : 'Reach out!'}
+						Reach out!
 					{/if}
 				</button>
 				{#if error}
