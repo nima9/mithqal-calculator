@@ -1,17 +1,23 @@
-import { asc, desc, lt, sql } from "drizzle-orm";
+import { asc, desc } from "drizzle-orm";
 import type { Database, DatabaseConfig } from "./client";
 import { createDatabase } from "./client";
-import { CURRENCIES } from "./currencies";
-import { parseFxRatesPayload, parseSwissquoteAsk } from "./external-api";
+import { getCurrencyMetadata, type CurrencyKind } from "./currencies";
+import { parseFxRatesPayload, parseSwissquoteMedianMidpoint } from "./external-api";
+import { validateRatesSnapshot } from "./rate-validation";
 import { currencies, metals, rateFetchLog } from "./schema";
 
-const ONE_MONTH_MS = 30 * 24 * 60 * 60 * 1000;
 const REQUEST_TIMEOUT_MS = 10_000;
 
 export interface RatesSnapshot {
   lastFetchTime: number | null;
   metals: Array<{ name: string; priceUSD: number }>;
-  currencies: Array<{ code: string; name: string; symbol: string; rateToUSD: number }>;
+  currencies: Array<{
+    code: string;
+    name: string;
+    symbol: string;
+    kind: CurrencyKind;
+    rateToUSD: number;
+  }>;
 }
 
 export async function getRatesSnapshot(db: Database): Promise<RatesSnapshot> {
@@ -32,9 +38,50 @@ export async function getRatesSnapshot(db: Database): Promise<RatesSnapshot> {
       code: currency.code,
       name: currency.name,
       symbol: currency.symbol,
+      kind: getCurrencyMetadata(currency.code).kind,
       rateToUSD: currency.rateToUsd,
     })),
   };
+}
+
+// ============================================
+// Snapshot cache
+// ============================================
+
+/**
+ * In-isolate cache for the rates snapshot. Rates only change once a day
+ * (cron refresh), so a short TTL removes almost every Turso roundtrip for
+ * page loads and /api/rates requests hitting the same isolate. Concurrent
+ * requests share a single in-flight query.
+ */
+const SNAPSHOT_CACHE_TTL_MS = 5 * 60 * 1000;
+
+let cachedSnapshot: { snapshot: RatesSnapshot; expiresAt: number } | null = null;
+let inflightSnapshot: Promise<RatesSnapshot> | null = null;
+
+/** Drop the cached snapshot (called after a cron refresh). */
+export function invalidateRatesSnapshotCache(): void {
+  cachedSnapshot = null;
+}
+
+/** Get the rates snapshot through the cache, never throwing. Callers handle rejections. */
+export function getRatesSnapshotCached(config: DatabaseConfig): Promise<RatesSnapshot> {
+  if (cachedSnapshot && Date.now() < cachedSnapshot.expiresAt) {
+    return Promise.resolve(cachedSnapshot.snapshot);
+  }
+
+  if (!inflightSnapshot) {
+    inflightSnapshot = getRatesSnapshot(createDatabase(config))
+      .then((snapshot) => {
+        cachedSnapshot = { snapshot, expiresAt: Date.now() + SNAPSHOT_CACHE_TTL_MS };
+        return snapshot;
+      })
+      .finally(() => {
+        inflightSnapshot = null;
+      });
+  }
+
+  return inflightSnapshot;
 }
 
 async function fetchJson(url: string): Promise<unknown> {
@@ -47,70 +94,49 @@ async function fetchMetalPrice(symbol: "XAU" | "XAG"): Promise<number> {
   const payload = await fetchJson(
     `https://forex-data-feed.swissquote.com/public-quotes/bboquotes/instrument/${symbol}/USD`,
   );
-  const price = parseSwissquoteAsk(payload);
+  const price = parseSwissquoteMedianMidpoint(payload);
   if (!price || price <= 0) throw new Error(`Swissquote returned an invalid ${symbol} price`);
   return price;
 }
 
-async function upsertMetal(db: Database, name: string, priceUsd: number, lastUpdated: number) {
-  await db.insert(metals).values({ name, priceUsd, lastUpdated }).onConflictDoUpdate({
-    target: metals.name,
-    set: { priceUsd, lastUpdated },
-  });
-}
-
-async function upsertCurrencies(db: Database, rates: Record<string, number>) {
-  const values = CURRENCIES.flatMap((currency) => {
-    const rateToUsd = rates[currency.code];
-    return typeof rateToUsd === "number" ? [{ ...currency, rateToUsd }] : [];
-  });
-
-  if (values.length === 0) throw new Error("FXRatesAPI did not return any supported currencies");
-
-  await db
-    .insert(currencies)
-    .values(values)
-    .onConflictDoUpdate({
-      target: currencies.code,
-      set: {
-        name: sql.raw("excluded.name"),
-        symbol: sql.raw("excluded.symbol"),
-        rateToUsd: sql.raw("excluded.rate_to_usd"),
-      },
-    });
-}
-
 export async function refreshRates(config: DatabaseConfig): Promise<void> {
   const db = createDatabase(config);
-  const now = Date.now();
-  let success = true;
-
-  const results = await Promise.allSettled([
-    fetchMetalPrice("XAU").then((price) => upsertMetal(db, "gold", price, now)),
-    fetchMetalPrice("XAG").then((price) => upsertMetal(db, "silver", price, now)),
-    fetchJson("https://api.fxratesapi.com/latest")
-      .then(parseFxRatesPayload)
-      .then((rates) => {
-        if (!rates) throw new Error("FXRatesAPI returned an invalid response");
-        return upsertCurrencies(db, rates);
-      }),
+  const [goldPriceUsd, silverPriceUsd, fxPayload] = await Promise.all([
+    fetchMetalPrice("XAU"),
+    fetchMetalPrice("XAG"),
+    fetchJson("https://api.fxratesapi.com/latest"),
   ]);
 
-  for (const result of results) {
-    if (result.status === "rejected") {
-      success = false;
-      console.error("Rate refresh failed:", result.reason);
-    }
-  }
+  const parsedRates = parseFxRatesPayload(fxPayload);
+  if (!parsedRates) throw new Error("FXRatesAPI returned an invalid response");
 
-  await db.insert(rateFetchLog).values({
-    fetchedAt: now,
-    metalsSource: "swissquote",
-    currencySource: "fxratesapi",
-    success,
+  const snapshot = validateRatesSnapshot({
+    goldPriceUsd,
+    silverPriceUsd,
+    rates: parsedRates,
+    retrievedAt: Date.now(),
   });
 
-  await db.delete(rateFetchLog).where(lt(rateFetchLog.fetchedAt, now - ONE_MONTH_MS));
+  await db.transaction(async (tx) => {
+    await tx.delete(currencies);
+    await tx.insert(currencies).values(
+      snapshot.currencies.map(({ code, name, symbol, rateToUsd }) => ({
+        code,
+        name,
+        symbol,
+        rateToUsd,
+      })),
+    );
 
-  if (!success) throw new Error("One or more rate providers failed");
+    await tx.delete(metals);
+    await tx.insert(metals).values(snapshot.metals);
+
+    await tx.delete(rateFetchLog);
+    await tx.insert(rateFetchLog).values({
+      fetchedAt: snapshot.retrievedAt,
+      metalsSource: "swissquote-median-midpoint",
+      currencySource: "fxratesapi",
+      success: true,
+    });
+  });
 }

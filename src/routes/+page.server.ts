@@ -11,9 +11,8 @@
 
 import type { PageServerLoad } from "./$types";
 import { countryToCurrency } from "$lib/utils/countryToCurrency";
-import { createDatabase } from "$lib/server/db/client";
 import { getDatabaseConfig } from "$lib/server/db/config";
-import { getRatesSnapshot } from "$lib/server/db/rates";
+import { getRatesSnapshotCached, type RatesSnapshot } from "$lib/server/db/rates";
 
 export const load: PageServerLoad = async ({ request, platform }) => {
   // Default values
@@ -44,12 +43,16 @@ export const load: PageServerLoad = async ({ request, platform }) => {
     }
   }
 
-  let initialRates = null;
-  try {
-    initialRates = await getRatesSnapshot(createDatabase(getDatabaseConfig(platform?.env)));
-  } catch {
+  // Stream the snapshot instead of awaiting it so client-side navigations back
+  // to this page are not blocked on the database query. The calculator renders
+  // immediately (from its localStorage cache) and merges this in after mount.
+  // The catch resolves to null so the promise never rejects while streaming.
+  const initialRates: Promise<RatesSnapshot | null> = getRatesSnapshotCached(
+    getDatabaseConfig(platform?.env),
+  ).catch(() => {
     // Fall back to the browser cache/API if the Turso snapshot is unavailable.
-  }
+    return null;
+  });
 
   return {
     defaultCurrency,
