@@ -3,9 +3,13 @@
   "account_id": "f2bcc8def8608fd9f1009912570164ce",
   "compatibility_date": "2026-01-25",
   "compatibility_flags": ["nodejs_als"],
-  "main": ".svelte-kit/cloudflare/worker.js",
+  "main": "worker/index.ts",
   "vars": {
     "PUBLIC_TURNSTILE_SITE_KEY": "0x4AAAAAACWcvfZNahDXX8aD",
+    "TURNSTILE_HOSTNAMES": "mithqal.app",
+  },
+  "secrets": {
+    "required": ["CONTACT_EMAIL", "TURNSTILE_SECRET_KEY", "TURSO_AUTH_TOKEN", "TURSO_DATABASE_URL"],
   },
   "assets": {
     "binding": "ASSETS",
@@ -13,5 +17,10 @@
   },
   "triggers": {
     "crons": ["0 6 * * *"],
+  },
+  "observability": {
+    "enabled": true,
+    "logs": { "enabled": true, "head_sampling_rate": 1 },
+    "traces": { "enabled": true, "head_sampling_rate": 0.01 },
   },
 }

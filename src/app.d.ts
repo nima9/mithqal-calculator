@@ -1,5 +1,3 @@
-import type {} from "../worker-configuration.d.ts";
-
 // See https://svelte.dev/docs/kit/types#app.d.ts
 // for information about these interfaces
 declare global {
@@ -11,6 +9,7 @@ declare global {
     interface Platform {
       env?: {
         TURNSTILE_SECRET_KEY?: string;
+        TURNSTILE_HOSTNAMES?: string;
         CONTACT_EMAIL?: string;
         PUBLIC_TURNSTILE_SITE_KEY?: string;
         TURSO_DATABASE_URL?: string;
@@ -31,9 +30,15 @@ declare global {
           sitekey: string;
           callback: (token: string) => void;
           theme?: "light" | "dark" | "auto";
+          action?: string;
+          retry?: "auto" | "never";
+          "error-callback"?: (errorCode: string) => void;
+          "expired-callback"?: () => void;
+          "timeout-callback"?: () => void;
         },
       ) => string;
-      remove: (element: HTMLElement) => void;
+      remove: (widgetId: string) => void;
+      reset: (widgetId: string) => void;
     };
   }
 }

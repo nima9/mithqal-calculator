@@ -7,6 +7,7 @@ const config = {
       remoteFunctions: true,
     },
     adapter: adapter({
+      config: "wrangler.svelte.jsonc",
       edge: true,
     }),
     alias: {

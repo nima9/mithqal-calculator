@@ -23,6 +23,7 @@ pnpm-debug.log*
 # environment variables
 .env
 .env.*
+.dev.vars*
 !.env.example
 !.env.test
 
@@ -36,4 +37,3 @@ vite.config.ts.timestamp-*
 
 # Cloudflare Types
 /worker-configuration.d.ts
-
