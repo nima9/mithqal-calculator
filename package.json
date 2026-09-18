@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "bun run --bun vite dev",
     "build": "bun run --bun vite build && node scripts/append-cron-handler.mjs",
-    "preview": "wrangler dev --port 4173",
+    "preview": "wrangler dev --env dev --port 4173",
     "deploy": "bun run build && wrangler deploy",
     "prepare": "svelte-kit sync || echo ''",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",

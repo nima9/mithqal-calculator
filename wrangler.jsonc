@@ -11,6 +11,17 @@
   "secrets": {
     "required": ["CONTACT_EMAIL", "TURNSTILE_SECRET_KEY", "TURSO_AUTH_TOKEN", "TURSO_DATABASE_URL"],
   },
+  // `bun run preview` runs `wrangler dev --env dev`: local runs must use
+  // Cloudflare's always-pass test site key and localhost hostnames, since the
+  // production values in `vars` only work on mithqal.app.
+  "env": {
+    "dev": {
+      "vars": {
+        "PUBLIC_TURNSTILE_SITE_KEY": "1x00000000000000000000AA",
+        "TURNSTILE_HOSTNAMES": "localhost,127.0.0.1",
+      },
+    },
+  },
   "assets": {
     "binding": "ASSETS",
     "directory": ".svelte-kit/cloudflare",
