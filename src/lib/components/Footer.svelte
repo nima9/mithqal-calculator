@@ -201,7 +201,7 @@
 </script>
 
 <footer class="mt-12 pb-8 text-center">
-	<div class="px-8 text-neutral-content/60 sm:px-0">
+	<div class="px-4 text-neutral-content/60 sm:px-0">
 		<div
 			class="mx-auto mt-4 max-w-xs rounded-xl border-2 border-dashed border-secondary/50 bg-base-200/20 px-4 py-3 sm:max-w-xl sm:rounded-2xl sm:px-6 sm:py-5"
 		>
@@ -229,14 +229,17 @@
 						</button>
 					{/if}
 				</div>
-			{:else if email}
-				<div class="mt-3 inline-flex items-center gap-2">
-					<a href={`mailto:${email}`} class="btn btn-outline btn-accent px-6 py-2 text-base">
-						Email {email}
-					</a>
-					<div
-						class:tooltip-open={copyMessage !== 'click to copy'}
-						class="tooltip tooltip-top"
+		{:else if email}
+			<div class="mt-3 flex items-center justify-center gap-2">
+				<a
+					href={`mailto:${email}`}
+					class="btn btn-outline btn-accent min-w-0 max-w-full px-4 py-2 text-sm sm:px-6 sm:text-base"
+				>
+					<span class="min-w-0 truncate">Email {email}</span>
+				</a>
+				<div
+					class:tooltip-open={copyMessage !== 'click to copy'}
+					class="tooltip tooltip-top"
 						data-tip={copyMessage}
 					>
 						<button
