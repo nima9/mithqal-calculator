@@ -189,7 +189,7 @@
 <style>
 	/* Pixelated dither overlay pattern */
 	.pixel-overlay {
-		background-color: oklch(from var(--color-base-200) l c h / 0.6);
+		background-color: oklch(from var(--surface-2) l c h / 0.6);
 		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect x='0' y='0' width='2' height='2' fill='%23000' fill-opacity='0.15'/%3E%3Crect x='2' y='2' width='2' height='2' fill='%23000' fill-opacity='0.15'/%3E%3C/svg%3E");
 		background-size: 4px 4px;
 		image-rendering: pixelated;
@@ -199,7 +199,7 @@
 	.link-underline {
 		background-image:
 			linear-gradient(transparent, transparent),
-			linear-gradient(var(--color-primary), var(--color-primary));
+			linear-gradient(var(--primary), var(--primary));
 		background-size: 0 6px;
 		background-position: 0 100%;
 		background-repeat: no-repeat;

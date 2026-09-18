@@ -112,7 +112,7 @@
 							<input
 								type="radio"
 								name="copyFormat"
-								class="radio radio-primary"
+								class="size-5 accent-primary"
 								checked={$settingsStore.copyWithCommas}
 								onchange={() => setCopyWithCommas(true)}
 							/>
@@ -122,7 +122,7 @@
 							<input
 								type="radio"
 								name="copyFormat"
-								class="radio radio-primary"
+								class="size-5 accent-primary"
 								checked={!$settingsStore.copyWithCommas}
 								onchange={() => setCopyWithCommas(false)}
 							/>
