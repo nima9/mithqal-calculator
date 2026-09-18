@@ -8,7 +8,7 @@ A Mithqál is a unit of weight used to measure gold and silver. One Mithqál is 
 
 ## Features
 
-- **143 currencies** - Supports all major fiat currencies worldwide
+- **Fiat and crypto rates** - Active fiat currencies plus a separately labeled crypto section
 - **Daily rates** - Metal prices and exchange rates refreshed by a Cloudflare Cron Trigger
 - **Geo-detection** - Auto-selects currency based on user's location (via Cloudflare)
 - **Timezone-aware** - Displays rate timestamps in user's local timezone
@@ -29,8 +29,7 @@ A Mithqál is a unit of weight used to measure gold and silver. One Mithqál is 
 
 - [SvelteKit](https://svelte.dev/) - Full-stack framework
 - [Svelte 5](https://svelte.dev/) - UI framework with runes
-- [Tailwind CSS v4](https://tailwindcss.com/) - Styling
-- [DaisyUI](https://daisyui.com/) - Component library
+- [Tailwind CSS v4](https://tailwindcss.com/) - Styling (custom component classes, no UI library)
 - [bits-ui](https://bits-ui.com/) - Headless components
 
 ### Backend
@@ -50,7 +49,7 @@ A Mithqál is a unit of weight used to measure gold and silver. One Mithqál is 
 - [Bun](https://bun.sh/) - Package manager & runtime
 - [Wrangler](https://developers.cloudflare.com/workers/wrangler/) - Cloudflare CLI
 - [OxLint](https://oxc.rs/) - Linter
-- [Prettier](https://prettier.io/) - Formatter
+- [Oxfmt](https://oxc.rs/) - Formatter
 - [TypeScript](https://www.typescriptlang.org/)
 
 ## Development
@@ -59,15 +58,18 @@ A Mithqál is a unit of weight used to measure gold and silver. One Mithqál is 
 # Install dependencies
 bun install
 
-# Copy .env.example to .env and add your Turso credentials
+# Copy .env.example to .env and add credentials for a development-only Turso database.
+# Do not reuse the production database locally.
 
-# Configure the same secrets in Cloudflare before the first deploy
+# Configure production secrets in Cloudflare before the first deploy
+bunx wrangler secret put CONTACT_EMAIL
+bunx wrangler secret put TURNSTILE_SECRET_KEY
 bunx wrangler secret put TURSO_DATABASE_URL
 bunx wrangler secret put TURSO_AUTH_TOKEN
 
 # PUBLIC_TURNSTILE_SITE_KEY is committed as a public Worker variable in wrangler.jsonc.
-# Configure TURNSTILE_SECRET_KEY as a Worker secret in the Cloudflare dashboard.
-# Local development automatically uses Cloudflare's always-pass test keys.
+# TURNSTILE_HOSTNAMES is also committed there and restricts accepted production hostnames.
+# Local development uses Cloudflare's always-pass test keys when no Turnstile keys are set.
 
 # Create/update the Turso schema, then seed the initial rates
 bun run db:migrate
@@ -79,6 +81,9 @@ bun run dev
 # Build for production
 bun run build
 
+# Run the same type, lint, format, test, and build gate used by CI and deploys
+bun run validate
+
 # Preview the Worker locally
 bun run preview
 
@@ -88,6 +93,11 @@ curl "http://localhost:4173/cdn-cgi/local/scheduled"
 # Deploy the Worker and its Cron Trigger
 bun run deploy
 ```
+
+The scheduled Worker fetches both metal prices and USD-based currency rates once daily. It stores
+only a complete validated snapshot: both metals plus USD and EUR are required, while individual
+missing currencies are omitted. Failed refreshes leave the prior snapshot untouched. Gold and
+silver use the median of every valid Swissquote bid/ask midpoint.
 
 ## Contributing
 
