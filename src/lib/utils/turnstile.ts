@@ -1,14 +1,18 @@
 /**
  * turnstile.ts
  * Shared Turnstile verification utilities.
- * Uses neverthrow for type-safe error handling.
- * Used by: api/contact, api/verify
+ * Uses Effect for never-throw, errors-as-values handling.
+ * Used by: turnstile.remote.ts
  */
 
-import { ResultAsync, err, ok } from "neverthrow";
+import { Effect, Either } from "effect";
 
 /** Cloudflare Turnstile server-side verification endpoint */
 const TURNSTILE_VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
+const TURNSTILE_SCRIPT_URL =
+  "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+
+let turnstileScriptPromise: Promise<void> | null = null;
 
 // ============================================
 // Error Types
@@ -27,47 +31,97 @@ export interface TurnstileError {
 
 /**
  * Verify a Turnstile token with Cloudflare's API.
- * @param token - The token from the client-side Turnstile widget
- * @param secretKey - Server-side Turnstile secret key
- * @returns ResultAsync resolving to verification success status
+ * Validates the token, action, and hostname through Cloudflare Siteverify.
  */
-export function verifyTurnstileToken(
-  token: string,
-  secretKey: string,
-): ResultAsync<boolean, TurnstileError> {
-  const formData = new FormData();
-  formData.append("secret", secretKey);
-  formData.append("response", token);
+function verifyTurnstileTokenEffect(input: {
+  token: string;
+  secretKey: string;
+  expectedAction: string;
+  allowedHostnames: ReadonlySet<string>;
+  remoteIp?: string;
+  allowTestResponse?: boolean;
+}): Effect.Effect<true, TurnstileError> {
+  const {
+    token,
+    secretKey,
+    expectedAction,
+    allowedHostnames,
+    remoteIp,
+    allowTestResponse = false,
+  } = input;
 
-  return ResultAsync.fromPromise(
-    fetch(TURNSTILE_VERIFY_URL, {
-      method: "POST",
-      body: formData,
-    }),
-    (): TurnstileError => ({
-      kind: "NETWORK_ERROR",
-      message: "Failed to connect to Turnstile verification service",
-    }),
-  )
-    .andThen((response) =>
-      ResultAsync.fromPromise(
-        response.json(),
-        (): TurnstileError => ({
-          kind: "INVALID_RESPONSE",
-          message: "Failed to parse Turnstile response",
-        }),
-      ),
-    )
-    .andThen((outcome: unknown) => {
-      const result = outcome as { success?: boolean };
-      if (result.success === true) {
-        return ok(true);
-      }
-      return err<boolean, TurnstileError>({
+  return Effect.gen(function* () {
+    if (token.length === 0 || token.length > 2048 || allowedHostnames.size === 0) {
+      return yield* Effect.fail<TurnstileError>({
         kind: "VERIFICATION_FAILED",
         message: "Turnstile verification failed",
       });
+    }
+
+    const formData = new FormData();
+    formData.append("secret", secretKey);
+    formData.append("response", token);
+    if (remoteIp) formData.append("remoteip", remoteIp);
+
+    const response = yield* Effect.tryPromise({
+      try: () =>
+        fetch(TURNSTILE_VERIFY_URL, {
+          method: "POST",
+          body: formData,
+          signal: AbortSignal.timeout(10_000),
+        }),
+      catch: (): TurnstileError => ({
+        kind: "NETWORK_ERROR",
+        message: "Failed to connect to Turnstile verification service",
+      }),
     });
+
+    if (!response.ok) {
+      return yield* Effect.fail<TurnstileError>({
+        kind: "INVALID_RESPONSE",
+        message: "Turnstile verification service returned an error",
+      });
+    }
+
+    const outcome: unknown = yield* Effect.tryPromise({
+      try: () => response.json(),
+      catch: (): TurnstileError => ({
+        kind: "INVALID_RESPONSE",
+        message: "Failed to parse Turnstile response",
+      }),
+    });
+
+    const result = outcome as { success?: boolean; action?: string; hostname?: string };
+    if (
+      result.success === true &&
+      (allowTestResponse ||
+        (result.action === expectedAction &&
+          typeof result.hostname === "string" &&
+          allowedHostnames.has(result.hostname)))
+    ) {
+      return true as const;
+    }
+
+    return yield* Effect.fail<TurnstileError>({
+      kind: "VERIFICATION_FAILED",
+      message: "Turnstile verification failed",
+    });
+  });
+}
+
+/**
+ * Run the verification effect and return its outcome as a value.
+ * Never throws: failures are reported as `Either.left`.
+ */
+export async function verifyTurnstileToken(input: {
+  token: string;
+  secretKey: string;
+  expectedAction: string;
+  allowedHostnames: ReadonlySet<string>;
+  remoteIp?: string;
+  allowTestResponse?: boolean;
+}): Promise<Either.Either<true, TurnstileError>> {
+  return Effect.runPromise(Effect.either(verifyTurnstileTokenEffect(input)));
 }
 
 /**
@@ -76,16 +130,51 @@ export function verifyTurnstileToken(
  * @returns Promise that resolves when script is loaded
  */
 export function loadTurnstileScript(): Promise<void> {
-  return new Promise((resolve) => {
-    if (typeof window !== "undefined" && window.turnstile) {
-      resolve();
-      return;
-    }
+  if (typeof window === "undefined") {
+    return Promise.reject(new Error("Turnstile can only load in a browser"));
+  }
 
-    const script = document.createElement("script");
-    script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
-    script.async = true;
-    script.onload = () => resolve();
-    document.head.appendChild(script);
+  if (window.turnstile) return Promise.resolve();
+  if (turnstileScriptPromise) return turnstileScriptPromise;
+
+  turnstileScriptPromise = new Promise((resolve, reject) => {
+    const existingScript = document.querySelector<HTMLScriptElement>(
+      'script[src^="https://challenges.cloudflare.com/turnstile/v0/api.js"]',
+    );
+    const script = existingScript ?? document.createElement("script");
+
+    const handleLoad = () => {
+      cleanup();
+      if (window.turnstile) {
+        resolve();
+        return;
+      }
+
+      script.remove();
+      turnstileScriptPromise = null;
+      reject(new Error("Turnstile loaded without exposing its browser API"));
+    };
+    const handleError = () => {
+      cleanup();
+      script.remove();
+      turnstileScriptPromise = null;
+      reject(new Error("Failed to load Turnstile"));
+    };
+    const cleanup = () => {
+      script.removeEventListener("load", handleLoad);
+      script.removeEventListener("error", handleError);
+    };
+
+    script.addEventListener("load", handleLoad, { once: true });
+    script.addEventListener("error", handleError, { once: true });
+
+    if (!existingScript) {
+      script.src = TURNSTILE_SCRIPT_URL;
+      script.async = true;
+      script.defer = true;
+      document.head.appendChild(script);
+    }
   });
+
+  return turnstileScriptPromise;
 }
