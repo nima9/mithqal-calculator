@@ -6,8 +6,8 @@
 
 	Flow:
 	1. Load cached rates from localStorage (if available)
-	2. Use the server-rendered Turso snapshot when it is newer
-	3. If stale, fetch a fresh snapshot from the server API
+	2. Use the streamed server Turso snapshot when it is newer
+	3. If there is no usable cache, fetch a fresh snapshot from the server API
 	4. Cache new data in localStorage for future visits
 	5. Calculate: mithqals × troy_oz_per_mithqal × metal_price × currency_rate
 	6. Sync calculator state with URL parameters (debounced)
@@ -23,13 +23,13 @@
 	import Footer from './Footer.svelte';
 	import RatesTimestamp from './RatesTimestamp.svelte';
 	import Sentence from './Sentence.svelte';
+	import { calculateMithqalValue, parsePositiveDecimal } from '$lib/calculator';
 	import { settingsStore } from '$lib/stores/settings.svelte';
 
 	// ============================================
 	// Constants
 	// ============================================
 
-	const MITHQAL_IN_TROY_OZ = 0.11708228065358918;
 	const CACHE_KEY = 'mithqal_rates_cache';
 	const CACHE_TTL_MS = 12 * 60 * 60 * 1000 + 5 * 60 * 1000;
 	const URL_UPDATE_DEBOUNCE_MS = 300;
@@ -53,6 +53,7 @@
 		code: string;
 		name: string;
 		symbol: string;
+		kind?: 'fiat' | 'crypto';
 		rateToUSD: number;
 	}
 
@@ -75,7 +76,7 @@
 	interface Props {
 		selectedCurrency?: string;
 		timezone?: string;
-		initialRates?: RatesSnapshot | null;
+		initialRates?: Promise<RatesSnapshot | null> | null;
 	}
 
 	let {
@@ -113,8 +114,7 @@
 
 	function parseQuantityParam(q: string | null): string {
 		if (!q) return DEFAULT_QUANTITY;
-		const parsed = parseFloat(q);
-		return !isNaN(parsed) && parsed > 0 ? q : DEFAULT_QUANTITY;
+		return parsePositiveDecimal(q) !== null ? q : DEFAULT_QUANTITY;
 	}
 
 	function parseMetalParam(m: string | null): string {
@@ -127,8 +127,19 @@
 		if (!currencyCode || cachedCurrencies.length === 0) return false;
 		const currency = cachedCurrencies.find((c) => c.code === currencyCode);
 		if (!currency) return false;
-		selectedCurrency = `${currency.symbol} ${currency.code}`;
+		selectedCurrency = [currency.symbol, currency.code].filter(Boolean).join(' ');
 		return true;
+	}
+
+	function ensureSelectedCurrencyAvailable() {
+		if (cachedCurrencies.length === 0) return;
+		const selectedCode = selectedCurrency.slice(-3).toUpperCase().trim();
+		if (cachedCurrencies.some((currency) => currency.code === selectedCode)) return;
+
+		const fallback =
+			cachedCurrencies.find((currency) => currency.code === DEFAULT_CURRENCY_CODE) ??
+			cachedCurrencies[0];
+		selectedCurrency = [fallback.symbol, fallback.code].filter(Boolean).join(' ');
 	}
 
 	function applyRatesSnapshot(snapshot: RatesSnapshot, persistToCache: boolean) {
@@ -140,15 +151,21 @@
 			return;
 		}
 
+		const normalizedCurrencies = snapshot.currencies.map((currency) => ({
+			...currency,
+			kind: currency.kind ?? (currency.code === 'BTC' ? 'crypto' : 'fiat')
+		}));
+
 		cachedMetals = snapshot.metals;
-		cachedCurrencies = snapshot.currencies;
+		cachedCurrencies = normalizedCurrencies;
 		cachedLastFetch = snapshot.lastFetchTime;
+		ensureSelectedCurrencyAvailable();
 
 		if (persistToCache) {
 			const cacheData: CacheData = {
 				lastFetchTime: snapshot.lastFetchTime,
 				metals: snapshot.metals,
-				currencies: snapshot.currencies
+				currencies: normalizedCurrencies
 			};
 			localStorage.setItem(CACHE_KEY, JSON.stringify(cacheData));
 		}
@@ -178,7 +195,10 @@
 				try {
 					const data: CacheData = JSON.parse(cached);
 					cachedMetals = data.metals || [];
-					cachedCurrencies = data.currencies || [];
+					cachedCurrencies = (data.currencies || []).map((currency) => ({
+						...currency,
+						kind: currency.kind ?? (currency.code === 'BTC' ? 'crypto' : 'fiat')
+					}));
 					cachedLastFetch = data.lastFetchTime || 0;
 				} catch {
 					// Invalid cache, will fetch fresh data
@@ -191,27 +211,48 @@
 
 			const hasValidCache =
 				cachedMetals.length > 0 && cachedCurrencies.length > 0 && !isCacheStale(cachedLastFetch);
-			const hasNewerServerData =
-				!!initialRates?.lastFetchTime && initialRates.lastFetchTime > cachedLastFetch;
 
-			// Prefer server snapshot from SSR when it's newer than local cache.
-			if (initialRates && hasNewerServerData) {
-				applyRatesSnapshot(initialRates, true);
+			if (hasValidCache) {
+				// Show cached data immediately without waiting for the server snapshot
+				// (it streams in separately and may still be in flight).
+				if (!applyCurrencyCodeFromUrl(initialCurrencyCode)) ensureSelectedCurrencyAvailable();
+				isInitialized = true;
+
+				// Merge the server snapshot in the background when it arrives, in case
+				// it is newer than the local cache. The noop catch keeps a failed
+				// stream from surfacing as an unhandled rejection.
+				if (initialRates) {
+					void initialRates
+						.then((snapshot) => {
+							if (snapshot?.lastFetchTime && snapshot.lastFetchTime > cachedLastFetch) {
+								applyRatesSnapshot(snapshot, true);
+							}
+						})
+						.catch(() => {});
+				}
+				return;
 			}
 
-			if (!hasValidCache && initialRates) {
-				applyRatesSnapshot(initialRates, true);
+			// No usable cache: wait for the streamed server snapshot before first paint
+			// of the data, falling back to the rates API if it is unavailable.
+			let serverSnapshot: RatesSnapshot | null = null;
+			if (initialRates) {
+				try {
+					serverSnapshot = await initialRates;
+				} catch {
+					// Stream failed; fall back to the rates API below.
+				}
+			}
+			if (serverSnapshot) {
+				applyRatesSnapshot(serverSnapshot, true);
 			}
 
-			const needsSnapshotFetch =
-				cachedMetals.length === 0 || cachedCurrencies.length === 0 || isCacheStale(cachedLastFetch);
-
-			if (needsSnapshotFetch && !(initialRates && initialRates.lastFetchTime)) {
+			if (!serverSnapshot?.lastFetchTime) {
 				await fetchRatesSnapshot();
 			}
 
 			// Apply URL currency after rates are available, before URL sync starts.
-			applyCurrencyCodeFromUrl(initialCurrencyCode);
+			if (!applyCurrencyCodeFromUrl(initialCurrencyCode)) ensureSelectedCurrencyAvailable();
 
 			isInitialized = true;
 		})();
@@ -326,7 +367,12 @@
 		return Object.fromEntries(
 			displayCurrencies.map((c) => [
 				c.code,
-				{ code: c.code, name: c.name, symbol_native: c.symbol }
+				{
+					code: c.code,
+					name: c.name,
+					symbol_native: c.symbol,
+					kind: c.kind ?? (c.code === 'BTC' ? 'crypto' : 'fiat')
+				}
 			])
 		);
 	});
@@ -339,15 +385,19 @@
 		const currencyCode = selectedCurrency.slice(-3).toUpperCase().trim();
 		const metalName = selectedMetal.toLowerCase().trim();
 
-		const metalPrice = metalMap.get(metalName) ?? 0;
-		const currencyRate = currencyMap.get(currencyCode)?.rateToUSD ?? 1;
-		const amount = parseFloat(mithqalAmount) || 0;
+		const metalPrice = metalMap.get(metalName);
+		const currencyRateToUsd = currencyMap.get(currencyCode)?.rateToUSD;
+		const quantity = parsePositiveDecimal(mithqalAmount);
 
-		// Formula: mithqals × troy_oz_per_mithqal × price_per_oz × currency_rate
-		return MITHQAL_IN_TROY_OZ * amount * metalPrice * currencyRate;
+		if (metalPrice === undefined || currencyRateToUsd === undefined || quantity === null) {
+			return null;
+		}
+
+		return calculateMithqalValue({ quantity, metalPriceUsd: metalPrice, currencyRateToUsd });
 	});
 
 	let formattedCalculatedValue = $derived.by(() => {
+		if (calculatedValue === null) return '';
 		const fixed = calculatedValue.toFixed(2);
 		const withCommas = fixed.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 		// Remove .00 for whole numbers
@@ -355,7 +405,7 @@
 	});
 
 	let displayCalculatedValue = $derived.by(() => {
-		if (isNaN(calculatedValue) || calculatedValue === 0) return '';
+		if (calculatedValue === null) return '';
 
 		const currencyCode = selectedCurrency.slice(-3).toUpperCase().trim();
 		const currencySymbol = currencyMap.get(currencyCode)?.symbol ?? '$';
@@ -366,7 +416,9 @@
 	// Display Helpers
 	// ============================================
 
-	let mithqalLabel = $derived(parseFloat(mithqalAmount) > 1 ? 'Mithqáls' : 'Mithqál');
+	let mithqalLabel = $derived(
+		(parsePositiveDecimal(mithqalAmount) ?? 0) > 1 ? 'Mithqáls' : 'Mithqál'
+	);
 
 	/** Font size class - large by default, smaller only for long values on mobile */
 	let resultSizeClass = $derived.by(() => {
@@ -402,6 +454,7 @@
 
 	/** Copy calculated value to clipboard (respects comma setting) */
 	async function handleCopyClick() {
+		if (!formattedCalculatedValue) return;
 		try {
 			const valueToCopy = $settingsStore.copyWithCommas
 				? formattedCalculatedValue
@@ -485,6 +538,7 @@
 		data-tip={copyTooltipText}
 		onclick={handleCopyClick}
 		onmouseleave={handleCopyMouseLeave}
+		disabled={!displayCalculatedValue}
 	>
 		{displayCalculatedValue || '...'}
 	</button>

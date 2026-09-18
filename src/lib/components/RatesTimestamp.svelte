@@ -22,7 +22,7 @@
 
 	/** Format the timestamp in the user's timezone with full date/time */
 	let readableRateDate = $derived.by(() => {
-		if (!lastFetchTime) return '...';
+		if (!lastFetchTime) return 'Unavailable';
 
 		// Date/Intl version (active)
 		const date = new Date(lastFetchTime);
@@ -54,5 +54,5 @@
 <div
 	class="flex flex-wrap justify-center pt-24 pb-1 text-neutral-content/60 text-xs sm:text-xs md:text-sm lg:text-lg lg:justify-end lg:px-7"
 >
-	Rates as of: {readableRateDate}
+	Rates retrieved: {readableRateDate}
 </div>

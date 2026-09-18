@@ -16,6 +16,7 @@
 		code: string;
 		name: string;
 		symbol_native: string;
+		kind: 'fiat' | 'crypto';
 	}
 
 	interface Props {
@@ -61,6 +62,17 @@
 		});
 	});
 
+	let groupedCurrencies = $derived.by(() => [
+		{
+			label: 'Fiat currencies',
+			items: filteredCurrencies.filter((currency) => currency.kind === 'fiat')
+		},
+		{
+			label: 'Cryptocurrencies',
+			items: filteredCurrencies.filter((currency) => currency.kind === 'crypto')
+		}
+	]);
+
 	// Extract selected currency from the selectedValue prop (format: "$ USD")
 	let selectedCurrency = $derived.by(() => {
 		if (!selectedValue) return null;
@@ -70,9 +82,7 @@
 
 	// Display text showing symbol + code (e.g., "$ USD")
 	let displayValue = $derived(
-		selectedCurrency
-			? `${selectedCurrency.symbol_native} ${selectedCurrency.code}`
-			: selectedValue || 'Select...'
+		selectedCurrency ? formatCurrencyLabel(selectedCurrency) : selectedValue || 'Select...'
 	);
 
 	// Full currency name for tooltip
@@ -98,7 +108,7 @@
 
 		const currency = currencies.find((c) => c.code === comboboxValue);
 		if (currency) {
-			const newValue = `${currency.symbol_native} ${currency.code}`;
+			const newValue = formatCurrencyLabel(currency);
 			if (newValue !== selectedValue) {
 				selectedValue = newValue;
 				onCurrencyChange?.();
@@ -109,6 +119,10 @@
 	// ============================================
 	// Event Handlers
 	// ============================================
+
+	function formatCurrencyLabel(currency: Currency): string {
+		return [currency.symbol_native, currency.code].filter(Boolean).join(' ');
+	}
 
 	/** Handle dropdown open/close and clear search on close */
 	function handleOpenChange(isOpen: boolean) {
@@ -151,18 +165,27 @@
 			{#if filteredCurrencies.length === 0}
 				<div class="px-3 py-2 text-sm text-base-content/60">No currencies found.</div>
 			{:else}
-				{#each filteredCurrencies as currency (currency.code)}
-					<Combobox.Item
-						value={currency.code}
-						label={`${currency.symbol_native} ${currency.code}`}
-						class="flex cursor-pointer items-center rounded px-3 py-2 text-sm text-base-content outline-hidden data-highlighted:bg-primary data-highlighted:text-primary-content"
-					>
-						{#snippet children({ selected })}
-							<Check class="mr-2 h-6 w-6 {selected ? 'text-accent' : 'text-transparent'}" />
-							<span>{currency.symbol_native} {currency.code}</span>
-							<span class="ml-2 text-xs text-base-content/60">{currency.name}</span>
-						{/snippet}
-					</Combobox.Item>
+				{#each groupedCurrencies as group (group.label)}
+					{#if group.items.length > 0}
+						<div class="px-3 pt-2 pb-1 text-xs font-semibold text-base-content/50">
+							{group.label}
+						</div>
+						{#each group.items as currency (currency.code)}
+							<Combobox.Item
+								value={currency.code}
+								label={formatCurrencyLabel(currency)}
+								class="flex cursor-pointer items-center rounded px-3 py-2 text-sm text-base-content outline-hidden data-highlighted:bg-primary data-highlighted:text-primary-content"
+							>
+								{#snippet children({ selected })}
+									<Check class="mr-2 h-6 w-6 {selected ? 'text-accent' : 'text-transparent'}" />
+									<span>{formatCurrencyLabel(currency)}</span>
+									{#if currency.name}
+										<span class="ml-2 text-xs text-base-content/60">{currency.name}</span>
+									{/if}
+								{/snippet}
+							</Combobox.Item>
+						{/each}
+					{/if}
 				{/each}
 			{/if}
 		</Combobox.Content>
