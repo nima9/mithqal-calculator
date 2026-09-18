@@ -181,3 +181,37 @@ export const CURRENCIES = [
   //Crypto currencies
   { code: "BTC", name: "Bitcoin", symbol: "₿" },
 ];
+
+export type CurrencyKind = "fiat" | "crypto";
+
+const CRYPTO_CURRENCY_CODES = new Set(["BTC"]);
+
+// Withdrawn currencies that the upstream provider may continue to return.
+export const RETIRED_CURRENCY_CODES = new Set([
+  "ANG",
+  "BYR",
+  "CUC",
+  "HRK",
+  "LTL",
+  "LVL",
+  "MRO",
+  "SLL",
+  "STD",
+  "VEF",
+  "ZMK",
+]);
+
+const CURRENCY_METADATA = new Map(CURRENCIES.map((currency) => [currency.code, currency]));
+
+export function getCurrencyMetadata(code: string): {
+  name: string;
+  symbol: string;
+  kind: CurrencyKind;
+} {
+  const currency = CURRENCY_METADATA.get(code);
+  return {
+    name: currency?.name ?? "",
+    symbol: currency?.symbol ?? "",
+    kind: CRYPTO_CURRENCY_CODES.has(code) ? "crypto" : "fiat",
+  };
+}
