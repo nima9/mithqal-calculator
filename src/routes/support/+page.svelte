@@ -18,6 +18,11 @@
 
 <svelte:head>
 	<title>Support - Mithqal Calculator</title>
+	<meta
+		name="description"
+		content="Support the Mithqal Calculator, a free ad-supported tool for converting gold and silver mithqals to any currency."
+	/>
+	<link rel="canonical" href="https://mithqal.app/support" />
 </svelte:head>
 
 <TurnstileGate storageKey="about_verified">

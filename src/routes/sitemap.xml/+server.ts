@@ -23,6 +23,7 @@ const SITE_URL = "https://mithqal.app";
 const PAGES = [
   { path: "", changefreq: "daily", priority: "1.0" }, // Homepage - rates change daily
   { path: "/about", changefreq: "monthly", priority: "0.5" }, // About page - rarely changes
+  { path: "/support", changefreq: "monthly", priority: "0.5" }, // Support page - rarely changes
 ];
 
 // ============================================

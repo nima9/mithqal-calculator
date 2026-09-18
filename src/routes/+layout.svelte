@@ -38,12 +38,18 @@
 </script>
 
 <svelte:head>
-	<title>Mithqal Calculator</title>
-	<meta name="description" content="Convert mithqals of gold and silver to any currency." />
+	<title>Mithqál Calculator – Convert Gold &amp; Silver to Any Currency</title>
+	<meta
+		name="description"
+		content="Free mithqál calculator: convert mithqals of gold and silver to any currency with live precious metal and exchange rates."
+	/>
 
 	<!-- Open Graph (used by iMessage, WhatsApp, SMS platforms) -->
-	<meta property="og:title" content="Mithqal Calculator" />
-	<meta property="og:description" content="Convert mithqals of gold and silver to any currency." />
+	<meta property="og:title" content="Mithqál Calculator – Convert Gold & Silver to Any Currency" />
+	<meta
+		property="og:description"
+		content="Free mithqál calculator: convert mithqals of gold and silver to any currency with live precious metal and exchange rates."
+	/>
 	<meta property="og:url" content="https://mithqal.app" />
 	<meta property="og:type" content="website" />
 	<meta property="og:site_name" content="Mithqal Calculator" />
@@ -57,8 +63,11 @@
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:creator" content="@OhNoNima" />
 	<meta name="twitter:image" content="https://mithqal.app/og.png" />
-	<meta name="twitter:title" content="Mithqal Calculator" />
-	<meta name="twitter:description" content="Convert mithqals of gold and silver to any currency." />
+	<meta name="twitter:title" content="Mithqál Calculator – Convert Gold & Silver to Any Currency" />
+	<meta
+		name="twitter:description"
+		content="Free mithqál calculator: convert mithqals of gold and silver to any currency with live precious metal and exchange rates."
+	/>
 
 	<!-- Other -->
 	<meta name="github" content="https://github.com/nima9/mithqal-culator" />

@@ -47,7 +47,7 @@
 			id: 'rate-sources',
 			question: 'Where do the currency and metal rates come from?',
 			answer:
-				"Gold and silver prices are fetched from Swissquote's forex data feed, which provides real-time market rates. Currency exchange rates come from FXRatesAPI, a reliable foreign exchange rate provider. Rates are updated daily to ensure accuracy."
+				"Gold and silver prices are fetched daily from Swissquote's forex data feed. For each metal, the calculator takes the midpoint of every valid bid/ask quote and uses the median of those midpoints. Currency exchange rates come from FXRatesAPI. The displayed timestamp shows when the latest complete snapshot was successfully retrieved."
 		}
 	];
 
@@ -75,6 +75,11 @@
 
 <svelte:head>
 	<title>About - Mithqal Calculator</title>
+	<meta
+		name="description"
+		content="About the Mithqal Calculator: a free tool for converting mithqals of gold and silver to any currency, used for Huqúqu'lláh calculations."
+	/>
+	<link rel="canonical" href="https://mithqal.app/about" />
 </svelte:head>
 
 <TurnstileGate storageKey="about_verified">
