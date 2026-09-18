@@ -24,6 +24,7 @@
 	import RatesTimestamp from './RatesTimestamp.svelte';
 	import Sentence from './Sentence.svelte';
 	import { calculateMithqalValue, parsePositiveDecimal } from '$lib/calculator';
+	import { getSentenceLanguage } from '$lib/sentences';
 	import { settingsStore } from '$lib/stores/settings.svelte';
 
 	// ============================================
@@ -413,11 +414,21 @@
 	});
 
 	// ============================================
+	// Sentence (i18n)
+	// ============================================
+
+	// Word order, direction, and unit labels come from the language registry
+	// so new languages only need a data entry in $lib/sentences.
+	const sentenceLanguage = getSentenceLanguage();
+
+	// ============================================
 	// Display Helpers
 	// ============================================
 
 	let mithqalLabel = $derived(
-		(parsePositiveDecimal(mithqalAmount) ?? 0) > 1 ? 'Mithqáls' : 'Mithqál'
+		(parsePositiveDecimal(mithqalAmount) ?? 0) > 1
+			? sentenceLanguage.mithqalUnit.plural
+			: sentenceLanguage.mithqalUnit.singular
 	);
 
 	/** Font size class - large by default, smaller only for long values on mobile */
@@ -512,15 +523,7 @@
 
 <!-- Calculator Input Row -->
 <Sentence
-	order={[
-		{ snippet: 'amount' },
-		{ snippet: 'mithqalLabel' },
-		'of',
-		{ snippet: 'metal' },
-		'in',
-		{ snippet: 'currency' },
-		'is:'
-	]}
+	language={sentenceLanguage}
 	snippets={{
 		amount,
 		mithqalLabel: mithqalLabelSnippet,
