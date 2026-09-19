@@ -51,8 +51,8 @@ export async function getRatesSnapshot(db: Database): Promise<RatesSnapshot> {
 /**
  * In-isolate cache for the rates snapshot. Rates only change once a day
  * (cron refresh), so a short TTL removes almost every Turso roundtrip for
- * page loads and /api/rates requests hitting the same isolate. Concurrent
- * requests share a single in-flight query.
+ * page loads hitting the same isolate. Concurrent requests share a single
+ * in-flight query.
  */
 const SNAPSHOT_CACHE_TTL_MS = 5 * 60 * 1000;
 

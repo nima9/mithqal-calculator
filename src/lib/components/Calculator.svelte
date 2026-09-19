@@ -1,16 +1,15 @@
 <!--
 	Calculator.svelte
 	Main calculator component for converting mithqals of gold/silver to currency values.
-	Fetches rates from the server API and caches them in localStorage for performance.
+	Loads rates from the streamed page data and caches them in localStorage for performance.
 	Supports URL parameters for shareable state (q=quantity, m=metal, c=currency).
 
 	Flow:
 	1. Load cached rates from localStorage (if available)
 	2. Use the streamed server Turso snapshot when it is newer
-	3. If there is no usable cache, fetch a fresh snapshot from the server API
-	4. Cache new data in localStorage for future visits
-	5. Calculate: mithqals × troy_oz_per_mithqal × metal_price × currency_rate
-	6. Sync calculator state with URL parameters (debounced)
+	3. Cache new data in localStorage for future visits
+	4. Calculate: mithqals × troy_oz_per_mithqal × metal_price × currency_rate
+	5. Sync calculator state with URL parameters (debounced)
 -->
 
 <script lang="ts">
@@ -172,17 +171,6 @@
 		}
 	}
 
-	async function fetchRatesSnapshot() {
-		try {
-			const response = await fetch('/api/rates');
-			if (!response.ok) return;
-			const snapshot: RatesSnapshot = await response.json();
-			applyRatesSnapshot(snapshot, true);
-		} catch {
-			// Keep using current cache state on query failures
-		}
-	}
-
 	// Load cached data and initialize state on mount
 	onMount(() => {
 		void (async () => {
@@ -235,21 +223,17 @@
 			}
 
 			// No usable cache: wait for the streamed server snapshot before first paint
-			// of the data, falling back to the rates API if it is unavailable.
+			// of the data.
 			let serverSnapshot: RatesSnapshot | null = null;
 			if (initialRates) {
 				try {
 					serverSnapshot = await initialRates;
 				} catch {
-					// Stream failed; fall back to the rates API below.
+					// Keep the calculator empty if the streamed snapshot is unavailable.
 				}
 			}
 			if (serverSnapshot) {
 				applyRatesSnapshot(serverSnapshot, true);
-			}
-
-			if (!serverSnapshot?.lastFetchTime) {
-				await fetchRatesSnapshot();
 			}
 
 			// Apply URL currency after rates are available, before URL sync starts.

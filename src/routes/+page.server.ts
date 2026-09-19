@@ -50,7 +50,7 @@ export const load: PageServerLoad = async ({ request, platform }) => {
   const initialRates: Promise<RatesSnapshot | null> = getRatesSnapshotCached(
     getDatabaseConfig(platform?.env),
   ).catch(() => {
-    // Fall back to the browser cache/API if the Turso snapshot is unavailable.
+    // The browser can still use its previously cached snapshot if Turso is unavailable.
     return null;
   });
 
