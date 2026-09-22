@@ -1,58 +1,195 @@
-type JsonRecord = Record<string, unknown>;
+import * as v from "valibot";
+import { getCurrencyKind } from "./currencies";
 
-function asRecord(value: unknown): JsonRecord | null {
-  return typeof value === "object" && value !== null ? (value as JsonRecord) : null;
-}
+/**
+ * Raw JSON as it arrives from an external fetch, before domain parsing. Kept as
+ * a named boundary type so `unknown` never leaves the decoder functions.
+ */
+export type JsonValue =
+  | string
+  | number
+  | boolean
+  | null
+  | JsonValue[]
+  | { [key: string]: JsonValue };
 
-export function parseFxRatesPayload(value: unknown): Record<string, number> | null {
-  const payload = asRecord(value);
-  if (!payload || payload.success !== true || payload.base !== "USD") return null;
+const FxRatesPayloadSchema = v.object({
+  success: v.literal(true),
+  base: v.literal("USD"),
+  timestamp: v.pipe(v.number(), v.finite(), v.integer(), v.gtValue(0)),
+  date: v.optional(v.string()),
+  rates: v.record(v.string(), v.unknown()),
+});
 
-  const rates = asRecord(payload.rates);
-  if (!rates) return null;
+const CurrencyCodeSchema = v.pipe(v.string(), v.regex(/^[A-Z0-9]{2,5}$/));
+
+const PositiveRateSchema = v.pipe(v.number(), v.finite(), v.gtValue(0));
+
+export type FxRatesSnapshot = {
+  rates: Record<string, number>;
+  timestampMs: number;
+};
+
+export function parseFxRatesPayload(value: JsonValue): FxRatesSnapshot | null {
+  const payload = v.safeParse(FxRatesPayloadSchema, value);
+
+  if (!payload.success) return null;
 
   const parsedRates: Record<string, number> = {};
-  for (const [code, rate] of Object.entries(rates)) {
-    if (/^[A-Z]{3}$/.test(code) && typeof rate === "number" && Number.isFinite(rate) && rate > 0) {
-      parsedRates[code] = rate;
+
+  for (const [code, rate] of Object.entries(payload.output.rates)) {
+    const parsedRate = v.safeParse(PositiveRateSchema, rate);
+
+    if (v.is(CurrencyCodeSchema, code) && parsedRate.success) {
+      parsedRates[code] = parsedRate.output;
     }
   }
 
-  return Object.keys(parsedRates).length > 0 ? parsedRates : null;
+  if (Object.keys(parsedRates).length === 0) return null;
+
+  const dateTimestampMs = Date.parse(payload.output.date ?? "");
+
+  const timestampMs = Number.isFinite(dateTimestampMs)
+    ? dateTimestampMs
+    : payload.output.timestamp * 1_000;
+
+  return { rates: parsedRates, timestampMs };
 }
 
-export function parseSwissquoteMedianMidpoint(value: unknown): number | null {
-  if (!Array.isArray(value)) return null;
+const FxCurrencySchema = v.object({
+  code: CurrencyCodeSchema,
+  name: v.pipe(v.string(), v.nonEmpty()),
+  symbol: v.string(),
+});
 
-  const midpoints: number[] = [];
-  for (const quote of value) {
-    const record = asRecord(quote);
-    if (!record || !Array.isArray(record.spreadProfilePrices)) continue;
+const PRECIOUS_METAL_CODES = new Set(["XAG", "XAU", "XPD", "XPT"]);
 
-    for (const spreadProfile of record.spreadProfilePrices) {
-      const price = asRecord(spreadProfile);
-      const bid = price?.bid;
-      const ask = price?.ask;
-      if (
-        typeof bid !== "number" ||
-        typeof ask !== "number" ||
-        !Number.isFinite(bid) ||
-        !Number.isFinite(ask) ||
-        bid <= 0 ||
-        ask <= 0 ||
-        ask < bid
-      ) {
+export type ActiveCurrency = {
+  code: string;
+  name: string;
+  symbol: string;
+  kind: "fiat" | "crypto";
+};
+
+export function parseFxCurrenciesPayload(value: JsonValue): ActiveCurrency[] | null {
+  const payload = v.safeParse(v.record(v.string(), v.unknown()), value);
+
+  if (!payload.success) return null;
+
+  const activeCurrencies: ActiveCurrency[] = [];
+
+  for (const [key, currency] of Object.entries(payload.output)) {
+    const parsedCurrency = v.safeParse(FxCurrencySchema, currency);
+
+    if (
+      !parsedCurrency.success ||
+      parsedCurrency.output.code !== key ||
+      PRECIOUS_METAL_CODES.has(key)
+    ) {
+      continue;
+    }
+
+    activeCurrencies.push({
+      code: key,
+      name: parsedCurrency.output.name,
+      symbol: parsedCurrency.output.symbol,
+      kind: getCurrencyKind(key),
+    });
+  }
+
+  if (!activeCurrencies.some(({ code }) => code === "USD")) return null;
+
+  if (!activeCurrencies.some(({ code }) => code === "EUR")) return null;
+
+  return activeCurrencies.sort((left, right) => left.code.localeCompare(right.code));
+}
+
+const SpreadProfileSchema = v.object({
+  bid: v.pipe(v.number(), v.finite(), v.gtValue(0)),
+  ask: v.pipe(v.number(), v.finite(), v.gtValue(0)),
+});
+
+const QuoteSchema = v.object({
+  ts: v.optional(v.pipe(v.number(), v.finite(), v.integer(), v.gtValue(0))),
+  spreadProfilePrices: v.array(v.unknown()),
+});
+
+export type MetalQuote = {
+  price: number;
+  timestampMs: number | null;
+};
+
+type ParsedQuote = {
+  midpoints: number[];
+  timestampMs: number | null;
+};
+
+function median(values: number[]): number {
+  values.sort((left, right) => left - right);
+  const middle = Math.floor(values.length / 2);
+
+  return values.length % 2 === 1 ? values[middle] : (values[middle - 1] + values[middle]) / 2;
+}
+
+export function parseSwissquoteMetalQuote(
+  value: JsonValue,
+  targetTimestampMs: number,
+): MetalQuote | null {
+  const quotes = v.safeParse(v.array(v.unknown()), value);
+
+  if (!quotes.success) return null;
+
+  const parsedQuotes: ParsedQuote[] = [];
+
+  for (const quote of quotes.output) {
+    const parsedQuote = v.safeParse(QuoteSchema, quote);
+
+    if (!parsedQuote.success) continue;
+
+    const midpoints: number[] = [];
+
+    for (const spreadProfile of parsedQuote.output.spreadProfilePrices) {
+      const parsedProfile = v.safeParse(SpreadProfileSchema, spreadProfile);
+
+      if (!parsedProfile.success || parsedProfile.output.ask < parsedProfile.output.bid) {
         continue;
       }
 
-      midpoints.push((bid + ask) / 2);
+      midpoints.push((parsedProfile.output.bid + parsedProfile.output.ask) / 2);
+    }
+
+    if (midpoints.length > 0) {
+      parsedQuotes.push({
+        midpoints,
+        timestampMs: parsedQuote.output.ts ?? null,
+      });
     }
   }
 
-  if (midpoints.length === 0) return null;
-  midpoints.sort((left, right) => left - right);
-  const middle = Math.floor(midpoints.length / 2);
-  return midpoints.length % 2 === 1
-    ? midpoints[middle]
-    : (midpoints[middle - 1] + midpoints[middle]) / 2;
+  if (parsedQuotes.length === 0) return null;
+
+  let closestQuote: ParsedQuote | null = null;
+  let closestDistance = Number.POSITIVE_INFINITY;
+
+  for (const quote of parsedQuotes) {
+    if (quote.timestampMs === null) continue;
+
+    const distance = Math.abs(quote.timestampMs - targetTimestampMs);
+
+    if (distance < closestDistance) {
+      closestQuote = quote;
+      closestDistance = distance;
+    }
+  }
+
+  if (closestQuote) {
+    return {
+      price: median(closestQuote.midpoints),
+      timestampMs: closestQuote.timestampMs,
+    };
+  }
+
+  const allMidpoints = parsedQuotes.flatMap(({ midpoints }) => midpoints);
+
+  return { price: median(allMidpoints), timestampMs: null };
 }

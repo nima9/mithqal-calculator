@@ -12,6 +12,17 @@ export const currencies = sqliteTable(
   (table) => [uniqueIndex("currencies_code_unique").on(table.code)],
 );
 
+export const activeCurrencies = sqliteTable(
+  "active_currencies",
+  {
+    code: text("code").primaryKey(),
+    name: text("name").notNull(),
+    symbol: text("symbol").notNull(),
+    kind: text("kind").notNull().$type<"fiat" | "crypto">(),
+  },
+  (table) => [index("active_currencies_kind_idx").on(table.kind)],
+);
+
 export const metals = sqliteTable(
   "metals",
   {

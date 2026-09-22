@@ -3,7 +3,9 @@ import { validateRatesSnapshot } from "../src/lib/server/db/rate-validation";
 
 const validInput = {
   goldPriceUsd: 3_000,
+  goldUpdatedAt: 123_400,
   silverPriceUsd: 35,
+  silverUpdatedAt: 123_500,
   rates: { USD: 1, EUR: 0.85, BTC: 0.00001 },
   retrievedAt: 123_456,
 };
@@ -45,11 +47,12 @@ describe("validateRatesSnapshot", () => {
     expect(snapshot.currencies.map(({ code }) => code)).toEqual(["BTC", "EUR", "USD"]);
   });
 
-  test("uses one retrieval timestamp for the complete snapshot", () => {
+  test("preserves the FX and nearest metal quote timestamps", () => {
     const snapshot = validateRatesSnapshot(validInput);
     expect(snapshot.retrievedAt).toBe(validInput.retrievedAt);
-    expect(snapshot.metals.every(({ lastUpdated }) => lastUpdated === validInput.retrievedAt)).toBe(
-      true,
-    );
+    expect(snapshot.metals).toEqual([
+      { name: "gold", priceUsd: 3_000, lastUpdated: validInput.goldUpdatedAt },
+      { name: "silver", priceUsd: 35, lastUpdated: validInput.silverUpdatedAt },
+    ]);
   });
 });

@@ -203,12 +203,32 @@ export const RETIRED_CURRENCY_CODES = new Set([
 
 const CURRENCY_METADATA = new Map(CURRENCIES.map((currency) => [currency.code, currency]));
 
-export function getCurrencyMetadata(code: string): {
+const FIAT_CURRENCY_CODES = new Set(
+  CURRENCIES.flatMap(({ code }) => (code === "BTC" ? [] : [code])),
+);
+
+const CURRENCY_DISPLAY_NAMES = new Intl.DisplayNames(["en"], {
+  type: "currency",
+  fallback: "none",
+});
+
+export type CurrencyMetadata = {
   name: string;
   symbol: string;
   kind: CurrencyKind;
-} {
+};
+
+export function getCurrencyKind(code: string): CurrencyKind {
+  if (FIAT_CURRENCY_CODES.has(code)) return "fiat";
+
+  if (/^[A-Z]{3}$/.test(code) && CURRENCY_DISPLAY_NAMES.of(code) !== undefined) return "fiat";
+
+  return "crypto";
+}
+
+export function getCurrencyMetadata(code: string): CurrencyMetadata {
   const currency = CURRENCY_METADATA.get(code);
+
   return {
     name: currency?.name ?? "",
     symbol: currency?.symbol ?? "",
