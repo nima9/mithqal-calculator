@@ -327,9 +327,8 @@ msgstr "什么是巴哈伊信仰？"
 msgid "Why are there advertisements?"
 msgstr "为什么会有广告？"
 
-#: src/routes/about/+page.svelte
-msgid "Currently, there are no advertisements on this site. The Mithqál Calculator is provided as a free service to the community. If ads are ever introduced, they would be to help cover hosting and maintenance costs while keeping the calculator freely accessible to everyone."
-msgstr "目前，本网站没有广告。密斯卡勒计算器作为一项免费服务提供给社区。如果将来加入广告，其目的将是帮助承担托管和维护费用，同时让所有人都能继续免费使用计算器。"
+#~ msgid "Currently, there are no advertisements on this site. The Mithqál Calculator is provided as a free service to the community. If ads are ever introduced, they would be to help cover hosting and maintenance costs while keeping the calculator freely accessible to everyone."
+#~ msgstr "目前，本网站没有广告。密斯卡勒计算器作为一项免费服务提供给社区。如果将来加入广告，其目的将是帮助承担托管和维护费用，同时让所有人都能继续免费使用计算器。"
 
 #: src/routes/about/+page.svelte
 msgid "Do you have a mobile app?"
@@ -387,9 +386,8 @@ msgstr "支持密斯卡勒计算器——一款通过广告支持的免费工具
 msgid "Support - Mithqal Calculator"
 msgstr "支持 - 密斯卡勒计算器"
 
-#: src/routes/support/+page.svelte
-msgid "The <0>Mithqal Calculator</0> is a free, ad-free tool built to serve the community. If you find it useful and would like to help keep it running, consider supporting the project."
-msgstr "<0>密斯卡勒计算器</0>是一款为服务社区而创建的免费、无广告工具。如果它对您有帮助，并且您愿意帮助它继续运行，请考虑支持本项目。"
+#~ msgid "The <0>Mithqal Calculator</0> is a free, ad-free tool built to serve the community. If you find it useful and would like to help keep it running, consider supporting the project."
+#~ msgstr "<0>密斯卡勒计算器</0>是一款为服务社区而创建的免费、无广告工具。如果它对您有帮助，并且您愿意帮助它继续运行，请考虑支持本项目。"
 
 #: src/routes/support/+page.svelte
 msgid "Ko-fi"
@@ -421,9 +419,8 @@ msgstr "购买贴纸"
 msgid "Ways to Support"
 msgstr "支持方式"
 
-#: src/routes/support/+page.svelte
-msgid "Your support helps cover hosting and domain costs and allows me to continue improving the calculator."
-msgstr "您的支持有助于支付托管和域名费用，也让我能够继续改进这款计算器。"
+#~ msgid "Your support helps cover hosting and domain costs and allows me to continue improving the calculator."
+#~ msgstr "您的支持有助于支付托管和域名费用，也让我能够继续改进这款计算器。"
 
 #: src/lib/components/LanguageSwitcher.svelte
 #: src/lib/components/LanguageSwitcher.svelte
@@ -474,10 +471,21 @@ msgstr "电子邮件"
 msgid "Have a suggestion? Found a bug?"
 msgstr "有建议？发现了问题？"
 
-#: src/routes/support/+page.svelte
-msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
-msgstr "你可以发送电子邮件至 <0>mithqal@mohajeri.dev</0>。"
+#~ msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
+#~ msgstr "你可以发送电子邮件至 <0>mithqal@mohajeri.dev</0>。"
 
 #: src/routes/about/+page.svelte
 msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation, meaning that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit <0>bahai.org</0>."
 msgstr "巴哈伊信仰是由巴哈欧拉于 19 世纪的波斯创立的世界性宗教。它教导所有宗教在本质上是一体的，人类也是一个整体。巴哈伊信徒相信渐进启示，也就是说，上帝在历史进程中派遣了一系列神圣使者，包括亚伯拉罕、摩西、佛陀、耶稣、穆罕默德，以及最近的巴哈欧拉。更多信息请访问 <0>bahai.org</0>。"
+
+#: src/routes/about/+page.svelte
+msgid "Advertisements help pay for the fees for running this website."
+msgstr "广告有助于支付本网站的运营费用。"
+
+#: src/routes/support/+page.svelte
+msgid "The <0>Mithqal Calculator</0> is a free tool built to serve the community. If you find it useful and want more projects like this, consider supporting me."
+msgstr "<0>密斯卡勒计算器</0>是一款为服务社区而创建的免费工具。如果它对您有帮助，并且您希望看到更多类似项目，请考虑支持我。"
+
+#: src/routes/support/+page.svelte
+msgid "You can email me at <0>mithqal@mohajeri.dev</0>"
+msgstr "你可以发送电子邮件至 <0>mithqal@mohajeri.dev</0>"

@@ -327,9 +327,8 @@ msgstr "बहाई धर्म क्या है?"
 msgid "Why are there advertisements?"
 msgstr "विज्ञापन क्यों हैं?"
 
-#: src/routes/about/+page.svelte
-msgid "Currently, there are no advertisements on this site. The Mithqál Calculator is provided as a free service to the community. If ads are ever introduced, they would be to help cover hosting and maintenance costs while keeping the calculator freely accessible to everyone."
-msgstr "इस समय इस साइट पर कोई विज्ञापन नहीं है। मिस्क़ाल कैलकुलेटर समुदाय के लिए एक निःशुल्क सेवा है। यदि भविष्य में विज्ञापन जोड़े जाते हैं, तो उनका उद्देश्य होस्टिंग और रखरखाव की लागत पूरी करना और कैलकुलेटर को सभी के लिए मुफ़्त रखना होगा।"
+#~ msgid "Currently, there are no advertisements on this site. The Mithqál Calculator is provided as a free service to the community. If ads are ever introduced, they would be to help cover hosting and maintenance costs while keeping the calculator freely accessible to everyone."
+#~ msgstr "इस समय इस साइट पर कोई विज्ञापन नहीं है। मिस्क़ाल कैलकुलेटर समुदाय के लिए एक निःशुल्क सेवा है। यदि भविष्य में विज्ञापन जोड़े जाते हैं, तो उनका उद्देश्य होस्टिंग और रखरखाव की लागत पूरी करना और कैलकुलेटर को सभी के लिए मुफ़्त रखना होगा।"
 
 #: src/routes/about/+page.svelte
 msgid "Do you have a mobile app?"
@@ -387,9 +386,8 @@ msgstr "मिस्क़ाल कैलकुलेटर की सहाय
 msgid "Support - Mithqal Calculator"
 msgstr "सहायता - मिस्क़ाल कैलकुलेटर"
 
-#: src/routes/support/+page.svelte
-msgid "The <0>Mithqal Calculator</0> is a free, ad-free tool built to serve the community. If you find it useful and would like to help keep it running, consider supporting the project."
-msgstr "<0>मिस्क़ाल कैलकुलेटर</0> समुदाय की सेवा के लिए बनाया गया मुफ़्त और विज्ञापन-मुक्त उपकरण है। यदि यह आपके लिए उपयोगी है और आप इसे चालू रखने में मदद करना चाहते हैं, तो परियोजना को सहयोग देने पर विचार करें।"
+#~ msgid "The <0>Mithqal Calculator</0> is a free, ad-free tool built to serve the community. If you find it useful and would like to help keep it running, consider supporting the project."
+#~ msgstr "<0>मिस्क़ाल कैलकुलेटर</0> समुदाय की सेवा के लिए बनाया गया मुफ़्त और विज्ञापन-मुक्त उपकरण है। यदि यह आपके लिए उपयोगी है और आप इसे चालू रखने में मदद करना चाहते हैं, तो परियोजना को सहयोग देने पर विचार करें।"
 
 #: src/routes/support/+page.svelte
 msgid "Ko-fi"
@@ -421,9 +419,8 @@ msgstr "स्टिकर खरीदें"
 msgid "Ways to Support"
 msgstr "सहायता के तरीके"
 
-#: src/routes/support/+page.svelte
-msgid "Your support helps cover hosting and domain costs and allows me to continue improving the calculator."
-msgstr "आपकी सहायता होस्टिंग और डोमेन की लागत पूरी करने में मदद करती है और मुझे कैलकुलेटर को बेहतर बनाते रहने देती है।"
+#~ msgid "Your support helps cover hosting and domain costs and allows me to continue improving the calculator."
+#~ msgstr "आपकी सहायता होस्टिंग और डोमेन की लागत पूरी करने में मदद करती है और मुझे कैलकुलेटर को बेहतर बनाते रहने देती है।"
 
 #: src/lib/components/LanguageSwitcher.svelte
 #: src/lib/components/LanguageSwitcher.svelte
@@ -474,10 +471,21 @@ msgstr "ईमेल"
 msgid "Have a suggestion? Found a bug?"
 msgstr "कोई सुझाव है? कोई गड़बड़ी मिली?"
 
-#: src/routes/support/+page.svelte
-msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
-msgstr "आप मुझे <0>mithqal@mohajeri.dev</0> पर ईमेल कर सकते हैं।"
+#~ msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
+#~ msgstr "आप मुझे <0>mithqal@mohajeri.dev</0> पर ईमेल कर सकते हैं।"
 
 #: src/routes/about/+page.svelte
 msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation, meaning that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit <0>bahai.org</0>."
 msgstr "बहाई धर्म एक विश्व धर्म है जिसकी स्थापना 19वीं सदी के फ़ारस में बहाउल्लाह ने की थी। यह सभी धर्मों की मूलभूत एकता और मानवजाति की एकता सिखाता है। बहाई क्रमिक प्रकाशना में विश्वास करते हैं, जिसका अर्थ है कि ईश्वर ने इतिहास में इब्राहीम, मूसा, बुद्ध, यीशु, मुहम्मद और सबसे हाल में बहाउल्लाह सहित दिव्य संदेशवाहकों की एक शृंखला भेजी है। अधिक जानकारी के लिए <0>bahai.org</0> देखें।"
+
+#: src/routes/about/+page.svelte
+msgid "Advertisements help pay for the fees for running this website."
+msgstr "विज्ञापन इस वेबसाइट को चलाने की लागत चुकाने में मदद करते हैं।"
+
+#: src/routes/support/+page.svelte
+msgid "The <0>Mithqal Calculator</0> is a free tool built to serve the community. If you find it useful and want more projects like this, consider supporting me."
+msgstr "<0>मिस्क़ाल कैलकुलेटर</0> समुदाय की सेवा के लिए बनाया गया एक मुफ़्त उपकरण है। यदि यह आपके लिए उपयोगी है और आप ऐसी और परियोजनाएँ चाहते हैं, तो मुझे सहयोग देने पर विचार करें।"
+
+#: src/routes/support/+page.svelte
+msgid "You can email me at <0>mithqal@mohajeri.dev</0>"
+msgstr "आप मुझे <0>mithqal@mohajeri.dev</0> पर ईमेल कर सकते हैं"

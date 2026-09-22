@@ -327,9 +327,8 @@ msgstr "ما هو الدين البهائي؟"
 msgid "Why are there advertisements?"
 msgstr "لماذا توجد إعلانات؟"
 
-#: src/routes/about/+page.svelte
-msgid "Currently, there are no advertisements on this site. The Mithqál Calculator is provided as a free service to the community. If ads are ever introduced, they would be to help cover hosting and maintenance costs while keeping the calculator freely accessible to everyone."
-msgstr "لا توجد حاليًا إعلانات على هذا الموقع. تُقدَّم حاسبة المثقال خدمةً مجانية للمجتمع. وإذا أُضيفت إعلانات مستقبلًا، فستكون للمساعدة في تغطية تكاليف الاستضافة والصيانة مع إبقاء الحاسبة متاحة للجميع مجانًا."
+#~ msgid "Currently, there are no advertisements on this site. The Mithqál Calculator is provided as a free service to the community. If ads are ever introduced, they would be to help cover hosting and maintenance costs while keeping the calculator freely accessible to everyone."
+#~ msgstr "لا توجد حاليًا إعلانات على هذا الموقع. تُقدَّم حاسبة المثقال خدمةً مجانية للمجتمع. وإذا أُضيفت إعلانات مستقبلًا، فستكون للمساعدة في تغطية تكاليف الاستضافة والصيانة مع إبقاء الحاسبة متاحة للجميع مجانًا."
 
 #: src/routes/about/+page.svelte
 msgid "Do you have a mobile app?"
@@ -387,9 +386,8 @@ msgstr "ادعم حاسبة المثقال، وهي أداة مجانية لتح
 msgid "Support - Mithqal Calculator"
 msgstr "الدعم - حاسبة المثقال"
 
-#: src/routes/support/+page.svelte
-msgid "The <0>Mithqal Calculator</0> is a free, ad-free tool built to serve the community. If you find it useful and would like to help keep it running, consider supporting the project."
-msgstr "<0>حاسبة المثقال</0> أداة مجانية وخالية من الإعلانات، أُنشئت لخدمة المجتمع. إذا وجدتها مفيدة وترغب في المساعدة على استمرارها، فيمكنك دعم المشروع."
+#~ msgid "The <0>Mithqal Calculator</0> is a free, ad-free tool built to serve the community. If you find it useful and would like to help keep it running, consider supporting the project."
+#~ msgstr "<0>حاسبة المثقال</0> أداة مجانية وخالية من الإعلانات، أُنشئت لخدمة المجتمع. إذا وجدتها مفيدة وترغب في المساعدة على استمرارها، فيمكنك دعم المشروع."
 
 #: src/routes/support/+page.svelte
 msgid "Ko-fi"
@@ -421,9 +419,8 @@ msgstr "اشترِ ملصقًا"
 msgid "Ways to Support"
 msgstr "طرق الدعم"
 
-#: src/routes/support/+page.svelte
-msgid "Your support helps cover hosting and domain costs and allows me to continue improving the calculator."
-msgstr "يساعد دعمك في تغطية تكاليف الاستضافة والنطاق، ويتيح لي مواصلة تحسين الحاسبة."
+#~ msgid "Your support helps cover hosting and domain costs and allows me to continue improving the calculator."
+#~ msgstr "يساعد دعمك في تغطية تكاليف الاستضافة والنطاق، ويتيح لي مواصلة تحسين الحاسبة."
 
 #: src/lib/components/LanguageSwitcher.svelte
 #: src/lib/components/LanguageSwitcher.svelte
@@ -474,10 +471,21 @@ msgstr "البريد الإلكتروني"
 msgid "Have a suggestion? Found a bug?"
 msgstr "هل لديك اقتراح؟ هل وجدت خطأً؟"
 
-#: src/routes/support/+page.svelte
-msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
-msgstr "يمكنك مراسلتي عبر البريد الإلكتروني على <0>mithqal@mohajeri.dev</0>."
+#~ msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
+#~ msgstr "يمكنك مراسلتي عبر البريد الإلكتروني على <0>mithqal@mohajeri.dev</0>."
 
 #: src/routes/about/+page.svelte
 msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation, meaning that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit <0>bahai.org</0>."
 msgstr "الدين البهائي دين عالمي أسّسه حضرة بهاء الله في بلاد فارس في القرن التاسع عشر. ويعلّم الوحدة الجوهرية لجميع الأديان ووحدة الجنس البشري. يؤمن البهائيون بالوحي التدريجي، أي أن الله أرسل سلسلة من الرسل الإلهيين عبر التاريخ، منهم إبراهيم وموسى وبوذا وعيسى ومحمد، وآخرهم حضرة بهاء الله. لمزيد من المعلومات، يرجى زيارة <0>bahai.org</0>."
+
+#: src/routes/about/+page.svelte
+msgid "Advertisements help pay for the fees for running this website."
+msgstr "تساعد الإعلانات في دفع تكاليف تشغيل هذا الموقع."
+
+#: src/routes/support/+page.svelte
+msgid "The <0>Mithqal Calculator</0> is a free tool built to serve the community. If you find it useful and want more projects like this, consider supporting me."
+msgstr "<0>حاسبة المثقال</0> أداة مجانية صُممت لخدمة المجتمع. إذا وجدتها مفيدة وترغب في رؤية المزيد من المشاريع المشابهة، فيمكنك دعمي."
+
+#: src/routes/support/+page.svelte
+msgid "You can email me at <0>mithqal@mohajeri.dev</0>"
+msgstr "يمكنك مراسلتي عبر البريد الإلكتروني على <0>mithqal@mohajeri.dev</0>"

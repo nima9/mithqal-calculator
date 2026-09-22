@@ -327,9 +327,8 @@ msgstr "바하이 신앙이란 무엇인가요?"
 msgid "Why are there advertisements?"
 msgstr "왜 광고가 있나요?"
 
-#: src/routes/about/+page.svelte
-msgid "Currently, there are no advertisements on this site. The Mithqál Calculator is provided as a free service to the community. If ads are ever introduced, they would be to help cover hosting and maintenance costs while keeping the calculator freely accessible to everyone."
-msgstr "현재 이 사이트에는 광고가 없습니다. 미스칼 계산기는 공동체를 위한 무료 서비스로 제공됩니다. 향후 광고가 도입된다면 모든 사람이 계산기를 무료로 이용할 수 있도록 호스팅 및 유지관리 비용을 충당하기 위한 것입니다."
+#~ msgid "Currently, there are no advertisements on this site. The Mithqál Calculator is provided as a free service to the community. If ads are ever introduced, they would be to help cover hosting and maintenance costs while keeping the calculator freely accessible to everyone."
+#~ msgstr "현재 이 사이트에는 광고가 없습니다. 미스칼 계산기는 공동체를 위한 무료 서비스로 제공됩니다. 향후 광고가 도입된다면 모든 사람이 계산기를 무료로 이용할 수 있도록 호스팅 및 유지관리 비용을 충당하기 위한 것입니다."
 
 #: src/routes/about/+page.svelte
 msgid "Do you have a mobile app?"
@@ -387,9 +386,8 @@ msgstr "금과 은의 미스칼 가치를 모든 통화로 환산하는 광고 �
 msgid "Support - Mithqal Calculator"
 msgstr "후원 - 미스칼 계산기"
 
-#: src/routes/support/+page.svelte
-msgid "The <0>Mithqal Calculator</0> is a free, ad-free tool built to serve the community. If you find it useful and would like to help keep it running, consider supporting the project."
-msgstr "<0>미스칼 계산기</0>는 공동체를 위해 만든 무료 무광고 도구입니다. 유용하게 사용하고 있으며 계속 운영될 수 있도록 돕고 싶다면 프로젝트 후원을 고려해 주세요."
+#~ msgid "The <0>Mithqal Calculator</0> is a free, ad-free tool built to serve the community. If you find it useful and would like to help keep it running, consider supporting the project."
+#~ msgstr "<0>미스칼 계산기</0>는 공동체를 위해 만든 무료 무광고 도구입니다. 유용하게 사용하고 있으며 계속 운영될 수 있도록 돕고 싶다면 프로젝트 후원을 고려해 주세요."
 
 #: src/routes/support/+page.svelte
 msgid "Ko-fi"
@@ -421,9 +419,8 @@ msgstr "스티커 구매"
 msgid "Ways to Support"
 msgstr "후원 방법"
 
-#: src/routes/support/+page.svelte
-msgid "Your support helps cover hosting and domain costs and allows me to continue improving the calculator."
-msgstr "여러분의 후원은 호스팅과 도메인 비용을 충당하고 제가 계산기를 계속 개선하는 데 도움이 됩니다."
+#~ msgid "Your support helps cover hosting and domain costs and allows me to continue improving the calculator."
+#~ msgstr "여러분의 후원은 호스팅과 도메인 비용을 충당하고 제가 계산기를 계속 개선하는 데 도움이 됩니다."
 
 #: src/lib/components/LanguageSwitcher.svelte
 #: src/lib/components/LanguageSwitcher.svelte
@@ -474,10 +471,21 @@ msgstr "이메일"
 msgid "Have a suggestion? Found a bug?"
 msgstr "제안이 있거나 버그를 발견하셨나요?"
 
-#: src/routes/support/+page.svelte
-msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
-msgstr "<0>mithqal@mohajeri.dev</0>로 이메일을 보내 주세요."
+#~ msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
+#~ msgstr "<0>mithqal@mohajeri.dev</0>로 이메일을 보내 주세요."
 
 #: src/routes/about/+page.svelte
 msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation, meaning that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit <0>bahai.org</0>."
 msgstr "바하이 신앙은 19세기 페르시아에서 바하올라가 창시한 세계 종교입니다. 모든 종교의 본질적 일체성과 인류의 통합을 가르칩니다. 바하이 신자들은 점진적 계시를 믿으며, 이는 하나님께서 역사 속에서 아브라함, 모세, 붓다, 예수, 무함마드, 그리고 가장 최근에는 바하올라를 비롯한 일련의 신성한 사자를 보내셨다는 의미입니다. 자세한 내용은 <0>bahai.org</0>를 방문해 주세요."
+
+#: src/routes/about/+page.svelte
+msgid "Advertisements help pay for the fees for running this website."
+msgstr "광고는 이 웹사이트의 운영 비용을 충당하는 데 도움이 됩니다."
+
+#: src/routes/support/+page.svelte
+msgid "The <0>Mithqal Calculator</0> is a free tool built to serve the community. If you find it useful and want more projects like this, consider supporting me."
+msgstr "<0>미스칼 계산기</0>는 공동체를 위해 만든 무료 도구입니다. 유용하게 사용하고 있으며 이와 같은 프로젝트가 더 만들어지길 원한다면 저를 후원해 주세요."
+
+#: src/routes/support/+page.svelte
+msgid "You can email me at <0>mithqal@mohajeri.dev</0>"
+msgstr "<0>mithqal@mohajeri.dev</0>로 이메일을 보내 주세요"

@@ -27,8 +27,7 @@
     {
       id: "why-ads",
       question: "Why are there advertisements?",
-      answer:
-        "Currently, there are no advertisements on this site. The Mithqál Calculator is provided as a free service to the community. If ads are ever introduced, they would be to help cover hosting and maintenance costs while keeping the calculator freely accessible to everyone.",
+      answer: "Advertisements help pay for the fees for running this website.",
     },
     {
       id: "mobile-app",

@@ -327,9 +327,8 @@ msgstr "¿Qué es la Fe bahá’í?"
 msgid "Why are there advertisements?"
 msgstr "¿Por qué hay publicidad?"
 
-#: src/routes/about/+page.svelte
-msgid "Currently, there are no advertisements on this site. The Mithqál Calculator is provided as a free service to the community. If ads are ever introduced, they would be to help cover hosting and maintenance costs while keeping the calculator freely accessible to everyone."
-msgstr "Actualmente no hay anuncios en este sitio. La Calculadora de mithqáles se ofrece como un servicio gratuito para la comunidad. Si alguna vez se introducen anuncios, servirían para cubrir los costes de alojamiento y mantenimiento y mantener la calculadora accesible gratuitamente para todos."
+#~ msgid "Currently, there are no advertisements on this site. The Mithqál Calculator is provided as a free service to the community. If ads are ever introduced, they would be to help cover hosting and maintenance costs while keeping the calculator freely accessible to everyone."
+#~ msgstr "Actualmente no hay anuncios en este sitio. La Calculadora de mithqáles se ofrece como un servicio gratuito para la comunidad. Si alguna vez se introducen anuncios, servirían para cubrir los costes de alojamiento y mantenimiento y mantener la calculadora accesible gratuitamente para todos."
 
 #: src/routes/about/+page.svelte
 msgid "Do you have a mobile app?"
@@ -387,9 +386,8 @@ msgstr "Apoya la Calculadora de mithqáles, una herramienta gratuita financiada 
 msgid "Support - Mithqal Calculator"
 msgstr "Apoyar - Calculadora de mithqáles"
 
-#: src/routes/support/+page.svelte
-msgid "The <0>Mithqal Calculator</0> is a free, ad-free tool built to serve the community. If you find it useful and would like to help keep it running, consider supporting the project."
-msgstr "La <0>Calculadora de mithqáles</0> es una herramienta gratuita y sin anuncios creada para servir a la comunidad. Si te resulta útil y quieres ayudar a mantenerla, considera apoyar el proyecto."
+#~ msgid "The <0>Mithqal Calculator</0> is a free, ad-free tool built to serve the community. If you find it useful and would like to help keep it running, consider supporting the project."
+#~ msgstr "La <0>Calculadora de mithqáles</0> es una herramienta gratuita y sin anuncios creada para servir a la comunidad. Si te resulta útil y quieres ayudar a mantenerla, considera apoyar el proyecto."
 
 #: src/routes/support/+page.svelte
 msgid "Ko-fi"
@@ -421,9 +419,8 @@ msgstr "Comprar una pegatina"
 msgid "Ways to Support"
 msgstr "Formas de apoyar"
 
-#: src/routes/support/+page.svelte
-msgid "Your support helps cover hosting and domain costs and allows me to continue improving the calculator."
-msgstr "Tu apoyo ayuda a cubrir los costes de alojamiento y dominio y me permite seguir mejorando la calculadora."
+#~ msgid "Your support helps cover hosting and domain costs and allows me to continue improving the calculator."
+#~ msgstr "Tu apoyo ayuda a cubrir los costes de alojamiento y dominio y me permite seguir mejorando la calculadora."
 
 #: src/lib/components/LanguageSwitcher.svelte
 #: src/lib/components/LanguageSwitcher.svelte
@@ -474,10 +471,21 @@ msgstr "Correo electrónico"
 msgid "Have a suggestion? Found a bug?"
 msgstr "¿Tienes alguna sugerencia? ¿Encontraste un error?"
 
-#: src/routes/support/+page.svelte
-msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
-msgstr "Puedes escribirme a <0>mithqal@mohajeri.dev</0>."
+#~ msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
+#~ msgstr "Puedes escribirme a <0>mithqal@mohajeri.dev</0>."
 
 #: src/routes/about/+page.svelte
 msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation, meaning that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit <0>bahai.org</0>."
 msgstr "La Fe bahá’í es una religión mundial fundada por Bahá’u’lláh en la Persia del siglo XIX. Enseña la unidad esencial de todas las religiones y la unidad de la humanidad. Los bahá’ís creen en la revelación progresiva, lo que significa que Dios ha enviado a lo largo de la historia una serie de mensajeros divinos, entre ellos Abraham, Moisés, Buda, Jesús, Muhammad y, más recientemente, Bahá’u’lláh. Para obtener más información, visita <0>bahai.org</0>."
+
+#: src/routes/about/+page.svelte
+msgid "Advertisements help pay for the fees for running this website."
+msgstr "Los anuncios ayudan a pagar los gastos de funcionamiento de este sitio web."
+
+#: src/routes/support/+page.svelte
+msgid "The <0>Mithqal Calculator</0> is a free tool built to serve the community. If you find it useful and want more projects like this, consider supporting me."
+msgstr "La <0>Calculadora de mithqáles</0> es una herramienta gratuita creada para servir a la comunidad. Si te resulta útil y quieres más proyectos como este, considera apoyarme."
+
+#: src/routes/support/+page.svelte
+msgid "You can email me at <0>mithqal@mohajeri.dev</0>"
+msgstr "Puedes escribirme a <0>mithqal@mohajeri.dev</0>"

@@ -327,9 +327,8 @@ msgstr "Was ist der Bahá’í-Glaube?"
 msgid "Why are there advertisements?"
 msgstr "Warum gibt es Werbung?"
 
-#: src/routes/about/+page.svelte
-msgid "Currently, there are no advertisements on this site. The Mithqál Calculator is provided as a free service to the community. If ads are ever introduced, they would be to help cover hosting and maintenance costs while keeping the calculator freely accessible to everyone."
-msgstr "Derzeit gibt es auf dieser Website keine Werbung. Der Mithqál-Rechner wird der Gemeinschaft kostenlos zur Verfügung gestellt. Sollte künftig Werbung eingeblendet werden, würde sie dazu beitragen, Hosting- und Wartungskosten zu decken und den Rechner weiterhin für alle kostenlos zugänglich zu halten."
+#~ msgid "Currently, there are no advertisements on this site. The Mithqál Calculator is provided as a free service to the community. If ads are ever introduced, they would be to help cover hosting and maintenance costs while keeping the calculator freely accessible to everyone."
+#~ msgstr "Derzeit gibt es auf dieser Website keine Werbung. Der Mithqál-Rechner wird der Gemeinschaft kostenlos zur Verfügung gestellt. Sollte künftig Werbung eingeblendet werden, würde sie dazu beitragen, Hosting- und Wartungskosten zu decken und den Rechner weiterhin für alle kostenlos zugänglich zu halten."
 
 #: src/routes/about/+page.svelte
 msgid "Do you have a mobile app?"
@@ -387,9 +386,8 @@ msgstr "Unterstütze den Mithqál-Rechner, ein kostenloses, werbefinanziertes We
 msgid "Support - Mithqal Calculator"
 msgstr "Unterstützen - Mithqál-Rechner"
 
-#: src/routes/support/+page.svelte
-msgid "The <0>Mithqal Calculator</0> is a free, ad-free tool built to serve the community. If you find it useful and would like to help keep it running, consider supporting the project."
-msgstr "Der <0>Mithqál-Rechner</0> ist ein kostenloses, werbefreies Werkzeug für die Gemeinschaft. Wenn er dir nützlich ist und du zu seinem Fortbestehen beitragen möchtest, kannst du das Projekt unterstützen."
+#~ msgid "The <0>Mithqal Calculator</0> is a free, ad-free tool built to serve the community. If you find it useful and would like to help keep it running, consider supporting the project."
+#~ msgstr "Der <0>Mithqál-Rechner</0> ist ein kostenloses, werbefreies Werkzeug für die Gemeinschaft. Wenn er dir nützlich ist und du zu seinem Fortbestehen beitragen möchtest, kannst du das Projekt unterstützen."
 
 #: src/routes/support/+page.svelte
 msgid "Ko-fi"
@@ -421,9 +419,8 @@ msgstr "Aufkleber kaufen"
 msgid "Ways to Support"
 msgstr "Möglichkeiten zur Unterstützung"
 
-#: src/routes/support/+page.svelte
-msgid "Your support helps cover hosting and domain costs and allows me to continue improving the calculator."
-msgstr "Deine Unterstützung hilft, Hosting- und Domainkosten zu decken, und ermöglicht mir, den Rechner weiter zu verbessern."
+#~ msgid "Your support helps cover hosting and domain costs and allows me to continue improving the calculator."
+#~ msgstr "Deine Unterstützung hilft, Hosting- und Domainkosten zu decken, und ermöglicht mir, den Rechner weiter zu verbessern."
 
 #: src/lib/components/LanguageSwitcher.svelte
 #: src/lib/components/LanguageSwitcher.svelte
@@ -474,10 +471,21 @@ msgstr "E-Mail"
 msgid "Have a suggestion? Found a bug?"
 msgstr "Hast du einen Vorschlag? Einen Fehler gefunden?"
 
-#: src/routes/support/+page.svelte
-msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
-msgstr "Du kannst mir eine E-Mail an <0>mithqal@mohajeri.dev</0> senden."
+#~ msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
+#~ msgstr "Du kannst mir eine E-Mail an <0>mithqal@mohajeri.dev</0> senden."
 
 #: src/routes/about/+page.svelte
 msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation, meaning that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit <0>bahai.org</0>."
 msgstr "Der Bahá’í-Glaube ist eine Weltreligion, die von Bahá’u’lláh im Persien des 19. Jahrhunderts gegründet wurde. Er lehrt die wesentliche Einheit aller Religionen und die Einheit der Menschheit. Bahá’í glauben an fortschreitende Offenbarung, was bedeutet, dass Gott im Laufe der Geschichte eine Reihe göttlicher Boten gesandt hat, darunter Abraham, Mose, Buddha, Jesus, Muhammad und zuletzt Bahá’u’lláh. Weitere Informationen findest du auf <0>bahai.org</0>."
+
+#: src/routes/about/+page.svelte
+msgid "Advertisements help pay for the fees for running this website."
+msgstr "Werbung hilft dabei, die Kosten für den Betrieb dieser Website zu decken."
+
+#: src/routes/support/+page.svelte
+msgid "The <0>Mithqal Calculator</0> is a free tool built to serve the community. If you find it useful and want more projects like this, consider supporting me."
+msgstr "Der <0>Mithqál-Rechner</0> ist ein kostenloses Werkzeug für die Gemeinschaft. Wenn er dir nützlich ist und du dir weitere Projekte wie dieses wünschst, kannst du mich unterstützen."
+
+#: src/routes/support/+page.svelte
+msgid "You can email me at <0>mithqal@mohajeri.dev</0>"
+msgstr "Du kannst mir eine E-Mail an <0>mithqal@mohajeri.dev</0> senden"

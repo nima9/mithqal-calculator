@@ -327,9 +327,8 @@ msgstr "آیین بهائی چیست؟"
 msgid "Why are there advertisements?"
 msgstr "چرا تبلیغ وجود دارد؟"
 
-#: src/routes/about/+page.svelte
-msgid "Currently, there are no advertisements on this site. The Mithqál Calculator is provided as a free service to the community. If ads are ever introduced, they would be to help cover hosting and maintenance costs while keeping the calculator freely accessible to everyone."
-msgstr "در حال حاضر هیچ تبلیغی در این سایت وجود ندارد. ماشین‌حساب مثقال به‌صورت خدمتی رایگان برای جامعه ارائه می‌شود. اگر در آینده تبلیغی اضافه شود، هدف آن کمک به تأمین هزینه‌های میزبانی و نگهداری و در عین حال رایگان نگه‌داشتن ماشین‌حساب برای همه خواهد بود."
+#~ msgid "Currently, there are no advertisements on this site. The Mithqál Calculator is provided as a free service to the community. If ads are ever introduced, they would be to help cover hosting and maintenance costs while keeping the calculator freely accessible to everyone."
+#~ msgstr "در حال حاضر هیچ تبلیغی در این سایت وجود ندارد. ماشین‌حساب مثقال به‌صورت خدمتی رایگان برای جامعه ارائه می‌شود. اگر در آینده تبلیغی اضافه شود، هدف آن کمک به تأمین هزینه‌های میزبانی و نگهداری و در عین حال رایگان نگه‌داشتن ماشین‌حساب برای همه خواهد بود."
 
 #: src/routes/about/+page.svelte
 msgid "Do you have a mobile app?"
@@ -387,9 +386,8 @@ msgstr "از ماشین‌حساب مثقال، ابزار رایگان تبدی
 msgid "Support - Mithqal Calculator"
 msgstr "حمایت - ماشین‌حساب مثقال"
 
-#: src/routes/support/+page.svelte
-msgid "The <0>Mithqal Calculator</0> is a free, ad-free tool built to serve the community. If you find it useful and would like to help keep it running, consider supporting the project."
-msgstr "<0>ماشین‌حساب مثقال</0> ابزاری رایگان و بدون تبلیغ است که برای خدمت به جامعه ساخته شده. اگر برایتان مفید است و می‌خواهید به ادامهٔ فعالیت آن کمک کنید، از پروژه حمایت کنید."
+#~ msgid "The <0>Mithqal Calculator</0> is a free, ad-free tool built to serve the community. If you find it useful and would like to help keep it running, consider supporting the project."
+#~ msgstr "<0>ماشین‌حساب مثقال</0> ابزاری رایگان و بدون تبلیغ است که برای خدمت به جامعه ساخته شده. اگر برایتان مفید است و می‌خواهید به ادامهٔ فعالیت آن کمک کنید، از پروژه حمایت کنید."
 
 #: src/routes/support/+page.svelte
 msgid "Ko-fi"
@@ -421,9 +419,8 @@ msgstr "خرید برچسب"
 msgid "Ways to Support"
 msgstr "راه‌های حمایت"
 
-#: src/routes/support/+page.svelte
-msgid "Your support helps cover hosting and domain costs and allows me to continue improving the calculator."
-msgstr "حمایت شما به تأمین هزینه‌های میزبانی و دامنه کمک می‌کند و به من امکان می‌دهد به بهبود ماشین‌حساب ادامه دهم."
+#~ msgid "Your support helps cover hosting and domain costs and allows me to continue improving the calculator."
+#~ msgstr "حمایت شما به تأمین هزینه‌های میزبانی و دامنه کمک می‌کند و به من امکان می‌دهد به بهبود ماشین‌حساب ادامه دهم."
 
 #: src/lib/components/LanguageSwitcher.svelte
 #: src/lib/components/LanguageSwitcher.svelte
@@ -474,10 +471,21 @@ msgstr "ایمیل"
 msgid "Have a suggestion? Found a bug?"
 msgstr "پیشنهادی دارید؟ اشکالی پیدا کرده‌اید؟"
 
-#: src/routes/support/+page.svelte
-msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
-msgstr "می‌توانید به <0>mithqal@mohajeri.dev</0> ایمیل بزنید."
+#~ msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
+#~ msgstr "می‌توانید به <0>mithqal@mohajeri.dev</0> ایمیل بزنید."
 
 #: src/routes/about/+page.svelte
 msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation, meaning that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit <0>bahai.org</0>."
 msgstr "آیین بهائی دینی جهانی است که حضرت بهاءالله در ایران سدهٔ نوزدهم بنیان گذاشت. این آیین یگانگی بنیادی همهٔ ادیان و وحدت نوع بشر را تعلیم می‌دهد. بهائیان به وحی تدریجی باور دارند؛ یعنی خداوند در طول تاریخ پیام‌آوران الهی متعددی، از جمله ابراهیم، موسی، بودا، عیسی، محمد و در تازه‌ترین دوره حضرت بهاءالله را فرستاده است. برای اطلاعات بیشتر به <0>bahai.org</0> مراجعه کنید."
+
+#: src/routes/about/+page.svelte
+msgid "Advertisements help pay for the fees for running this website."
+msgstr "تبلیغات به پرداخت هزینه‌های ادارهٔ این وب‌سایت کمک می‌کند."
+
+#: src/routes/support/+page.svelte
+msgid "The <0>Mithqal Calculator</0> is a free tool built to serve the community. If you find it useful and want more projects like this, consider supporting me."
+msgstr "<0>ماشین‌حساب مثقال</0> ابزاری رایگان است که برای خدمت به جامعه ساخته شده. اگر برایتان مفید است و پروژه‌های بیشتری مانند این می‌خواهید، از من حمایت کنید."
+
+#: src/routes/support/+page.svelte
+msgid "You can email me at <0>mithqal@mohajeri.dev</0>"
+msgstr "می‌توانید به <0>mithqal@mohajeri.dev</0> ایمیل بزنید"

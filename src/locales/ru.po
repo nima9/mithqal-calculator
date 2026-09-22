@@ -327,9 +327,8 @@ msgstr "Что такое Вера Бахаи?"
 msgid "Why are there advertisements?"
 msgstr "Почему здесь есть реклама?"
 
-#: src/routes/about/+page.svelte
-msgid "Currently, there are no advertisements on this site. The Mithqál Calculator is provided as a free service to the community. If ads are ever introduced, they would be to help cover hosting and maintenance costs while keeping the calculator freely accessible to everyone."
-msgstr "Сейчас на этом сайте нет рекламы. Калькулятор мискалей предоставляется как бесплатный сервис для сообщества. Если реклама когда-либо появится, она поможет покрыть расходы на хостинг и обслуживание, сохранив бесплатный доступ к калькулятору для всех."
+#~ msgid "Currently, there are no advertisements on this site. The Mithqál Calculator is provided as a free service to the community. If ads are ever introduced, they would be to help cover hosting and maintenance costs while keeping the calculator freely accessible to everyone."
+#~ msgstr "Сейчас на этом сайте нет рекламы. Калькулятор мискалей предоставляется как бесплатный сервис для сообщества. Если реклама когда-либо появится, она поможет покрыть расходы на хостинг и обслуживание, сохранив бесплатный доступ к калькулятору для всех."
 
 #: src/routes/about/+page.svelte
 msgid "Do you have a mobile app?"
@@ -387,9 +386,8 @@ msgstr "Поддержите Калькулятор мискалей — бес�
 msgid "Support - Mithqal Calculator"
 msgstr "Поддержать — Калькулятор мискалей"
 
-#: src/routes/support/+page.svelte
-msgid "The <0>Mithqal Calculator</0> is a free, ad-free tool built to serve the community. If you find it useful and would like to help keep it running, consider supporting the project."
-msgstr "<0>Калькулятор мискалей</0> — бесплатный инструмент без рекламы, созданный для сообщества. Если он оказался вам полезен и вы хотите помочь ему продолжить работу, поддержите проект."
+#~ msgid "The <0>Mithqal Calculator</0> is a free, ad-free tool built to serve the community. If you find it useful and would like to help keep it running, consider supporting the project."
+#~ msgstr "<0>Калькулятор мискалей</0> — бесплатный инструмент без рекламы, созданный для сообщества. Если он оказался вам полезен и вы хотите помочь ему продолжить работу, поддержите проект."
 
 #: src/routes/support/+page.svelte
 msgid "Ko-fi"
@@ -421,9 +419,8 @@ msgstr "Купить наклейку"
 msgid "Ways to Support"
 msgstr "Способы поддержки"
 
-#: src/routes/support/+page.svelte
-msgid "Your support helps cover hosting and domain costs and allows me to continue improving the calculator."
-msgstr "Ваша поддержка помогает оплачивать хостинг и домен и позволяет мне продолжать улучшать калькулятор."
+#~ msgid "Your support helps cover hosting and domain costs and allows me to continue improving the calculator."
+#~ msgstr "Ваша поддержка помогает оплачивать хостинг и домен и позволяет мне продолжать улучшать калькулятор."
 
 #: src/lib/components/LanguageSwitcher.svelte
 #: src/lib/components/LanguageSwitcher.svelte
@@ -474,10 +471,21 @@ msgstr "Электронная почта"
 msgid "Have a suggestion? Found a bug?"
 msgstr "Есть предложение? Нашли ошибку?"
 
-#: src/routes/support/+page.svelte
-msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
-msgstr "Напишите мне на <0>mithqal@mohajeri.dev</0>."
+#~ msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
+#~ msgstr "Напишите мне на <0>mithqal@mohajeri.dev</0>."
 
 #: src/routes/about/+page.svelte
 msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation, meaning that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit <0>bahai.org</0>."
 msgstr "Вера Бахаи — мировая религия, основанная Бахауллой в Персии XIX века. Она учит сущностному единству всех религий и единству человечества. Бахаи верят в последовательное откровение, то есть в то, что на протяжении истории Бог посылал череду Божественных Посланников, среди которых Авраам, Моисей, Будда, Иисус, Мухаммад и, совсем недавно, Бахаулла. Подробнее — на сайте <0>bahai.org</0>."
+
+#: src/routes/about/+page.svelte
+msgid "Advertisements help pay for the fees for running this website."
+msgstr "Реклама помогает оплачивать расходы на работу этого сайта."
+
+#: src/routes/support/+page.svelte
+msgid "The <0>Mithqal Calculator</0> is a free tool built to serve the community. If you find it useful and want more projects like this, consider supporting me."
+msgstr "<0>Калькулятор мискалей</0> — бесплатный инструмент, созданный для сообщества. Если он оказался вам полезен и вы хотите видеть больше подобных проектов, поддержите меня."
+
+#: src/routes/support/+page.svelte
+msgid "You can email me at <0>mithqal@mohajeri.dev</0>"
+msgstr "Напишите мне на <0>mithqal@mohajeri.dev</0>"

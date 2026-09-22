@@ -10,9 +10,8 @@
 
 		<section class="mt-8">
 			<p class="text-lg leading-relaxed text-base-content/80">
-				The <strong class="text-base-content">Mithqal Calculator</strong> is a free, ad-free tool built
-				to serve the community. If you find it useful and would like to help keep it running, consider
-				supporting the project.
+				The <strong class="text-base-content">Mithqal Calculator</strong> is a free tool built to serve
+				the community. If you find it useful and want more projects like this, consider supporting me.
 			</p>
 		</section>
 
@@ -71,14 +70,7 @@
 					class="font-medium text-primary underline decoration-primary/40 underline-offset-4 transition-colors hover:decoration-primary"
 				>
 					mithqal@mohajeri.dev</a
-				>.
-			</p>
-		</section>
-
-		<section class="mt-10">
-			<p class="text-base leading-relaxed text-base-content/60">
-				Your support helps cover hosting and domain costs and allows me to continue improving the
-				calculator.
+				>
 			</p>
 		</section>
 </div>
