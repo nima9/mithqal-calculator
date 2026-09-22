@@ -21,10 +21,11 @@
 
 	interface Props {
 		open: boolean;
+		onCookiePreferences?: () => void;
 		onClose: () => void;
 	}
 
-	let { open = $bindable(), onClose }: Props = $props();
+	let { open = $bindable(), onCookiePreferences, onClose }: Props = $props();
 
 	// ============================================
 	// Event Handlers
@@ -49,6 +50,11 @@
 		if (e.key === 'Escape') {
 			onClose();
 		}
+	}
+
+	function openCookiePreferences() {
+		onClose();
+		onCookiePreferences?.();
 	}
 
 	$effect(() => {
@@ -164,7 +170,12 @@
 				</fieldset>
 			</div>
 
-			<div class="mt-8 flex justify-end">
+			<div class="mt-8 flex items-center justify-end gap-2">
+				{#if onCookiePreferences}
+					<button type="button" onclick={openCookiePreferences} class="btn btn-ghost">
+						Cookie Policy
+					</button>
+				{/if}
 				<button type="button" onclick={onClose} class="btn btn-primary"> Done </button>
 			</div>
 		</div>

@@ -124,6 +124,7 @@ msgid "Close"
 msgstr "閉じる"
 
 #: src/lib/components/CookieModal.svelte
+#: src/lib/components/SettingsModal.svelte
 msgid "Cookie Policy"
 msgstr "Cookie ポリシー"
 

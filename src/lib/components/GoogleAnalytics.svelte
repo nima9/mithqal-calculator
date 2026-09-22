@@ -1,49 +1,34 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { page } from '$app/state';
+	import { updateGoogleConsent } from '$lib/googleConsent';
+	import type { ConsentValue } from '$lib/stores/consent.svelte';
 
 	interface Props {
 		measurementId: string;
 		requiresConsent: boolean;
+		consent: ConsentValue;
 	}
 
-	let { measurementId, requiresConsent }: Props = $props();
+	let { measurementId, requiresConsent, consent }: Props = $props();
 	let initialized = $state(false);
+	let lastConsent: ConsentValue | undefined;
 	let lastTrackedUrl = '';
 
 	onMount(() => {
 		if (!/^G-[A-Z0-9]+$/.test(measurementId)) return;
 
-		window.dataLayer = window.dataLayer || [];
-		window.gtag =
-			window.gtag ||
-			function gtag(...args: unknown[]) {
-				window.dataLayer?.push(args);
-			};
-
-		const defaultConsent = requiresConsent ? 'denied' : 'granted';
-		window.gtag('consent', 'default', {
-			analytics_storage: defaultConsent,
-			ad_storage: defaultConsent,
-			ad_user_data: defaultConsent,
-			ad_personalization: defaultConsent
-		});
-		if (requiresConsent) {
-			window.gtag('consent', 'update', {
-				analytics_storage: 'granted',
-				ad_storage: 'granted',
-				ad_user_data: 'granted',
-				ad_personalization: 'granted'
-			});
-		}
-		window.gtag('js', new Date());
-		window.gtag('config', measurementId, { send_page_view: false });
-
-		const script = document.createElement('script');
-		script.async = true;
-		script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(measurementId)}`;
-		document.head.appendChild(script);
+		// The server-rendered head initializes gtag and restores saved consent.
+		if (!window.gtag) return;
+		lastConsent = consent;
 		initialized = true;
+	});
+
+	$effect(() => {
+		if (!initialized || !window.gtag || !requiresConsent || consent === lastConsent) return;
+
+		lastConsent = consent;
+		updateGoogleConsent(window.gtag, consent);
 	});
 
 	$effect(() => {

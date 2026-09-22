@@ -124,6 +124,7 @@ msgid "Close"
 msgstr "Funga"
 
 #: src/lib/components/CookieModal.svelte
+#: src/lib/components/SettingsModal.svelte
 msgid "Cookie Policy"
 msgstr "Sera ya Vidakuzi"
 

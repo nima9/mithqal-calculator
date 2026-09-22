@@ -11,7 +11,7 @@
 	import CookieConsent from '$lib/components/CookieConsent.svelte';
 	import CookieModal from '$lib/components/CookieModal.svelte';
 	import { env } from '$env/dynamic/public';
-	import { allowsTracking } from '$lib/stores/consent.svelte';
+	import { allowsTracking, consentStore } from '$lib/stores/consent.svelte';
 	import {
 		getDefaultLanguageUrl,
 		getLanguageAlternates,
@@ -32,7 +32,6 @@
 	// Dynamically load GoogleAds component to prevent adblockers from breaking the app
 	let GoogleAds: Component | null = $state(null);
 	let shouldLoadAds = $derived(!data.requiresConsent || $allowsTracking);
-	let shouldLoadAnalytics = $derived(!data.requiresConsent || $allowsTracking);
 	const GA_MEASUREMENT_ID = env.PUBLIC_GA_MEASUREMENT_ID;
 
 	let currentPathname = $derived(page.url.pathname);
@@ -114,10 +113,16 @@
 	<link rel="sitemap" href="/sitemap.xml" />
 </svelte:head>
 
-<Header />
+<Header
+	onCookiePreferences={data.requiresConsent ? () => (cookieModalOpen = true) : undefined}
+/>
 
-{#if GA_MEASUREMENT_ID && shouldLoadAnalytics}
-	<GoogleAnalytics measurementId={GA_MEASUREMENT_ID} requiresConsent={data.requiresConsent} />
+{#if GA_MEASUREMENT_ID}
+	<GoogleAnalytics
+		measurementId={GA_MEASUREMENT_ID}
+		requiresConsent={data.requiresConsent}
+		consent={$consentStore}
+	/>
 {/if}
 
 <!-- Keyed block ensures main content remounts when the URL changes so fly transitions re-run -->

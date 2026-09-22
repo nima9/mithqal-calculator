@@ -2,7 +2,7 @@ import { browser } from "$app/environment";
 import { derived, writable } from "svelte/store";
 
 const STORAGE_KEY = "mithqal_cookie_consent";
-type ConsentValue = boolean | null;
+export type ConsentValue = boolean | null;
 
 function getInitialConsent(): ConsentValue {
   if (!browser) return null;

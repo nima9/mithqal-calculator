@@ -20,6 +20,12 @@
 	import LanguageSwitcher from './LanguageSwitcher.svelte';
 	import { getLocale, withLocale } from '$lib/i18n';
 
+	interface Props {
+		onCookiePreferences?: () => void;
+	}
+
+	let { onCookiePreferences }: Props = $props();
+
 	// ============================================
 	// State
 	// ============================================
@@ -202,7 +208,11 @@
 	</div>
 {/if}
 
-<SettingsModal bind:open={settingsOpen} onClose={() => (settingsOpen = false)} />
+<SettingsModal
+	bind:open={settingsOpen}
+	{onCookiePreferences}
+	onClose={() => (settingsOpen = false)}
+/>
 
 <style>
 	/* Pixelated dither overlay pattern */
