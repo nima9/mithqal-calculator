@@ -19,7 +19,6 @@
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
 	import CurrencyCombobox from './Combobox.svelte';
-	import Footer from './Footer.svelte';
 	import RatesTimestamp from './RatesTimestamp.svelte';
 	import Sentence from './Sentence.svelte';
 	import {
@@ -559,5 +558,3 @@
 </div>
 
 <RatesTimestamp lastFetchTime={displayLastFetch} {timezone} {locale} />
-
-<Footer />
