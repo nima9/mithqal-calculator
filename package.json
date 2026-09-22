@@ -11,8 +11,8 @@
     "prepare": "svelte-kit sync || echo ''",
     "check": "svelte-kit sync && wrangler types && svelte-check --tsconfig ./tsconfig.json && tsc --project ./tsconfig.worker.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "lint": "oxlint",
-    "lint:fix": "oxlint --fix",
+    "lint:check": "oxlint",
+    "lint": "oxlint --fix",
     "format": "oxfmt --write .",
     "format:check": "oxfmt --check .",
     "test": "bun test",
@@ -21,7 +21,7 @@
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:seed": "bun run scripts/seed.ts",
-    "gen": "wrangler types"
+    "cf:types": "wrangler types"
   },
   "dependencies": {
     "@tursodatabase/serverless": "^1.4.0",
