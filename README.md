@@ -9,7 +9,8 @@ A Mithqál is a unit of weight used to measure gold and silver. One Mithqál is 
 ## Features
 
 - **Fiat and crypto rates** - Active fiat currencies plus a separately labeled crypto section
-- **Daily rates** - Metal prices and exchange rates refreshed by a Cloudflare Cron Trigger
+- **Twice-daily rates** - Metal prices and exchange rates refreshed by a Cloudflare Cron Trigger
+- **Current catalog** - Active fiat currencies and cryptocurrencies synced monthly from FXRatesAPI
 - **Geo-detection** - Auto-selects currency based on user's location (via Cloudflare)
 - **Timezone-aware** - Displays rate timestamps in user's local timezone
 - **Copy to clipboard** - Click the calculated value to copy
@@ -58,18 +59,22 @@ A Mithqál is a unit of weight used to measure gold and silver. One Mithqál is 
 # Install dependencies
 bun install
 
-# Copy .env.example to .env and add credentials for a development-only Turso database.
-# Do not reuse the production database locally.
-
-# Configure production secrets in Cloudflare before the first deploy
-bunx wrangler secret put CONTACT_EMAIL
-bunx wrangler secret put TURNSTILE_SECRET_KEY
-bunx wrangler secret put TURSO_DATABASE_URL
-bunx wrangler secret put TURSO_AUTH_TOKEN
-
-# PUBLIC_TURNSTILE_SITE_KEY is committed as a public Worker variable in wrangler.jsonc.
-# TURNSTILE_HOSTNAMES is also committed there and restricts accepted production hostnames.
-# Local development uses Cloudflare's always-pass test keys when no Turnstile keys are set.
+# Environment variables and secrets are managed by Varlock. `.env.schema` is the
+# single source of truth; sensitive values resolve from the `pass` store under
+# `mithqal-calculator/production/*`. Local-only overrides live in tracked
+# `.env.development` / `.env.production` files (no secrets).
+#
+# Create the pass entries once (see `.env.schema` for the exact paths):
+#   pass insert -m mithqal-calculator/production/TURSO_DATABASE_URL
+#   pass insert -m mithqal-calculator/production/TURSO_AUTH_TOKEN
+#   pass insert -m mithqal-calculator/production/CONTACT_EMAIL
+#   pass insert -m mithqal-calculator/production/PUBLIC_TURNSTILE_SITE_KEY
+#   pass insert -m mithqal-calculator/production/TURNSTILE_SECRET_KEY
+#   pass insert -m mithqal-calculator/production/FXRATESAPI_SERVER_KEY
+#
+# Validate the resolved environment (sensitive values are redacted)
+bun run env:check
+VARLOCK_ENV=production bun run env:check-prod
 
 # Create/update the Turso schema, then seed the initial rates
 bun run db:migrate
@@ -90,14 +95,17 @@ bun run preview
 # In another terminal, invoke the 06:00 UTC cron handler locally
 curl "http://localhost:4173/cdn-cgi/local/scheduled"
 
-# Deploy the Worker and its Cron Trigger
+# Deploy the Worker and its Cron Trigger. `varlock-wrangler deploy` resolves the
+# environment and uploads non-sensitive values as Worker vars and sensitive
+# values as Worker secrets.
 bun run deploy
 ```
 
-The scheduled Worker fetches both metal prices and USD-based currency rates once daily. It stores
-only a complete validated snapshot: both metals plus USD and EUR are required, while individual
-missing currencies are omitted. Failed refreshes leave the prior snapshot untouched. Gold and
-silver use the median of every valid Swissquote bid/ask midpoint.
+The scheduled Worker fetches both metal prices and authenticated USD-based currency rates twice
+daily (06:00 and 18:00 UTC). On the first day of each month at 06:15 UTC, it also replaces the
+active fiat/crypto catalog from FXRatesAPI's `/currencies` endpoint. It stores only complete,
+validated updates, so failed refreshes leave prior data untouched. Gold and silver use the median
+bid/ask midpoint from the timestamped Swissquote quote closest to the FXRatesAPI snapshot time.
 
 ## Contributing
 
