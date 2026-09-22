@@ -1,24 +1,24 @@
 <!-- Close.svelte - Pixelated X icon for closing menus/modals -->
 <script lang="ts">
-	interface Props {
-		color?: string;
-		size?: string | number;
-	}
+  type Props = {
+    color?: string;
+    size?: number;
+  };
 
-	let { color = 'currentColor', size = '1em' }: Props = $props();
+  let { color = "currentColor", size = 16 }: Props = $props();
 
-	let sizeValue = $derived(typeof size === 'number' ? `${size}px` : size);
+  let sizeValue = $derived(`${size}px`);
 </script>
 
 <svg
-	xmlns="http://www.w3.org/2000/svg"
-	fill="none"
-	viewBox="0 0 24 24"
-	width={sizeValue}
-	height={sizeValue}
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+  viewBox="0 0 24 24"
+  width={sizeValue}
+  height={sizeValue}
 >
-	<path
-		d="M5 3H3v18h18V3H5zm14 2v14H5V5h14zm-8 4H9V7H7v2h2v2h2v2H9v2H7v2h2v-2h2v-2h2v2h2v2h2v-2h-2v-2h-2v-2h2V9h2V7h-2v2h-2v2h-2V9z"
-		fill={color}
-	/>
+  <path
+    d="M5 3H3v18h18V3H5zm14 2v14H5V5h14zm-8 4H9V7H7v2h2v2h2v2H9v2H7v2h2v-2h2v-2h2v2h2v2h2v-2h-2v-2h-2v-2h2V9h2V7h-2v2h-2v2h-2V9z"
+    fill={color}
+  />
 </svg>

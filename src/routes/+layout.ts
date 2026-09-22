@@ -2,6 +2,7 @@ import { browser } from "$app/environment";
 import { getLocale } from "$lib/i18n";
 import { loadLocale } from "wuchale/load-utils";
 import "../locales/main.loader.svelte.js";
+
 import type { LayoutLoad } from "./$types";
 
 export const load: LayoutLoad = async ({ data, url }) => {

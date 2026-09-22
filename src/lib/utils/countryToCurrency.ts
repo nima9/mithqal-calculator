@@ -4,12 +4,12 @@
  * Used for geo-based currency selection on initial page load.
  */
 
-interface CurrencyInfo {
+type CurrencyInfo = {
   code: string;
   symbol: string;
-}
+};
 
-const COUNTRY_TO_CURRENCY: Record<string, CurrencyInfo> = {
+const COUNTRY_TO_CURRENCY = {
   // North America
   US: { code: "USD", symbol: "$" },
   CA: { code: "CAD", symbol: "$" },
@@ -83,7 +83,7 @@ const COUNTRY_TO_CURRENCY: Record<string, CurrencyInfo> = {
   CL: { code: "CLP", symbol: "$" },
   CO: { code: "COP", symbol: "$" },
   PE: { code: "PEN", symbol: "S/" },
-};
+} satisfies Record<string, CurrencyInfo>;
 
 /**
  * Get the default currency for a country code.
@@ -91,7 +91,12 @@ const COUNTRY_TO_CURRENCY: Record<string, CurrencyInfo> = {
  * @returns Formatted currency string (e.g., "$ USD")
  */
 export function countryToCurrency(countryCode: string): string {
-  const currency = COUNTRY_TO_CURRENCY[countryCode.toUpperCase()];
+  const normalizedCode = countryCode.toUpperCase();
+
+  // SAFETY: `Object.hasOwn` proves `normalizedCode` is a key of the literal map.
+  const currency = Object.hasOwn(COUNTRY_TO_CURRENCY, normalizedCode)
+    ? COUNTRY_TO_CURRENCY[normalizedCode as keyof typeof COUNTRY_TO_CURRENCY]
+    : undefined;
 
   if (!currency) {
     return "$ USD";

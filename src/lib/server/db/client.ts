@@ -1,9 +1,9 @@
 import { drizzle } from "drizzle-orm/tursodatabase-serverless";
 
-export interface DatabaseConfig {
+export type DatabaseConfig = {
   url: string;
   authToken: string;
-}
+};
 
 export function createDatabase(config: DatabaseConfig) {
   return drizzle({

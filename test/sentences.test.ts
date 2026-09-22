@@ -25,7 +25,9 @@ describe("getSentenceLanguage", () => {
       "ru",
       "de",
     ]) {
-      expect(getSentenceLanguage(id)).toBe(SENTENCE_LANGUAGES[id]);
+      expect(getSentenceLanguage(id)).toBe(
+        SENTENCE_LANGUAGES[id as keyof typeof SENTENCE_LANGUAGES],
+      );
     }
   });
 

@@ -9,10 +9,11 @@
  * @see https://developers.cloudflare.com/rules/transform/managed-transforms/reference/
  */
 
-import type { PageServerLoad } from "./$types";
-import { countryToCurrency } from "$lib/utils/countryToCurrency";
 import { getDatabaseConfig } from "$lib/server/db/config";
 import { getRatesSnapshotCached, type RatesSnapshot } from "$lib/server/db/rates";
+import { countryToCurrency } from "$lib/utils/countryToCurrency";
+
+import type { PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = async ({ request, platform }) => {
   // Default values
@@ -34,10 +35,12 @@ export const load: PageServerLoad = async ({ request, platform }) => {
   // Fallback: Try platform.cf object (Cloudflare Workers/Pages)
   // @ts-expect-error - platform.cf exists on Cloudflare but not typed by default
   const cf = platform?.cf;
+
   if (cf) {
     if (!cfCountry && cf.country) {
       defaultCurrency = countryToCurrency(cf.country);
     }
+
     if (!cfTimezone && cf.timezone) {
       timezone = cf.timezone;
     }

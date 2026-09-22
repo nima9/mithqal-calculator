@@ -26,7 +26,14 @@ export const LANGUAGE_OPTIONS: ReadonlyArray<{ value: Locale; label: string }> =
 ];
 
 export function getLocale(value: string | null | undefined): Locale {
-  return locales.includes(value as Locale) ? (value as Locale) : DEFAULT_LOCALE;
+  if (value === null || value === undefined) return DEFAULT_LOCALE;
+
+  // SAFETY: `isLocale` narrows `value` to a member of the `locales` tuple.
+  return isLocale(value) ? value : DEFAULT_LOCALE;
+}
+
+function isLocale(value: string): value is Locale {
+  return locales.some((locale) => locale === value);
 }
 
 export function withLocale(pathname: string, locale: Locale): string {
@@ -34,5 +41,6 @@ export function withLocale(pathname: string, locale: Locale): string {
 
   const url = new URL(pathname, "https://mithqal.app");
   url.searchParams.set("lang", locale);
+
   return `${url.pathname}${url.search}${url.hash}`;
 }

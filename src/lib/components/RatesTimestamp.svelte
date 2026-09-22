@@ -5,55 +5,56 @@
 -->
 
 <script lang="ts">
-	// ============================================
-	// Props
-	// ============================================
+  // ============================================
+  // Props
+  // ============================================
 
-	interface Props {
-		lastFetchTime: number;
-		timezone?: string;
-		locale?: string;
-	}
+  type Props = {
+    lastFetchTime: number;
+    timezone?: string;
+    locale?: string;
+  };
 
-	let { lastFetchTime, timezone = 'America/Los_Angeles', locale = 'en' }: Props = $props();
+  let { lastFetchTime, timezone = "America/Los_Angeles", locale = "en" }: Props = $props();
 
-	// ============================================
-	// Derived Values
-	// ============================================
+  // ============================================
+  // Derived Values
+  // ============================================
 
-	/** Format the timestamp in the user's timezone with full date/time */
-	let readableRateDate = $derived.by(() => {
-		if (!lastFetchTime) return 'Unavailable';
+  /** Format the timestamp in the user's timezone with full date/time */
+  let readableRateDate = $derived.by(() => {
+    if (!lastFetchTime) return "Unavailable";
 
-		// Date/Intl version (active)
-		const date = new Date(lastFetchTime);
-		return new Intl.DateTimeFormat(locale, {
-			year: 'numeric',
-			month: 'long',
-			day: 'numeric',
-			hour: 'numeric',
-			minute: 'numeric',
-			timeZone: timezone,
-			timeZoneName: 'long'
-		}).format(date);
+    // Date/Intl version (active)
+    const date = new Date(lastFetchTime);
 
-		// Temporal version (for side-by-side reference)
-		// const zonedDateTime = Temporal.Instant.fromEpochMilliseconds(lastFetchTime).toZonedDateTimeISO(
-		// 	timezone
-		// );
-		// return zonedDateTime.toLocaleString('en-US', {
-		// 	year: 'numeric',
-		// 	month: 'long',
-		// 	day: 'numeric',
-		// 	hour: 'numeric',
-		// 	minute: 'numeric',
-		// 	timeZoneName: 'long'
-		// });
-	});
+    return new Intl.DateTimeFormat(locale, {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+      timeZone: timezone,
+      timeZoneName: "long",
+    }).format(date);
+
+    // Temporal version (for side-by-side reference)
+    // const zonedDateTime = Temporal.Instant.fromEpochMilliseconds(lastFetchTime).toZonedDateTimeISO(
+    // 	timezone
+    // );
+    // return zonedDateTime.toLocaleString('en-US', {
+    // 	year: 'numeric',
+    // 	month: 'long',
+    // 	day: 'numeric',
+    // 	hour: 'numeric',
+    // 	minute: 'numeric',
+    // 	timeZoneName: 'long'
+    // });
+  });
 </script>
 
 <div
-	class="flex flex-wrap justify-center pt-24 pb-1 text-neutral-content/60 text-xs sm:text-xs md:text-sm lg:text-lg lg:justify-end lg:px-7"
+  class="flex flex-wrap justify-center pt-24 pb-1 text-xs text-neutral-content/60 sm:text-xs md:text-sm lg:justify-end lg:px-7 lg:text-lg"
 >
-	Rates retrieved: {readableRateDate}
+  Rates retrieved: {readableRateDate}
 </div>

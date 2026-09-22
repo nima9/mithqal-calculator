@@ -4,9 +4,9 @@
 -->
 
 <script lang="ts">
+  import { trackGoogleEvent } from "$lib/analytics";
   import { Accordion, Popover } from "bits-ui";
   import { slide, fly } from "svelte/transition";
-  import { trackGoogleEvent } from "$lib/analytics";
 
   // ============================================
   // FAQ Data
@@ -48,6 +48,7 @@
 
   // Accordion state - tracks which FAQ items are open
   let openItems = $state<string[]>([]);
+
   let allExpanded = $derived(openItems.length === faqs.length);
 
   // ============================================
@@ -70,8 +71,8 @@
   <!-- Developer Intro -->
   <section class="mt-8">
     <p class="text-lg leading-relaxed text-base-content/80">
-      Hi, I'm <strong class="text-base-content">Nima</strong>, a software
-      developer passionate about building useful tools for the community.
+      Hi, I'm <strong class="text-base-content">Nima</strong>, a software developer passionate about
+      building useful tools for the community.
     </p>
     <div class="mt-4">
       <Popover.Root>
@@ -123,8 +124,7 @@
               </a>
               <a
                 href="mailto:mithqal@mohajeri.dev"
-                onclick={() =>
-                  trackGoogleEvent("generate_lead", { method: "social_email" })}
+                onclick={() => trackGoogleEvent("generate_lead", { method: "social_email" })}
                 class="flex items-center gap-2 rounded px-3 py-2 text-sm text-base-content transition-colors hover:bg-base-200"
               >
                 Email
@@ -139,28 +139,25 @@
   <!-- Site Description -->
   <section class="mt-8">
     <p class="text-lg leading-relaxed text-base-content/80">
-      The <strong class="text-base-content">Mithqál Calculator</strong> is a
-      free tool designed to help calculate the value of gold and silver in
-      mithqáls, the traditional unit of weight used for
-      <strong class="text-base-content">Huqúqu'lláh</strong> calculations in the
-      Bahá'í Faith.
+      The <strong class="text-base-content">Mithqál Calculator</strong> is a free tool designed to
+      help calculate the value of gold and silver in mithqáls, the traditional unit of weight used
+      for
+      <strong class="text-base-content">Huqúqu'lláh</strong> calculations in the Bahá'í Faith.
     </p>
     <p class="mt-4 text-lg leading-relaxed text-base-content/80">
-      Simply enter the weight in mithqáls, select your preferred currency, and
-      get an instant conversion based on current market rates. The calculator
-      supports over 150 currencies worldwide.
+      Simply enter the weight in mithqáls, select your preferred currency, and get an instant
+      conversion based on current market rates. The calculator supports over 150 currencies
+      worldwide.
     </p>
     <p class="mt-4 text-lg leading-relaxed text-base-content/80">
-      I am working on a website to showcase all the great Bahai tools people
-      have made online. The domain of the site is bahaitools.app!
+      I am working on a website to showcase all the great Bahai tools people have made online. The
+      domain of the site is bahaitools.app!
     </p>
   </section>
 
   <!-- FAQ Section with Accordion -->
   <section class="mt-12">
-    <h2 class="font-karla text-2xl font-medium md:text-3xl">
-      Frequently Asked Questions
-    </h2>
+    <h2 class="font-karla text-2xl font-medium md:text-3xl">Frequently Asked Questions</h2>
 
     <!-- Expand/Collapse All Button -->
     <button
@@ -172,11 +169,7 @@
     </button>
 
     <!-- FAQ Accordion (bits-ui) -->
-    <Accordion.Root
-      type="multiple"
-      bind:value={openItems}
-      class="mt-4 space-y-2"
-    >
+    <Accordion.Root type="multiple" bind:value={openItems} class="mt-4 space-y-2">
       {#each faqs as faq (faq.id)}
         {@const isOpen = openItems.includes(faq.id)}
         <Accordion.Item value={faq.id} class="border-b border-base-300">
@@ -187,9 +180,7 @@
               <span>{faq.question}</span>
               <!-- Plus icon that rotates 45° to become X when open -->
               <span
-                class="ml-4 text-2xl transition-transform duration-200 {isOpen
-                  ? 'rotate-45'
-                  : ''}"
+                class="ml-4 text-2xl transition-transform duration-200 {isOpen ? 'rotate-45' : ''}"
               >
                 +
               </span>
@@ -203,13 +194,11 @@
                 class="pb-4 text-base-content/70"
               >
                 {#if faq.id === "what-is-bahai"}
-                  The Bahá'í Faith is a world religion founded by Bahá'u'lláh in
-                  19th-century Persia. It teaches the essential oneness of all
-                  religions and the unity of humanity. Bahá'ís believe in
-                  progressive revelation, meaning that God has sent a series of
-                  divine messengers throughout history, including Abraham,
-                  Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh.
-                  For more information, please visit
+                  The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century
+                  Persia. It teaches the essential oneness of all religions and the unity of
+                  humanity. Bahá'ís believe in progressive revelation, meaning that God has sent a
+                  series of divine messengers throughout history, including Abraham, Moses, Buddha,
+                  Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit
                   <a
                     href="https://www.bahai.org/"
                     target="_blank"

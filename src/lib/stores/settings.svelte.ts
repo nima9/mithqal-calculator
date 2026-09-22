@@ -1,34 +1,36 @@
 import { browser } from "$app/environment";
 import { derived, writable } from "svelte/store";
+import * as v from "valibot";
 
 const STORAGE_KEY = "mithqal_settings";
 
 export type WeightUnit = "grams" | "ounces";
 
-interface Settings {
+type Settings = {
   copyWithCommas: boolean;
   weightUnit: WeightUnit;
-}
+};
 
 const defaults: Settings = {
   copyWithCommas: true,
   weightUnit: "grams",
 };
 
+const SettingsSchema = v.object({
+  copyWithCommas: v.boolean(),
+  weightUnit: v.picklist(["grams", "ounces"]),
+});
+
 function getInitialSettings(): Settings {
   if (!browser) return defaults;
   const stored = localStorage.getItem(STORAGE_KEY);
+
   if (!stored) return defaults;
 
   try {
-    const parsed = JSON.parse(stored) as Partial<Settings>;
-    return {
-      copyWithCommas:
-        typeof parsed.copyWithCommas === "boolean"
-          ? parsed.copyWithCommas
-          : defaults.copyWithCommas,
-      weightUnit: parsed.weightUnit === "ounces" ? "ounces" : "grams",
-    };
+    const parsed = v.parse(SettingsSchema, JSON.parse(stored));
+
+    return parsed;
   } catch {
     return defaults;
   }
@@ -43,6 +45,7 @@ if (browser) {
 }
 
 export const copyWithCommas = derived(settingsStore, (settings) => settings.copyWithCommas);
+
 export const weightUnit = derived(settingsStore, (settings) => settings.weightUnit);
 
 export function setCopyWithCommas(value: boolean) {

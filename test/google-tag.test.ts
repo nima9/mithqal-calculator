@@ -1,22 +1,26 @@
 import { describe, expect, test } from "bun:test";
-import { runInNewContext } from "node:vm";
 import { readFileSync } from "node:fs";
+import { runInNewContext } from "node:vm";
 import { renderGoogleTag } from "../src/lib/server/googleTag";
 
 function executeTag(saved: string | null, requiresConsent = true, storageBlocked = false) {
   const html = renderGoogleTag("G-DTZYQSS4SE", requiresConsent);
+
   const context = {
     window: {} as Record<string, unknown>,
     localStorage: {
       getItem: () => {
         if (storageBlocked) throw new Error("Storage blocked");
+
         return saved;
       },
     },
   };
+
   context.window = context;
   runInNewContext(html.match(/<script>([\s\S]*?)<\/script>/)![1], context);
   const queue = context.window.dataLayer as IArguments[];
+
   return { queue, calls: queue.map((entry) => Array.from(entry)) };
 }
 
@@ -60,6 +64,7 @@ describe("server-rendered Google tag", () => {
         ad_personalization: state,
       });
     }
+
     expect(executeTag("true", false).calls.some((call) => call[1] === "update")).toBe(false);
   });
 

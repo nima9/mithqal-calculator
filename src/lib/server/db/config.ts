@@ -1,10 +1,11 @@
 import { env } from "$env/dynamic/private";
+
 import type { DatabaseConfig } from "./client";
 
-interface CloudflareDatabaseEnv {
+type CloudflareDatabaseEnv = {
   TURSO_DATABASE_URL?: string;
   TURSO_AUTH_TOKEN?: string;
-}
+};
 
 export function getDatabaseConfig(cloudflareEnv?: CloudflareDatabaseEnv): DatabaseConfig {
   const url = cloudflareEnv?.TURSO_DATABASE_URL ?? env.TURSO_DATABASE_URL;

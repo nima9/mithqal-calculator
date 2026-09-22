@@ -61,6 +61,7 @@ describe("verifyTurnstileToken", () => {
       expectedAction: "content_gate",
       allowedHostnames: new Set(["localhost"]),
     });
+
     const testResult = await verifyTurnstileToken({
       token: "dummy-token",
       secretKey: "test-secret",

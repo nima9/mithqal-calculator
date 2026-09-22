@@ -21,7 +21,7 @@ export type SentenceSlot = "amount" | "mithqalLabel" | "metal" | "currency";
 /** One part of a sentence: a literal word or a snippet slot */
 export type SentenceItem = string | { snippet: SentenceSlot };
 
-export interface SentenceLanguage {
+export type SentenceLanguage = {
   /** BCP-47 language code */
   id: string;
   /** Text direction of the sentence container */
@@ -34,13 +34,13 @@ export interface SentenceLanguage {
   mithqalDefinition: string;
   /** Localized troy-ounce tooltip template; {value} is filled at runtime */
   mithqalDefinitionOunces: string;
-}
+};
 
 // ============================================
 // Registry
 // ============================================
 
-export const SENTENCE_LANGUAGES: Record<string, SentenceLanguage> = {
+export const SENTENCE_LANGUAGES = {
   en: {
     id: "en",
     dir: "ltr",
@@ -246,7 +246,7 @@ export const SENTENCE_LANGUAGES: Record<string, SentenceLanguage> = {
     mithqalDefinition: "1 Mithqál = 3,642 g",
     mithqalDefinitionOunces: "1 Mithqál = {value} Feinunzen",
   },
-};
+} satisfies Record<string, SentenceLanguage>;
 
 export const DEFAULT_SENTENCE_LANGUAGE: SentenceLanguage = SENTENCE_LANGUAGES.en;
 
@@ -255,5 +255,10 @@ export const DEFAULT_SENTENCE_LANGUAGE: SentenceLanguage = SENTENCE_LANGUAGES.en
  * when the language is unknown.
  */
 export function getSentenceLanguage(id?: string): SentenceLanguage {
-  return SENTENCE_LANGUAGES[id ?? ""] ?? DEFAULT_SENTENCE_LANGUAGE;
+  if (id !== undefined && Object.hasOwn(SENTENCE_LANGUAGES, id)) {
+    // SAFETY: `Object.hasOwn` guarantees `id` is one of the registry's literal keys.
+    return SENTENCE_LANGUAGES[id as keyof typeof SENTENCE_LANGUAGES];
+  }
+
+  return DEFAULT_SENTENCE_LANGUAGE;
 }

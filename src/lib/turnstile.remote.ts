@@ -11,12 +11,11 @@
  * - Footer.svelte (getEmail)
  */
 
-import { command } from "$app/server";
-import { getRequestEvent } from "$app/server";
-import { Either } from "effect";
+import { command, getRequestEvent } from "$app/server";
 import { env } from "$env/dynamic/private";
-import * as v from "valibot";
 import { verifyTurnstileToken } from "$lib/utils/turnstile";
+import { Either } from "effect";
+import * as v from "valibot";
 
 /**
  * Cloudflare's documented always-pass secret key. Local development (vite dev
@@ -60,6 +59,7 @@ async function verifyTokenForAction(token: string, expectedAction: string): Prom
   if (!secretKey) return { success: false, error: "Server misconfigured" };
 
   let remoteIp: string | undefined;
+
   try {
     remoteIp = event.getClientAddress();
   } catch {
@@ -99,6 +99,7 @@ export const verifyToken = command(TokenSchema, async ({ token }): Promise<Verif
  */
 export const getEmail = command(TokenSchema, async ({ token }): Promise<EmailResult> => {
   const verification = await verifyTokenForAction(token, "contact_email");
+
   if (!verification.success) return verification;
 
   const event = getRequestEvent();

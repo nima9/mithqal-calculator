@@ -5,10 +5,14 @@
  * Used by: turnstile.remote.ts
  */
 
-import { Effect, Either } from "effect";
+import { Effect } from "effect";
+import * as v from "valibot";
+
+import type { Either } from "effect";
 
 /** Cloudflare Turnstile server-side verification endpoint */
 const TURNSTILE_VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
+
 const TURNSTILE_SCRIPT_URL =
   "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
 
@@ -20,10 +24,20 @@ let turnstileScriptPromise: Promise<void> | null = null;
 
 export type TurnstileErrorKind = "NETWORK_ERROR" | "VERIFICATION_FAILED" | "INVALID_RESPONSE";
 
-export interface TurnstileError {
+export type TurnstileError = {
   kind: TurnstileErrorKind;
   message: string;
-}
+};
+
+/**
+ * Subset of the Cloudflare Siteverify response we act on. Unknown sibling
+ * fields (challenge timestamp, error codes, customer data) are ignored.
+ */
+const TurnstileOutcomeSchema = v.object({
+  success: v.optional(v.boolean()),
+  action: v.optional(v.string()),
+  hostname: v.optional(v.string()),
+});
 
 // ============================================
 // Verification Function
@@ -61,6 +75,7 @@ function verifyTurnstileTokenEffect(input: {
     const formData = new FormData();
     formData.append("secret", secretKey);
     formData.append("response", token);
+
     if (remoteIp) formData.append("remoteip", remoteIp);
 
     const response = yield* Effect.tryPromise({
@@ -91,12 +106,22 @@ function verifyTurnstileTokenEffect(input: {
       }),
     });
 
-    const result = outcome as { success?: boolean; action?: string; hostname?: string };
+    const parsed = v.safeParse(TurnstileOutcomeSchema, outcome);
+
+    if (!parsed.success) {
+      return yield* Effect.fail<TurnstileError>({
+        kind: "INVALID_RESPONSE",
+        message: "Turnstile verification service returned an unexpected response",
+      });
+    }
+
+    const result = parsed.output;
+
     if (
       result.success === true &&
       (allowTestResponse ||
         (result.action === expectedAction &&
-          typeof result.hostname === "string" &&
+          result.hostname !== undefined &&
           allowedHostnames.has(result.hostname)))
     ) {
       return true as const;
@@ -135,18 +160,22 @@ export function loadTurnstileScript(): Promise<void> {
   }
 
   if (window.turnstile) return Promise.resolve();
+
   if (turnstileScriptPromise) return turnstileScriptPromise;
 
   turnstileScriptPromise = new Promise((resolve, reject) => {
     const existingScript = document.querySelector<HTMLScriptElement>(
       'script[src^="https://challenges.cloudflare.com/turnstile/v0/api.js"]',
     );
+
     const script = existingScript ?? document.createElement("script");
 
     const handleLoad = () => {
       cleanup();
+
       if (window.turnstile) {
         resolve();
+
         return;
       }
 
@@ -154,12 +183,14 @@ export function loadTurnstileScript(): Promise<void> {
       turnstileScriptPromise = null;
       reject(new Error("Turnstile loaded without exposing its browser API"));
     };
+
     const handleError = () => {
       cleanup();
       script.remove();
       turnstileScriptPromise = null;
       reject(new Error("Failed to load Turnstile"));
     };
+
     const cleanup = () => {
       script.removeEventListener("load", handleLoad);
       script.removeEventListener("error", handleError);

@@ -1,6 +1,6 @@
 const displayNamesByLocale = new Map<string, Intl.DisplayNames>();
 
-const currencyNameOverrides: Record<string, Record<string, string>> = {
+const currencyNameOverrides = {
   BTC: {
     en: "Bitcoin",
     ar: "بيتكوين",
@@ -16,7 +16,7 @@ const currencyNameOverrides: Record<string, Record<string, string>> = {
     ru: "Биткоин",
     de: "Bitcoin",
   },
-};
+} satisfies Record<string, Record<string, string>>;
 
 /**
  * Return the CLDR currency name for the active locale. The database name stays
@@ -29,17 +29,30 @@ export function getLocalizedCurrencyName(
   fallbackName: string,
 ): string {
   const normalizedCode = code.toUpperCase();
-  const override = currencyNameOverrides[normalizedCode]?.[locale];
+
+  // SAFETY: each `Object.hasOwn` guard proves the key exists on that literal object.
+  const overrides = Object.hasOwn(currencyNameOverrides, normalizedCode)
+    ? currencyNameOverrides[normalizedCode as keyof typeof currencyNameOverrides]
+    : undefined;
+
+  // SAFETY: the `Object.hasOwn` guard proves `locale` is a key of `overrides`.
+  const override =
+    overrides && Object.hasOwn(overrides, locale)
+      ? overrides[locale as keyof typeof overrides]
+      : undefined;
+
   if (override) return override;
 
   try {
     let displayNames = displayNamesByLocale.get(locale);
+
     if (!displayNames) {
       displayNames = new Intl.DisplayNames([locale], { type: "currency" });
       displayNamesByLocale.set(locale, displayNames);
     }
 
     const localizedName = displayNames.of(normalizedCode);
+
     return localizedName && localizedName !== normalizedCode ? localizedName : fallbackName;
   } catch {
     return fallbackName;

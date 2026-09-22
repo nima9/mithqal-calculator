@@ -4,10 +4,11 @@
  * Accessed at: https://mithqal.app/sitemap.xml
  */
 
-// import { Temporal } from "@js-temporal/polyfill";
-import type { RequestHandler } from "./$types";
 import { DEFAULT_LOCALE, LANGUAGE_OPTIONS } from "$lib/i18n";
 import { localizedUrl } from "$lib/seo";
+
+// import { Temporal } from "@js-temporal/polyfill";
+import type { RequestHandler } from "./$types";
 
 // ============================================
 // Configuration
@@ -39,6 +40,7 @@ export const GET: RequestHandler = async () => {
         ({ value: alternateLocale }) =>
           `    <xhtml:link rel="alternate" hreflang="${alternateLocale}" href="${escapeXml(localizedUrl(page.path, alternateLocale))}" />`,
       ).join("\n");
+
       const defaultAlternate = `    <xhtml:link rel="alternate" hreflang="x-default" href="${escapeXml(localizedUrl(page.path, DEFAULT_LOCALE))}" />`;
 
       return `  <url>

@@ -39,7 +39,9 @@ export const GOOGLE_CONSENT_REGIONS = [
 ] as const;
 
 export type GoogleConsentValue = boolean | null;
+
 export type GoogleTagFunction = (...args: unknown[]) => void;
+
 type GoogleConsentState = "granted" | "denied";
 
 const GOOGLE_CONSENT_REGION_SET = new Set<string>(GOOGLE_CONSENT_REGIONS);
