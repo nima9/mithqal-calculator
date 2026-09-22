@@ -24,9 +24,10 @@ pnpm-debug.log*
 .env
 .env.*
 .dev.vars*
-!.env.example
 !.env.schema
 !.env.test
+!.env.development
+!.env.production
 
 # OS
 .DS_Store
@@ -44,3 +45,6 @@ vite.config.ts.timestamp-*
 
 # Cloudflare Types
 /worker-configuration.d.ts
+
+#ai
+skils-lock.json
