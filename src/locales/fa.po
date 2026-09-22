@@ -69,7 +69,6 @@ msgid "Click to copy"
 msgstr "برای کپی کلیک کنید"
 
 #: src/lib/components/Calculator.svelte
-#: src/lib/components/ContactEmail.svelte
 msgid "Copied!"
 msgstr "کپی شد!"
 
@@ -164,75 +163,58 @@ msgstr "رد همه"
 msgid "Accept All"
 msgstr "پذیرش همه"
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Failed to get contact email."
-msgstr "دریافت ایمیل تماس ناموفق بود."
+#~ msgid "Failed to get contact email."
+#~ msgstr "دریافت ایمیل تماس ناموفق بود."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Something went wrong. Please try again."
 msgstr "مشکلی پیش آمد. لطفاً دوباره تلاش کنید."
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Contact verification is not configured."
-msgstr "تأیید تماس پیکربندی نشده است."
+#~ msgid "Contact verification is not configured."
+#~ msgstr "تأیید تماس پیکربندی نشده است."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Human verification could not load. Please try again."
 msgstr "تأیید هویت انسانی بارگیری نشد. لطفاً دوباره تلاش کنید."
 
 #. 0: code
-#. 0: code
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Human verification could not run{0}. Please try again or use another browser."
 msgstr "تأیید هویت انسانی اجرا نشد{0}. لطفاً دوباره تلاش کنید یا از مرورگر دیگری استفاده کنید."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Human verification expired. Please try again."
 msgstr "مهلت تأیید هویت انسانی به پایان رسید. لطفاً دوباره تلاش کنید."
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Copy failed"
-msgstr "کپی ناموفق بود"
+#~ msgid "Copy failed"
+#~ msgstr "کپی ناموفق بود"
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Loading..."
 msgstr "در حال بارگیری..."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Verifying..."
 msgstr "در حال تأیید..."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Try again"
 msgstr "تلاش دوباره"
 
-#. 0: email
-#: src/lib/components/ContactEmail.svelte
-msgid "Email {0}"
-msgstr "ایمیل {0}"
+#~ msgid "Email {0}"
+#~ msgstr "ایمیل {0}"
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Copy email address"
-msgstr "کپی نشانی ایمیل"
+#~ msgid "Copy email address"
+#~ msgstr "کپی نشانی ایمیل"
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Reach out!"
-msgstr "تماس بگیرید!"
+#~ msgid "Reach out!"
+#~ msgstr "تماس بگیرید!"
 
-#: src/lib/components/Footer.svelte
-msgid "Special Sponsor"
-msgstr "حامی ویژه"
+#~ msgid "Special Sponsor"
+#~ msgstr "حامی ویژه"
 
-#: src/lib/components/Footer.svelte
-msgid "We're looking for sponsors to keep this project alive and perhaps ad-free"
-msgstr "برای فعال و شاید بدون تبلیغ نگه‌داشتن این پروژه به دنبال حامی هستیم"
+#~ msgid "We're looking for sponsors to keep this project alive and perhaps ad-free"
+#~ msgstr "برای فعال و شاید بدون تبلیغ نگه‌داشتن این پروژه به دنبال حامی هستیم"
 
 #: src/lib/components/Header.svelte
 #: src/lib/components/Header.svelte
@@ -338,9 +320,8 @@ msgstr "مثقال یک واحد سنتی وزن در خاورمیانه است 
 msgid "What is the Bahá'í Faith?"
 msgstr "آیین بهائی چیست؟"
 
-#: src/routes/about/+page.svelte
-msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation—that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit bahai.org"
-msgstr "آیین بهائی دینی جهانی است که حضرت بهاءالله در ایران سدهٔ نوزدهم بنیان گذاشت. این آیین یگانگی بنیادی همهٔ ادیان و وحدت نوع بشر را تعلیم می‌دهد. بهائیان به وحی تدریجی باور دارند؛ یعنی خداوند در طول تاریخ پیام‌آوران الهی متعددی، از جمله ابراهیم، موسی، بودا، عیسی، محمد و در تازه‌ترین دوره حضرت بهاءالله را فرستاده است. برای اطلاعات بیشتر به bahai.org مراجعه کنید."
+#~ msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation—that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit bahai.org"
+#~ msgstr "آیین بهائی دینی جهانی است که حضرت بهاءالله در ایران سدهٔ نوزدهم بنیان گذاشت. این آیین یگانگی بنیادی همهٔ ادیان و وحدت نوع بشر را تعلیم می‌دهد. بهائیان به وحی تدریجی باور دارند؛ یعنی خداوند در طول تاریخ پیام‌آوران الهی متعددی، از جمله ابراهیم، موسی، بودا، عیسی، محمد و در تازه‌ترین دوره حضرت بهاءالله را فرستاده است. برای اطلاعات بیشتر به bahai.org مراجعه کنید."
 
 #: src/routes/about/+page.svelte
 msgid "Why are there advertisements?"
@@ -485,7 +466,7 @@ msgstr "اونس تروا (oz)"
 msgid "Weight unit"
 msgstr "واحد وزن"
 
-#: src/lib/components/ContactEmail.svelte
+#: src/routes/about/+page.svelte
 msgid "Email"
 msgstr "ایمیل"
 
@@ -496,3 +477,7 @@ msgstr "پیشنهادی دارید؟ اشکالی پیدا کرده‌اید؟"
 #: src/routes/support/+page.svelte
 msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
 msgstr "می‌توانید به <0>mithqal@mohajeri.dev</0> ایمیل بزنید."
+
+#: src/routes/about/+page.svelte
+msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation, meaning that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit <0>bahai.org</0>."
+msgstr "آیین بهائی دینی جهانی است که حضرت بهاءالله در ایران سدهٔ نوزدهم بنیان گذاشت. این آیین یگانگی بنیادی همهٔ ادیان و وحدت نوع بشر را تعلیم می‌دهد. بهائیان به وحی تدریجی باور دارند؛ یعنی خداوند در طول تاریخ پیام‌آوران الهی متعددی، از جمله ابراهیم، موسی، بودا، عیسی، محمد و در تازه‌ترین دوره حضرت بهاءالله را فرستاده است. برای اطلاعات بیشتر به <0>bahai.org</0> مراجعه کنید."

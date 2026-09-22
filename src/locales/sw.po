@@ -69,7 +69,6 @@ msgid "Click to copy"
 msgstr "Bofya ili kunakili"
 
 #: src/lib/components/Calculator.svelte
-#: src/lib/components/ContactEmail.svelte
 msgid "Copied!"
 msgstr "Imenakiliwa!"
 
@@ -164,75 +163,58 @@ msgstr "Kataa Zote"
 msgid "Accept All"
 msgstr "Kubali Zote"
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Failed to get contact email."
-msgstr "Imeshindikana kupata barua pepe ya mawasiliano."
+#~ msgid "Failed to get contact email."
+#~ msgstr "Imeshindikana kupata barua pepe ya mawasiliano."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Something went wrong. Please try again."
 msgstr "Hitilafu imetokea. Tafadhali jaribu tena."
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Contact verification is not configured."
-msgstr "Uthibitishaji wa mawasiliano haujasanidiwa."
+#~ msgid "Contact verification is not configured."
+#~ msgstr "Uthibitishaji wa mawasiliano haujasanidiwa."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Human verification could not load. Please try again."
 msgstr "Uthibitishaji wa kibinadamu haukuweza kupakiwa. Tafadhali jaribu tena."
 
 #. 0: code
-#. 0: code
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Human verification could not run{0}. Please try again or use another browser."
 msgstr "Uthibitishaji wa kibinadamu haukuweza kuendeshwa{0}. Tafadhali jaribu tena au utumie kivinjari kingine."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Human verification expired. Please try again."
 msgstr "Muda wa uthibitishaji wa kibinadamu umeisha. Tafadhali jaribu tena."
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Copy failed"
-msgstr "Kunakili kumeshindikana"
+#~ msgid "Copy failed"
+#~ msgstr "Kunakili kumeshindikana"
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Loading..."
 msgstr "Inapakia..."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Verifying..."
 msgstr "Inathibitisha..."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Try again"
 msgstr "Jaribu tena"
 
-#. 0: email
-#: src/lib/components/ContactEmail.svelte
-msgid "Email {0}"
-msgstr "Barua pepe {0}"
+#~ msgid "Email {0}"
+#~ msgstr "Barua pepe {0}"
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Copy email address"
-msgstr "Nakili anwani ya barua pepe"
+#~ msgid "Copy email address"
+#~ msgstr "Nakili anwani ya barua pepe"
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Reach out!"
-msgstr "Wasiliana nami!"
+#~ msgid "Reach out!"
+#~ msgstr "Wasiliana nami!"
 
-#: src/lib/components/Footer.svelte
-msgid "Special Sponsor"
-msgstr "Mfadhili Maalum"
+#~ msgid "Special Sponsor"
+#~ msgstr "Mfadhili Maalum"
 
-#: src/lib/components/Footer.svelte
-msgid "We're looking for sponsors to keep this project alive and perhaps ad-free"
-msgstr "Tunatafuta wafadhili ili kuendeleza mradi huu na ikiwezekana uendelee bila matangazo"
+#~ msgid "We're looking for sponsors to keep this project alive and perhaps ad-free"
+#~ msgstr "Tunatafuta wafadhili ili kuendeleza mradi huu na ikiwezekana uendelee bila matangazo"
 
 #: src/lib/components/Header.svelte
 #: src/lib/components/Header.svelte
@@ -338,9 +320,8 @@ msgstr "Mithqál ni kipimo cha jadi cha uzito kinachotumiwa Mashariki ya Kati, s
 msgid "What is the Bahá'í Faith?"
 msgstr "Imani ya Bahá’í ni nini?"
 
-#: src/routes/about/+page.svelte
-msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation—that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit bahai.org"
-msgstr "Imani ya Bahá’í ni dini ya ulimwengu iliyoanzishwa na Bahá’u’lláh katika Uajemi wa karne ya 19. Inafundisha umoja wa kimsingi wa dini zote na umoja wa wanadamu. Wabahá’í huamini katika ufunuo endelevu—kwamba Mungu ametuma mfululizo wa wajumbe wa kimungu katika historia, wakiwemo Abrahamu, Musa, Buddha, Yesu, Muhammad na, hivi karibuni zaidi, Bahá’u’lláh. Kwa maelezo zaidi, tembelea bahai.org"
+#~ msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation—that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit bahai.org"
+#~ msgstr "Imani ya Bahá’í ni dini ya ulimwengu iliyoanzishwa na Bahá’u’lláh katika Uajemi wa karne ya 19. Inafundisha umoja wa kimsingi wa dini zote na umoja wa wanadamu. Wabahá’í huamini katika ufunuo endelevu—kwamba Mungu ametuma mfululizo wa wajumbe wa kimungu katika historia, wakiwemo Abrahamu, Musa, Buddha, Yesu, Muhammad na, hivi karibuni zaidi, Bahá’u’lláh. Kwa maelezo zaidi, tembelea bahai.org"
 
 #: src/routes/about/+page.svelte
 msgid "Why are there advertisements?"
@@ -485,7 +466,7 @@ msgstr "Wakia za troy (oz)"
 msgid "Weight unit"
 msgstr "Kipimo cha uzito"
 
-#: src/lib/components/ContactEmail.svelte
+#: src/routes/about/+page.svelte
 msgid "Email"
 msgstr "Barua pepe"
 
@@ -496,3 +477,7 @@ msgstr "Una pendekezo? Umegundua hitilafu?"
 #: src/routes/support/+page.svelte
 msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
 msgstr "Unaweza kunitumia barua pepe kupitia <0>mithqal@mohajeri.dev</0>."
+
+#: src/routes/about/+page.svelte
+msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation, meaning that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit <0>bahai.org</0>."
+msgstr "Imani ya Bahá’í ni dini ya ulimwengu iliyoanzishwa na Bahá’u’lláh katika Uajemi wa karne ya 19. Inafundisha umoja wa kimsingi wa dini zote na umoja wa wanadamu. Wabahá’í huamini katika ufunuo endelevu, kumaanisha kwamba Mungu ametuma mfululizo wa wajumbe wa kimungu katika historia, wakiwemo Abrahamu, Musa, Buddha, Yesu, Muhammad na, hivi karibuni zaidi, Bahá’u’lláh. Kwa maelezo zaidi, tembelea <0>bahai.org</0>."

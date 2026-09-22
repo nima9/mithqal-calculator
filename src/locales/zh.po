@@ -69,7 +69,6 @@ msgid "Click to copy"
 msgstr "点击复制"
 
 #: src/lib/components/Calculator.svelte
-#: src/lib/components/ContactEmail.svelte
 msgid "Copied!"
 msgstr "已复制！"
 
@@ -164,75 +163,58 @@ msgstr "全部拒绝"
 msgid "Accept All"
 msgstr "全部接受"
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Failed to get contact email."
-msgstr "无法获取联系邮箱。"
+#~ msgid "Failed to get contact email."
+#~ msgstr "无法获取联系邮箱。"
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Something went wrong. Please try again."
 msgstr "出了点问题，请重试。"
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Contact verification is not configured."
-msgstr "尚未配置联系验证。"
+#~ msgid "Contact verification is not configured."
+#~ msgstr "尚未配置联系验证。"
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Human verification could not load. Please try again."
 msgstr "无法加载真人验证，请重试。"
 
 #. 0: code
-#. 0: code
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Human verification could not run{0}. Please try again or use another browser."
 msgstr "无法运行真人验证{0}。请重试或使用其他浏览器。"
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Human verification expired. Please try again."
 msgstr "真人验证已过期，请重试。"
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Copy failed"
-msgstr "复制失败"
+#~ msgid "Copy failed"
+#~ msgstr "复制失败"
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Loading..."
 msgstr "正在加载..."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Verifying..."
 msgstr "正在验证..."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Try again"
 msgstr "重试"
 
-#. 0: email
-#: src/lib/components/ContactEmail.svelte
-msgid "Email {0}"
-msgstr "电子邮件 {0}"
+#~ msgid "Email {0}"
+#~ msgstr "电子邮件 {0}"
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Copy email address"
-msgstr "复制电子邮件地址"
+#~ msgid "Copy email address"
+#~ msgstr "复制电子邮件地址"
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Reach out!"
-msgstr "联系我！"
+#~ msgid "Reach out!"
+#~ msgstr "联系我！"
 
-#: src/lib/components/Footer.svelte
-msgid "Special Sponsor"
-msgstr "特别赞助商"
+#~ msgid "Special Sponsor"
+#~ msgstr "特别赞助商"
 
-#: src/lib/components/Footer.svelte
-msgid "We're looking for sponsors to keep this project alive and perhaps ad-free"
-msgstr "我们正在寻找赞助商，让这个项目能够继续运行，并尽可能保持无广告"
+#~ msgid "We're looking for sponsors to keep this project alive and perhaps ad-free"
+#~ msgstr "我们正在寻找赞助商，让这个项目能够继续运行，并尽可能保持无广告"
 
 #: src/lib/components/Header.svelte
 #: src/lib/components/Header.svelte
@@ -338,9 +320,8 @@ msgstr "密斯卡勒是中东地区使用的传统重量单位，约等于 3.642
 msgid "What is the Bahá'í Faith?"
 msgstr "什么是巴哈伊信仰？"
 
-#: src/routes/about/+page.svelte
-msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation—that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit bahai.org"
-msgstr "巴哈伊信仰是由巴哈欧拉于 19 世纪的波斯创立的世界性宗教。它教导所有宗教在本质上是一体的，人类也是一个整体。巴哈伊信徒相信渐进启示，即上帝在历史进程中派遣了一系列神圣使者，包括亚伯拉罕、摩西、佛陀、耶稣、穆罕默德，以及最近的巴哈欧拉。更多信息请访问 bahai.org"
+#~ msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation—that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit bahai.org"
+#~ msgstr "巴哈伊信仰是由巴哈欧拉于 19 世纪的波斯创立的世界性宗教。它教导所有宗教在本质上是一体的，人类也是一个整体。巴哈伊信徒相信渐进启示，即上帝在历史进程中派遣了一系列神圣使者，包括亚伯拉罕、摩西、佛陀、耶稣、穆罕默德，以及最近的巴哈欧拉。更多信息请访问 bahai.org"
 
 #: src/routes/about/+page.svelte
 msgid "Why are there advertisements?"
@@ -485,7 +466,7 @@ msgstr "金衡盎司 (oz)"
 msgid "Weight unit"
 msgstr "重量单位"
 
-#: src/lib/components/ContactEmail.svelte
+#: src/routes/about/+page.svelte
 msgid "Email"
 msgstr "电子邮件"
 
@@ -496,3 +477,7 @@ msgstr "有建议？发现了问题？"
 #: src/routes/support/+page.svelte
 msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
 msgstr "你可以发送电子邮件至 <0>mithqal@mohajeri.dev</0>。"
+
+#: src/routes/about/+page.svelte
+msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation, meaning that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit <0>bahai.org</0>."
+msgstr "巴哈伊信仰是由巴哈欧拉于 19 世纪的波斯创立的世界性宗教。它教导所有宗教在本质上是一体的，人类也是一个整体。巴哈伊信徒相信渐进启示，也就是说，上帝在历史进程中派遣了一系列神圣使者，包括亚伯拉罕、摩西、佛陀、耶稣、穆罕默德，以及最近的巴哈欧拉。更多信息请访问 <0>bahai.org</0>。"

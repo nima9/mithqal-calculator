@@ -69,7 +69,6 @@ msgid "Click to copy"
 msgstr "Cliquer pour copier"
 
 #: src/lib/components/Calculator.svelte
-#: src/lib/components/ContactEmail.svelte
 msgid "Copied!"
 msgstr "Copié !"
 
@@ -164,75 +163,58 @@ msgstr "Tout refuser"
 msgid "Accept All"
 msgstr "Tout accepter"
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Failed to get contact email."
-msgstr "Impossible d’obtenir l’adresse e-mail de contact."
+#~ msgid "Failed to get contact email."
+#~ msgstr "Impossible d’obtenir l’adresse e-mail de contact."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Something went wrong. Please try again."
 msgstr "Une erreur s’est produite. Veuillez réessayer."
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Contact verification is not configured."
-msgstr "La vérification du contact n’est pas configurée."
+#~ msgid "Contact verification is not configured."
+#~ msgstr "La vérification du contact n’est pas configurée."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Human verification could not load. Please try again."
 msgstr "Impossible de charger la vérification humaine. Veuillez réessayer."
 
 #. 0: code
-#. 0: code
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Human verification could not run{0}. Please try again or use another browser."
 msgstr "Impossible d’exécuter la vérification humaine{0}. Veuillez réessayer ou utiliser un autre navigateur."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Human verification expired. Please try again."
 msgstr "La vérification humaine a expiré. Veuillez réessayer."
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Copy failed"
-msgstr "Échec de la copie"
+#~ msgid "Copy failed"
+#~ msgstr "Échec de la copie"
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Loading..."
 msgstr "Chargement..."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Verifying..."
 msgstr "Vérification..."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Try again"
 msgstr "Réessayer"
 
-#. 0: email
-#: src/lib/components/ContactEmail.svelte
-msgid "Email {0}"
-msgstr "E-mail {0}"
+#~ msgid "Email {0}"
+#~ msgstr "E-mail {0}"
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Copy email address"
-msgstr "Copier l’adresse e-mail"
+#~ msgid "Copy email address"
+#~ msgstr "Copier l’adresse e-mail"
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Reach out!"
-msgstr "Me contacter !"
+#~ msgid "Reach out!"
+#~ msgstr "Me contacter !"
 
-#: src/lib/components/Footer.svelte
-msgid "Special Sponsor"
-msgstr "Sponsor spécial"
+#~ msgid "Special Sponsor"
+#~ msgstr "Sponsor spécial"
 
-#: src/lib/components/Footer.svelte
-msgid "We're looking for sponsors to keep this project alive and perhaps ad-free"
-msgstr "Nous recherchons des sponsors pour faire vivre ce projet et, peut-être, le maintenir sans publicité"
+#~ msgid "We're looking for sponsors to keep this project alive and perhaps ad-free"
+#~ msgstr "Nous recherchons des sponsors pour faire vivre ce projet et, peut-être, le maintenir sans publicité"
 
 #: src/lib/components/Header.svelte
 #: src/lib/components/Header.svelte
@@ -338,9 +320,8 @@ msgstr "Le mithqál est une unité de poids traditionnelle utilisée au Moyen-Or
 msgid "What is the Bahá'í Faith?"
 msgstr "Qu’est-ce que la foi bahá’íe ?"
 
-#: src/routes/about/+page.svelte
-msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation—that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit bahai.org"
-msgstr "La foi bahá’íe est une religion mondiale fondée par Bahá’u’lláh dans la Perse du XIXe siècle. Elle enseigne l’unité essentielle de toutes les religions et l’unité de l’humanité. Les bahá’ís croient en la révélation progressive : Dieu a envoyé au fil de l’histoire une série de messagers divins, notamment Abraham, Moïse, Bouddha, Jésus, Muhammad et, plus récemment, Bahá’u’lláh. Pour plus d’informations, rendez-vous sur bahai.org"
+#~ msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation—that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit bahai.org"
+#~ msgstr "La foi bahá’íe est une religion mondiale fondée par Bahá’u’lláh dans la Perse du XIXe siècle. Elle enseigne l’unité essentielle de toutes les religions et l’unité de l’humanité. Les bahá’ís croient en la révélation progressive : Dieu a envoyé au fil de l’histoire une série de messagers divins, notamment Abraham, Moïse, Bouddha, Jésus, Muhammad et, plus récemment, Bahá’u’lláh. Pour plus d’informations, rendez-vous sur bahai.org"
 
 #: src/routes/about/+page.svelte
 msgid "Why are there advertisements?"
@@ -485,7 +466,7 @@ msgstr "Onces troy (oz)"
 msgid "Weight unit"
 msgstr "Unité de poids"
 
-#: src/lib/components/ContactEmail.svelte
+#: src/routes/about/+page.svelte
 msgid "Email"
 msgstr "E-mail"
 
@@ -496,3 +477,7 @@ msgstr "Une suggestion ? Vous avez trouvé un bug ?"
 #: src/routes/support/+page.svelte
 msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
 msgstr "Vous pouvez m’écrire à <0>mithqal@mohajeri.dev</0>."
+
+#: src/routes/about/+page.svelte
+msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation, meaning that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit <0>bahai.org</0>."
+msgstr "La foi bahá’íe est une religion mondiale fondée par Bahá’u’lláh dans la Perse du XIXe siècle. Elle enseigne l’unité essentielle de toutes les religions et l’unité de l’humanité. Les bahá’ís croient en la révélation progressive, ce qui signifie que Dieu a envoyé au fil de l’histoire une série de messagers divins, notamment Abraham, Moïse, Bouddha, Jésus, Muhammad et, plus récemment, Bahá’u’lláh. Pour plus d’informations, rendez-vous sur <0>bahai.org</0>."

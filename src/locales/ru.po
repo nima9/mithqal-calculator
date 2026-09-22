@@ -69,7 +69,6 @@ msgid "Click to copy"
 msgstr "Нажмите, чтобы скопировать"
 
 #: src/lib/components/Calculator.svelte
-#: src/lib/components/ContactEmail.svelte
 msgid "Copied!"
 msgstr "Скопировано!"
 
@@ -164,75 +163,58 @@ msgstr "Отклонить все"
 msgid "Accept All"
 msgstr "Принять все"
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Failed to get contact email."
-msgstr "Не удалось получить контактный адрес электронной почты."
+#~ msgid "Failed to get contact email."
+#~ msgstr "Не удалось получить контактный адрес электронной почты."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Something went wrong. Please try again."
 msgstr "Что-то пошло не так. Повторите попытку."
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Contact verification is not configured."
-msgstr "Проверка контакта не настроена."
+#~ msgid "Contact verification is not configured."
+#~ msgstr "Проверка контакта не настроена."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Human verification could not load. Please try again."
 msgstr "Не удалось загрузить проверку пользователя. Повторите попытку."
 
 #. 0: code
-#. 0: code
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Human verification could not run{0}. Please try again or use another browser."
 msgstr "Не удалось выполнить проверку пользователя{0}. Повторите попытку или воспользуйтесь другим браузером."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Human verification expired. Please try again."
 msgstr "Срок проверки пользователя истёк. Повторите попытку."
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Copy failed"
-msgstr "Не удалось скопировать"
+#~ msgid "Copy failed"
+#~ msgstr "Не удалось скопировать"
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Loading..."
 msgstr "Загрузка..."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Verifying..."
 msgstr "Проверка..."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Try again"
 msgstr "Повторить"
 
-#. 0: email
-#: src/lib/components/ContactEmail.svelte
-msgid "Email {0}"
-msgstr "Эл. почта {0}"
+#~ msgid "Email {0}"
+#~ msgstr "Эл. почта {0}"
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Copy email address"
-msgstr "Скопировать адрес электронной почты"
+#~ msgid "Copy email address"
+#~ msgstr "Скопировать адрес электронной почты"
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Reach out!"
-msgstr "Связаться!"
+#~ msgid "Reach out!"
+#~ msgstr "Связаться!"
 
-#: src/lib/components/Footer.svelte
-msgid "Special Sponsor"
-msgstr "Особый спонсор"
+#~ msgid "Special Sponsor"
+#~ msgstr "Особый спонсор"
 
-#: src/lib/components/Footer.svelte
-msgid "We're looking for sponsors to keep this project alive and perhaps ad-free"
-msgstr "Мы ищем спонсоров, чтобы проект продолжал жить и, возможно, оставался без рекламы"
+#~ msgid "We're looking for sponsors to keep this project alive and perhaps ad-free"
+#~ msgstr "Мы ищем спонсоров, чтобы проект продолжал жить и, возможно, оставался без рекламы"
 
 #: src/lib/components/Header.svelte
 #: src/lib/components/Header.svelte
@@ -338,9 +320,8 @@ msgstr "Мискаль — традиционная мера веса, испо�
 msgid "What is the Bahá'í Faith?"
 msgstr "Что такое Вера Бахаи?"
 
-#: src/routes/about/+page.svelte
-msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation—that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit bahai.org"
-msgstr "Вера Бахаи — мировая религия, основанная Бахауллой в Персии XIX века. Она учит сущностному единству всех религий и единству человечества. Бахаи верят в последовательное откровение: на протяжении истории Бог посылал череду Божественных Посланников, среди которых Авраам, Моисей, Будда, Иисус, Мухаммад и, совсем недавно, Бахаулла. Подробнее — на сайте bahai.org"
+#~ msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation—that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit bahai.org"
+#~ msgstr "Вера Бахаи — мировая религия, основанная Бахауллой в Персии XIX века. Она учит сущностному единству всех религий и единству человечества. Бахаи верят в последовательное откровение: на протяжении истории Бог посылал череду Божественных Посланников, среди которых Авраам, Моисей, Будда, Иисус, Мухаммад и, совсем недавно, Бахаулла. Подробнее — на сайте bahai.org"
 
 #: src/routes/about/+page.svelte
 msgid "Why are there advertisements?"
@@ -485,7 +466,7 @@ msgstr "Тройские унции (oz)"
 msgid "Weight unit"
 msgstr "Единица веса"
 
-#: src/lib/components/ContactEmail.svelte
+#: src/routes/about/+page.svelte
 msgid "Email"
 msgstr "Электронная почта"
 
@@ -496,3 +477,7 @@ msgstr "Есть предложение? Нашли ошибку?"
 #: src/routes/support/+page.svelte
 msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
 msgstr "Напишите мне на <0>mithqal@mohajeri.dev</0>."
+
+#: src/routes/about/+page.svelte
+msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation, meaning that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit <0>bahai.org</0>."
+msgstr "Вера Бахаи — мировая религия, основанная Бахауллой в Персии XIX века. Она учит сущностному единству всех религий и единству человечества. Бахаи верят в последовательное откровение, то есть в то, что на протяжении истории Бог посылал череду Божественных Посланников, среди которых Авраам, Моисей, Будда, Иисус, Мухаммад и, совсем недавно, Бахаулла. Подробнее — на сайте <0>bahai.org</0>."

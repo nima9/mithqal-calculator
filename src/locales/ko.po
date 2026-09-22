@@ -69,7 +69,6 @@ msgid "Click to copy"
 msgstr "클릭하여 복사"
 
 #: src/lib/components/Calculator.svelte
-#: src/lib/components/ContactEmail.svelte
 msgid "Copied!"
 msgstr "복사했습니다!"
 
@@ -164,75 +163,58 @@ msgstr "모두 거부"
 msgid "Accept All"
 msgstr "모두 동의"
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Failed to get contact email."
-msgstr "연락처 이메일을 가져오지 못했습니다."
+#~ msgid "Failed to get contact email."
+#~ msgstr "연락처 이메일을 가져오지 못했습니다."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Something went wrong. Please try again."
 msgstr "문제가 발생했습니다. 다시 시도해 주세요."
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Contact verification is not configured."
-msgstr "연락처 확인이 설정되어 있지 않습니다."
+#~ msgid "Contact verification is not configured."
+#~ msgstr "연락처 확인이 설정되어 있지 않습니다."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Human verification could not load. Please try again."
 msgstr "사람 확인을 불러오지 못했습니다. 다시 시도해 주세요."
 
 #. 0: code
-#. 0: code
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Human verification could not run{0}. Please try again or use another browser."
 msgstr "사람 확인을 실행하지 못했습니다{0}. 다시 시도하거나 다른 브라우저를 사용해 주세요."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Human verification expired. Please try again."
 msgstr "사람 확인이 만료되었습니다. 다시 시도해 주세요."
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Copy failed"
-msgstr "복사 실패"
+#~ msgid "Copy failed"
+#~ msgstr "복사 실패"
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Loading..."
 msgstr "불러오는 중..."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Verifying..."
 msgstr "확인 중..."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Try again"
 msgstr "다시 시도"
 
-#. 0: email
-#: src/lib/components/ContactEmail.svelte
-msgid "Email {0}"
-msgstr "이메일 {0}"
+#~ msgid "Email {0}"
+#~ msgstr "이메일 {0}"
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Copy email address"
-msgstr "이메일 주소 복사"
+#~ msgid "Copy email address"
+#~ msgstr "이메일 주소 복사"
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Reach out!"
-msgstr "문의하기!"
+#~ msgid "Reach out!"
+#~ msgstr "문의하기!"
 
-#: src/lib/components/Footer.svelte
-msgid "Special Sponsor"
-msgstr "특별 후원자"
+#~ msgid "Special Sponsor"
+#~ msgstr "특별 후원자"
 
-#: src/lib/components/Footer.svelte
-msgid "We're looking for sponsors to keep this project alive and perhaps ad-free"
-msgstr "이 프로젝트가 계속 운영되고 가능하면 광고 없이 유지될 수 있도록 후원자를 찾고 있습니다"
+#~ msgid "We're looking for sponsors to keep this project alive and perhaps ad-free"
+#~ msgstr "이 프로젝트가 계속 운영되고 가능하면 광고 없이 유지될 수 있도록 후원자를 찾고 있습니다"
 
 #: src/lib/components/Header.svelte
 #: src/lib/components/Header.svelte
@@ -338,9 +320,8 @@ msgstr "미스칼은 중동에서 사용되는 전통적인 무게 단위로 약
 msgid "What is the Bahá'í Faith?"
 msgstr "바하이 신앙이란 무엇인가요?"
 
-#: src/routes/about/+page.svelte
-msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation—that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit bahai.org"
-msgstr "바하이 신앙은 19세기 페르시아에서 바하올라가 창시한 세계 종교입니다. 모든 종교의 본질적 일체성과 인류의 통합을 가르칩니다. 바하이 신자들은 점진적 계시, 즉 하나님께서 역사 속에서 아브라함, 모세, 붓다, 예수, 무함마드, 그리고 가장 최근에는 바하올라를 비롯한 일련의 신성한 사자를 보내셨다고 믿습니다. 자세한 내용은 bahai.org를 방문해 주세요"
+#~ msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation—that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit bahai.org"
+#~ msgstr "바하이 신앙은 19세기 페르시아에서 바하올라가 창시한 세계 종교입니다. 모든 종교의 본질적 일체성과 인류의 통합을 가르칩니다. 바하이 신자들은 점진적 계시, 즉 하나님께서 역사 속에서 아브라함, 모세, 붓다, 예수, 무함마드, 그리고 가장 최근에는 바하올라를 비롯한 일련의 신성한 사자를 보내셨다고 믿습니다. 자세한 내용은 bahai.org를 방문해 주세요"
 
 #: src/routes/about/+page.svelte
 msgid "Why are there advertisements?"
@@ -485,7 +466,7 @@ msgstr "트로이온스 (oz)"
 msgid "Weight unit"
 msgstr "무게 단위"
 
-#: src/lib/components/ContactEmail.svelte
+#: src/routes/about/+page.svelte
 msgid "Email"
 msgstr "이메일"
 
@@ -496,3 +477,7 @@ msgstr "제안이 있거나 버그를 발견하셨나요?"
 #: src/routes/support/+page.svelte
 msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
 msgstr "<0>mithqal@mohajeri.dev</0>로 이메일을 보내 주세요."
+
+#: src/routes/about/+page.svelte
+msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation, meaning that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit <0>bahai.org</0>."
+msgstr "바하이 신앙은 19세기 페르시아에서 바하올라가 창시한 세계 종교입니다. 모든 종교의 본질적 일체성과 인류의 통합을 가르칩니다. 바하이 신자들은 점진적 계시를 믿으며, 이는 하나님께서 역사 속에서 아브라함, 모세, 붓다, 예수, 무함마드, 그리고 가장 최근에는 바하올라를 비롯한 일련의 신성한 사자를 보내셨다는 의미입니다. 자세한 내용은 <0>bahai.org</0>를 방문해 주세요."

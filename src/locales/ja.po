@@ -69,7 +69,6 @@ msgid "Click to copy"
 msgstr "クリックしてコピー"
 
 #: src/lib/components/Calculator.svelte
-#: src/lib/components/ContactEmail.svelte
 msgid "Copied!"
 msgstr "コピーしました！"
 
@@ -164,75 +163,58 @@ msgstr "すべて拒否"
 msgid "Accept All"
 msgstr "すべて同意"
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Failed to get contact email."
-msgstr "連絡先メールアドレスを取得できませんでした。"
+#~ msgid "Failed to get contact email."
+#~ msgstr "連絡先メールアドレスを取得できませんでした。"
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Something went wrong. Please try again."
 msgstr "問題が発生しました。もう一度お試しください。"
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Contact verification is not configured."
-msgstr "連絡先の認証が設定されていません。"
+#~ msgid "Contact verification is not configured."
+#~ msgstr "連絡先の認証が設定されていません。"
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Human verification could not load. Please try again."
 msgstr "本人確認を読み込めませんでした。もう一度お試しください。"
 
 #. 0: code
-#. 0: code
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Human verification could not run{0}. Please try again or use another browser."
 msgstr "本人確認を実行できませんでした{0}。もう一度試すか、別のブラウザをご利用ください。"
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Human verification expired. Please try again."
 msgstr "本人確認の有効期限が切れました。もう一度お試しください。"
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Copy failed"
-msgstr "コピーに失敗しました"
+#~ msgid "Copy failed"
+#~ msgstr "コピーに失敗しました"
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Loading..."
 msgstr "読み込み中..."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Verifying..."
 msgstr "確認中..."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Try again"
 msgstr "もう一度試す"
 
-#. 0: email
-#: src/lib/components/ContactEmail.svelte
-msgid "Email {0}"
-msgstr "メール {0}"
+#~ msgid "Email {0}"
+#~ msgstr "メール {0}"
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Copy email address"
-msgstr "メールアドレスをコピー"
+#~ msgid "Copy email address"
+#~ msgstr "メールアドレスをコピー"
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Reach out!"
-msgstr "お問い合わせ！"
+#~ msgid "Reach out!"
+#~ msgstr "お問い合わせ！"
 
-#: src/lib/components/Footer.svelte
-msgid "Special Sponsor"
-msgstr "特別スポンサー"
+#~ msgid "Special Sponsor"
+#~ msgstr "特別スポンサー"
 
-#: src/lib/components/Footer.svelte
-msgid "We're looking for sponsors to keep this project alive and perhaps ad-free"
-msgstr "このプロジェクトを継続し、できれば広告なしで運営するためのスポンサーを募集しています"
+#~ msgid "We're looking for sponsors to keep this project alive and perhaps ad-free"
+#~ msgstr "このプロジェクトを継続し、できれば広告なしで運営するためのスポンサーを募集しています"
 
 #: src/lib/components/Header.svelte
 #: src/lib/components/Header.svelte
@@ -338,9 +320,8 @@ msgstr "ミスカールは中東で使われてきた伝統的な重量単位で
 msgid "What is the Bahá'í Faith?"
 msgstr "バハイ信教とは？"
 
-#: src/routes/about/+page.svelte
-msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation—that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit bahai.org"
-msgstr "バハイ信教は、19 世紀のペルシャでバハオラによって創始された世界宗教です。すべての宗教の本質的な一体性と、人類の一体性を説いています。バハイ信徒は漸進的啓示、すなわち神が歴史を通じてアブラハム、モーセ、仏陀、イエス、ムハンマド、そして最も新しくはバハオラを含む一連の聖なる使者を遣わしたと信じています。詳しくは bahai.org をご覧ください"
+#~ msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation—that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit bahai.org"
+#~ msgstr "バハイ信教は、19 世紀のペルシャでバハオラによって創始された世界宗教です。すべての宗教の本質的な一体性と、人類の一体性を説いています。バハイ信徒は漸進的啓示、すなわち神が歴史を通じてアブラハム、モーセ、仏陀、イエス、ムハンマド、そして最も新しくはバハオラを含む一連の聖なる使者を遣わしたと信じています。詳しくは bahai.org をご覧ください"
 
 #: src/routes/about/+page.svelte
 msgid "Why are there advertisements?"
@@ -485,7 +466,7 @@ msgstr "トロイオンス (oz)"
 msgid "Weight unit"
 msgstr "重量単位"
 
-#: src/lib/components/ContactEmail.svelte
+#: src/routes/about/+page.svelte
 msgid "Email"
 msgstr "メール"
 
@@ -496,3 +477,7 @@ msgstr "ご提案や不具合の報告はありますか？"
 #: src/routes/support/+page.svelte
 msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
 msgstr "<0>mithqal@mohajeri.dev</0> までメールでご連絡ください。"
+
+#: src/routes/about/+page.svelte
+msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation, meaning that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit <0>bahai.org</0>."
+msgstr "バハイ信教は、19 世紀のペルシャでバハオラによって創始された世界宗教です。すべての宗教の本質的な一体性と、人類の一体性を説いています。バハイ信徒は漸進的啓示を信じています。これは、神が歴史を通じてアブラハム、モーセ、仏陀、イエス、ムハンマド、そして最も新しくはバハオラを含む一連の聖なる使者を遣わしたという意味です。詳しくは <0>bahai.org</0> をご覧ください。"

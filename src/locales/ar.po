@@ -69,7 +69,6 @@ msgid "Click to copy"
 msgstr "انقر للنسخ"
 
 #: src/lib/components/Calculator.svelte
-#: src/lib/components/ContactEmail.svelte
 msgid "Copied!"
 msgstr "تم النسخ!"
 
@@ -164,75 +163,58 @@ msgstr "رفض الكل"
 msgid "Accept All"
 msgstr "قبول الكل"
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Failed to get contact email."
-msgstr "تعذّر الحصول على بريد التواصل."
+#~ msgid "Failed to get contact email."
+#~ msgstr "تعذّر الحصول على بريد التواصل."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Something went wrong. Please try again."
 msgstr "حدث خطأ ما. يرجى المحاولة مرة أخرى."
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Contact verification is not configured."
-msgstr "لم يتم إعداد التحقق من التواصل."
+#~ msgid "Contact verification is not configured."
+#~ msgstr "لم يتم إعداد التحقق من التواصل."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Human verification could not load. Please try again."
 msgstr "تعذّر تحميل التحقق البشري. يرجى المحاولة مرة أخرى."
 
 #. 0: code
-#. 0: code
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Human verification could not run{0}. Please try again or use another browser."
 msgstr "تعذّر تشغيل التحقق البشري{0}. يرجى المحاولة مرة أخرى أو استخدام متصفح آخر."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Human verification expired. Please try again."
 msgstr "انتهت صلاحية التحقق البشري. يرجى المحاولة مرة أخرى."
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Copy failed"
-msgstr "فشل النسخ"
+#~ msgid "Copy failed"
+#~ msgstr "فشل النسخ"
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Loading..."
 msgstr "جارٍ التحميل..."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Verifying..."
 msgstr "جارٍ التحقق..."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Try again"
 msgstr "حاول مرة أخرى"
 
-#. 0: email
-#: src/lib/components/ContactEmail.svelte
-msgid "Email {0}"
-msgstr "البريد الإلكتروني {0}"
+#~ msgid "Email {0}"
+#~ msgstr "البريد الإلكتروني {0}"
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Copy email address"
-msgstr "نسخ عنوان البريد الإلكتروني"
+#~ msgid "Copy email address"
+#~ msgstr "نسخ عنوان البريد الإلكتروني"
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Reach out!"
-msgstr "تواصل معنا!"
+#~ msgid "Reach out!"
+#~ msgstr "تواصل معنا!"
 
-#: src/lib/components/Footer.svelte
-msgid "Special Sponsor"
-msgstr "راعٍ مميز"
+#~ msgid "Special Sponsor"
+#~ msgstr "راعٍ مميز"
 
-#: src/lib/components/Footer.svelte
-msgid "We're looking for sponsors to keep this project alive and perhaps ad-free"
-msgstr "نبحث عن رعاة لإبقاء هذا المشروع مستمرًا وربما بلا إعلانات"
+#~ msgid "We're looking for sponsors to keep this project alive and perhaps ad-free"
+#~ msgstr "نبحث عن رعاة لإبقاء هذا المشروع مستمرًا وربما بلا إعلانات"
 
 #: src/lib/components/Header.svelte
 #: src/lib/components/Header.svelte
@@ -338,9 +320,8 @@ msgstr "المثقال وحدة وزن تقليدية مستخدمة في الش
 msgid "What is the Bahá'í Faith?"
 msgstr "ما هو الدين البهائي؟"
 
-#: src/routes/about/+page.svelte
-msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation—that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit bahai.org"
-msgstr "الدين البهائي دين عالمي أسّسه حضرة بهاء الله في بلاد فارس في القرن التاسع عشر. ويعلّم الوحدة الجوهرية لجميع الأديان ووحدة الجنس البشري. يؤمن البهائيون بالوحي التدريجي، أي أن الله أرسل سلسلة من الرسل الإلهيين عبر التاريخ، منهم إبراهيم وموسى وبوذا وعيسى ومحمد، وآخرهم حضرة بهاء الله. لمزيد من المعلومات، يرجى زيارة bahai.org."
+#~ msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation—that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit bahai.org"
+#~ msgstr "الدين البهائي دين عالمي أسّسه حضرة بهاء الله في بلاد فارس في القرن التاسع عشر. ويعلّم الوحدة الجوهرية لجميع الأديان ووحدة الجنس البشري. يؤمن البهائيون بالوحي التدريجي، أي أن الله أرسل سلسلة من الرسل الإلهيين عبر التاريخ، منهم إبراهيم وموسى وبوذا وعيسى ومحمد، وآخرهم حضرة بهاء الله. لمزيد من المعلومات، يرجى زيارة bahai.org."
 
 #: src/routes/about/+page.svelte
 msgid "Why are there advertisements?"
@@ -485,7 +466,7 @@ msgstr "أونصات تروي (oz)"
 msgid "Weight unit"
 msgstr "وحدة الوزن"
 
-#: src/lib/components/ContactEmail.svelte
+#: src/routes/about/+page.svelte
 msgid "Email"
 msgstr "البريد الإلكتروني"
 
@@ -496,3 +477,7 @@ msgstr "هل لديك اقتراح؟ هل وجدت خطأً؟"
 #: src/routes/support/+page.svelte
 msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
 msgstr "يمكنك مراسلتي عبر البريد الإلكتروني على <0>mithqal@mohajeri.dev</0>."
+
+#: src/routes/about/+page.svelte
+msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation, meaning that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit <0>bahai.org</0>."
+msgstr "الدين البهائي دين عالمي أسّسه حضرة بهاء الله في بلاد فارس في القرن التاسع عشر. ويعلّم الوحدة الجوهرية لجميع الأديان ووحدة الجنس البشري. يؤمن البهائيون بالوحي التدريجي، أي أن الله أرسل سلسلة من الرسل الإلهيين عبر التاريخ، منهم إبراهيم وموسى وبوذا وعيسى ومحمد، وآخرهم حضرة بهاء الله. لمزيد من المعلومات، يرجى زيارة <0>bahai.org</0>."

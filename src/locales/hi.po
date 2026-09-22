@@ -69,7 +69,6 @@ msgid "Click to copy"
 msgstr "कॉपी करने के लिए क्लिक करें"
 
 #: src/lib/components/Calculator.svelte
-#: src/lib/components/ContactEmail.svelte
 msgid "Copied!"
 msgstr "कॉपी हो गया!"
 
@@ -164,75 +163,58 @@ msgstr "सभी अस्वीकार करें"
 msgid "Accept All"
 msgstr "सभी स्वीकार करें"
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Failed to get contact email."
-msgstr "संपर्क ईमेल नहीं मिल सका।"
+#~ msgid "Failed to get contact email."
+#~ msgstr "संपर्क ईमेल नहीं मिल सका।"
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Something went wrong. Please try again."
 msgstr "कुछ गड़बड़ हुई। कृपया फिर से कोशिश करें।"
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Contact verification is not configured."
-msgstr "संपर्क सत्यापन कॉन्फ़िगर नहीं किया गया है।"
+#~ msgid "Contact verification is not configured."
+#~ msgstr "संपर्क सत्यापन कॉन्फ़िगर नहीं किया गया है।"
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Human verification could not load. Please try again."
 msgstr "मानव सत्यापन लोड नहीं हो सका। कृपया फिर से कोशिश करें।"
 
 #. 0: code
-#. 0: code
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Human verification could not run{0}. Please try again or use another browser."
 msgstr "मानव सत्यापन चल नहीं सका{0}। कृपया फिर से कोशिश करें या कोई दूसरा ब्राउज़र इस्तेमाल करें।"
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Human verification expired. Please try again."
 msgstr "मानव सत्यापन की समय-सीमा समाप्त हो गई। कृपया फिर से कोशिश करें।"
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Copy failed"
-msgstr "कॉपी नहीं हो सका"
+#~ msgid "Copy failed"
+#~ msgstr "कॉपी नहीं हो सका"
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Loading..."
 msgstr "लोड हो रहा है..."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Verifying..."
 msgstr "सत्यापन हो रहा है..."
 
-#: src/lib/components/ContactEmail.svelte
 #: src/lib/components/TurnstileGate.svelte
 msgid "Try again"
 msgstr "फिर से कोशिश करें"
 
-#. 0: email
-#: src/lib/components/ContactEmail.svelte
-msgid "Email {0}"
-msgstr "ईमेल {0}"
+#~ msgid "Email {0}"
+#~ msgstr "ईमेल {0}"
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Copy email address"
-msgstr "ईमेल पता कॉपी करें"
+#~ msgid "Copy email address"
+#~ msgstr "ईमेल पता कॉपी करें"
 
-#: src/lib/components/ContactEmail.svelte
-msgid "Reach out!"
-msgstr "संपर्क करें!"
+#~ msgid "Reach out!"
+#~ msgstr "संपर्क करें!"
 
-#: src/lib/components/Footer.svelte
-msgid "Special Sponsor"
-msgstr "विशेष प्रायोजक"
+#~ msgid "Special Sponsor"
+#~ msgstr "विशेष प्रायोजक"
 
-#: src/lib/components/Footer.svelte
-msgid "We're looking for sponsors to keep this project alive and perhaps ad-free"
-msgstr "इस परियोजना को जारी रखने और शायद विज्ञापन-मुक्त रखने के लिए हम प्रायोजक खोज रहे हैं"
+#~ msgid "We're looking for sponsors to keep this project alive and perhaps ad-free"
+#~ msgstr "इस परियोजना को जारी रखने और शायद विज्ञापन-मुक्त रखने के लिए हम प्रायोजक खोज रहे हैं"
 
 #: src/lib/components/Header.svelte
 #: src/lib/components/Header.svelte
@@ -338,9 +320,8 @@ msgstr "मिस्क़ाल मध्य पूर्व में इस�
 msgid "What is the Bahá'í Faith?"
 msgstr "बहाई धर्म क्या है?"
 
-#: src/routes/about/+page.svelte
-msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation—that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit bahai.org"
-msgstr "बहाई धर्म एक विश्व धर्म है जिसकी स्थापना 19वीं सदी के फ़ारस में बहाउल्लाह ने की थी। यह सभी धर्मों की मूलभूत एकता और मानवजाति की एकता सिखाता है। बहाई क्रमिक प्रकाशना में विश्वास करते हैं—अर्थात ईश्वर ने इतिहास में इब्राहीम, मूसा, बुद्ध, यीशु, मुहम्मद और सबसे हाल में बहाउल्लाह सहित दिव्य संदेशवाहकों की एक शृंखला भेजी है। अधिक जानकारी के लिए bahai.org देखें"
+#~ msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation—that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit bahai.org"
+#~ msgstr "बहाई धर्म एक विश्व धर्म है जिसकी स्थापना 19वीं सदी के फ़ारस में बहाउल्लाह ने की थी। यह सभी धर्मों की मूलभूत एकता और मानवजाति की एकता सिखाता है। बहाई क्रमिक प्रकाशना में विश्वास करते हैं—अर्थात ईश्वर ने इतिहास में इब्राहीम, मूसा, बुद्ध, यीशु, मुहम्मद और सबसे हाल में बहाउल्लाह सहित दिव्य संदेशवाहकों की एक शृंखला भेजी है। अधिक जानकारी के लिए bahai.org देखें"
 
 #: src/routes/about/+page.svelte
 msgid "Why are there advertisements?"
@@ -485,7 +466,7 @@ msgstr "ट्रॉय औंस (oz)"
 msgid "Weight unit"
 msgstr "भार इकाई"
 
-#: src/lib/components/ContactEmail.svelte
+#: src/routes/about/+page.svelte
 msgid "Email"
 msgstr "ईमेल"
 
@@ -496,3 +477,7 @@ msgstr "कोई सुझाव है? कोई गड़बड़ी मि
 #: src/routes/support/+page.svelte
 msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
 msgstr "आप मुझे <0>mithqal@mohajeri.dev</0> पर ईमेल कर सकते हैं।"
+
+#: src/routes/about/+page.svelte
+msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation, meaning that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit <0>bahai.org</0>."
+msgstr "बहाई धर्म एक विश्व धर्म है जिसकी स्थापना 19वीं सदी के फ़ारस में बहाउल्लाह ने की थी। यह सभी धर्मों की मूलभूत एकता और मानवजाति की एकता सिखाता है। बहाई क्रमिक प्रकाशना में विश्वास करते हैं, जिसका अर्थ है कि ईश्वर ने इतिहास में इब्राहीम, मूसा, बुद्ध, यीशु, मुहम्मद और सबसे हाल में बहाउल्लाह सहित दिव्य संदेशवाहकों की एक शृंखला भेजी है। अधिक जानकारी के लिए <0>bahai.org</0> देखें।"
