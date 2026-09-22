@@ -1,0 +1,33 @@
+{
+  "ignorePatterns": [
+    ".agents/**",
+    ".svelte-kit/**",
+    ".wrangler/**",
+    "build/**",
+    "drizzle/**",
+    "env.d.ts",
+    "node_modules/**",
+    "static/**",
+    "src/lib/server/db/auth-schema.ts",
+    "tools/oxlint/anti-slop/**",
+    "worker-configuration.d.ts"
+  ],
+  "sortImports": {
+    "newlinesBetween": false,
+    "groups": [
+      ["value-builtin", "value-external"],
+      ["value-internal", "value-parent", "value-sibling", "value-index"],
+      {
+        "newlinesBetween": true
+      },
+      "type-import",
+      "unknown"
+    ]
+  },
+  "sortTailwindcss": {
+    "stylesheet": "src/routes/layout.css",
+    "functions": ["clsx", "cn"],
+    "preserveWhitespace": true
+  },
+  "svelte": true
+}
