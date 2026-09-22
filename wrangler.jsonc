@@ -2,36 +2,15 @@
   "name": "mithqal-calculator",
   "account_id": "f2bcc8def8608fd9f1009912570164ce",
   "compatibility_date": "2026-01-25",
-  "compatibility_flags": ["nodejs_als"],
+  "compatibility_flags": ["nodejs_compat", "nodejs_als"],
   "main": "worker/index.ts",
-  "vars": {
-    "PUBLIC_TURNSTILE_SITE_KEY": "0x4AAAAAACWcvfZNahDXX8aD",
-    // Public GA4 web-stream ID.
-    "PUBLIC_GA_MEASUREMENT_ID": "G-DTZYQSS4SE",
-    "TURNSTILE_HOSTNAMES": "mithqal.app",
-  },
-  "secrets": {
-    "required": ["CONTACT_EMAIL", "TURNSTILE_SECRET_KEY", "TURSO_AUTH_TOKEN", "TURSO_DATABASE_URL"],
-  },
-  // `bun run preview` runs `wrangler dev --env dev`: local runs must use
-  // Cloudflare's always-pass test site key and localhost hostnames, since the
-  // production values in `vars` only work on mithqal.app.
-  "env": {
-    "dev": {
-      "vars": {
-        "PUBLIC_TURNSTILE_SITE_KEY": "1x00000000000000000000AA",
-        // Vars do not inherit into named Wrangler environments.
-        "PUBLIC_GA_MEASUREMENT_ID": "G-DTZYQSS4SE",
-        "TURNSTILE_HOSTNAMES": "localhost,127.0.0.1",
-      },
-    },
-  },
+  // Env vars and secrets are managed by Varlock (`.env.schema`).
   "assets": {
     "binding": "ASSETS",
     "directory": ".svelte-kit/cloudflare",
   },
   "triggers": {
-    "crons": ["0 6 * * *"],
+    "crons": ["0 6,18 * * *", "15 6 1 * *"],
   },
   "observability": {
     "enabled": true,
