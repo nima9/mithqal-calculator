@@ -1,0 +1,498 @@
+msgid ""
+msgstr ""
+"Source-Language: en\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1\n"
+"X-Plurals-Order: other\n"
+
+#: src/routes/+layout.svelte
+#: src/routes/+page.svelte
+msgid "Free mithqál calculator: convert mithqals of gold and silver to any currency with live precious metal and exchange rates."
+msgstr "무료 미스칼 계산기: 실시간 귀금속 가격과 환율을 이용해 금과 은의 미스칼 가치를 모든 통화로 환산하세요."
+
+#: src/routes/+layout.svelte
+msgid "Mithqál Calculator – Convert Gold & Silver to Any Currency"
+msgstr "미스칼 계산기 – 금과 은을 모든 통화로 환산"
+
+#: src/routes/+layout.svelte
+msgid "Mithqal Calculator"
+msgstr "미스칼 계산기"
+
+#: src/routes/+layout.svelte
+msgid "Mithqal Calculator - Convert mithqals to currency"
+msgstr "미스칼 계산기 - 미스칼을 통화로 환산"
+
+#: src/routes/+page.svelte
+msgid "WebApplication"
+msgstr "WebApplication"
+
+#: src/lib/components/Header.svelte
+#: src/routes/+page.svelte
+#: src/routes/+page.svelte
+msgid "Mithqál Calculator"
+msgstr "미스칼 계산기"
+
+#: src/routes/+page.svelte
+msgid "FinanceApplication"
+msgstr "FinanceApplication"
+
+#: src/routes/+page.svelte
+msgid "Web"
+msgstr "Web"
+
+#: src/routes/+page.svelte
+msgid "Requires JavaScript"
+msgstr "Requires JavaScript"
+
+#: src/routes/+page.svelte
+msgid "Offer"
+msgstr "Offer"
+
+#: src/lib/components/Calculator.svelte
+msgid "Gold"
+msgstr "금"
+
+#: src/lib/components/Calculator.svelte
+msgid "Silver"
+msgstr "은"
+
+#: src/lib/components/Calculator.svelte
+#: src/lib/components/RatesTimestamp.svelte
+msgid "America/Los_Angeles"
+msgstr "America/Los_Angeles"
+
+#: src/lib/components/Calculator.svelte
+msgid "Click to copy"
+msgstr "클릭하여 복사"
+
+#: src/lib/components/Calculator.svelte
+#: src/lib/components/ContactEmail.svelte
+msgid "Copied!"
+msgstr "복사했습니다!"
+
+#: src/lib/components/Calculator.svelte
+msgid "Failed to copy"
+msgstr "복사하지 못했습니다"
+
+#: src/lib/components/Combobox.svelte
+msgid "Fiat currencies"
+msgstr "법정 통화"
+
+#: src/lib/components/Combobox.svelte
+msgid "Cryptocurrencies"
+msgstr "암호화폐"
+
+#: src/lib/components/Combobox.svelte
+msgid "Select..."
+msgstr "선택..."
+
+#: src/lib/components/Combobox.svelte
+msgid "No currencies found."
+msgstr "통화를 찾을 수 없습니다."
+
+#: src/lib/components/CookieConsent.svelte
+msgid "Decline"
+msgstr "거부"
+
+#: src/lib/components/CookieConsent.svelte
+msgid "Accept"
+msgstr "동의"
+
+#: src/lib/components/CookieConsent.svelte
+msgid "We use cookies for analytics and ads. <0>Learn more</0>"
+msgstr "분석 및 광고를 위해 쿠키를 사용합니다. <0>자세히 알아보기</0>"
+
+#: src/lib/components/CookieModal.svelte
+#: src/lib/components/SettingsModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Escape"
+msgstr "Escape"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Close cookie policy"
+msgstr "쿠키 정책 닫기"
+
+#: src/lib/components/CookieModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Enter"
+msgstr "Enter"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Close"
+msgstr "닫기"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Cookie Policy"
+msgstr "쿠키 정책"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Essential (Always Active)"
+msgstr "필수 항목(항상 활성화)"
+
+#: src/lib/components/CookieModal.svelte
+msgid "These are required for the site to function. They store your preferences like theme and currency settings in your browser's local storage. No data is sent to external servers."
+msgstr "사이트가 작동하는 데 필요합니다. 테마와 통화 같은 환경설정을 브라우저의 로컬 저장소에 보관합니다. 외부 서버로 전송되는 데이터는 없습니다."
+
+#: src/lib/components/CookieModal.svelte
+msgid "Analytics (Optional)"
+msgstr "분석(선택 사항)"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Google Analytics helps us understand how visitors use the site. It collects anonymized data about page views and interactions. This data is processed by Google."
+msgstr "Google Analytics는 방문자가 사이트를 어떻게 이용하는지 파악하는 데 도움이 됩니다. 페이지 조회와 상호작용에 관한 익명 데이터를 수집하며, 이 데이터는 Google에서 처리합니다."
+
+#: src/lib/components/CookieModal.svelte
+msgid "Advertising (Optional)"
+msgstr "광고(선택 사항)"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Google AdSense displays ads to support the site. It may use cookies to show personalized ads based on your browsing history. If declined, ads will not be shown."
+msgstr "Google AdSense는 사이트 운영을 지원하기 위해 광고를 표시합니다. 검색 기록을 바탕으로 맞춤 광고를 표시하기 위해 쿠키를 사용할 수 있습니다. 거부하면 광고가 표시되지 않습니다."
+
+#: src/lib/components/CookieModal.svelte
+msgid "You can change your preference at any time by clearing your browser's local storage for this site."
+msgstr "브라우저에서 이 사이트의 로컬 저장소를 삭제하면 언제든지 선택을 변경할 수 있습니다."
+
+#: src/lib/components/CookieModal.svelte
+msgid "Decline All"
+msgstr "모두 거부"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Accept All"
+msgstr "모두 동의"
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Failed to get contact email."
+msgstr "연락처 이메일을 가져오지 못했습니다."
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Something went wrong. Please try again."
+msgstr "문제가 발생했습니다. 다시 시도해 주세요."
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Contact verification is not configured."
+msgstr "연락처 확인이 설정되어 있지 않습니다."
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification could not load. Please try again."
+msgstr "사람 확인을 불러오지 못했습니다. 다시 시도해 주세요."
+
+#. 0: code
+#. 0: code
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification could not run{0}. Please try again or use another browser."
+msgstr "사람 확인을 실행하지 못했습니다{0}. 다시 시도하거나 다른 브라우저를 사용해 주세요."
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification expired. Please try again."
+msgstr "사람 확인이 만료되었습니다. 다시 시도해 주세요."
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Copy failed"
+msgstr "복사 실패"
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Loading..."
+msgstr "불러오는 중..."
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verifying..."
+msgstr "확인 중..."
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Try again"
+msgstr "다시 시도"
+
+#. 0: email
+#: src/lib/components/ContactEmail.svelte
+msgid "Email {0}"
+msgstr "이메일 {0}"
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Copy email address"
+msgstr "이메일 주소 복사"
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Reach out!"
+msgstr "문의하기!"
+
+#: src/lib/components/Footer.svelte
+msgid "Special Sponsor"
+msgstr "특별 후원자"
+
+#: src/lib/components/Footer.svelte
+msgid "We're looking for sponsors to keep this project alive and perhaps ad-free"
+msgstr "이 프로젝트가 계속 운영되고 가능하면 광고 없이 유지될 수 있도록 후원자를 찾고 있습니다"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+#: src/routes/about/+page.svelte
+msgid "About"
+msgstr "소개"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+#: src/routes/support/+page.svelte
+msgid "Support"
+msgstr "후원"
+
+#: src/lib/components/Header.svelte
+msgid "Open settings"
+msgstr "설정 열기"
+
+#: src/lib/components/Header.svelte
+msgid "Open menu"
+msgstr "메뉴 열기"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+msgid "Close menu"
+msgstr "메뉴 닫기"
+
+#: src/lib/components/Header.svelte
+msgid "Theme"
+msgstr "테마"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Settings"
+msgstr "설정"
+
+#: src/lib/components/RatesTimestamp.svelte
+msgid "Unavailable"
+msgstr "사용할 수 없음"
+
+#. 0: readableRateDate
+#: src/lib/components/RatesTimestamp.svelte
+msgid "Rates retrieved: {0}"
+msgstr "환율을 가져온 시간: {0}"
+
+#: src/lib/components/SettingsModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Close settings"
+msgstr "설정 닫기"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "With commas (1,234.56)"
+msgstr "쉼표 포함 (1,234.56)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Without commas (1234.56)"
+msgstr "쉼표 없음 (1234.56)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Copy format"
+msgstr "복사 형식"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Done"
+msgstr "완료"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "Light mode"
+msgstr "라이트 모드"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "Dark mode"
+msgstr "다크 모드"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "System mode"
+msgstr "시스템 모드"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification is not configured."
+msgstr "사람 확인이 설정되어 있지 않습니다."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verification failed. Please try again."
+msgstr "확인에 실패했습니다. 다시 시도해 주세요."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verify you're human"
+msgstr "사람인지 확인"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Please complete the challenge to view this page."
+msgstr "이 페이지를 보려면 확인 절차를 완료해 주세요."
+
+#: src/routes/about/+page.svelte
+msgid "What is a Mithqál?"
+msgstr "미스칼이란 무엇인가요?"
+
+#: src/routes/about/+page.svelte
+msgid "A mithqál is a traditional unit of weight used in the Middle East, equivalent to approximately 3.642 grams. In the Bahá'í Faith, it holds special significance as it is used to calculate Huqúqu'lláh (the Right of God), a spiritual obligation for Bahá'ís to contribute 19% of their surplus wealth after essential expenses (only if the individuals net worth is worth 19 Mithqáls of gold or more)."
+msgstr "미스칼은 중동에서 사용되는 전통적인 무게 단위로 약 3.642그램에 해당합니다. 바하이 신앙에서는 Huqúqu’lláh(신의 권리)를 계산하는 데 사용되므로 특별한 의미가 있습니다. 이는 필수 지출을 제외한 잉여 재산의 19%를 기부하는 바하이 신자의 영적 의무입니다(개인의 순자산 가치가 금 19미스칼 이상인 경우에만 해당합니다)."
+
+#: src/routes/about/+page.svelte
+msgid "What is the Bahá'í Faith?"
+msgstr "바하이 신앙이란 무엇인가요?"
+
+#: src/routes/about/+page.svelte
+msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation—that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit bahai.org"
+msgstr "바하이 신앙은 19세기 페르시아에서 바하올라가 창시한 세계 종교입니다. 모든 종교의 본질적 일체성과 인류의 통합을 가르칩니다. 바하이 신자들은 점진적 계시, 즉 하나님께서 역사 속에서 아브라함, 모세, 붓다, 예수, 무함마드, 그리고 가장 최근에는 바하올라를 비롯한 일련의 신성한 사자를 보내셨다고 믿습니다. 자세한 내용은 bahai.org를 방문해 주세요"
+
+#: src/routes/about/+page.svelte
+msgid "Why are there advertisements?"
+msgstr "왜 광고가 있나요?"
+
+#: src/routes/about/+page.svelte
+msgid "Currently, there are no advertisements on this site. The Mithqál Calculator is provided as a free service to the community. If ads are ever introduced, they would be to help cover hosting and maintenance costs while keeping the calculator freely accessible to everyone."
+msgstr "현재 이 사이트에는 광고가 없습니다. 미스칼 계산기는 공동체를 위한 무료 서비스로 제공됩니다. 향후 광고가 도입된다면 모든 사람이 계산기를 무료로 이용할 수 있도록 호스팅 및 유지관리 비용을 충당하기 위한 것입니다."
+
+#: src/routes/about/+page.svelte
+msgid "Do you have a mobile app?"
+msgstr "모바일 앱이 있나요?"
+
+#: src/routes/about/+page.svelte
+msgid "In the works!"
+msgstr "개발 중입니다!"
+
+#: src/routes/about/+page.svelte
+msgid "Where do the currency and metal rates come from?"
+msgstr "통화 환율과 금속 가격은 어디에서 가져오나요?"
+
+#: src/routes/about/+page.svelte
+msgid "Gold and silver prices are fetched daily from Swissquote's forex data feed. For each metal, the calculator takes the midpoint of every valid bid/ask quote and uses the median of those midpoints. Currency exchange rates come from FXRatesAPI. The displayed timestamp shows when the latest complete snapshot was successfully retrieved."
+msgstr "금과 은 가격은 Swissquote의 외환 데이터 피드에서 매일 가져옵니다. 각 금속에 대해 계산기는 유효한 매수/매도 호가마다 중간값을 구하고 그 중간값들의 중앙값을 사용합니다. 환율은 FXRatesAPI에서 가져옵니다. 표시된 시간은 가장 최근의 완전한 데이터 스냅샷을 성공적으로 가져온 시각입니다."
+
+#: src/routes/+layout.svelte
+msgid "About the Mithqal Calculator: a free tool for converting mithqals of gold and silver to any currency, used for Huqúqu'lláh calculations."
+msgstr "미스칼 계산기 소개: 금과 은의 미스칼 가치를 모든 통화로 환산하며 Huqúqu’lláh 계산에 사용하는 무료 도구입니다."
+
+#: src/routes/+layout.svelte
+msgid "About - Mithqal Calculator"
+msgstr "소개 - 미스칼 계산기"
+
+#: src/routes/about/+page.svelte
+msgid "The <0>Mithqál Calculator</0> is a free tool designed to help calculate the value of gold and silver in mithqáls, the traditional unit of weight used for <1>Huqúqu'lláh</1> calculations in the Bahá'í Faith."
+msgstr "<0>미스칼 계산기</0>는 바하이 신앙에서 <1>Huqúqu’lláh</1> 계산에 사용하는 전통적인 무게 단위인 미스칼로 금과 은의 가치를 계산하도록 만든 무료 도구입니다."
+
+#: src/routes/about/+page.svelte
+msgid "I am working on a website to showcase all the great Bahai tools people have made online. The domain of the site is bahaitools.app!"
+msgstr "사람들이 온라인에서 만든 훌륭한 바하이 도구를 모두 소개하는 웹사이트를 만들고 있습니다. 사이트 도메인은 bahaitools.app입니다!"
+
+#: src/routes/about/+page.svelte
+msgid "Simply enter the weight in mithqáls, select your preferred currency, and get an instant conversion based on current market rates. The calculator supports over 150 currencies worldwide."
+msgstr "미스칼 단위의 무게를 입력하고 원하는 통화를 선택하면 현재 시장 가격을 기준으로 즉시 환산됩니다. 이 계산기는 전 세계 150개 이상의 통화를 지원합니다."
+
+#: src/routes/about/+page.svelte
+msgid "Collapse all"
+msgstr "모두 접기"
+
+#: src/routes/about/+page.svelte
+msgid "Expand all"
+msgstr "모두 펼치기"
+
+#: src/routes/about/+page.svelte
+msgid "Frequently Asked Questions"
+msgstr "자주 묻는 질문"
+
+#: src/routes/+layout.svelte
+msgid "Support the Mithqal Calculator, a free ad-supported tool for converting gold and silver mithqals to any currency."
+msgstr "금과 은의 미스칼 가치를 모든 통화로 환산하는 광고 지원 무료 도구인 미스칼 계산기를 후원해 주세요."
+
+#: src/routes/+layout.svelte
+msgid "Support - Mithqal Calculator"
+msgstr "후원 - 미스칼 계산기"
+
+#: src/routes/support/+page.svelte
+msgid "The <0>Mithqal Calculator</0> is a free, ad-free tool built to serve the community. If you find it useful and would like to help keep it running, consider supporting the project."
+msgstr "<0>미스칼 계산기</0>는 공동체를 위해 만든 무료 무광고 도구입니다. 유용하게 사용하고 있으며 계속 운영될 수 있도록 돕고 싶다면 프로젝트 후원을 고려해 주세요."
+
+#: src/routes/support/+page.svelte
+msgid "Ko-fi"
+msgstr "Ko-fi"
+
+#: src/routes/support/+page.svelte
+msgid "Buy me a coffee"
+msgstr "커피 한 잔 사주기"
+
+#: src/routes/support/+page.svelte
+msgid "World Citizen sticker"
+msgstr "세계 시민 스티커"
+
+#: src/routes/support/+page.svelte
+msgid "World Citizen Sticker"
+msgstr "세계 시민 스티커"
+
+#: src/routes/support/+page.svelte
+msgid "Buy a sticker"
+msgstr "스티커 구매"
+
+#~ msgid "PayPal"
+#~ msgstr "PayPal"
+
+#~ msgid "One-time donation"
+#~ msgstr "일회성 기부"
+
+#: src/routes/support/+page.svelte
+msgid "Ways to Support"
+msgstr "후원 방법"
+
+#: src/routes/support/+page.svelte
+msgid "Your support helps cover hosting and domain costs and allows me to continue improving the calculator."
+msgstr "여러분의 후원은 호스팅과 도메인 비용을 충당하고 제가 계산기를 계속 개선하는 데 도움이 됩니다."
+
+#: src/lib/components/LanguageSwitcher.svelte
+#: src/lib/components/LanguageSwitcher.svelte
+msgid "Language"
+msgstr "언어"
+
+#: src/routes/about/+page.svelte
+msgid "GitHub"
+msgstr "GitHub"
+
+#: src/routes/about/+page.svelte
+msgid "Twitter (X)"
+msgstr "Twitter (X)"
+
+#: src/routes/about/+page.svelte
+msgid "Bluesky"
+msgstr "Bluesky"
+
+#: src/routes/about/+page.svelte
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: src/routes/about/+page.svelte
+msgid "Socials <0/>"
+msgstr "SNS <0/>"
+
+#: src/routes/about/+page.svelte
+msgid "Hi, I'm <0>Nima</0>, a software developer passionate about building useful tools for the community."
+msgstr "안녕하세요. 저는 공동체에 유용한 도구를 만드는 데 열정을 가진 소프트웨어 개발자 <0>Nima</0>입니다."
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Grams (g)"
+msgstr "그램 (g)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Troy ounces (oz)"
+msgstr "트로이온스 (oz)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Weight unit"
+msgstr "무게 단위"
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Email"
+msgstr "이메일"
+
+#: src/routes/support/+page.svelte
+msgid "Have a suggestion? Found a bug?"
+msgstr "제안이 있거나 버그를 발견하셨나요?"
+
+#: src/routes/support/+page.svelte
+msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
+msgstr "<0>mithqal@mohajeri.dev</0>로 이메일을 보내 주세요."

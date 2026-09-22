@@ -1,18 +1,13 @@
 <!--
 	about/+page.svelte
-	About page with Turnstile verification gate, site explanation, and FAQ accordion.
-
-	Flow:
-	1. Check if user is already verified (sessionStorage)
-	2. If not verified, show Cloudflare Turnstile challenge
-	3. On successful verification, store in sessionStorage and show content
-	4. Content includes site description and FAQ accordion (bits-ui)
+	Public, crawlable site explanation and FAQ accordion.
+	Only the email reveal inside the Socials popover uses Turnstile.
 -->
 
 <script lang="ts">
 	import { Accordion, Popover } from 'bits-ui';
 	import { slide, fly } from 'svelte/transition';
-	import TurnstileGate from '$lib/components/TurnstileGate.svelte';
+	import ContactEmail from '$lib/components/ContactEmail.svelte';
 
 	// ============================================
 	// FAQ Data
@@ -73,17 +68,7 @@
 	}
 </script>
 
-<svelte:head>
-	<title>About - Mithqal Calculator</title>
-	<meta
-		name="description"
-		content="About the Mithqal Calculator: a free tool for converting mithqals of gold and silver to any currency, used for Huqúqu'lláh calculations."
-	/>
-	<link rel="canonical" href="https://mithqal.app/about" />
-</svelte:head>
-
-<TurnstileGate storageKey="about_verified">
-	<div class="mx-auto max-w-2xl px-6 py-8 text-base-content">
+<div class="mx-auto max-w-2xl px-6 py-8 text-base-content">
 		<h1 class="font-karla text-4xl font-medium md:text-5xl">About</h1>
 
 		<!-- Developer Intro -->
@@ -91,6 +76,8 @@
 			<p class="text-lg leading-relaxed text-base-content/80">
 				Hi, I'm <strong class="text-base-content">Nima</strong>, a software developer passionate
 				about building useful tools for the community.
+			</p>
+			<div class="mt-4">
 				<Popover.Root>
 					<Popover.Trigger
 						class="inline-flex cursor-pointer items-center gap-1 rounded border border-primary/50 px-2 py-0.5 text-primary transition-colors hover:border-primary hover:bg-primary/10"
@@ -100,8 +87,10 @@
 					</Popover.Trigger>
 					<Popover.Portal>
 						<Popover.Content
-							class="z-50 w-48 rounded-lg border border-base-300 bg-base-100 p-2 shadow-lg"
+							class="z-50 w-80 max-w-[calc(100vw-2rem)] rounded-lg border border-base-300 bg-base-100 p-2 shadow-lg"
 							sideOffset={8}
+							onFocusOutside={(event) => event.preventDefault()}
+							onInteractOutside={(event) => event.preventDefault()}
 						>
 							<div class="flex flex-col gap-1" in:fly={{ y: -8, duration: 150 }}>
 								<a
@@ -136,11 +125,12 @@
 								>
 									LinkedIn
 								</a>
+								<ContactEmail variant="social" />
 							</div>
 						</Popover.Content>
 					</Popover.Portal>
 				</Popover.Root>
-			</p>
+			</div>
 		</section>
 
 		<!-- Site Description -->
@@ -197,7 +187,7 @@
 						</Accordion.Header>
 						{#if isOpen}
 							<Accordion.Content forceMount>
-								<div transition:slide={{ duration: 200 }} class="pb-4 text-base-content/70">
+								<div data-prose transition:slide={{ duration: 200 }} class="pb-4 text-base-content/70">
 									{faq.answer}
 								</div>
 							</Accordion.Content>
@@ -206,5 +196,4 @@
 				{/each}
 			</Accordion.Root>
 		</section>
-	</div>
-</TurnstileGate>
+</div>

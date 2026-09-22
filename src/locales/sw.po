@@ -1,0 +1,498 @@
+msgid ""
+msgstr ""
+"Source-Language: en\n"
+"Language: sw\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2\n"
+"X-Plurals-Order: one, other\n"
+
+#: src/routes/+layout.svelte
+#: src/routes/+page.svelte
+msgid "Free mithqál calculator: convert mithqals of gold and silver to any currency with live precious metal and exchange rates."
+msgstr "Kikokotoo cha mithqál bila malipo: badilisha mithqál za dhahabu na fedha kuwa sarafu yoyote kwa bei za sasa za madini ya thamani na viwango vya ubadilishaji."
+
+#: src/routes/+layout.svelte
+msgid "Mithqál Calculator – Convert Gold & Silver to Any Currency"
+msgstr "Kikokotoo cha mithqál – Badilisha dhahabu na fedha kuwa sarafu yoyote"
+
+#: src/routes/+layout.svelte
+msgid "Mithqal Calculator"
+msgstr "Kikokotoo cha mithqál"
+
+#: src/routes/+layout.svelte
+msgid "Mithqal Calculator - Convert mithqals to currency"
+msgstr "Kikokotoo cha mithqál - Badilisha mithqál kuwa sarafu"
+
+#: src/routes/+page.svelte
+msgid "WebApplication"
+msgstr "WebApplication"
+
+#: src/lib/components/Header.svelte
+#: src/routes/+page.svelte
+#: src/routes/+page.svelte
+msgid "Mithqál Calculator"
+msgstr "Kikokotoo cha mithqál"
+
+#: src/routes/+page.svelte
+msgid "FinanceApplication"
+msgstr "FinanceApplication"
+
+#: src/routes/+page.svelte
+msgid "Web"
+msgstr "Web"
+
+#: src/routes/+page.svelte
+msgid "Requires JavaScript"
+msgstr "Requires JavaScript"
+
+#: src/routes/+page.svelte
+msgid "Offer"
+msgstr "Offer"
+
+#: src/lib/components/Calculator.svelte
+msgid "Gold"
+msgstr "Dhahabu"
+
+#: src/lib/components/Calculator.svelte
+msgid "Silver"
+msgstr "Fedha"
+
+#: src/lib/components/Calculator.svelte
+#: src/lib/components/RatesTimestamp.svelte
+msgid "America/Los_Angeles"
+msgstr "America/Los_Angeles"
+
+#: src/lib/components/Calculator.svelte
+msgid "Click to copy"
+msgstr "Bofya ili kunakili"
+
+#: src/lib/components/Calculator.svelte
+#: src/lib/components/ContactEmail.svelte
+msgid "Copied!"
+msgstr "Imenakiliwa!"
+
+#: src/lib/components/Calculator.svelte
+msgid "Failed to copy"
+msgstr "Imeshindwa kunakili"
+
+#: src/lib/components/Combobox.svelte
+msgid "Fiat currencies"
+msgstr "Sarafu rasmi"
+
+#: src/lib/components/Combobox.svelte
+msgid "Cryptocurrencies"
+msgstr "Sarafu za kidijitali"
+
+#: src/lib/components/Combobox.svelte
+msgid "Select..."
+msgstr "Chagua..."
+
+#: src/lib/components/Combobox.svelte
+msgid "No currencies found."
+msgstr "Hakuna sarafu zilizopatikana."
+
+#: src/lib/components/CookieConsent.svelte
+msgid "Decline"
+msgstr "Kataa"
+
+#: src/lib/components/CookieConsent.svelte
+msgid "Accept"
+msgstr "Kubali"
+
+#: src/lib/components/CookieConsent.svelte
+msgid "We use cookies for analytics and ads. <0>Learn more</0>"
+msgstr "Tunatumia vidakuzi kwa uchanganuzi na matangazo. <0>Pata maelezo zaidi</0>"
+
+#: src/lib/components/CookieModal.svelte
+#: src/lib/components/SettingsModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Escape"
+msgstr "Escape"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Close cookie policy"
+msgstr "Funga sera ya vidakuzi"
+
+#: src/lib/components/CookieModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Enter"
+msgstr "Enter"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Close"
+msgstr "Funga"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Cookie Policy"
+msgstr "Sera ya Vidakuzi"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Essential (Always Active)"
+msgstr "Muhimu (Hutumika Daima)"
+
+#: src/lib/components/CookieModal.svelte
+msgid "These are required for the site to function. They store your preferences like theme and currency settings in your browser's local storage. No data is sent to external servers."
+msgstr "Hivi vinahitajika ili tovuti ifanye kazi. Huhifadhi mapendeleo yako, kama mandhari na mipangilio ya sarafu, katika hifadhi ya ndani ya kivinjari. Hakuna data inayotumwa kwa seva za nje."
+
+#: src/lib/components/CookieModal.svelte
+msgid "Analytics (Optional)"
+msgstr "Uchanganuzi (Si lazima)"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Google Analytics helps us understand how visitors use the site. It collects anonymized data about page views and interactions. This data is processed by Google."
+msgstr "Google Analytics hutusaidia kuelewa jinsi wageni wanavyotumia tovuti. Hukusanya data isiyotambulisha mtu kuhusu kurasa zilizotazamwa na miingiliano. Data hii huchakatwa na Google."
+
+#: src/lib/components/CookieModal.svelte
+msgid "Advertising (Optional)"
+msgstr "Matangazo (Si lazima)"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Google AdSense displays ads to support the site. It may use cookies to show personalized ads based on your browsing history. If declined, ads will not be shown."
+msgstr "Google AdSense huonyesha matangazo ili kusaidia tovuti. Inaweza kutumia vidakuzi kuonyesha matangazo yanayokufaa kulingana na historia yako ya kuvinjari. Ukikataa, matangazo hayataonyeshwa."
+
+#: src/lib/components/CookieModal.svelte
+msgid "You can change your preference at any time by clearing your browser's local storage for this site."
+msgstr "Unaweza kubadilisha chaguo lako wakati wowote kwa kufuta hifadhi ya ndani ya tovuti hii kwenye kivinjari chako."
+
+#: src/lib/components/CookieModal.svelte
+msgid "Decline All"
+msgstr "Kataa Zote"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Accept All"
+msgstr "Kubali Zote"
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Failed to get contact email."
+msgstr "Imeshindikana kupata barua pepe ya mawasiliano."
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Something went wrong. Please try again."
+msgstr "Hitilafu imetokea. Tafadhali jaribu tena."
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Contact verification is not configured."
+msgstr "Uthibitishaji wa mawasiliano haujasanidiwa."
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification could not load. Please try again."
+msgstr "Uthibitishaji wa kibinadamu haukuweza kupakiwa. Tafadhali jaribu tena."
+
+#. 0: code
+#. 0: code
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification could not run{0}. Please try again or use another browser."
+msgstr "Uthibitishaji wa kibinadamu haukuweza kuendeshwa{0}. Tafadhali jaribu tena au utumie kivinjari kingine."
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification expired. Please try again."
+msgstr "Muda wa uthibitishaji wa kibinadamu umeisha. Tafadhali jaribu tena."
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Copy failed"
+msgstr "Kunakili kumeshindikana"
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Loading..."
+msgstr "Inapakia..."
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verifying..."
+msgstr "Inathibitisha..."
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Try again"
+msgstr "Jaribu tena"
+
+#. 0: email
+#: src/lib/components/ContactEmail.svelte
+msgid "Email {0}"
+msgstr "Barua pepe {0}"
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Copy email address"
+msgstr "Nakili anwani ya barua pepe"
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Reach out!"
+msgstr "Wasiliana nami!"
+
+#: src/lib/components/Footer.svelte
+msgid "Special Sponsor"
+msgstr "Mfadhili Maalum"
+
+#: src/lib/components/Footer.svelte
+msgid "We're looking for sponsors to keep this project alive and perhaps ad-free"
+msgstr "Tunatafuta wafadhili ili kuendeleza mradi huu na ikiwezekana uendelee bila matangazo"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+#: src/routes/about/+page.svelte
+msgid "About"
+msgstr "Kuhusu"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+#: src/routes/support/+page.svelte
+msgid "Support"
+msgstr "Saidia"
+
+#: src/lib/components/Header.svelte
+msgid "Open settings"
+msgstr "Fungua mipangilio"
+
+#: src/lib/components/Header.svelte
+msgid "Open menu"
+msgstr "Fungua menyu"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+msgid "Close menu"
+msgstr "Funga menyu"
+
+#: src/lib/components/Header.svelte
+msgid "Theme"
+msgstr "Mandhari"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Settings"
+msgstr "Mipangilio"
+
+#: src/lib/components/RatesTimestamp.svelte
+msgid "Unavailable"
+msgstr "Haipatikani"
+
+#. 0: readableRateDate
+#: src/lib/components/RatesTimestamp.svelte
+msgid "Rates retrieved: {0}"
+msgstr "Viwango vilipatikana: {0}"
+
+#: src/lib/components/SettingsModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Close settings"
+msgstr "Funga mipangilio"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "With commas (1,234.56)"
+msgstr "Yenye koma (1,234.56)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Without commas (1234.56)"
+msgstr "Bila koma (1234.56)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Copy format"
+msgstr "Muundo wa kunakili"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Done"
+msgstr "Imekamilika"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "Light mode"
+msgstr "Hali angavu"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "Dark mode"
+msgstr "Hali nyeusi"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "System mode"
+msgstr "Hali ya mfumo"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification is not configured."
+msgstr "Uthibitishaji wa kibinadamu haujasanidiwa."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verification failed. Please try again."
+msgstr "Uthibitishaji umeshindikana. Tafadhali jaribu tena."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verify you're human"
+msgstr "Thibitisha kuwa wewe ni binadamu"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Please complete the challenge to view this page."
+msgstr "Tafadhali kamilisha jaribio ili kuona ukurasa huu."
+
+#: src/routes/about/+page.svelte
+msgid "What is a Mithqál?"
+msgstr "Mithqál ni nini?"
+
+#: src/routes/about/+page.svelte
+msgid "A mithqál is a traditional unit of weight used in the Middle East, equivalent to approximately 3.642 grams. In the Bahá'í Faith, it holds special significance as it is used to calculate Huqúqu'lláh (the Right of God), a spiritual obligation for Bahá'ís to contribute 19% of their surplus wealth after essential expenses (only if the individuals net worth is worth 19 Mithqáls of gold or more)."
+msgstr "Mithqál ni kipimo cha jadi cha uzito kinachotumiwa Mashariki ya Kati, sawa na takriban gramu 3.642. Katika Imani ya Bahá’í, kina umuhimu maalum kwa sababu kinatumika kukokotoa Huqúqu’lláh (Haki ya Mungu), wajibu wa kiroho wa Wabahá’í kuchangia asilimia 19 ya mali yao ya ziada baada ya gharama muhimu (ikiwa tu thamani halisi ya mali ya mtu ni sawa na mithqál 19 za dhahabu au zaidi)."
+
+#: src/routes/about/+page.svelte
+msgid "What is the Bahá'í Faith?"
+msgstr "Imani ya Bahá’í ni nini?"
+
+#: src/routes/about/+page.svelte
+msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation—that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit bahai.org"
+msgstr "Imani ya Bahá’í ni dini ya ulimwengu iliyoanzishwa na Bahá’u’lláh katika Uajemi wa karne ya 19. Inafundisha umoja wa kimsingi wa dini zote na umoja wa wanadamu. Wabahá’í huamini katika ufunuo endelevu—kwamba Mungu ametuma mfululizo wa wajumbe wa kimungu katika historia, wakiwemo Abrahamu, Musa, Buddha, Yesu, Muhammad na, hivi karibuni zaidi, Bahá’u’lláh. Kwa maelezo zaidi, tembelea bahai.org"
+
+#: src/routes/about/+page.svelte
+msgid "Why are there advertisements?"
+msgstr "Kwa nini kuna matangazo?"
+
+#: src/routes/about/+page.svelte
+msgid "Currently, there are no advertisements on this site. The Mithqál Calculator is provided as a free service to the community. If ads are ever introduced, they would be to help cover hosting and maintenance costs while keeping the calculator freely accessible to everyone."
+msgstr "Kwa sasa hakuna matangazo kwenye tovuti hii. Kikokotoo cha mithqál kinatolewa kama huduma ya bure kwa jamii. Matangazo yakiongezwa siku zijazo, yatasaidia kugharamia upangishaji na matengenezo huku kikokotoo kikiendelea kupatikana bure kwa kila mtu."
+
+#: src/routes/about/+page.svelte
+msgid "Do you have a mobile app?"
+msgstr "Je, kuna programu ya simu?"
+
+#: src/routes/about/+page.svelte
+msgid "In the works!"
+msgstr "Inatengenezwa!"
+
+#: src/routes/about/+page.svelte
+msgid "Where do the currency and metal rates come from?"
+msgstr "Viwango vya sarafu na madini vinatoka wapi?"
+
+#: src/routes/about/+page.svelte
+msgid "Gold and silver prices are fetched daily from Swissquote's forex data feed. For each metal, the calculator takes the midpoint of every valid bid/ask quote and uses the median of those midpoints. Currency exchange rates come from FXRatesAPI. The displayed timestamp shows when the latest complete snapshot was successfully retrieved."
+msgstr "Bei za dhahabu na fedha hupatikana kila siku kutoka kwa mkondo wa data ya fedha za kigeni wa Swissquote. Kwa kila madini, kikokotoo huchukua thamani ya kati ya kila bei halali ya kununua na kuuza, kisha hutumia thamani ya kati ya matokeo hayo. Viwango vya ubadilishaji wa sarafu hutoka FXRatesAPI. Muhuri wa muda unaoonyeshwa unaonyesha wakati data kamili ya hivi karibuni ilipopatikana kwa mafanikio."
+
+#: src/routes/+layout.svelte
+msgid "About the Mithqal Calculator: a free tool for converting mithqals of gold and silver to any currency, used for Huqúqu'lláh calculations."
+msgstr "Kuhusu Kikokotoo cha mithqál: zana ya bure ya kubadilisha mithqál za dhahabu na fedha kuwa sarafu yoyote, inayotumika katika mahesabu ya Huqúqu’lláh."
+
+#: src/routes/+layout.svelte
+msgid "About - Mithqal Calculator"
+msgstr "Kuhusu - Kikokotoo cha mithqál"
+
+#: src/routes/about/+page.svelte
+msgid "The <0>Mithqál Calculator</0> is a free tool designed to help calculate the value of gold and silver in mithqáls, the traditional unit of weight used for <1>Huqúqu'lláh</1> calculations in the Bahá'í Faith."
+msgstr "<0>Kikokotoo cha mithqál</0> ni zana ya bure iliyoundwa kusaidia kukokotoa thamani ya dhahabu na fedha katika mithqál, kipimo cha jadi cha uzito kinachotumiwa kwa mahesabu ya <1>Huqúqu’lláh</1> katika Imani ya Bahá’í."
+
+#: src/routes/about/+page.svelte
+msgid "I am working on a website to showcase all the great Bahai tools people have made online. The domain of the site is bahaitools.app!"
+msgstr "Ninaunda tovuti ya kuonyesha zana zote bora za Bahá’í ambazo watu wametengeneza mtandaoni. Anwani ya tovuti ni bahaitools.app!"
+
+#: src/routes/about/+page.svelte
+msgid "Simply enter the weight in mithqáls, select your preferred currency, and get an instant conversion based on current market rates. The calculator supports over 150 currencies worldwide."
+msgstr "Weka tu uzito katika mithqál, chagua sarafu unayopendelea, kisha upate ubadilishaji wa papo hapo kulingana na bei za sasa za soko. Kikokotoo kinaweza kutumia zaidi ya sarafu 150 duniani."
+
+#: src/routes/about/+page.svelte
+msgid "Collapse all"
+msgstr "Funga zote"
+
+#: src/routes/about/+page.svelte
+msgid "Expand all"
+msgstr "Fungua zote"
+
+#: src/routes/about/+page.svelte
+msgid "Frequently Asked Questions"
+msgstr "Maswali Yanayoulizwa Mara kwa Mara"
+
+#: src/routes/+layout.svelte
+msgid "Support the Mithqal Calculator, a free ad-supported tool for converting gold and silver mithqals to any currency."
+msgstr "Saidia Kikokotoo cha mithqál, zana ya bure inayofadhiliwa na matangazo ya kubadilisha mithqál za dhahabu na fedha kuwa sarafu yoyote."
+
+#: src/routes/+layout.svelte
+msgid "Support - Mithqal Calculator"
+msgstr "Saidia - Kikokotoo cha mithqál"
+
+#: src/routes/support/+page.svelte
+msgid "The <0>Mithqal Calculator</0> is a free, ad-free tool built to serve the community. If you find it useful and would like to help keep it running, consider supporting the project."
+msgstr "<0>Kikokotoo cha mithqál</0> ni zana ya bure isiyo na matangazo iliyoundwa kuhudumia jamii. Ikiwa inakufaa na ungependa kusaidia iendelee kufanya kazi, tafadhali fikiria kuufadhili mradi."
+
+#: src/routes/support/+page.svelte
+msgid "Ko-fi"
+msgstr "Ko-fi"
+
+#: src/routes/support/+page.svelte
+msgid "Buy me a coffee"
+msgstr "Ninunulie kahawa"
+
+#: src/routes/support/+page.svelte
+msgid "World Citizen sticker"
+msgstr "Kibandiko cha Raia wa Dunia"
+
+#: src/routes/support/+page.svelte
+msgid "World Citizen Sticker"
+msgstr "Kibandiko cha Raia wa Dunia"
+
+#: src/routes/support/+page.svelte
+msgid "Buy a sticker"
+msgstr "Nunua kibandiko"
+
+#~ msgid "PayPal"
+#~ msgstr "PayPal"
+
+#~ msgid "One-time donation"
+#~ msgstr "Mchango wa mara moja"
+
+#: src/routes/support/+page.svelte
+msgid "Ways to Support"
+msgstr "Njia za Kusaidia"
+
+#: src/routes/support/+page.svelte
+msgid "Your support helps cover hosting and domain costs and allows me to continue improving the calculator."
+msgstr "Msaada wako husaidia kulipia gharama za upangishaji na kikoa na huniruhusu kuendelea kuboresha kikokotoo."
+
+#: src/lib/components/LanguageSwitcher.svelte
+#: src/lib/components/LanguageSwitcher.svelte
+msgid "Language"
+msgstr "Lugha"
+
+#: src/routes/about/+page.svelte
+msgid "GitHub"
+msgstr "GitHub"
+
+#: src/routes/about/+page.svelte
+msgid "Twitter (X)"
+msgstr "Twitter (X)"
+
+#: src/routes/about/+page.svelte
+msgid "Bluesky"
+msgstr "Bluesky"
+
+#: src/routes/about/+page.svelte
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: src/routes/about/+page.svelte
+msgid "Socials <0/>"
+msgstr "Mitandao ya kijamii <0/>"
+
+#: src/routes/about/+page.svelte
+msgid "Hi, I'm <0>Nima</0>, a software developer passionate about building useful tools for the community."
+msgstr "Habari, mimi ni <0>Nima</0>, msanidi programu ninayependa kutengeneza zana muhimu kwa jamii."
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Grams (g)"
+msgstr "Gramu (g)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Troy ounces (oz)"
+msgstr "Wakia za troy (oz)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Weight unit"
+msgstr "Kipimo cha uzito"
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Email"
+msgstr "Barua pepe"
+
+#: src/routes/support/+page.svelte
+msgid "Have a suggestion? Found a bug?"
+msgstr "Una pendekezo? Umegundua hitilafu?"
+
+#: src/routes/support/+page.svelte
+msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
+msgstr "Unaweza kunitumia barua pepe kupitia <0>mithqal@mohajeri.dev</0>."

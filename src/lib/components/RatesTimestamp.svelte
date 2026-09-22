@@ -12,9 +12,10 @@
 	interface Props {
 		lastFetchTime: number;
 		timezone?: string;
+		locale?: string;
 	}
 
-	let { lastFetchTime, timezone = 'America/Los_Angeles' }: Props = $props();
+	let { lastFetchTime, timezone = 'America/Los_Angeles', locale = 'en' }: Props = $props();
 
 	// ============================================
 	// Derived Values
@@ -26,7 +27,7 @@
 
 		// Date/Intl version (active)
 		const date = new Date(lastFetchTime);
-		return new Intl.DateTimeFormat('en-US', {
+		return new Intl.DateTimeFormat(locale, {
 			year: 'numeric',
 			month: 'long',
 			day: 'numeric',

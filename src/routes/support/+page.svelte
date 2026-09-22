@@ -1,32 +1,11 @@
-<!--
-	support/+page.svelte
-	Support page with Turnstile verification gate and donation links.
-	Shares verification session with About page via sessionStorage.
+<!-- Support page with donation links. -->
 
-	Flow:
-	1. Check if user is already verified (sessionStorage)
-	2. If not verified, show Cloudflare Turnstile challenge
-	3. On successful verification, store in sessionStorage and show content
-	4. Content includes Ko-fi and PayPal donation links
--->
+	<script lang="ts">
+		import { trackGoogleEvent } from '$lib/analytics';
+		import Coffee from '$lib/components/icons/Coffee.svelte';
+	</script>
 
-<script lang="ts">
-	import TurnstileGate from '$lib/components/TurnstileGate.svelte';
-	import Coffee from '$lib/components/icons/Coffee.svelte';
-	import PayPal from '$lib/components/icons/PayPal.svelte';
-</script>
-
-<svelte:head>
-	<title>Support - Mithqal Calculator</title>
-	<meta
-		name="description"
-		content="Support the Mithqal Calculator, a free ad-supported tool for converting gold and silver mithqals to any currency."
-	/>
-	<link rel="canonical" href="https://mithqal.app/support" />
-</svelte:head>
-
-<TurnstileGate storageKey="about_verified">
-	<div class="mx-auto max-w-2xl px-6 py-8 text-base-content">
+<div class="mx-auto max-w-2xl px-6 py-8 text-base-content">
 		<h1 class="font-karla text-4xl font-medium md:text-5xl">Support</h1>
 
 		<section class="mt-8">
@@ -40,10 +19,11 @@
 		<section class="mt-10">
 			<h2 class="font-karla text-2xl font-medium md:text-3xl">Ways to Support</h2>
 
-			<div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+			<div class="mt-6 grid gap-4 sm:grid-cols-2">
 				<!-- Ko-fi -->
 				<a
 					href="https://ko-fi.com/nima999"
+					onclick={() => trackGoogleEvent('donation_link_click', { provider: 'ko-fi' })}
 					target="_blank"
 					rel="noopener noreferrer"
 					class="group flex flex-col items-center rounded-xl border-2 border-base-300 bg-base-200/30 p-6 transition-all hover:border-primary hover:bg-base-200/60"
@@ -59,6 +39,7 @@
 				<!-- World Citizen Sticker -->
 				<a
 					href="https://itsidempotent.com/products/world-citizen-sticker?utm_campaign=eb9a4c&utm_source=shareable_link"
+					onclick={() => trackGoogleEvent('donation_link_click', { provider: 'sticker' })}
 					target="_blank"
 					rel="noopener noreferrer"
 					class="group flex flex-col items-center rounded-xl border-2 border-base-300 bg-base-200/30 p-6 transition-all hover:border-primary hover:bg-base-200/60"
@@ -77,22 +58,21 @@
 					>
 					<span class="mt-1 text-sm text-base-content/60">Buy a sticker</span>
 				</a>
-
-				<!-- PayPal -->
-				<a
-					href="https://paypal.me/jpnima999"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="group flex flex-col items-center rounded-xl border-2 border-base-300 bg-base-200/30 p-6 transition-all hover:border-primary hover:bg-base-200/60"
-				>
-					<PayPal size={40} />
-					<span
-						class="mt-3 font-karla text-xl font-medium text-base-content group-hover:text-primary"
-						>PayPal</span
-					>
-					<span class="mt-1 text-sm text-base-content/60">One-time donation</span>
-				</a>
 			</div>
+		</section>
+
+		<section class="mt-10 rounded-xl border border-base-300 bg-base-200/30 p-6">
+			<h2 class="font-karla text-2xl font-medium md:text-3xl">Have a suggestion? Found a bug?</h2>
+			<p class="mt-3 text-base leading-relaxed text-base-content/70">
+				You can email me at
+				<a
+					href="mailto:mithqal@mohajeri.dev"
+					onclick={() => trackGoogleEvent('generate_lead', { method: 'support_email' })}
+					class="font-medium text-primary underline decoration-primary/40 underline-offset-4 transition-colors hover:decoration-primary"
+				>
+					mithqal@mohajeri.dev</a
+				>.
+			</p>
 		</section>
 
 		<section class="mt-10">
@@ -101,5 +81,4 @@
 				calculator.
 			</p>
 		</section>
-	</div>
-</TurnstileGate>
+</div>

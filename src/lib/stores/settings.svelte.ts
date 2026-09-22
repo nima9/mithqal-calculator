@@ -3,12 +3,16 @@ import { derived, writable } from "svelte/store";
 
 const STORAGE_KEY = "mithqal_settings";
 
+export type WeightUnit = "grams" | "ounces";
+
 interface Settings {
   copyWithCommas: boolean;
+  weightUnit: WeightUnit;
 }
 
 const defaults: Settings = {
   copyWithCommas: true,
+  weightUnit: "grams",
 };
 
 function getInitialSettings(): Settings {
@@ -17,7 +21,14 @@ function getInitialSettings(): Settings {
   if (!stored) return defaults;
 
   try {
-    return { ...defaults, ...JSON.parse(stored) };
+    const parsed = JSON.parse(stored) as Partial<Settings>;
+    return {
+      copyWithCommas:
+        typeof parsed.copyWithCommas === "boolean"
+          ? parsed.copyWithCommas
+          : defaults.copyWithCommas,
+      weightUnit: parsed.weightUnit === "ounces" ? "ounces" : "grams",
+    };
   } catch {
     return defaults;
   }
@@ -32,7 +43,12 @@ if (browser) {
 }
 
 export const copyWithCommas = derived(settingsStore, (settings) => settings.copyWithCommas);
+export const weightUnit = derived(settingsStore, (settings) => settings.weightUnit);
 
 export function setCopyWithCommas(value: boolean) {
   settingsStore.update((settings) => ({ ...settings, copyWithCommas: value }));
+}
+
+export function setWeightUnit(value: WeightUnit) {
+  settingsStore.update((settings) => ({ ...settings, weightUnit: value }));
 }

@@ -1,0 +1,498 @@
+msgid ""
+msgstr ""
+"Source-Language: en\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3\n"
+"X-Plurals-Order: one, many, other\n"
+
+#: src/routes/+layout.svelte
+#: src/routes/+page.svelte
+msgid "Free mithqál calculator: convert mithqals of gold and silver to any currency with live precious metal and exchange rates."
+msgstr "Calculateur de mithqáls gratuit : convertissez des mithqáls d’or et d’argent dans n’importe quelle devise grâce aux cours en direct des métaux précieux et des devises."
+
+#: src/routes/+layout.svelte
+msgid "Mithqál Calculator – Convert Gold & Silver to Any Currency"
+msgstr "Calculateur de mithqáls – Convertissez l’or et l’argent dans n’importe quelle devise"
+
+#: src/routes/+layout.svelte
+msgid "Mithqal Calculator"
+msgstr "Calculateur de mithqáls"
+
+#: src/routes/+layout.svelte
+msgid "Mithqal Calculator - Convert mithqals to currency"
+msgstr "Calculateur de mithqáls - Convertissez des mithqáls en devise"
+
+#: src/routes/+page.svelte
+msgid "WebApplication"
+msgstr "WebApplication"
+
+#: src/lib/components/Header.svelte
+#: src/routes/+page.svelte
+#: src/routes/+page.svelte
+msgid "Mithqál Calculator"
+msgstr "Calculateur de mithqáls"
+
+#: src/routes/+page.svelte
+msgid "FinanceApplication"
+msgstr "FinanceApplication"
+
+#: src/routes/+page.svelte
+msgid "Web"
+msgstr "Web"
+
+#: src/routes/+page.svelte
+msgid "Requires JavaScript"
+msgstr "Requires JavaScript"
+
+#: src/routes/+page.svelte
+msgid "Offer"
+msgstr "Offer"
+
+#: src/lib/components/Calculator.svelte
+msgid "Gold"
+msgstr "Or"
+
+#: src/lib/components/Calculator.svelte
+msgid "Silver"
+msgstr "Argent"
+
+#: src/lib/components/Calculator.svelte
+#: src/lib/components/RatesTimestamp.svelte
+msgid "America/Los_Angeles"
+msgstr "America/Los_Angeles"
+
+#: src/lib/components/Calculator.svelte
+msgid "Click to copy"
+msgstr "Cliquer pour copier"
+
+#: src/lib/components/Calculator.svelte
+#: src/lib/components/ContactEmail.svelte
+msgid "Copied!"
+msgstr "Copié !"
+
+#: src/lib/components/Calculator.svelte
+msgid "Failed to copy"
+msgstr "Échec de la copie"
+
+#: src/lib/components/Combobox.svelte
+msgid "Fiat currencies"
+msgstr "Monnaies fiduciaires"
+
+#: src/lib/components/Combobox.svelte
+msgid "Cryptocurrencies"
+msgstr "Cryptomonnaies"
+
+#: src/lib/components/Combobox.svelte
+msgid "Select..."
+msgstr "Sélectionner..."
+
+#: src/lib/components/Combobox.svelte
+msgid "No currencies found."
+msgstr "Aucune devise trouvée."
+
+#: src/lib/components/CookieConsent.svelte
+msgid "Decline"
+msgstr "Refuser"
+
+#: src/lib/components/CookieConsent.svelte
+msgid "Accept"
+msgstr "Accepter"
+
+#: src/lib/components/CookieConsent.svelte
+msgid "We use cookies for analytics and ads. <0>Learn more</0>"
+msgstr "Nous utilisons des cookies à des fins d’analyse et de publicité. <0>En savoir plus</0>"
+
+#: src/lib/components/CookieModal.svelte
+#: src/lib/components/SettingsModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Escape"
+msgstr "Escape"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Close cookie policy"
+msgstr "Fermer la politique relative aux cookies"
+
+#: src/lib/components/CookieModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Enter"
+msgstr "Enter"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Close"
+msgstr "Fermer"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Cookie Policy"
+msgstr "Politique relative aux cookies"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Essential (Always Active)"
+msgstr "Essentiels (toujours actifs)"
+
+#: src/lib/components/CookieModal.svelte
+msgid "These are required for the site to function. They store your preferences like theme and currency settings in your browser's local storage. No data is sent to external servers."
+msgstr "Ils sont nécessaires au fonctionnement du site. Ils enregistrent vos préférences, telles que le thème et la devise, dans le stockage local de votre navigateur. Aucune donnée n’est envoyée à des serveurs externes."
+
+#: src/lib/components/CookieModal.svelte
+msgid "Analytics (Optional)"
+msgstr "Analyse (facultative)"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Google Analytics helps us understand how visitors use the site. It collects anonymized data about page views and interactions. This data is processed by Google."
+msgstr "Google Analytics nous aide à comprendre comment les visiteurs utilisent le site. Il recueille des données anonymisées sur les pages consultées et les interactions. Ces données sont traitées par Google."
+
+#: src/lib/components/CookieModal.svelte
+msgid "Advertising (Optional)"
+msgstr "Publicité (facultative)"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Google AdSense displays ads to support the site. It may use cookies to show personalized ads based on your browsing history. If declined, ads will not be shown."
+msgstr "Google AdSense affiche des publicités pour soutenir le site. Il peut utiliser des cookies pour afficher des annonces personnalisées en fonction de votre historique de navigation. Si vous refusez, aucune publicité ne sera affichée."
+
+#: src/lib/components/CookieModal.svelte
+msgid "You can change your preference at any time by clearing your browser's local storage for this site."
+msgstr "Vous pouvez modifier votre choix à tout moment en effaçant le stockage local de ce site dans votre navigateur."
+
+#: src/lib/components/CookieModal.svelte
+msgid "Decline All"
+msgstr "Tout refuser"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Accept All"
+msgstr "Tout accepter"
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Failed to get contact email."
+msgstr "Impossible d’obtenir l’adresse e-mail de contact."
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Something went wrong. Please try again."
+msgstr "Une erreur s’est produite. Veuillez réessayer."
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Contact verification is not configured."
+msgstr "La vérification du contact n’est pas configurée."
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification could not load. Please try again."
+msgstr "Impossible de charger la vérification humaine. Veuillez réessayer."
+
+#. 0: code
+#. 0: code
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification could not run{0}. Please try again or use another browser."
+msgstr "Impossible d’exécuter la vérification humaine{0}. Veuillez réessayer ou utiliser un autre navigateur."
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification expired. Please try again."
+msgstr "La vérification humaine a expiré. Veuillez réessayer."
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Copy failed"
+msgstr "Échec de la copie"
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Loading..."
+msgstr "Chargement..."
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verifying..."
+msgstr "Vérification..."
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Try again"
+msgstr "Réessayer"
+
+#. 0: email
+#: src/lib/components/ContactEmail.svelte
+msgid "Email {0}"
+msgstr "E-mail {0}"
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Copy email address"
+msgstr "Copier l’adresse e-mail"
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Reach out!"
+msgstr "Me contacter !"
+
+#: src/lib/components/Footer.svelte
+msgid "Special Sponsor"
+msgstr "Sponsor spécial"
+
+#: src/lib/components/Footer.svelte
+msgid "We're looking for sponsors to keep this project alive and perhaps ad-free"
+msgstr "Nous recherchons des sponsors pour faire vivre ce projet et, peut-être, le maintenir sans publicité"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+#: src/routes/about/+page.svelte
+msgid "About"
+msgstr "À propos"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+#: src/routes/support/+page.svelte
+msgid "Support"
+msgstr "Soutenir"
+
+#: src/lib/components/Header.svelte
+msgid "Open settings"
+msgstr "Ouvrir les paramètres"
+
+#: src/lib/components/Header.svelte
+msgid "Open menu"
+msgstr "Ouvrir le menu"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+msgid "Close menu"
+msgstr "Fermer le menu"
+
+#: src/lib/components/Header.svelte
+msgid "Theme"
+msgstr "Thème"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Settings"
+msgstr "Paramètres"
+
+#: src/lib/components/RatesTimestamp.svelte
+msgid "Unavailable"
+msgstr "Indisponible"
+
+#. 0: readableRateDate
+#: src/lib/components/RatesTimestamp.svelte
+msgid "Rates retrieved: {0}"
+msgstr "Cours récupérés : {0}"
+
+#: src/lib/components/SettingsModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Close settings"
+msgstr "Fermer les paramètres"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "With commas (1,234.56)"
+msgstr "Avec séparateurs (1,234.56)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Without commas (1234.56)"
+msgstr "Sans séparateurs (1234.56)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Copy format"
+msgstr "Format de copie"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Done"
+msgstr "Terminé"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "Light mode"
+msgstr "Mode clair"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "Dark mode"
+msgstr "Mode sombre"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "System mode"
+msgstr "Mode système"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification is not configured."
+msgstr "La vérification humaine n’est pas configurée."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verification failed. Please try again."
+msgstr "La vérification a échoué. Veuillez réessayer."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verify you're human"
+msgstr "Vérifiez que vous êtes humain"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Please complete the challenge to view this page."
+msgstr "Veuillez relever le défi pour afficher cette page."
+
+#: src/routes/about/+page.svelte
+msgid "What is a Mithqál?"
+msgstr "Qu’est-ce qu’un mithqál ?"
+
+#: src/routes/about/+page.svelte
+msgid "A mithqál is a traditional unit of weight used in the Middle East, equivalent to approximately 3.642 grams. In the Bahá'í Faith, it holds special significance as it is used to calculate Huqúqu'lláh (the Right of God), a spiritual obligation for Bahá'ís to contribute 19% of their surplus wealth after essential expenses (only if the individuals net worth is worth 19 Mithqáls of gold or more)."
+msgstr "Le mithqál est une unité de poids traditionnelle utilisée au Moyen-Orient, équivalant à environ 3,642 grammes. Dans la foi bahá’íe, il revêt une importance particulière, car il sert à calculer le Huqúqu’lláh (le Droit de Dieu), l’obligation spirituelle pour les bahá’ís de verser 19 % de leur richesse excédentaire après les dépenses essentielles (uniquement si la valeur nette de la personne atteint au moins 19 mithqáls d’or)."
+
+#: src/routes/about/+page.svelte
+msgid "What is the Bahá'í Faith?"
+msgstr "Qu’est-ce que la foi bahá’íe ?"
+
+#: src/routes/about/+page.svelte
+msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation—that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit bahai.org"
+msgstr "La foi bahá’íe est une religion mondiale fondée par Bahá’u’lláh dans la Perse du XIXe siècle. Elle enseigne l’unité essentielle de toutes les religions et l’unité de l’humanité. Les bahá’ís croient en la révélation progressive : Dieu a envoyé au fil de l’histoire une série de messagers divins, notamment Abraham, Moïse, Bouddha, Jésus, Muhammad et, plus récemment, Bahá’u’lláh. Pour plus d’informations, rendez-vous sur bahai.org"
+
+#: src/routes/about/+page.svelte
+msgid "Why are there advertisements?"
+msgstr "Pourquoi y a-t-il des publicités ?"
+
+#: src/routes/about/+page.svelte
+msgid "Currently, there are no advertisements on this site. The Mithqál Calculator is provided as a free service to the community. If ads are ever introduced, they would be to help cover hosting and maintenance costs while keeping the calculator freely accessible to everyone."
+msgstr "Il n’y a actuellement aucune publicité sur ce site. Le Calculateur de mithqáls est proposé comme un service gratuit à la communauté. Si des publicités devaient être ajoutées, elles serviraient à couvrir les frais d’hébergement et de maintenance tout en maintenant l’accès gratuit au calculateur pour tous."
+
+#: src/routes/about/+page.svelte
+msgid "Do you have a mobile app?"
+msgstr "Existe-t-il une application mobile ?"
+
+#: src/routes/about/+page.svelte
+msgid "In the works!"
+msgstr "C’est en préparation !"
+
+#: src/routes/about/+page.svelte
+msgid "Where do the currency and metal rates come from?"
+msgstr "D’où proviennent les cours des devises et des métaux ?"
+
+#: src/routes/about/+page.svelte
+msgid "Gold and silver prices are fetched daily from Swissquote's forex data feed. For each metal, the calculator takes the midpoint of every valid bid/ask quote and uses the median of those midpoints. Currency exchange rates come from FXRatesAPI. The displayed timestamp shows when the latest complete snapshot was successfully retrieved."
+msgstr "Les prix de l’or et de l’argent sont récupérés chaque jour depuis le flux de données de change de Swissquote. Pour chaque métal, le calculateur prend le point médian de chaque cotation achat/vente valide, puis utilise la médiane de ces points. Les taux de change proviennent de FXRatesAPI. L’horodatage affiché indique quand le dernier relevé complet a été récupéré avec succès."
+
+#: src/routes/+layout.svelte
+msgid "About the Mithqal Calculator: a free tool for converting mithqals of gold and silver to any currency, used for Huqúqu'lláh calculations."
+msgstr "À propos du Calculateur de mithqáls : un outil gratuit permettant de convertir des mithqáls d’or et d’argent dans n’importe quelle devise, utilisé pour les calculs du Huqúqu’lláh."
+
+#: src/routes/+layout.svelte
+msgid "About - Mithqal Calculator"
+msgstr "À propos - Calculateur de mithqáls"
+
+#: src/routes/about/+page.svelte
+msgid "The <0>Mithqál Calculator</0> is a free tool designed to help calculate the value of gold and silver in mithqáls, the traditional unit of weight used for <1>Huqúqu'lláh</1> calculations in the Bahá'í Faith."
+msgstr "Le <0>Calculateur de mithqáls</0> est un outil gratuit conçu pour calculer la valeur de l’or et de l’argent en mithqáls, l’unité de poids traditionnelle utilisée pour les calculs du <1>Huqúqu’lláh</1> dans la foi bahá’íe."
+
+#: src/routes/about/+page.svelte
+msgid "I am working on a website to showcase all the great Bahai tools people have made online. The domain of the site is bahaitools.app!"
+msgstr "Je travaille sur un site destiné à présenter tous les excellents outils bahá’ís créés en ligne. Son domaine est bahaitools.app !"
+
+#: src/routes/about/+page.svelte
+msgid "Simply enter the weight in mithqáls, select your preferred currency, and get an instant conversion based on current market rates. The calculator supports over 150 currencies worldwide."
+msgstr "Saisissez simplement le poids en mithqáls, sélectionnez la devise de votre choix et obtenez une conversion instantanée fondée sur les cours actuels du marché. Le calculateur prend en charge plus de 150 devises dans le monde."
+
+#: src/routes/about/+page.svelte
+msgid "Collapse all"
+msgstr "Tout réduire"
+
+#: src/routes/about/+page.svelte
+msgid "Expand all"
+msgstr "Tout développer"
+
+#: src/routes/about/+page.svelte
+msgid "Frequently Asked Questions"
+msgstr "Questions fréquentes"
+
+#: src/routes/+layout.svelte
+msgid "Support the Mithqal Calculator, a free ad-supported tool for converting gold and silver mithqals to any currency."
+msgstr "Soutenez le Calculateur de mithqáls, un outil gratuit financé par la publicité permettant de convertir des mithqáls d’or et d’argent dans n’importe quelle devise."
+
+#: src/routes/+layout.svelte
+msgid "Support - Mithqal Calculator"
+msgstr "Soutenir - Calculateur de mithqáls"
+
+#: src/routes/support/+page.svelte
+msgid "The <0>Mithqal Calculator</0> is a free, ad-free tool built to serve the community. If you find it useful and would like to help keep it running, consider supporting the project."
+msgstr "Le <0>Calculateur de mithqáls</0> est un outil gratuit et sans publicité conçu au service de la communauté. S’il vous est utile et que vous souhaitez contribuer à son fonctionnement, pensez à soutenir le projet."
+
+#: src/routes/support/+page.svelte
+msgid "Ko-fi"
+msgstr "Ko-fi"
+
+#: src/routes/support/+page.svelte
+msgid "Buy me a coffee"
+msgstr "Offrez-moi un café"
+
+#: src/routes/support/+page.svelte
+msgid "World Citizen sticker"
+msgstr "Autocollant Citoyen du monde"
+
+#: src/routes/support/+page.svelte
+msgid "World Citizen Sticker"
+msgstr "Autocollant Citoyen du monde"
+
+#: src/routes/support/+page.svelte
+msgid "Buy a sticker"
+msgstr "Acheter un autocollant"
+
+#~ msgid "PayPal"
+#~ msgstr "PayPal"
+
+#~ msgid "One-time donation"
+#~ msgstr "Don ponctuel"
+
+#: src/routes/support/+page.svelte
+msgid "Ways to Support"
+msgstr "Façons de soutenir"
+
+#: src/routes/support/+page.svelte
+msgid "Your support helps cover hosting and domain costs and allows me to continue improving the calculator."
+msgstr "Votre soutien contribue à couvrir les frais d’hébergement et de domaine et me permet de continuer à améliorer le calculateur."
+
+#: src/lib/components/LanguageSwitcher.svelte
+#: src/lib/components/LanguageSwitcher.svelte
+msgid "Language"
+msgstr "Langue"
+
+#: src/routes/about/+page.svelte
+msgid "GitHub"
+msgstr "GitHub"
+
+#: src/routes/about/+page.svelte
+msgid "Twitter (X)"
+msgstr "Twitter (X)"
+
+#: src/routes/about/+page.svelte
+msgid "Bluesky"
+msgstr "Bluesky"
+
+#: src/routes/about/+page.svelte
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: src/routes/about/+page.svelte
+msgid "Socials <0/>"
+msgstr "Réseaux sociaux <0/>"
+
+#: src/routes/about/+page.svelte
+msgid "Hi, I'm <0>Nima</0>, a software developer passionate about building useful tools for the community."
+msgstr "Bonjour, je suis <0>Nima</0>, un développeur logiciel passionné par la création d’outils utiles à la communauté."
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Grams (g)"
+msgstr "Grammes (g)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Troy ounces (oz)"
+msgstr "Onces troy (oz)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Weight unit"
+msgstr "Unité de poids"
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Email"
+msgstr "E-mail"
+
+#: src/routes/support/+page.svelte
+msgid "Have a suggestion? Found a bug?"
+msgstr "Une suggestion ? Vous avez trouvé un bug ?"
+
+#: src/routes/support/+page.svelte
+msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
+msgstr "Vous pouvez m’écrire à <0>mithqal@mohajeri.dev</0>."

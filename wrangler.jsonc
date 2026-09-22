@@ -6,6 +6,8 @@
   "main": "worker/index.ts",
   "vars": {
     "PUBLIC_TURNSTILE_SITE_KEY": "0x4AAAAAACWcvfZNahDXX8aD",
+    // Public GA4 web-stream ID, for example "G-XXXXXXXXXX".
+    "PUBLIC_GA_MEASUREMENT_ID": "",
     "TURNSTILE_HOSTNAMES": "mithqal.app",
   },
   "secrets": {
@@ -18,6 +20,8 @@
     "dev": {
       "vars": {
         "PUBLIC_TURNSTILE_SITE_KEY": "1x00000000000000000000AA",
+        // Vars do not inherit into named Wrangler environments.
+        "PUBLIC_GA_MEASUREMENT_ID": "",
         "TURNSTILE_HOSTNAMES": "localhost,127.0.0.1",
       },
     },

@@ -10,7 +10,23 @@ const SLOTS: SentenceSlot[] = ["amount", "mithqalLabel", "metal", "currency"];
 
 describe("getSentenceLanguage", () => {
   test("returns the requested language", () => {
-    expect(getSentenceLanguage("en")).toBe(SENTENCE_LANGUAGES.en);
+    for (const id of [
+      "en",
+      "ar",
+      "fa",
+      "es",
+      "fr",
+      "zh",
+      "ja",
+      "ko",
+      "hi",
+      "sw",
+      "pt",
+      "ru",
+      "de",
+    ]) {
+      expect(getSentenceLanguage(id)).toBe(SENTENCE_LANGUAGES[id]);
+    }
   });
 
   test("falls back to the default for unknown or missing ids", () => {
@@ -25,6 +41,13 @@ describe("getSentenceLanguage", () => {
           expect(SLOTS).toContain(item.snippet);
         }
       }
+    }
+  });
+
+  test("every language provides both tooltip unit formats", () => {
+    for (const language of Object.values(SENTENCE_LANGUAGES)) {
+      expect(language.mithqalDefinition).toBeTruthy();
+      expect(language.mithqalDefinitionOunces).toContain("{value}");
     }
   });
 });

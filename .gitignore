@@ -25,6 +25,7 @@ pnpm-debug.log*
 .env.*
 .dev.vars*
 !.env.example
+!.env.schema
 !.env.test
 
 # OS
@@ -34,6 +35,12 @@ Thumbs.db
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Wuchale generated catalogs and proxies
+/src/locales/.wuchale/
+/src/locales/data.js
+/src/locales/plural.js
+/src/locales/*.loader*.js
 
 # Cloudflare Types
 /worker-configuration.d.ts

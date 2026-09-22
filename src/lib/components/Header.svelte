@@ -17,6 +17,8 @@
 	import Settings from './icons/Settings.svelte';
 	import Menu from './icons/Menu.svelte';
 	import Close from './icons/Close.svelte';
+	import LanguageSwitcher from './LanguageSwitcher.svelte';
+	import { getLocale, withLocale } from '$lib/i18n';
 
 	// ============================================
 	// State
@@ -26,6 +28,10 @@
 	let isSupportPage = $derived(page.url.pathname === '/support');
 	let settingsOpen = $state(false);
 	let mobileMenuOpen = $state(false);
+	let locale = $derived(getLocale(page.url.searchParams.get('lang')));
+	let homeHref = $derived(withLocale('/', locale));
+	let aboutHref = $derived(withLocale('/about', locale));
+	let supportHref = $derived(withLocale('/support', locale));
 
 	// ============================================
 	// Event Handlers
@@ -44,32 +50,37 @@
 </script>
 
 <nav
-	class="relative z-50 flex flex-wrap items-center justify-between bg-base-100 p-4 pb-20 sm:pb-24 md:pb-28 lg:pb-36"
+	class="relative z-50 flex items-center justify-between gap-4 bg-base-100 p-4 pb-20 sm:pb-24 md:pb-28 lg:pb-36"
 >
 	<a
-		href="/"
-		class="font-karla font-medium text-base-content text-4xl sm:text-4xl md:text-5xl lg:text-6xl"
+		href={homeHref}
+		class="min-w-0 font-karla font-medium text-base-content text-4xl md:text-5xl 2xl:text-6xl"
 	>
 		<span class="link-underline">Mithqál Calculator</span>
 	</a>
 
 	<!-- Desktop Navigation (hidden on mobile) -->
-	<div class="hidden items-center gap-6 sm:flex lg:gap-10">
+	<div class="hidden shrink-0 items-center gap-4 xl:flex 2xl:gap-6">
 		<a
-			href="/about"
-			class="font-karla text-2xl font-medium text-base-content transition-colors hover:text-primary md:text-3xl lg:text-4xl"
+			href={aboutHref}
+			class="inline-flex h-11 items-center font-karla text-xl font-medium text-base-content transition-colors hover:text-primary"
 		>
-			<span class="link-underline pb-1" class:link-active={isAboutPage}>About</span>
+			<span class="link-underline header-action-link pb-1" class:link-active={isAboutPage}
+				>About</span
+			>
 		</a>
 
 		<a
-			href="/support"
-			class="font-karla text-2xl font-medium text-base-content transition-colors hover:text-primary md:text-3xl lg:text-4xl"
+			href={supportHref}
+			class="inline-flex h-11 items-center font-karla text-xl font-medium text-base-content transition-colors hover:text-primary"
 		>
-			<span class="link-underline pb-1" class:link-active={isSupportPage}>Support</span>
+			<span class="link-underline header-action-link pb-1" class:link-active={isSupportPage}
+				>Support</span
+			>
 		</a>
 
 		<div class="flex items-center gap-2">
+			<LanguageSwitcher />
 			<ThemeSwitcher />
 			<button
 				type="button"
@@ -86,7 +97,7 @@
 	<button
 		type="button"
 		onclick={() => (mobileMenuOpen = true)}
-		class="btn-pixel !text-base-content sm:hidden {mobileMenuOpen ? 'invisible' : ''}"
+		class="btn-pixel shrink-0 !text-base-content xl:hidden {mobileMenuOpen ? 'invisible' : ''}"
 		aria-label="Open menu"
 		aria-expanded={mobileMenuOpen}
 	>
@@ -96,7 +107,7 @@
 
 <!-- Fixed Close Button (above overlay when menu is open) -->
 {#if mobileMenuOpen}
-	<div class="fixed right-4 top-4 z-60 sm:hidden">
+	<div class="fixed right-4 top-4 z-60 xl:hidden">
 		<button
 			type="button"
 			onclick={() => (mobileMenuOpen = false)}
@@ -113,14 +124,14 @@
 	<!-- Pixelated Overlay -->
 	<button
 		type="button"
-		class="pixel-overlay fixed inset-0 z-55 sm:hidden"
+		class="pixel-overlay fixed inset-0 z-55 xl:hidden"
 		onclick={closeMobileMenu}
 		aria-label="Close menu"
 	></button>
 
 	<!-- Menu Panel -->
 	<div
-		class="fixed right-4 top-16 z-60 w-48 overflow-hidden border-2 border-primary bg-base-100 sm:hidden"
+		class="fixed right-4 top-16 z-60 w-56 overflow-hidden border-2 border-primary bg-base-100 xl:hidden"
 		style="clip-path: polygon(
 			0% 8px, 8px 8px, 8px 0%, calc(100% - 8px) 0%, calc(100% - 8px) 8px, 100% 8px,
 			100% calc(100% - 8px), calc(100% - 8px) calc(100% - 8px), calc(100% - 8px) 100%,
@@ -131,7 +142,7 @@
 		<div class="flex flex-col">
 			<!-- About Link -->
 			<a
-				href="/about"
+				href={aboutHref}
 				onclick={closeMobileMenu}
 				class="flex items-center gap-3 px-4 py-3 text-base-content transition-colors hover:bg-base-300/50 {isAboutPage
 					? 'bg-primary/20'
@@ -147,7 +158,7 @@
 
 			<!-- Support Link -->
 			<a
-				href="/support"
+				href={supportHref}
 				onclick={closeMobileMenu}
 				class="flex items-center gap-3 px-4 py-3 text-base-content transition-colors hover:bg-base-300/50 {isSupportPage
 					? 'bg-primary/20'
@@ -158,6 +169,13 @@
 					<span class="ml-auto h-2 w-2 bg-primary"></span>
 				{/if}
 			</a>
+
+			<div class="mx-3 h-px bg-base-300"></div>
+
+			<!-- Language Switcher Row -->
+			<div class="px-2 py-1">
+				<LanguageSwitcher variant="menu" class="w-full" />
+			</div>
 
 			<div class="mx-3 h-px bg-base-300"></div>
 
@@ -210,6 +228,15 @@
 
 	.link-underline:hover {
 		background-size: 100% 6px;
+	}
+
+	.header-action-link {
+		background-size: 0 4px;
+	}
+
+	.header-action-link:hover,
+	.header-action-link.link-active {
+		background-size: 100% 4px;
 	}
 
 	/* Active state - full underline */

@@ -1,6 +1,6 @@
 import type { LayoutServerLoad } from "./$types";
 
-// EU + UK + Switzerland require an explicit consent prompt.
+// EEA + UK + Switzerland require an explicit consent prompt for Google measurement.
 const CONSENT_REQUIRED_COUNTRIES = new Set([
   // EU Member States
   "AT", // Austria
@@ -30,6 +30,10 @@ const CONSENT_REQUIRED_COUNTRIES = new Set([
   "SI", // Slovenia
   "ES", // Spain
   "SE", // Sweden
+  // Other EEA countries
+  "IS", // Iceland
+  "LI", // Liechtenstein
+  "NO", // Norway
   // Non-EU but GDPR-like
   "GB", // United Kingdom
   "CH", // Switzerland

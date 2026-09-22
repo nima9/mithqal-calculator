@@ -5,10 +5,15 @@
 
 	Available Settings:
 	- Copy format: With commas (1,234.56) or without (1234.56)
+	- Weight unit: Grams or troy ounces in the Mithqál tooltip
 -->
 
 <script lang="ts">
-	import { settingsStore, setCopyWithCommas } from '$lib/stores/settings.svelte';
+	import {
+		settingsStore,
+		setCopyWithCommas,
+		setWeightUnit
+	} from '$lib/stores/settings.svelte';
 
 	// ============================================
 	// Props
@@ -104,6 +109,33 @@
 			</div>
 
 			<div class="mt-6 space-y-6">
+				<!-- Weight Unit Setting -->
+				<fieldset class="space-y-3">
+					<legend class="text-sm font-medium text-base-content">Weight unit</legend>
+					<div class="space-y-2">
+						<label class="flex cursor-pointer items-center gap-3">
+							<input
+								type="radio"
+								name="weightUnit"
+								class="size-5 accent-primary"
+								checked={$settingsStore.weightUnit === 'grams'}
+								onchange={() => setWeightUnit('grams')}
+							/>
+							<span class="text-base-content">Grams (g)</span>
+						</label>
+						<label class="flex cursor-pointer items-center gap-3">
+							<input
+								type="radio"
+								name="weightUnit"
+								class="size-5 accent-primary"
+								checked={$settingsStore.weightUnit === 'ounces'}
+								onchange={() => setWeightUnit('ounces')}
+							/>
+							<span class="text-base-content">Troy ounces (oz)</span>
+						</label>
+					</div>
+				</fieldset>
+
 				<!-- Copy Format Setting -->
 				<fieldset class="space-y-3">
 					<legend class="text-sm font-medium text-base-content">Copy format</legend>

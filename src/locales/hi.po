@@ -1,0 +1,498 @@
+msgid ""
+msgstr ""
+"Source-Language: en\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2\n"
+"X-Plurals-Order: one, other\n"
+
+#: src/routes/+layout.svelte
+#: src/routes/+page.svelte
+msgid "Free mithqál calculator: convert mithqals of gold and silver to any currency with live precious metal and exchange rates."
+msgstr "मुफ़्त मिस्क़ाल कैलकुलेटर: कीमती धातुओं की लाइव कीमतों और विनिमय दरों से सोने और चाँदी के मिस्क़ाल को किसी भी मुद्रा में बदलें।"
+
+#: src/routes/+layout.svelte
+msgid "Mithqál Calculator – Convert Gold & Silver to Any Currency"
+msgstr "मिस्क़ाल कैलकुलेटर – सोने और चाँदी को किसी भी मुद्रा में बदलें"
+
+#: src/routes/+layout.svelte
+msgid "Mithqal Calculator"
+msgstr "मिस्क़ाल कैलकुलेटर"
+
+#: src/routes/+layout.svelte
+msgid "Mithqal Calculator - Convert mithqals to currency"
+msgstr "मिस्क़ाल कैलकुलेटर - मिस्क़ाल को मुद्रा में बदलें"
+
+#: src/routes/+page.svelte
+msgid "WebApplication"
+msgstr "WebApplication"
+
+#: src/lib/components/Header.svelte
+#: src/routes/+page.svelte
+#: src/routes/+page.svelte
+msgid "Mithqál Calculator"
+msgstr "मिस्क़ाल कैलकुलेटर"
+
+#: src/routes/+page.svelte
+msgid "FinanceApplication"
+msgstr "FinanceApplication"
+
+#: src/routes/+page.svelte
+msgid "Web"
+msgstr "Web"
+
+#: src/routes/+page.svelte
+msgid "Requires JavaScript"
+msgstr "Requires JavaScript"
+
+#: src/routes/+page.svelte
+msgid "Offer"
+msgstr "Offer"
+
+#: src/lib/components/Calculator.svelte
+msgid "Gold"
+msgstr "सोना"
+
+#: src/lib/components/Calculator.svelte
+msgid "Silver"
+msgstr "चाँदी"
+
+#: src/lib/components/Calculator.svelte
+#: src/lib/components/RatesTimestamp.svelte
+msgid "America/Los_Angeles"
+msgstr "America/Los_Angeles"
+
+#: src/lib/components/Calculator.svelte
+msgid "Click to copy"
+msgstr "कॉपी करने के लिए क्लिक करें"
+
+#: src/lib/components/Calculator.svelte
+#: src/lib/components/ContactEmail.svelte
+msgid "Copied!"
+msgstr "कॉपी हो गया!"
+
+#: src/lib/components/Calculator.svelte
+msgid "Failed to copy"
+msgstr "कॉपी नहीं हो सका"
+
+#: src/lib/components/Combobox.svelte
+msgid "Fiat currencies"
+msgstr "फ़िएट मुद्राएँ"
+
+#: src/lib/components/Combobox.svelte
+msgid "Cryptocurrencies"
+msgstr "क्रिप्टोकरेंसी"
+
+#: src/lib/components/Combobox.svelte
+msgid "Select..."
+msgstr "चुनें..."
+
+#: src/lib/components/Combobox.svelte
+msgid "No currencies found."
+msgstr "कोई मुद्रा नहीं मिली।"
+
+#: src/lib/components/CookieConsent.svelte
+msgid "Decline"
+msgstr "अस्वीकार करें"
+
+#: src/lib/components/CookieConsent.svelte
+msgid "Accept"
+msgstr "स्वीकार करें"
+
+#: src/lib/components/CookieConsent.svelte
+msgid "We use cookies for analytics and ads. <0>Learn more</0>"
+msgstr "हम विश्लेषण और विज्ञापनों के लिए कुकीज़ का उपयोग करते हैं। <0>और जानें</0>"
+
+#: src/lib/components/CookieModal.svelte
+#: src/lib/components/SettingsModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Escape"
+msgstr "Escape"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Close cookie policy"
+msgstr "कुकी नीति बंद करें"
+
+#: src/lib/components/CookieModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Enter"
+msgstr "Enter"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Close"
+msgstr "बंद करें"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Cookie Policy"
+msgstr "कुकी नीति"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Essential (Always Active)"
+msgstr "आवश्यक (हमेशा सक्रिय)"
+
+#: src/lib/components/CookieModal.svelte
+msgid "These are required for the site to function. They store your preferences like theme and currency settings in your browser's local storage. No data is sent to external servers."
+msgstr "साइट के काम करने के लिए ये आवश्यक हैं। ये थीम और मुद्रा जैसी आपकी पसंद को ब्राउज़र के लोकल स्टोरेज में रखते हैं। कोई डेटा बाहरी सर्वर पर नहीं भेजा जाता।"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Analytics (Optional)"
+msgstr "विश्लेषण (वैकल्पिक)"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Google Analytics helps us understand how visitors use the site. It collects anonymized data about page views and interactions. This data is processed by Google."
+msgstr "Google Analytics हमें यह समझने में मदद करता है कि आगंतुक साइट का उपयोग कैसे करते हैं। यह पेज देखे जाने और इंटरैक्शन के बारे में गुमनाम डेटा एकत्र करता है। इस डेटा को Google संसाधित करता है।"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Advertising (Optional)"
+msgstr "विज्ञापन (वैकल्पिक)"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Google AdSense displays ads to support the site. It may use cookies to show personalized ads based on your browsing history. If declined, ads will not be shown."
+msgstr "Google AdSense साइट की सहायता के लिए विज्ञापन दिखाता है। यह आपके ब्राउज़िंग इतिहास के आधार पर व्यक्तिगत विज्ञापन दिखाने के लिए कुकीज़ का उपयोग कर सकता है। अस्वीकार करने पर विज्ञापन नहीं दिखाए जाएँगे।"
+
+#: src/lib/components/CookieModal.svelte
+msgid "You can change your preference at any time by clearing your browser's local storage for this site."
+msgstr "इस साइट के लिए ब्राउज़र का लोकल स्टोरेज साफ़ करके आप किसी भी समय अपनी पसंद बदल सकते हैं।"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Decline All"
+msgstr "सभी अस्वीकार करें"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Accept All"
+msgstr "सभी स्वीकार करें"
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Failed to get contact email."
+msgstr "संपर्क ईमेल नहीं मिल सका।"
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Something went wrong. Please try again."
+msgstr "कुछ गड़बड़ हुई। कृपया फिर से कोशिश करें।"
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Contact verification is not configured."
+msgstr "संपर्क सत्यापन कॉन्फ़िगर नहीं किया गया है।"
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification could not load. Please try again."
+msgstr "मानव सत्यापन लोड नहीं हो सका। कृपया फिर से कोशिश करें।"
+
+#. 0: code
+#. 0: code
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification could not run{0}. Please try again or use another browser."
+msgstr "मानव सत्यापन चल नहीं सका{0}। कृपया फिर से कोशिश करें या कोई दूसरा ब्राउज़र इस्तेमाल करें।"
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification expired. Please try again."
+msgstr "मानव सत्यापन की समय-सीमा समाप्त हो गई। कृपया फिर से कोशिश करें।"
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Copy failed"
+msgstr "कॉपी नहीं हो सका"
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Loading..."
+msgstr "लोड हो रहा है..."
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verifying..."
+msgstr "सत्यापन हो रहा है..."
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Try again"
+msgstr "फिर से कोशिश करें"
+
+#. 0: email
+#: src/lib/components/ContactEmail.svelte
+msgid "Email {0}"
+msgstr "ईमेल {0}"
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Copy email address"
+msgstr "ईमेल पता कॉपी करें"
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Reach out!"
+msgstr "संपर्क करें!"
+
+#: src/lib/components/Footer.svelte
+msgid "Special Sponsor"
+msgstr "विशेष प्रायोजक"
+
+#: src/lib/components/Footer.svelte
+msgid "We're looking for sponsors to keep this project alive and perhaps ad-free"
+msgstr "इस परियोजना को जारी रखने और शायद विज्ञापन-मुक्त रखने के लिए हम प्रायोजक खोज रहे हैं"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+#: src/routes/about/+page.svelte
+msgid "About"
+msgstr "परिचय"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+#: src/routes/support/+page.svelte
+msgid "Support"
+msgstr "सहायता करें"
+
+#: src/lib/components/Header.svelte
+msgid "Open settings"
+msgstr "सेटिंग्स खोलें"
+
+#: src/lib/components/Header.svelte
+msgid "Open menu"
+msgstr "मेनू खोलें"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+msgid "Close menu"
+msgstr "मेनू बंद करें"
+
+#: src/lib/components/Header.svelte
+msgid "Theme"
+msgstr "थीम"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Settings"
+msgstr "सेटिंग्स"
+
+#: src/lib/components/RatesTimestamp.svelte
+msgid "Unavailable"
+msgstr "उपलब्ध नहीं"
+
+#. 0: readableRateDate
+#: src/lib/components/RatesTimestamp.svelte
+msgid "Rates retrieved: {0}"
+msgstr "दरें प्राप्त की गईं: {0}"
+
+#: src/lib/components/SettingsModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Close settings"
+msgstr "सेटिंग्स बंद करें"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "With commas (1,234.56)"
+msgstr "कॉमा के साथ (1,234.56)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Without commas (1234.56)"
+msgstr "कॉमा के बिना (1234.56)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Copy format"
+msgstr "कॉपी प्रारूप"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Done"
+msgstr "पूर्ण"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "Light mode"
+msgstr "लाइट मोड"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "Dark mode"
+msgstr "डार्क मोड"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "System mode"
+msgstr "सिस्टम मोड"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification is not configured."
+msgstr "मानव सत्यापन कॉन्फ़िगर नहीं किया गया है।"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verification failed. Please try again."
+msgstr "सत्यापन विफल रहा। कृपया फिर से कोशिश करें।"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verify you're human"
+msgstr "सत्यापित करें कि आप इंसान हैं"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Please complete the challenge to view this page."
+msgstr "यह पेज देखने के लिए कृपया चुनौती पूरी करें।"
+
+#: src/routes/about/+page.svelte
+msgid "What is a Mithqál?"
+msgstr "मिस्क़ाल क्या है?"
+
+#: src/routes/about/+page.svelte
+msgid "A mithqál is a traditional unit of weight used in the Middle East, equivalent to approximately 3.642 grams. In the Bahá'í Faith, it holds special significance as it is used to calculate Huqúqu'lláh (the Right of God), a spiritual obligation for Bahá'ís to contribute 19% of their surplus wealth after essential expenses (only if the individuals net worth is worth 19 Mithqáls of gold or more)."
+msgstr "मिस्क़ाल मध्य पूर्व में इस्तेमाल होने वाली एक पारंपरिक भार इकाई है, जो लगभग 3.642 ग्राम के बराबर होती है। बहाई धर्म में इसका विशेष महत्व है, क्योंकि इसका उपयोग Huqúqu’lláh (ईश्वर का अधिकार) की गणना के लिए किया जाता है। यह बहाइयों का आध्यात्मिक दायित्व है कि आवश्यक खर्चों के बाद बची अतिरिक्त संपत्ति का 19% अर्पित करें (केवल तब, जब व्यक्ति की कुल शुद्ध संपत्ति का मूल्य 19 मिस्क़ाल सोने या उससे अधिक के बराबर हो)।"
+
+#: src/routes/about/+page.svelte
+msgid "What is the Bahá'í Faith?"
+msgstr "बहाई धर्म क्या है?"
+
+#: src/routes/about/+page.svelte
+msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation—that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit bahai.org"
+msgstr "बहाई धर्म एक विश्व धर्म है जिसकी स्थापना 19वीं सदी के फ़ारस में बहाउल्लाह ने की थी। यह सभी धर्मों की मूलभूत एकता और मानवजाति की एकता सिखाता है। बहाई क्रमिक प्रकाशना में विश्वास करते हैं—अर्थात ईश्वर ने इतिहास में इब्राहीम, मूसा, बुद्ध, यीशु, मुहम्मद और सबसे हाल में बहाउल्लाह सहित दिव्य संदेशवाहकों की एक शृंखला भेजी है। अधिक जानकारी के लिए bahai.org देखें"
+
+#: src/routes/about/+page.svelte
+msgid "Why are there advertisements?"
+msgstr "विज्ञापन क्यों हैं?"
+
+#: src/routes/about/+page.svelte
+msgid "Currently, there are no advertisements on this site. The Mithqál Calculator is provided as a free service to the community. If ads are ever introduced, they would be to help cover hosting and maintenance costs while keeping the calculator freely accessible to everyone."
+msgstr "इस समय इस साइट पर कोई विज्ञापन नहीं है। मिस्क़ाल कैलकुलेटर समुदाय के लिए एक निःशुल्क सेवा है। यदि भविष्य में विज्ञापन जोड़े जाते हैं, तो उनका उद्देश्य होस्टिंग और रखरखाव की लागत पूरी करना और कैलकुलेटर को सभी के लिए मुफ़्त रखना होगा।"
+
+#: src/routes/about/+page.svelte
+msgid "Do you have a mobile app?"
+msgstr "क्या कोई मोबाइल ऐप है?"
+
+#: src/routes/about/+page.svelte
+msgid "In the works!"
+msgstr "काम जारी है!"
+
+#: src/routes/about/+page.svelte
+msgid "Where do the currency and metal rates come from?"
+msgstr "मुद्रा और धातु की दरें कहाँ से आती हैं?"
+
+#: src/routes/about/+page.svelte
+msgid "Gold and silver prices are fetched daily from Swissquote's forex data feed. For each metal, the calculator takes the midpoint of every valid bid/ask quote and uses the median of those midpoints. Currency exchange rates come from FXRatesAPI. The displayed timestamp shows when the latest complete snapshot was successfully retrieved."
+msgstr "सोने और चाँदी की कीमतें Swissquote के फ़ॉरेक्स डेटा फ़ीड से प्रतिदिन ली जाती हैं। हर धातु के लिए कैलकुलेटर प्रत्येक मान्य खरीद/बिक्री भाव का मध्य बिंदु निकालता है और उन मध्य बिंदुओं की माध्यिका का उपयोग करता है। विनिमय दरें FXRatesAPI से आती हैं। दिखाई गई समय-मुद्रा बताती है कि नवीनतम पूर्ण डेटा स्नैपशॉट सफलतापूर्वक कब प्राप्त हुआ था।"
+
+#: src/routes/+layout.svelte
+msgid "About the Mithqal Calculator: a free tool for converting mithqals of gold and silver to any currency, used for Huqúqu'lláh calculations."
+msgstr "मिस्क़ाल कैलकुलेटर के बारे में: सोने और चाँदी के मिस्क़ाल को किसी भी मुद्रा में बदलने का एक मुफ़्त उपकरण, जिसका उपयोग Huqúqu’lláh की गणना में होता है।"
+
+#: src/routes/+layout.svelte
+msgid "About - Mithqal Calculator"
+msgstr "परिचय - मिस्क़ाल कैलकुलेटर"
+
+#: src/routes/about/+page.svelte
+msgid "The <0>Mithqál Calculator</0> is a free tool designed to help calculate the value of gold and silver in mithqáls, the traditional unit of weight used for <1>Huqúqu'lláh</1> calculations in the Bahá'í Faith."
+msgstr "<0>मिस्क़ाल कैलकुलेटर</0> सोने और चाँदी का मूल्य मिस्क़ाल में निकालने के लिए बनाया गया मुफ़्त उपकरण है। मिस्क़ाल बहाई धर्म में <1>Huqúqu’lláh</1> की गणना के लिए इस्तेमाल होने वाली पारंपरिक भार इकाई है।"
+
+#: src/routes/about/+page.svelte
+msgid "I am working on a website to showcase all the great Bahai tools people have made online. The domain of the site is bahaitools.app!"
+msgstr "मैं एक ऐसी वेबसाइट बना रहा हूँ जहाँ लोगों द्वारा ऑनलाइन बनाए गए सभी शानदार बहाई उपकरण प्रदर्शित किए जाएँगे। साइट का डोमेन bahaitools.app है!"
+
+#: src/routes/about/+page.svelte
+msgid "Simply enter the weight in mithqáls, select your preferred currency, and get an instant conversion based on current market rates. The calculator supports over 150 currencies worldwide."
+msgstr "बस मिस्क़ाल में वजन दर्ज करें, अपनी पसंदीदा मुद्रा चुनें और मौजूदा बाज़ार दरों पर तुरंत रूपांतरण पाएँ। कैलकुलेटर दुनिया भर की 150 से अधिक मुद्राओं का समर्थन करता है।"
+
+#: src/routes/about/+page.svelte
+msgid "Collapse all"
+msgstr "सभी समेटें"
+
+#: src/routes/about/+page.svelte
+msgid "Expand all"
+msgstr "सभी फैलाएँ"
+
+#: src/routes/about/+page.svelte
+msgid "Frequently Asked Questions"
+msgstr "अक्सर पूछे जाने वाले प्रश्न"
+
+#: src/routes/+layout.svelte
+msgid "Support the Mithqal Calculator, a free ad-supported tool for converting gold and silver mithqals to any currency."
+msgstr "मिस्क़ाल कैलकुलेटर की सहायता करें—सोने और चाँदी के मिस्क़ाल को किसी भी मुद्रा में बदलने वाला मुफ़्त, विज्ञापन-समर्थित उपकरण।"
+
+#: src/routes/+layout.svelte
+msgid "Support - Mithqal Calculator"
+msgstr "सहायता - मिस्क़ाल कैलकुलेटर"
+
+#: src/routes/support/+page.svelte
+msgid "The <0>Mithqal Calculator</0> is a free, ad-free tool built to serve the community. If you find it useful and would like to help keep it running, consider supporting the project."
+msgstr "<0>मिस्क़ाल कैलकुलेटर</0> समुदाय की सेवा के लिए बनाया गया मुफ़्त और विज्ञापन-मुक्त उपकरण है। यदि यह आपके लिए उपयोगी है और आप इसे चालू रखने में मदद करना चाहते हैं, तो परियोजना को सहयोग देने पर विचार करें।"
+
+#: src/routes/support/+page.svelte
+msgid "Ko-fi"
+msgstr "Ko-fi"
+
+#: src/routes/support/+page.svelte
+msgid "Buy me a coffee"
+msgstr "मुझे एक कॉफ़ी पिलाएँ"
+
+#: src/routes/support/+page.svelte
+msgid "World Citizen sticker"
+msgstr "विश्व नागरिक स्टिकर"
+
+#: src/routes/support/+page.svelte
+msgid "World Citizen Sticker"
+msgstr "विश्व नागरिक स्टिकर"
+
+#: src/routes/support/+page.svelte
+msgid "Buy a sticker"
+msgstr "स्टिकर खरीदें"
+
+#~ msgid "PayPal"
+#~ msgstr "PayPal"
+
+#~ msgid "One-time donation"
+#~ msgstr "एक बार का दान"
+
+#: src/routes/support/+page.svelte
+msgid "Ways to Support"
+msgstr "सहायता के तरीके"
+
+#: src/routes/support/+page.svelte
+msgid "Your support helps cover hosting and domain costs and allows me to continue improving the calculator."
+msgstr "आपकी सहायता होस्टिंग और डोमेन की लागत पूरी करने में मदद करती है और मुझे कैलकुलेटर को बेहतर बनाते रहने देती है।"
+
+#: src/lib/components/LanguageSwitcher.svelte
+#: src/lib/components/LanguageSwitcher.svelte
+msgid "Language"
+msgstr "भाषा"
+
+#: src/routes/about/+page.svelte
+msgid "GitHub"
+msgstr "GitHub"
+
+#: src/routes/about/+page.svelte
+msgid "Twitter (X)"
+msgstr "Twitter (X)"
+
+#: src/routes/about/+page.svelte
+msgid "Bluesky"
+msgstr "Bluesky"
+
+#: src/routes/about/+page.svelte
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: src/routes/about/+page.svelte
+msgid "Socials <0/>"
+msgstr "सोशल मीडिया <0/>"
+
+#: src/routes/about/+page.svelte
+msgid "Hi, I'm <0>Nima</0>, a software developer passionate about building useful tools for the community."
+msgstr "नमस्ते, मैं <0>Nima</0> हूँ—एक सॉफ़्टवेयर डेवलपर जिसे समुदाय के लिए उपयोगी उपकरण बनाना पसंद है।"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Grams (g)"
+msgstr "ग्राम (g)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Troy ounces (oz)"
+msgstr "ट्रॉय औंस (oz)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Weight unit"
+msgstr "भार इकाई"
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Email"
+msgstr "ईमेल"
+
+#: src/routes/support/+page.svelte
+msgid "Have a suggestion? Found a bug?"
+msgstr "कोई सुझाव है? कोई गड़बड़ी मिली?"
+
+#: src/routes/support/+page.svelte
+msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
+msgstr "आप मुझे <0>mithqal@mohajeri.dev</0> पर ईमेल कर सकते हैं।"

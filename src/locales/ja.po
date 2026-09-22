@@ -1,0 +1,498 @@
+msgid ""
+msgstr ""
+"Source-Language: en\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1\n"
+"X-Plurals-Order: other\n"
+
+#: src/routes/+layout.svelte
+#: src/routes/+page.svelte
+msgid "Free mithqál calculator: convert mithqals of gold and silver to any currency with live precious metal and exchange rates."
+msgstr "無料のミスカール計算機：貴金属のリアルタイム価格と為替レートを使って、金や銀のミスカールをあらゆる通貨に換算できます。"
+
+#: src/routes/+layout.svelte
+msgid "Mithqál Calculator – Convert Gold & Silver to Any Currency"
+msgstr "ミスカール計算機 – 金と銀をあらゆる通貨に換算"
+
+#: src/routes/+layout.svelte
+msgid "Mithqal Calculator"
+msgstr "ミスカール計算機"
+
+#: src/routes/+layout.svelte
+msgid "Mithqal Calculator - Convert mithqals to currency"
+msgstr "ミスカール計算機 - ミスカールを通貨に換算"
+
+#: src/routes/+page.svelte
+msgid "WebApplication"
+msgstr "WebApplication"
+
+#: src/lib/components/Header.svelte
+#: src/routes/+page.svelte
+#: src/routes/+page.svelte
+msgid "Mithqál Calculator"
+msgstr "ミスカール計算機"
+
+#: src/routes/+page.svelte
+msgid "FinanceApplication"
+msgstr "FinanceApplication"
+
+#: src/routes/+page.svelte
+msgid "Web"
+msgstr "Web"
+
+#: src/routes/+page.svelte
+msgid "Requires JavaScript"
+msgstr "Requires JavaScript"
+
+#: src/routes/+page.svelte
+msgid "Offer"
+msgstr "Offer"
+
+#: src/lib/components/Calculator.svelte
+msgid "Gold"
+msgstr "金"
+
+#: src/lib/components/Calculator.svelte
+msgid "Silver"
+msgstr "銀"
+
+#: src/lib/components/Calculator.svelte
+#: src/lib/components/RatesTimestamp.svelte
+msgid "America/Los_Angeles"
+msgstr "America/Los_Angeles"
+
+#: src/lib/components/Calculator.svelte
+msgid "Click to copy"
+msgstr "クリックしてコピー"
+
+#: src/lib/components/Calculator.svelte
+#: src/lib/components/ContactEmail.svelte
+msgid "Copied!"
+msgstr "コピーしました！"
+
+#: src/lib/components/Calculator.svelte
+msgid "Failed to copy"
+msgstr "コピーできませんでした"
+
+#: src/lib/components/Combobox.svelte
+msgid "Fiat currencies"
+msgstr "法定通貨"
+
+#: src/lib/components/Combobox.svelte
+msgid "Cryptocurrencies"
+msgstr "暗号資産"
+
+#: src/lib/components/Combobox.svelte
+msgid "Select..."
+msgstr "選択..."
+
+#: src/lib/components/Combobox.svelte
+msgid "No currencies found."
+msgstr "通貨が見つかりません。"
+
+#: src/lib/components/CookieConsent.svelte
+msgid "Decline"
+msgstr "拒否"
+
+#: src/lib/components/CookieConsent.svelte
+msgid "Accept"
+msgstr "同意"
+
+#: src/lib/components/CookieConsent.svelte
+msgid "We use cookies for analytics and ads. <0>Learn more</0>"
+msgstr "分析と広告のために Cookie を使用しています。<0>詳細を見る</0>"
+
+#: src/lib/components/CookieModal.svelte
+#: src/lib/components/SettingsModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Escape"
+msgstr "Escape"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Close cookie policy"
+msgstr "Cookie ポリシーを閉じる"
+
+#: src/lib/components/CookieModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Enter"
+msgstr "Enter"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Close"
+msgstr "閉じる"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Cookie Policy"
+msgstr "Cookie ポリシー"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Essential (Always Active)"
+msgstr "必須（常に有効）"
+
+#: src/lib/components/CookieModal.svelte
+msgid "These are required for the site to function. They store your preferences like theme and currency settings in your browser's local storage. No data is sent to external servers."
+msgstr "これらはサイトの動作に必要です。テーマや通貨などの設定をブラウザのローカルストレージに保存します。外部サーバーへデータが送信されることはありません。"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Analytics (Optional)"
+msgstr "アクセス解析（任意）"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Google Analytics helps us understand how visitors use the site. It collects anonymized data about page views and interactions. This data is processed by Google."
+msgstr "Google Analytics は、訪問者によるサイトの利用状況を把握するために使用されます。ページ閲覧や操作に関する匿名データを収集し、そのデータは Google によって処理されます。"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Advertising (Optional)"
+msgstr "広告（任意）"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Google AdSense displays ads to support the site. It may use cookies to show personalized ads based on your browsing history. If declined, ads will not be shown."
+msgstr "Google AdSense はサイトを支援するために広告を表示します。閲覧履歴に基づくパーソナライズ広告を表示する目的で Cookie を使用する場合があります。拒否した場合、広告は表示されません。"
+
+#: src/lib/components/CookieModal.svelte
+msgid "You can change your preference at any time by clearing your browser's local storage for this site."
+msgstr "このサイトのブラウザ内ローカルストレージを消去することで、いつでも設定を変更できます。"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Decline All"
+msgstr "すべて拒否"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Accept All"
+msgstr "すべて同意"
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Failed to get contact email."
+msgstr "連絡先メールアドレスを取得できませんでした。"
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Something went wrong. Please try again."
+msgstr "問題が発生しました。もう一度お試しください。"
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Contact verification is not configured."
+msgstr "連絡先の認証が設定されていません。"
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification could not load. Please try again."
+msgstr "本人確認を読み込めませんでした。もう一度お試しください。"
+
+#. 0: code
+#. 0: code
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification could not run{0}. Please try again or use another browser."
+msgstr "本人確認を実行できませんでした{0}。もう一度試すか、別のブラウザをご利用ください。"
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification expired. Please try again."
+msgstr "本人確認の有効期限が切れました。もう一度お試しください。"
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Copy failed"
+msgstr "コピーに失敗しました"
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Loading..."
+msgstr "読み込み中..."
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verifying..."
+msgstr "確認中..."
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Try again"
+msgstr "もう一度試す"
+
+#. 0: email
+#: src/lib/components/ContactEmail.svelte
+msgid "Email {0}"
+msgstr "メール {0}"
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Copy email address"
+msgstr "メールアドレスをコピー"
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Reach out!"
+msgstr "お問い合わせ！"
+
+#: src/lib/components/Footer.svelte
+msgid "Special Sponsor"
+msgstr "特別スポンサー"
+
+#: src/lib/components/Footer.svelte
+msgid "We're looking for sponsors to keep this project alive and perhaps ad-free"
+msgstr "このプロジェクトを継続し、できれば広告なしで運営するためのスポンサーを募集しています"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+#: src/routes/about/+page.svelte
+msgid "About"
+msgstr "概要"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+#: src/routes/support/+page.svelte
+msgid "Support"
+msgstr "支援"
+
+#: src/lib/components/Header.svelte
+msgid "Open settings"
+msgstr "設定を開く"
+
+#: src/lib/components/Header.svelte
+msgid "Open menu"
+msgstr "メニューを開く"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+msgid "Close menu"
+msgstr "メニューを閉じる"
+
+#: src/lib/components/Header.svelte
+msgid "Theme"
+msgstr "テーマ"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Settings"
+msgstr "設定"
+
+#: src/lib/components/RatesTimestamp.svelte
+msgid "Unavailable"
+msgstr "利用できません"
+
+#. 0: readableRateDate
+#: src/lib/components/RatesTimestamp.svelte
+msgid "Rates retrieved: {0}"
+msgstr "レート取得日時：{0}"
+
+#: src/lib/components/SettingsModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Close settings"
+msgstr "設定を閉じる"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "With commas (1,234.56)"
+msgstr "桁区切りあり (1,234.56)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Without commas (1234.56)"
+msgstr "桁区切りなし (1234.56)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Copy format"
+msgstr "コピー形式"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Done"
+msgstr "完了"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "Light mode"
+msgstr "ライトモード"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "Dark mode"
+msgstr "ダークモード"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "System mode"
+msgstr "システムモード"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification is not configured."
+msgstr "本人確認が設定されていません。"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verification failed. Please try again."
+msgstr "確認に失敗しました。もう一度お試しください。"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verify you're human"
+msgstr "人間であることを確認"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Please complete the challenge to view this page."
+msgstr "このページを表示するには認証を完了してください。"
+
+#: src/routes/about/+page.svelte
+msgid "What is a Mithqál?"
+msgstr "ミスカールとは？"
+
+#: src/routes/about/+page.svelte
+msgid "A mithqál is a traditional unit of weight used in the Middle East, equivalent to approximately 3.642 grams. In the Bahá'í Faith, it holds special significance as it is used to calculate Huqúqu'lláh (the Right of God), a spiritual obligation for Bahá'ís to contribute 19% of their surplus wealth after essential expenses (only if the individuals net worth is worth 19 Mithqáls of gold or more)."
+msgstr "ミスカールは中東で使われてきた伝統的な重量単位で、約 3.642 グラムに相当します。バハイ信教では、Huqúqu’lláh（神の権利）の計算に用いられるため、特別な意味を持ちます。これは、必要経費を差し引いた余剰財産の 19% を拠出するというバハイ信徒の精神的義務です（個人の純資産が金 19 ミスカール以上の価値に達した場合に限ります）。"
+
+#: src/routes/about/+page.svelte
+msgid "What is the Bahá'í Faith?"
+msgstr "バハイ信教とは？"
+
+#: src/routes/about/+page.svelte
+msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation—that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit bahai.org"
+msgstr "バハイ信教は、19 世紀のペルシャでバハオラによって創始された世界宗教です。すべての宗教の本質的な一体性と、人類の一体性を説いています。バハイ信徒は漸進的啓示、すなわち神が歴史を通じてアブラハム、モーセ、仏陀、イエス、ムハンマド、そして最も新しくはバハオラを含む一連の聖なる使者を遣わしたと信じています。詳しくは bahai.org をご覧ください"
+
+#: src/routes/about/+page.svelte
+msgid "Why are there advertisements?"
+msgstr "なぜ広告があるのですか？"
+
+#: src/routes/about/+page.svelte
+msgid "Currently, there are no advertisements on this site. The Mithqál Calculator is provided as a free service to the community. If ads are ever introduced, they would be to help cover hosting and maintenance costs while keeping the calculator freely accessible to everyone."
+msgstr "現在、このサイトに広告はありません。ミスカール計算機はコミュニティ向けの無料サービスとして提供されています。今後広告を導入する場合は、すべての方が計算機を無料で使い続けられるよう、ホスティングと保守の費用を補うためのものとなります。"
+
+#: src/routes/about/+page.svelte
+msgid "Do you have a mobile app?"
+msgstr "モバイルアプリはありますか？"
+
+#: src/routes/about/+page.svelte
+msgid "In the works!"
+msgstr "開発中です！"
+
+#: src/routes/about/+page.svelte
+msgid "Where do the currency and metal rates come from?"
+msgstr "通貨と金属のレートはどこから取得していますか？"
+
+#: src/routes/about/+page.svelte
+msgid "Gold and silver prices are fetched daily from Swissquote's forex data feed. For each metal, the calculator takes the midpoint of every valid bid/ask quote and uses the median of those midpoints. Currency exchange rates come from FXRatesAPI. The displayed timestamp shows when the latest complete snapshot was successfully retrieved."
+msgstr "金と銀の価格は、Swissquote の外国為替データフィードから毎日取得しています。各金属について、有効な買値と売値の組み合わせごとに中間値を求め、その中央値を使用します。為替レートは FXRatesAPI から取得します。表示される日時は、最新の完全なスナップショットを正常に取得した時刻です。"
+
+#: src/routes/+layout.svelte
+msgid "About the Mithqal Calculator: a free tool for converting mithqals of gold and silver to any currency, used for Huqúqu'lláh calculations."
+msgstr "ミスカール計算機について：金や銀のミスカールをあらゆる通貨に換算し、Huqúqu’lláh の計算に使える無料ツールです。"
+
+#: src/routes/+layout.svelte
+msgid "About - Mithqal Calculator"
+msgstr "概要 - ミスカール計算機"
+
+#: src/routes/about/+page.svelte
+msgid "The <0>Mithqál Calculator</0> is a free tool designed to help calculate the value of gold and silver in mithqáls, the traditional unit of weight used for <1>Huqúqu'lláh</1> calculations in the Bahá'í Faith."
+msgstr "<0>ミスカール計算機</0>は、バハイ信教の <1>Huqúqu’lláh</1> の計算に用いられる伝統的な重量単位ミスカールで、金と銀の価値を計算するための無料ツールです。"
+
+#: src/routes/about/+page.svelte
+msgid "I am working on a website to showcase all the great Bahai tools people have made online. The domain of the site is bahaitools.app!"
+msgstr "皆さんがオンラインで作った優れたバハイ関連ツールを紹介するウェブサイトを制作しています。ドメインは bahaitools.app です！"
+
+#: src/routes/about/+page.svelte
+msgid "Simply enter the weight in mithqáls, select your preferred currency, and get an instant conversion based on current market rates. The calculator supports over 150 currencies worldwide."
+msgstr "ミスカール単位の重量を入力し、希望する通貨を選ぶだけで、現在の市場価格に基づく換算結果をすぐに確認できます。世界の 150 種類以上の通貨に対応しています。"
+
+#: src/routes/about/+page.svelte
+msgid "Collapse all"
+msgstr "すべて閉じる"
+
+#: src/routes/about/+page.svelte
+msgid "Expand all"
+msgstr "すべて開く"
+
+#: src/routes/about/+page.svelte
+msgid "Frequently Asked Questions"
+msgstr "よくある質問"
+
+#: src/routes/+layout.svelte
+msgid "Support the Mithqal Calculator, a free ad-supported tool for converting gold and silver mithqals to any currency."
+msgstr "金や銀のミスカールをあらゆる通貨に換算できる、広告で運営される無料のミスカール計算機をご支援ください。"
+
+#: src/routes/+layout.svelte
+msgid "Support - Mithqal Calculator"
+msgstr "支援 - ミスカール計算機"
+
+#: src/routes/support/+page.svelte
+msgid "The <0>Mithqal Calculator</0> is a free, ad-free tool built to serve the community. If you find it useful and would like to help keep it running, consider supporting the project."
+msgstr "<0>ミスカール計算機</0>は、コミュニティのために作られた無料・広告なしのツールです。便利だと感じ、運営の継続を支援したいと思われた方は、ぜひプロジェクトへの支援をご検討ください。"
+
+#: src/routes/support/+page.svelte
+msgid "Ko-fi"
+msgstr "Ko-fi"
+
+#: src/routes/support/+page.svelte
+msgid "Buy me a coffee"
+msgstr "コーヒーをごちそうする"
+
+#: src/routes/support/+page.svelte
+msgid "World Citizen sticker"
+msgstr "世界市民ステッカー"
+
+#: src/routes/support/+page.svelte
+msgid "World Citizen Sticker"
+msgstr "世界市民ステッカー"
+
+#: src/routes/support/+page.svelte
+msgid "Buy a sticker"
+msgstr "ステッカーを購入"
+
+#~ msgid "PayPal"
+#~ msgstr "PayPal"
+
+#~ msgid "One-time donation"
+#~ msgstr "1 回限りの寄付"
+
+#: src/routes/support/+page.svelte
+msgid "Ways to Support"
+msgstr "支援方法"
+
+#: src/routes/support/+page.svelte
+msgid "Your support helps cover hosting and domain costs and allows me to continue improving the calculator."
+msgstr "皆さまのご支援は、ホスティングとドメインの費用をまかない、計算機を改善し続ける助けになります。"
+
+#: src/lib/components/LanguageSwitcher.svelte
+#: src/lib/components/LanguageSwitcher.svelte
+msgid "Language"
+msgstr "言語"
+
+#: src/routes/about/+page.svelte
+msgid "GitHub"
+msgstr "GitHub"
+
+#: src/routes/about/+page.svelte
+msgid "Twitter (X)"
+msgstr "Twitter (X)"
+
+#: src/routes/about/+page.svelte
+msgid "Bluesky"
+msgstr "Bluesky"
+
+#: src/routes/about/+page.svelte
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: src/routes/about/+page.svelte
+msgid "Socials <0/>"
+msgstr "ソーシャル <0/>"
+
+#: src/routes/about/+page.svelte
+msgid "Hi, I'm <0>Nima</0>, a software developer passionate about building useful tools for the community."
+msgstr "こんにちは、<0>Nima</0> です。コミュニティに役立つツール作りに情熱を注ぐソフトウェア開発者です。"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Grams (g)"
+msgstr "グラム (g)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Troy ounces (oz)"
+msgstr "トロイオンス (oz)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Weight unit"
+msgstr "重量単位"
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Email"
+msgstr "メール"
+
+#: src/routes/support/+page.svelte
+msgid "Have a suggestion? Found a bug?"
+msgstr "ご提案や不具合の報告はありますか？"
+
+#: src/routes/support/+page.svelte
+msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
+msgstr "<0>mithqal@mohajeri.dev</0> までメールでご連絡ください。"

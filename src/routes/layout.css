@@ -113,6 +113,12 @@
     scroll-behavior: smooth;
   }
 
+  /* Arabic and Persian prose reads RTL without mirroring controls or layout. */
+  html:is([lang="ar"], [lang="fa"]) :where(p, [data-prose]) {
+    direction: rtl;
+    unicode-bidi: plaintext;
+  }
+
   /* Reduce motion for users who prefer it */
   @media (prefers-reduced-motion: reduce) {
     *,
@@ -266,7 +272,8 @@
     position: absolute;
     z-index: 70;
     left: 50%;
-    border: 5px 5px 0 solid;
+    border-style: solid;
+    border-width: 5px 5px 0;
     border-color: var(--primary) transparent transparent;
     opacity: 0;
     pointer-events: none;

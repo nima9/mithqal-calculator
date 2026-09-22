@@ -22,9 +22,15 @@
 	import Footer from './Footer.svelte';
 	import RatesTimestamp from './RatesTimestamp.svelte';
 	import Sentence from './Sentence.svelte';
-	import { calculateMithqalValue, parsePositiveDecimal } from '$lib/calculator';
+	import {
+		MITHQAL_IN_TROY_OZ,
+		calculateMithqalValue,
+		parsePositiveDecimal
+	} from '$lib/calculator';
 	import { getSentenceLanguage } from '$lib/sentences';
 	import { settingsStore } from '$lib/stores/settings.svelte';
+	import { getLocale } from '$lib/i18n';
+	import { getLocalizedCurrencyName } from '$lib/currencyNames';
 
 	// ============================================
 	// Constants
@@ -36,9 +42,9 @@
 
 	// Default values for URL param comparison
 	const DEFAULT_QUANTITY = '19';
-	const DEFAULT_METAL = 'Gold';
+	const DEFAULT_METAL = 'gold';
 	const DEFAULT_CURRENCY_CODE = 'USD';
-	const VALID_METALS = ['Gold', 'Silver'];
+	const VALID_METALS = ['gold', 'silver'];
 
 	// ============================================
 	// Types
@@ -77,12 +83,14 @@
 		selectedCurrency?: string;
 		timezone?: string;
 		initialRates?: Promise<RatesSnapshot | null> | null;
+		locale?: string;
 	}
 
 	let {
 		selectedCurrency = $bindable('$ USD'),
 		timezone = 'America/Los_Angeles',
-		initialRates = null
+		initialRates = null,
+		locale = 'en'
 	}: Props = $props();
 
 	// ============================================
@@ -92,7 +100,14 @@
 	// User inputs (initialized from URL params)
 	let mithqalAmount = $state(DEFAULT_QUANTITY);
 	let selectedMetal = $state(DEFAULT_METAL);
-	let copyTooltipText = $state('Click to copy');
+	let copyTooltipState = $state<'idle' | 'copied' | 'failed'>('idle');
+	let copyTooltipText = $derived(
+		copyTooltipState === 'copied'
+			? 'Copied!'
+			: copyTooltipState === 'failed'
+				? 'Failed to copy'
+				: 'Click to copy'
+	);
 
 	// URL sync state
 	let urlUpdateTimeout: ReturnType<typeof setTimeout> | null = null;
@@ -119,7 +134,7 @@
 
 	function parseMetalParam(m: string | null): string {
 		if (!m) return DEFAULT_METAL;
-		const normalized = m.charAt(0).toUpperCase() + m.slice(1).toLowerCase();
+		const normalized = m.toLowerCase();
 		return VALID_METALS.includes(normalized) ? normalized : DEFAULT_METAL;
 	}
 
@@ -292,6 +307,8 @@
 	 */
 	function buildUrlParams(quantity: string, metal: string, currencyCode: string): string {
 		const params = new URLSearchParams();
+		const locale = getLocale(page.url.searchParams.get('lang'));
+		if (locale !== 'en') params.set('lang', locale);
 		const normalizedCurrencyCode = /^[A-Z]{3}$/.test(currencyCode)
 			? currencyCode
 			: DEFAULT_CURRENCY_CODE;
@@ -354,7 +371,7 @@
 				c.code,
 				{
 					code: c.code,
-					name: c.name,
+					name: getLocalizedCurrencyName(c.code, locale, c.name),
 					symbol_native: c.symbol,
 					kind: c.kind ?? (c.code === 'BTC' ? 'crypto' : 'fiat')
 				}
@@ -403,7 +420,7 @@
 
 	// Word order, direction, and unit labels come from the language registry
 	// so new languages only need a data entry in $lib/sentences.
-	const sentenceLanguage = getSentenceLanguage();
+	let sentenceLanguage = $derived(getSentenceLanguage(locale));
 
 	// ============================================
 	// Display Helpers
@@ -414,6 +431,16 @@
 			? sentenceLanguage.mithqalUnit.plural
 			: sentenceLanguage.mithqalUnit.singular
 	);
+
+	let mithqalDefinition = $derived.by(() => {
+		if ($settingsStore.weightUnit === 'grams') return sentenceLanguage.mithqalDefinition;
+
+		const ounces = new Intl.NumberFormat(locale, {
+			minimumFractionDigits: 4,
+			maximumFractionDigits: 4
+		}).format(MITHQAL_IN_TROY_OZ);
+		return sentenceLanguage.mithqalDefinitionOunces.replace('{value}', ounces);
+	});
 
 	/** Font size class - large by default, smaller only for long values on mobile */
 	let resultSizeClass = $derived.by(() => {
@@ -444,7 +471,7 @@
 
 	/** Toggle between Gold and Silver */
 	function switchSelectedMetal() {
-		selectedMetal = selectedMetal === 'Gold' ? 'Silver' : 'Gold';
+		selectedMetal = selectedMetal === 'gold' ? 'silver' : 'gold';
 	}
 
 	/** Copy calculated value to clipboard (respects comma setting) */
@@ -455,16 +482,16 @@
 				? formattedCalculatedValue
 				: formattedCalculatedValue.replace(/,/g, '');
 			await navigator.clipboard.writeText(valueToCopy);
-			copyTooltipText = 'Copied!';
+			copyTooltipState = 'copied';
 		} catch {
-			copyTooltipText = 'Failed to copy';
+			copyTooltipState = 'failed';
 		}
 	}
 
 	/** Reset tooltip text after mouse leaves */
 	function handleCopyMouseLeave() {
 		setTimeout(() => {
-			copyTooltipText = 'Click to copy';
+			copyTooltipState = 'idle';
 		}, 300);
 	}
 </script>
@@ -485,7 +512,7 @@
 	<label
 		for="mithqalAmount"
 		class="tooltip tooltip-top pl-4 font-medium text-base-content"
-		data-tip="1 Mithqál = 3.642g"
+		data-tip={mithqalDefinition}
 	>
 		{mithqalLabel}
 	</label>
@@ -497,7 +524,7 @@
 		onclick={switchSelectedMetal}
 		class="input-underline mb-1 cursor-pointer appearance-none bg-base-100 px-4 pb-1 text-center text-base-content outline-hidden md:pb-3 lg:pb-3"
 	>
-		{selectedMetal}
+		{selectedMetal === 'gold' ? 'Gold' : 'Silver'}
 	</button>
 {/snippet}
 
@@ -531,6 +558,6 @@
 	</button>
 </div>
 
-<RatesTimestamp lastFetchTime={displayLastFetch} {timezone} />
+<RatesTimestamp lastFetchTime={displayLastFetch} {timezone} {locale} />
 
 <Footer />

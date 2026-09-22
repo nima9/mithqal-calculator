@@ -1,0 +1,498 @@
+msgid ""
+msgstr ""
+"Source-Language: en\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4\n"
+"X-Plurals-Order: one, few, many, other\n"
+
+#: src/routes/+layout.svelte
+#: src/routes/+page.svelte
+msgid "Free mithqál calculator: convert mithqals of gold and silver to any currency with live precious metal and exchange rates."
+msgstr "Бесплатный калькулятор мискалей: переводите стоимость мискалей золота и серебра в любую валюту по актуальным ценам на драгоценные металлы и обменным курсам."
+
+#: src/routes/+layout.svelte
+msgid "Mithqál Calculator – Convert Gold & Silver to Any Currency"
+msgstr "Калькулятор мискалей — перевод золота и серебра в любую валюту"
+
+#: src/routes/+layout.svelte
+msgid "Mithqal Calculator"
+msgstr "Калькулятор мискалей"
+
+#: src/routes/+layout.svelte
+msgid "Mithqal Calculator - Convert mithqals to currency"
+msgstr "Калькулятор мискалей — перевод мискалей в валюту"
+
+#: src/routes/+page.svelte
+msgid "WebApplication"
+msgstr "WebApplication"
+
+#: src/lib/components/Header.svelte
+#: src/routes/+page.svelte
+#: src/routes/+page.svelte
+msgid "Mithqál Calculator"
+msgstr "Калькулятор мискалей"
+
+#: src/routes/+page.svelte
+msgid "FinanceApplication"
+msgstr "FinanceApplication"
+
+#: src/routes/+page.svelte
+msgid "Web"
+msgstr "Web"
+
+#: src/routes/+page.svelte
+msgid "Requires JavaScript"
+msgstr "Requires JavaScript"
+
+#: src/routes/+page.svelte
+msgid "Offer"
+msgstr "Offer"
+
+#: src/lib/components/Calculator.svelte
+msgid "Gold"
+msgstr "Золото"
+
+#: src/lib/components/Calculator.svelte
+msgid "Silver"
+msgstr "Серебро"
+
+#: src/lib/components/Calculator.svelte
+#: src/lib/components/RatesTimestamp.svelte
+msgid "America/Los_Angeles"
+msgstr "America/Los_Angeles"
+
+#: src/lib/components/Calculator.svelte
+msgid "Click to copy"
+msgstr "Нажмите, чтобы скопировать"
+
+#: src/lib/components/Calculator.svelte
+#: src/lib/components/ContactEmail.svelte
+msgid "Copied!"
+msgstr "Скопировано!"
+
+#: src/lib/components/Calculator.svelte
+msgid "Failed to copy"
+msgstr "Не удалось скопировать"
+
+#: src/lib/components/Combobox.svelte
+msgid "Fiat currencies"
+msgstr "Фиатные валюты"
+
+#: src/lib/components/Combobox.svelte
+msgid "Cryptocurrencies"
+msgstr "Криптовалюты"
+
+#: src/lib/components/Combobox.svelte
+msgid "Select..."
+msgstr "Выбрать..."
+
+#: src/lib/components/Combobox.svelte
+msgid "No currencies found."
+msgstr "Валюты не найдены."
+
+#: src/lib/components/CookieConsent.svelte
+msgid "Decline"
+msgstr "Отклонить"
+
+#: src/lib/components/CookieConsent.svelte
+msgid "Accept"
+msgstr "Принять"
+
+#: src/lib/components/CookieConsent.svelte
+msgid "We use cookies for analytics and ads. <0>Learn more</0>"
+msgstr "Мы используем файлы cookie для аналитики и рекламы. <0>Подробнее</0>"
+
+#: src/lib/components/CookieModal.svelte
+#: src/lib/components/SettingsModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Escape"
+msgstr "Escape"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Close cookie policy"
+msgstr "Закрыть политику cookie"
+
+#: src/lib/components/CookieModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Enter"
+msgstr "Enter"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Close"
+msgstr "Закрыть"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Cookie Policy"
+msgstr "Политика использования cookie"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Essential (Always Active)"
+msgstr "Необходимые (всегда активны)"
+
+#: src/lib/components/CookieModal.svelte
+msgid "These are required for the site to function. They store your preferences like theme and currency settings in your browser's local storage. No data is sent to external servers."
+msgstr "Они необходимы для работы сайта. В локальном хранилище браузера сохраняются ваши настройки, например тема и валюта. Данные не отправляются на внешние серверы."
+
+#: src/lib/components/CookieModal.svelte
+msgid "Analytics (Optional)"
+msgstr "Аналитика (необязательно)"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Google Analytics helps us understand how visitors use the site. It collects anonymized data about page views and interactions. This data is processed by Google."
+msgstr "Google Analytics помогает нам понять, как посетители используют сайт. Сервис собирает обезличенные данные о просмотрах страниц и взаимодействиях. Эти данные обрабатываются Google."
+
+#: src/lib/components/CookieModal.svelte
+msgid "Advertising (Optional)"
+msgstr "Реклама (необязательно)"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Google AdSense displays ads to support the site. It may use cookies to show personalized ads based on your browsing history. If declined, ads will not be shown."
+msgstr "Google AdSense показывает рекламу для поддержки сайта. Сервис может использовать cookie для показа персонализированной рекламы на основе истории просмотров. При отказе реклама показываться не будет."
+
+#: src/lib/components/CookieModal.svelte
+msgid "You can change your preference at any time by clearing your browser's local storage for this site."
+msgstr "Вы можете изменить свой выбор в любое время, очистив локальное хранилище этого сайта в браузере."
+
+#: src/lib/components/CookieModal.svelte
+msgid "Decline All"
+msgstr "Отклонить все"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Accept All"
+msgstr "Принять все"
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Failed to get contact email."
+msgstr "Не удалось получить контактный адрес электронной почты."
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Something went wrong. Please try again."
+msgstr "Что-то пошло не так. Повторите попытку."
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Contact verification is not configured."
+msgstr "Проверка контакта не настроена."
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification could not load. Please try again."
+msgstr "Не удалось загрузить проверку пользователя. Повторите попытку."
+
+#. 0: code
+#. 0: code
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification could not run{0}. Please try again or use another browser."
+msgstr "Не удалось выполнить проверку пользователя{0}. Повторите попытку или воспользуйтесь другим браузером."
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification expired. Please try again."
+msgstr "Срок проверки пользователя истёк. Повторите попытку."
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Copy failed"
+msgstr "Не удалось скопировать"
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Loading..."
+msgstr "Загрузка..."
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verifying..."
+msgstr "Проверка..."
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Try again"
+msgstr "Повторить"
+
+#. 0: email
+#: src/lib/components/ContactEmail.svelte
+msgid "Email {0}"
+msgstr "Эл. почта {0}"
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Copy email address"
+msgstr "Скопировать адрес электронной почты"
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Reach out!"
+msgstr "Связаться!"
+
+#: src/lib/components/Footer.svelte
+msgid "Special Sponsor"
+msgstr "Особый спонсор"
+
+#: src/lib/components/Footer.svelte
+msgid "We're looking for sponsors to keep this project alive and perhaps ad-free"
+msgstr "Мы ищем спонсоров, чтобы проект продолжал жить и, возможно, оставался без рекламы"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+#: src/routes/about/+page.svelte
+msgid "About"
+msgstr "О проекте"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+#: src/routes/support/+page.svelte
+msgid "Support"
+msgstr "Поддержать"
+
+#: src/lib/components/Header.svelte
+msgid "Open settings"
+msgstr "Открыть настройки"
+
+#: src/lib/components/Header.svelte
+msgid "Open menu"
+msgstr "Открыть меню"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+msgid "Close menu"
+msgstr "Закрыть меню"
+
+#: src/lib/components/Header.svelte
+msgid "Theme"
+msgstr "Тема"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Settings"
+msgstr "Настройки"
+
+#: src/lib/components/RatesTimestamp.svelte
+msgid "Unavailable"
+msgstr "Недоступно"
+
+#. 0: readableRateDate
+#: src/lib/components/RatesTimestamp.svelte
+msgid "Rates retrieved: {0}"
+msgstr "Курсы получены: {0}"
+
+#: src/lib/components/SettingsModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Close settings"
+msgstr "Закрыть настройки"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "With commas (1,234.56)"
+msgstr "С разделителями (1,234.56)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Without commas (1234.56)"
+msgstr "Без разделителей (1234.56)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Copy format"
+msgstr "Формат копирования"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Done"
+msgstr "Готово"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "Light mode"
+msgstr "Светлый режим"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "Dark mode"
+msgstr "Тёмный режим"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "System mode"
+msgstr "Системный режим"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification is not configured."
+msgstr "Проверка пользователя не настроена."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verification failed. Please try again."
+msgstr "Проверка не пройдена. Повторите попытку."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verify you're human"
+msgstr "Подтвердите, что вы человек"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Please complete the challenge to view this page."
+msgstr "Выполните проверку, чтобы просмотреть эту страницу."
+
+#: src/routes/about/+page.svelte
+msgid "What is a Mithqál?"
+msgstr "Что такое мискаль?"
+
+#: src/routes/about/+page.svelte
+msgid "A mithqál is a traditional unit of weight used in the Middle East, equivalent to approximately 3.642 grams. In the Bahá'í Faith, it holds special significance as it is used to calculate Huqúqu'lláh (the Right of God), a spiritual obligation for Bahá'ís to contribute 19% of their surplus wealth after essential expenses (only if the individuals net worth is worth 19 Mithqáls of gold or more)."
+msgstr "Мискаль — традиционная мера веса, используемая на Ближнем Востоке и равная примерно 3,642 грамма. В Вере Бахаи она имеет особое значение, поскольку используется для расчёта Хукукулла (Права Бога) — духовного обязательства бахаи отдавать 19% излишка имущества после необходимых расходов (только если чистое имущество человека равно стоимости 19 мискалей золота или более)."
+
+#: src/routes/about/+page.svelte
+msgid "What is the Bahá'í Faith?"
+msgstr "Что такое Вера Бахаи?"
+
+#: src/routes/about/+page.svelte
+msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation—that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit bahai.org"
+msgstr "Вера Бахаи — мировая религия, основанная Бахауллой в Персии XIX века. Она учит сущностному единству всех религий и единству человечества. Бахаи верят в последовательное откровение: на протяжении истории Бог посылал череду Божественных Посланников, среди которых Авраам, Моисей, Будда, Иисус, Мухаммад и, совсем недавно, Бахаулла. Подробнее — на сайте bahai.org"
+
+#: src/routes/about/+page.svelte
+msgid "Why are there advertisements?"
+msgstr "Почему здесь есть реклама?"
+
+#: src/routes/about/+page.svelte
+msgid "Currently, there are no advertisements on this site. The Mithqál Calculator is provided as a free service to the community. If ads are ever introduced, they would be to help cover hosting and maintenance costs while keeping the calculator freely accessible to everyone."
+msgstr "Сейчас на этом сайте нет рекламы. Калькулятор мискалей предоставляется как бесплатный сервис для сообщества. Если реклама когда-либо появится, она поможет покрыть расходы на хостинг и обслуживание, сохранив бесплатный доступ к калькулятору для всех."
+
+#: src/routes/about/+page.svelte
+msgid "Do you have a mobile app?"
+msgstr "Есть ли мобильное приложение?"
+
+#: src/routes/about/+page.svelte
+msgid "In the works!"
+msgstr "Уже в работе!"
+
+#: src/routes/about/+page.svelte
+msgid "Where do the currency and metal rates come from?"
+msgstr "Откуда берутся курсы валют и цены металлов?"
+
+#: src/routes/about/+page.svelte
+msgid "Gold and silver prices are fetched daily from Swissquote's forex data feed. For each metal, the calculator takes the midpoint of every valid bid/ask quote and uses the median of those midpoints. Currency exchange rates come from FXRatesAPI. The displayed timestamp shows when the latest complete snapshot was successfully retrieved."
+msgstr "Цены золота и серебра ежедневно загружаются из валютного потока данных Swissquote. Для каждого металла калькулятор находит среднее значение каждой корректной пары цен покупки и продажи, а затем использует медиану этих значений. Обменные курсы поступают из FXRatesAPI. Отображаемая отметка времени показывает, когда был успешно получен последний полный набор данных."
+
+#: src/routes/+layout.svelte
+msgid "About the Mithqal Calculator: a free tool for converting mithqals of gold and silver to any currency, used for Huqúqu'lláh calculations."
+msgstr "О Калькуляторе мискалей: бесплатном инструменте для перевода стоимости мискалей золота и серебра в любую валюту, используемом при расчётах Хукукулла."
+
+#: src/routes/+layout.svelte
+msgid "About - Mithqal Calculator"
+msgstr "О проекте — Калькулятор мискалей"
+
+#: src/routes/about/+page.svelte
+msgid "The <0>Mithqál Calculator</0> is a free tool designed to help calculate the value of gold and silver in mithqáls, the traditional unit of weight used for <1>Huqúqu'lláh</1> calculations in the Bahá'í Faith."
+msgstr "<0>Калькулятор мискалей</0> — бесплатный инструмент для расчёта стоимости золота и серебра в мискалях, традиционной единице веса, используемой для расчётов <1>Хукукулла</1> в Вере Бахаи."
+
+#: src/routes/about/+page.svelte
+msgid "I am working on a website to showcase all the great Bahai tools people have made online. The domain of the site is bahaitools.app!"
+msgstr "Я работаю над сайтом, на котором будут представлены замечательные инструменты бахаи, созданные людьми в интернете. Адрес сайта — bahaitools.app!"
+
+#: src/routes/about/+page.svelte
+msgid "Simply enter the weight in mithqáls, select your preferred currency, and get an instant conversion based on current market rates. The calculator supports over 150 currencies worldwide."
+msgstr "Просто введите вес в мискалях, выберите нужную валюту и мгновенно получите результат по текущим рыночным ценам. Калькулятор поддерживает более 150 валют мира."
+
+#: src/routes/about/+page.svelte
+msgid "Collapse all"
+msgstr "Свернуть всё"
+
+#: src/routes/about/+page.svelte
+msgid "Expand all"
+msgstr "Развернуть всё"
+
+#: src/routes/about/+page.svelte
+msgid "Frequently Asked Questions"
+msgstr "Часто задаваемые вопросы"
+
+#: src/routes/+layout.svelte
+msgid "Support the Mithqal Calculator, a free ad-supported tool for converting gold and silver mithqals to any currency."
+msgstr "Поддержите Калькулятор мискалей — бесплатный инструмент с рекламной поддержкой для перевода стоимости мискалей золота и серебра в любую валюту."
+
+#: src/routes/+layout.svelte
+msgid "Support - Mithqal Calculator"
+msgstr "Поддержать — Калькулятор мискалей"
+
+#: src/routes/support/+page.svelte
+msgid "The <0>Mithqal Calculator</0> is a free, ad-free tool built to serve the community. If you find it useful and would like to help keep it running, consider supporting the project."
+msgstr "<0>Калькулятор мискалей</0> — бесплатный инструмент без рекламы, созданный для сообщества. Если он оказался вам полезен и вы хотите помочь ему продолжить работу, поддержите проект."
+
+#: src/routes/support/+page.svelte
+msgid "Ko-fi"
+msgstr "Ko-fi"
+
+#: src/routes/support/+page.svelte
+msgid "Buy me a coffee"
+msgstr "Угостить меня кофе"
+
+#: src/routes/support/+page.svelte
+msgid "World Citizen sticker"
+msgstr "Наклейка «Гражданин мира»"
+
+#: src/routes/support/+page.svelte
+msgid "World Citizen Sticker"
+msgstr "Наклейка «Гражданин мира»"
+
+#: src/routes/support/+page.svelte
+msgid "Buy a sticker"
+msgstr "Купить наклейку"
+
+#~ msgid "PayPal"
+#~ msgstr "PayPal"
+
+#~ msgid "One-time donation"
+#~ msgstr "Разовое пожертвование"
+
+#: src/routes/support/+page.svelte
+msgid "Ways to Support"
+msgstr "Способы поддержки"
+
+#: src/routes/support/+page.svelte
+msgid "Your support helps cover hosting and domain costs and allows me to continue improving the calculator."
+msgstr "Ваша поддержка помогает оплачивать хостинг и домен и позволяет мне продолжать улучшать калькулятор."
+
+#: src/lib/components/LanguageSwitcher.svelte
+#: src/lib/components/LanguageSwitcher.svelte
+msgid "Language"
+msgstr "Язык"
+
+#: src/routes/about/+page.svelte
+msgid "GitHub"
+msgstr "GitHub"
+
+#: src/routes/about/+page.svelte
+msgid "Twitter (X)"
+msgstr "Twitter (X)"
+
+#: src/routes/about/+page.svelte
+msgid "Bluesky"
+msgstr "Bluesky"
+
+#: src/routes/about/+page.svelte
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: src/routes/about/+page.svelte
+msgid "Socials <0/>"
+msgstr "Социальные сети <0/>"
+
+#: src/routes/about/+page.svelte
+msgid "Hi, I'm <0>Nima</0>, a software developer passionate about building useful tools for the community."
+msgstr "Привет! Я <0>Nima</0>, разработчик программного обеспечения, увлечённый созданием полезных инструментов для сообщества."
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Grams (g)"
+msgstr "Граммы (г)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Troy ounces (oz)"
+msgstr "Тройские унции (oz)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Weight unit"
+msgstr "Единица веса"
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Email"
+msgstr "Электронная почта"
+
+#: src/routes/support/+page.svelte
+msgid "Have a suggestion? Found a bug?"
+msgstr "Есть предложение? Нашли ошибку?"
+
+#: src/routes/support/+page.svelte
+msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
+msgstr "Напишите мне на <0>mithqal@mohajeri.dev</0>."

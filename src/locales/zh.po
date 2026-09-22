@@ -1,0 +1,498 @@
+msgid ""
+msgstr ""
+"Source-Language: en\n"
+"Language: zh\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1\n"
+"X-Plurals-Order: other\n"
+
+#: src/routes/+layout.svelte
+#: src/routes/+page.svelte
+msgid "Free mithqál calculator: convert mithqals of gold and silver to any currency with live precious metal and exchange rates."
+msgstr "免费密斯卡勒计算器：使用实时贵金属价格和汇率，将黄金或白银的密斯卡勒价值换算为任意货币。"
+
+#: src/routes/+layout.svelte
+msgid "Mithqál Calculator – Convert Gold & Silver to Any Currency"
+msgstr "密斯卡勒计算器 – 将黄金和白银换算为任意货币"
+
+#: src/routes/+layout.svelte
+msgid "Mithqal Calculator"
+msgstr "密斯卡勒计算器"
+
+#: src/routes/+layout.svelte
+msgid "Mithqal Calculator - Convert mithqals to currency"
+msgstr "密斯卡勒计算器 - 将密斯卡勒换算为货币"
+
+#: src/routes/+page.svelte
+msgid "WebApplication"
+msgstr "WebApplication"
+
+#: src/lib/components/Header.svelte
+#: src/routes/+page.svelte
+#: src/routes/+page.svelte
+msgid "Mithqál Calculator"
+msgstr "密斯卡勒计算器"
+
+#: src/routes/+page.svelte
+msgid "FinanceApplication"
+msgstr "FinanceApplication"
+
+#: src/routes/+page.svelte
+msgid "Web"
+msgstr "Web"
+
+#: src/routes/+page.svelte
+msgid "Requires JavaScript"
+msgstr "Requires JavaScript"
+
+#: src/routes/+page.svelte
+msgid "Offer"
+msgstr "Offer"
+
+#: src/lib/components/Calculator.svelte
+msgid "Gold"
+msgstr "黄金"
+
+#: src/lib/components/Calculator.svelte
+msgid "Silver"
+msgstr "白银"
+
+#: src/lib/components/Calculator.svelte
+#: src/lib/components/RatesTimestamp.svelte
+msgid "America/Los_Angeles"
+msgstr "America/Los_Angeles"
+
+#: src/lib/components/Calculator.svelte
+msgid "Click to copy"
+msgstr "点击复制"
+
+#: src/lib/components/Calculator.svelte
+#: src/lib/components/ContactEmail.svelte
+msgid "Copied!"
+msgstr "已复制！"
+
+#: src/lib/components/Calculator.svelte
+msgid "Failed to copy"
+msgstr "复制失败"
+
+#: src/lib/components/Combobox.svelte
+msgid "Fiat currencies"
+msgstr "法定货币"
+
+#: src/lib/components/Combobox.svelte
+msgid "Cryptocurrencies"
+msgstr "加密货币"
+
+#: src/lib/components/Combobox.svelte
+msgid "Select..."
+msgstr "请选择..."
+
+#: src/lib/components/Combobox.svelte
+msgid "No currencies found."
+msgstr "未找到货币。"
+
+#: src/lib/components/CookieConsent.svelte
+msgid "Decline"
+msgstr "拒绝"
+
+#: src/lib/components/CookieConsent.svelte
+msgid "Accept"
+msgstr "接受"
+
+#: src/lib/components/CookieConsent.svelte
+msgid "We use cookies for analytics and ads. <0>Learn more</0>"
+msgstr "我们使用 Cookie 进行分析和广告投放。<0>了解更多</0>"
+
+#: src/lib/components/CookieModal.svelte
+#: src/lib/components/SettingsModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Escape"
+msgstr "Escape"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Close cookie policy"
+msgstr "关闭 Cookie 政策"
+
+#: src/lib/components/CookieModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Enter"
+msgstr "Enter"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Close"
+msgstr "关闭"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Cookie Policy"
+msgstr "Cookie 政策"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Essential (Always Active)"
+msgstr "必要 Cookie（始终启用）"
+
+#: src/lib/components/CookieModal.svelte
+msgid "These are required for the site to function. They store your preferences like theme and currency settings in your browser's local storage. No data is sent to external servers."
+msgstr "这些 Cookie 是网站正常运行所必需的。它们会在浏览器的本地存储中保存您的主题和货币等偏好设置。不会向外部服务器发送任何数据。"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Analytics (Optional)"
+msgstr "分析（可选）"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Google Analytics helps us understand how visitors use the site. It collects anonymized data about page views and interactions. This data is processed by Google."
+msgstr "Google Analytics 可帮助我们了解访客如何使用本网站。它会收集有关页面浏览和互动的匿名数据，这些数据由 Google 处理。"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Advertising (Optional)"
+msgstr "广告（可选）"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Google AdSense displays ads to support the site. It may use cookies to show personalized ads based on your browsing history. If declined, ads will not be shown."
+msgstr "Google AdSense 通过展示广告来支持本网站。它可能会使用 Cookie，根据您的浏览记录展示个性化广告。如果您拒绝，将不会显示广告。"
+
+#: src/lib/components/CookieModal.svelte
+msgid "You can change your preference at any time by clearing your browser's local storage for this site."
+msgstr "您可以随时清除此网站在浏览器中的本地存储来更改偏好。"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Decline All"
+msgstr "全部拒绝"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Accept All"
+msgstr "全部接受"
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Failed to get contact email."
+msgstr "无法获取联系邮箱。"
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Something went wrong. Please try again."
+msgstr "出了点问题，请重试。"
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Contact verification is not configured."
+msgstr "尚未配置联系验证。"
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification could not load. Please try again."
+msgstr "无法加载真人验证，请重试。"
+
+#. 0: code
+#. 0: code
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification could not run{0}. Please try again or use another browser."
+msgstr "无法运行真人验证{0}。请重试或使用其他浏览器。"
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification expired. Please try again."
+msgstr "真人验证已过期，请重试。"
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Copy failed"
+msgstr "复制失败"
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Loading..."
+msgstr "正在加载..."
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verifying..."
+msgstr "正在验证..."
+
+#: src/lib/components/ContactEmail.svelte
+#: src/lib/components/TurnstileGate.svelte
+msgid "Try again"
+msgstr "重试"
+
+#. 0: email
+#: src/lib/components/ContactEmail.svelte
+msgid "Email {0}"
+msgstr "电子邮件 {0}"
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Copy email address"
+msgstr "复制电子邮件地址"
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Reach out!"
+msgstr "联系我！"
+
+#: src/lib/components/Footer.svelte
+msgid "Special Sponsor"
+msgstr "特别赞助商"
+
+#: src/lib/components/Footer.svelte
+msgid "We're looking for sponsors to keep this project alive and perhaps ad-free"
+msgstr "我们正在寻找赞助商，让这个项目能够继续运行，并尽可能保持无广告"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+#: src/routes/about/+page.svelte
+msgid "About"
+msgstr "关于"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+#: src/routes/support/+page.svelte
+msgid "Support"
+msgstr "支持"
+
+#: src/lib/components/Header.svelte
+msgid "Open settings"
+msgstr "打开设置"
+
+#: src/lib/components/Header.svelte
+msgid "Open menu"
+msgstr "打开菜单"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+msgid "Close menu"
+msgstr "关闭菜单"
+
+#: src/lib/components/Header.svelte
+msgid "Theme"
+msgstr "主题"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Settings"
+msgstr "设置"
+
+#: src/lib/components/RatesTimestamp.svelte
+msgid "Unavailable"
+msgstr "不可用"
+
+#. 0: readableRateDate
+#: src/lib/components/RatesTimestamp.svelte
+msgid "Rates retrieved: {0}"
+msgstr "汇率获取时间：{0}"
+
+#: src/lib/components/SettingsModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Close settings"
+msgstr "关闭设置"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "With commas (1,234.56)"
+msgstr "保留千位分隔符 (1,234.56)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Without commas (1234.56)"
+msgstr "不使用千位分隔符 (1234.56)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Copy format"
+msgstr "复制格式"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Done"
+msgstr "完成"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "Light mode"
+msgstr "浅色模式"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "Dark mode"
+msgstr "深色模式"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "System mode"
+msgstr "跟随系统"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification is not configured."
+msgstr "尚未配置真人验证。"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verification failed. Please try again."
+msgstr "验证失败，请重试。"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verify you're human"
+msgstr "请验证您是真人"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Please complete the challenge to view this page."
+msgstr "请完成验证以查看此页面。"
+
+#: src/routes/about/+page.svelte
+msgid "What is a Mithqál?"
+msgstr "什么是密斯卡勒？"
+
+#: src/routes/about/+page.svelte
+msgid "A mithqál is a traditional unit of weight used in the Middle East, equivalent to approximately 3.642 grams. In the Bahá'í Faith, it holds special significance as it is used to calculate Huqúqu'lláh (the Right of God), a spiritual obligation for Bahá'ís to contribute 19% of their surplus wealth after essential expenses (only if the individuals net worth is worth 19 Mithqáls of gold or more)."
+msgstr "密斯卡勒是中东地区使用的传统重量单位，约等于 3.642 克。在巴哈伊信仰中，它具有特殊意义，因为它用于计算 Huqúqu’lláh（上帝的权利）。这是一项精神义务，巴哈伊信徒在扣除必要开支后，应捐出盈余财富的 19%（仅当个人净资产达到或超过 19 密斯卡勒黄金的价值时）。"
+
+#: src/routes/about/+page.svelte
+msgid "What is the Bahá'í Faith?"
+msgstr "什么是巴哈伊信仰？"
+
+#: src/routes/about/+page.svelte
+msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation—that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit bahai.org"
+msgstr "巴哈伊信仰是由巴哈欧拉于 19 世纪的波斯创立的世界性宗教。它教导所有宗教在本质上是一体的，人类也是一个整体。巴哈伊信徒相信渐进启示，即上帝在历史进程中派遣了一系列神圣使者，包括亚伯拉罕、摩西、佛陀、耶稣、穆罕默德，以及最近的巴哈欧拉。更多信息请访问 bahai.org"
+
+#: src/routes/about/+page.svelte
+msgid "Why are there advertisements?"
+msgstr "为什么会有广告？"
+
+#: src/routes/about/+page.svelte
+msgid "Currently, there are no advertisements on this site. The Mithqál Calculator is provided as a free service to the community. If ads are ever introduced, they would be to help cover hosting and maintenance costs while keeping the calculator freely accessible to everyone."
+msgstr "目前，本网站没有广告。密斯卡勒计算器作为一项免费服务提供给社区。如果将来加入广告，其目的将是帮助承担托管和维护费用，同时让所有人都能继续免费使用计算器。"
+
+#: src/routes/about/+page.svelte
+msgid "Do you have a mobile app?"
+msgstr "有移动应用吗？"
+
+#: src/routes/about/+page.svelte
+msgid "In the works!"
+msgstr "正在开发中！"
+
+#: src/routes/about/+page.svelte
+msgid "Where do the currency and metal rates come from?"
+msgstr "货币汇率和金属价格来自哪里？"
+
+#: src/routes/about/+page.svelte
+msgid "Gold and silver prices are fetched daily from Swissquote's forex data feed. For each metal, the calculator takes the midpoint of every valid bid/ask quote and uses the median of those midpoints. Currency exchange rates come from FXRatesAPI. The displayed timestamp shows when the latest complete snapshot was successfully retrieved."
+msgstr "黄金和白银价格每日取自 Swissquote 的外汇数据源。对于每种金属，计算器会计算每组有效买入价和卖出价的中间值，并采用这些中间值的中位数。货币汇率来自 FXRatesAPI。显示的时间戳表示最近一次成功获取完整数据快照的时间。"
+
+#: src/routes/+layout.svelte
+msgid "About the Mithqal Calculator: a free tool for converting mithqals of gold and silver to any currency, used for Huqúqu'lláh calculations."
+msgstr "关于密斯卡勒计算器：一款免费的工具，可将黄金和白银的密斯卡勒价值换算为任意货币，并用于计算 Huqúqu’lláh。"
+
+#: src/routes/+layout.svelte
+msgid "About - Mithqal Calculator"
+msgstr "关于 - 密斯卡勒计算器"
+
+#: src/routes/about/+page.svelte
+msgid "The <0>Mithqál Calculator</0> is a free tool designed to help calculate the value of gold and silver in mithqáls, the traditional unit of weight used for <1>Huqúqu'lláh</1> calculations in the Bahá'í Faith."
+msgstr "<0>密斯卡勒计算器</0>是一款免费工具，用于计算以密斯卡勒计量的黄金和白银价值。密斯卡勒是巴哈伊信仰中计算 <1>Huqúqu’lláh</1> 时使用的传统重量单位。"
+
+#: src/routes/about/+page.svelte
+msgid "I am working on a website to showcase all the great Bahai tools people have made online. The domain of the site is bahaitools.app!"
+msgstr "我正在创建一个网站，用来展示大家在网上制作的优秀巴哈伊工具。网站域名是 bahaitools.app！"
+
+#: src/routes/about/+page.svelte
+msgid "Simply enter the weight in mithqáls, select your preferred currency, and get an instant conversion based on current market rates. The calculator supports over 150 currencies worldwide."
+msgstr "只需输入以密斯卡勒为单位的重量，选择您想使用的货币，即可根据当前市场价格立即完成换算。本计算器支持全球 150 多种货币。"
+
+#: src/routes/about/+page.svelte
+msgid "Collapse all"
+msgstr "全部收起"
+
+#: src/routes/about/+page.svelte
+msgid "Expand all"
+msgstr "全部展开"
+
+#: src/routes/about/+page.svelte
+msgid "Frequently Asked Questions"
+msgstr "常见问题"
+
+#: src/routes/+layout.svelte
+msgid "Support the Mithqal Calculator, a free ad-supported tool for converting gold and silver mithqals to any currency."
+msgstr "支持密斯卡勒计算器——一款通过广告支持的免费工具，可将黄金和白银的密斯卡勒价值换算为任意货币。"
+
+#: src/routes/+layout.svelte
+msgid "Support - Mithqal Calculator"
+msgstr "支持 - 密斯卡勒计算器"
+
+#: src/routes/support/+page.svelte
+msgid "The <0>Mithqal Calculator</0> is a free, ad-free tool built to serve the community. If you find it useful and would like to help keep it running, consider supporting the project."
+msgstr "<0>密斯卡勒计算器</0>是一款为服务社区而创建的免费、无广告工具。如果它对您有帮助，并且您愿意帮助它继续运行，请考虑支持本项目。"
+
+#: src/routes/support/+page.svelte
+msgid "Ko-fi"
+msgstr "Ko-fi"
+
+#: src/routes/support/+page.svelte
+msgid "Buy me a coffee"
+msgstr "请我喝杯咖啡"
+
+#: src/routes/support/+page.svelte
+msgid "World Citizen sticker"
+msgstr "世界公民贴纸"
+
+#: src/routes/support/+page.svelte
+msgid "World Citizen Sticker"
+msgstr "世界公民贴纸"
+
+#: src/routes/support/+page.svelte
+msgid "Buy a sticker"
+msgstr "购买贴纸"
+
+#~ msgid "PayPal"
+#~ msgstr "PayPal"
+
+#~ msgid "One-time donation"
+#~ msgstr "单次捐赠"
+
+#: src/routes/support/+page.svelte
+msgid "Ways to Support"
+msgstr "支持方式"
+
+#: src/routes/support/+page.svelte
+msgid "Your support helps cover hosting and domain costs and allows me to continue improving the calculator."
+msgstr "您的支持有助于支付托管和域名费用，也让我能够继续改进这款计算器。"
+
+#: src/lib/components/LanguageSwitcher.svelte
+#: src/lib/components/LanguageSwitcher.svelte
+msgid "Language"
+msgstr "语言"
+
+#: src/routes/about/+page.svelte
+msgid "GitHub"
+msgstr "GitHub"
+
+#: src/routes/about/+page.svelte
+msgid "Twitter (X)"
+msgstr "Twitter (X)"
+
+#: src/routes/about/+page.svelte
+msgid "Bluesky"
+msgstr "Bluesky"
+
+#: src/routes/about/+page.svelte
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: src/routes/about/+page.svelte
+msgid "Socials <0/>"
+msgstr "社交平台 <0/>"
+
+#: src/routes/about/+page.svelte
+msgid "Hi, I'm <0>Nima</0>, a software developer passionate about building useful tools for the community."
+msgstr "您好，我是 <0>Nima</0>，一名热衷于为社区开发实用工具的软件开发者。"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Grams (g)"
+msgstr "克 (g)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Troy ounces (oz)"
+msgstr "金衡盎司 (oz)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Weight unit"
+msgstr "重量单位"
+
+#: src/lib/components/ContactEmail.svelte
+msgid "Email"
+msgstr "电子邮件"
+
+#: src/routes/support/+page.svelte
+msgid "Have a suggestion? Found a bug?"
+msgstr "有建议？发现了问题？"
+
+#: src/routes/support/+page.svelte
+msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
+msgstr "你可以发送电子邮件至 <0>mithqal@mohajeri.dev</0>。"

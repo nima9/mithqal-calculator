@@ -6,17 +6,19 @@
 
 <script lang="ts">
 	import Calculator from '$lib/components/Calculator.svelte';
+	import { localizedUrl } from '$lib/seo';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
 
-	const structuredData = {
+	let structuredData = $derived({
 		'@context': 'https://schema.org',
 		'@type': 'WebApplication',
 		name: 'Mithqál Calculator',
-		url: 'https://mithqal.app/',
+		url: localizedUrl('/', data.locale),
 		description:
 			'Free mithqál calculator: convert mithqals of gold and silver to any currency with live precious metal and exchange rates.',
+		inLanguage: data.locale,
 		applicationCategory: 'FinanceApplication',
 		operatingSystem: 'Web',
 		browserRequirements: 'Requires JavaScript',
@@ -25,16 +27,19 @@
 			price: '0',
 			priceCurrency: 'USD'
 		}
-	};
+	});
+	let structuredDataJson = $derived(JSON.stringify(structuredData).replaceAll('<', '\\u003c'));
 </script>
 
 <svelte:head>
-	<link rel="canonical" href="https://mithqal.app/" />
-	<script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+	{@html '<script type="application/ld+json">' + structuredDataJson + '</' + 'script>'}
 </svelte:head>
+
+<h1 class="sr-only">Mithqál Calculator</h1>
 
 <Calculator
 	selectedCurrency={data.defaultCurrency}
 	timezone={data.timezone}
 	initialRates={data.initialRates}
+	locale={data.locale}
 />

@@ -11,6 +11,7 @@ declare global {
         TURNSTILE_SECRET_KEY?: string;
         TURNSTILE_HOSTNAMES?: string;
         CONTACT_EMAIL?: string;
+        PUBLIC_GA_MEASUREMENT_ID?: string;
         PUBLIC_TURNSTILE_SITE_KEY?: string;
         TURSO_DATABASE_URL?: string;
         TURSO_AUTH_TOKEN?: string;
@@ -23,6 +24,8 @@ declare global {
   }
 
   interface Window {
+    dataLayer?: unknown[][];
+    gtag?: (...args: unknown[]) => void;
     turnstile?: {
       render: (
         element: HTMLElement,
