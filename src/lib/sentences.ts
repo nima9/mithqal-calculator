@@ -74,8 +74,7 @@ export const SENTENCE_LANGUAGES = {
   },
   ar: {
     id: "ar",
-    // Keep the control layout stable; only prose is given RTL direction.
-    dir: "ltr",
+    dir: "rtl",
     items: [
       { snippet: "amount" },
       { snippet: "mithqalLabel" },
@@ -107,8 +106,7 @@ export const SENTENCE_LANGUAGES = {
   },
   fa: {
     id: "fa",
-    // Keep the control layout stable; only prose is given RTL direction.
-    dir: "ltr",
+    dir: "rtl",
     items: [
       { snippet: "amount" },
       { snippet: "mithqalLabel" },
@@ -264,8 +262,7 @@ export const SENTENCE_LANGUAGES = {
   },
   ur: {
     id: "ur",
-    // Keep the control layout stable; only prose is given RTL direction.
-    dir: "ltr",
+    dir: "rtl",
     items: [
       { snippet: "amount" },
       { snippet: "mithqalLabel" },

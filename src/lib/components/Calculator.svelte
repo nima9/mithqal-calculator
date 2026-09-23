@@ -556,7 +556,7 @@
 {#snippet mithqalLabelSnippet()}
   <label
     for="mithqalAmount"
-    class="tooltip tooltip-top pl-4 font-medium text-base-content"
+    class="tooltip tooltip-top ps-4 font-medium text-base-content"
     data-tip={mithqalDefinition}
   >
     {mithqalLabel}

@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import { LANGUAGE_OPTIONS } from "../src/lib/i18n";
+import { isRtlLocale, LANGUAGE_OPTIONS, type Locale } from "../src/lib/i18n";
 import {
   DEFAULT_SENTENCE_LANGUAGE,
   getSentenceLanguage,
@@ -43,6 +43,14 @@ describe("getSentenceLanguage", () => {
     for (const language of Object.values(SENTENCE_LANGUAGES)) {
       expect(language.mithqalDefinition).toBeTruthy();
       expect(language.mithqalDefinitionOunces).toContain("{value}");
+    }
+  });
+
+  test("sentence direction matches the locale's script direction", () => {
+    for (const language of Object.values(SENTENCE_LANGUAGES)) {
+      const rtl = isRtlLocale(language.id as Locale);
+
+      expect(language.dir).toBe(rtl ? "rtl" : "ltr");
     }
   });
 });

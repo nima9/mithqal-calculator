@@ -22,6 +22,219 @@ The interface is currently available in English, Afrikaans, Arabic, Bemba, Burme
 French, German, Hindi, Japanese, Korean, Lingala, Malay, Persian, Portuguese, Russian, Spanish,
 Swahili, Tagalog, Thai, Tok Pisin, Urdu, Vietnamese, and Zulu.
 
+## Supported Currencies
+
+The calculator supports 163 currencies: the active fiat catalog synced from FXRatesAPI plus Bitcoin.
+Symbols are the native display symbols.
+
+### Major currencies
+
+| Code | Currency           | Symbol |
+| ---- | ------------------ | ------ |
+| USD  | US Dollar          | `$`    |
+| EUR  | Euro               | `€`    |
+| GBP  | British Pound      | `£`    |
+| JPY  | Japanese Yen       | `¥`    |
+| CHF  | Swiss Franc        | `Fr`   |
+| CAD  | Canadian Dollar    | `C$`   |
+| AUD  | Australian Dollar  | `A$`   |
+| NZD  | New Zealand Dollar | `NZ$`  |
+| CNY  | Chinese Yuan       | `¥`    |
+| HKD  | Hong Kong Dollar   | `HK$`  |
+| SGD  | Singapore Dollar   | `S$`   |
+| INR  | Indian Rupee       | `₹`    |
+
+### European currencies
+
+| Code | Currency                            | Symbol |
+| ---- | ----------------------------------- | ------ |
+| SEK  | Swedish Krona                       | `kr`   |
+| NOK  | Norwegian Krone                     | `kr`   |
+| DKK  | Danish Krone                        | `kr`   |
+| PLN  | Polish Zloty                        | `zł`   |
+| CZK  | Czech Koruna                        | `Kč`   |
+| HUF  | Hungarian Forint                    | `Ft`   |
+| RON  | Romanian Leu                        | `lei`  |
+| BGN  | Bulgarian Lev                       | `лв`   |
+| HRK  | Croatian Kuna                       | `kn`   |
+| RSD  | Serbian Dinar                       | `дин.` |
+| BAM  | Bosnia-Herzegovina Convertible Mark | `KM`   |
+| MKD  | Macedonian Denar                    | `ден`  |
+| ALL  | Albanian Lek                        | `L`    |
+| MDL  | Moldovan Leu                        | `L`    |
+| ISK  | Icelandic Krona                     | `kr`   |
+| RUB  | Russian Ruble                       | `₽`    |
+| UAH  | Ukrainian Hryvnia                   | `₴`    |
+| BYN  | Belarusian Ruble                    | `Br`   |
+| BYR  | Belarusian Ruble (old)              | `Br`   |
+| GEL  | Georgian Lari                       | `₾`    |
+| AMD  | Armenian Dram                       | `֏`    |
+| AZN  | Azerbaijani Manat                   | `₼`    |
+| LTL  | Lithuanian Litas                    | `Lt`   |
+| LVL  | Latvian Lats                        | `Ls`   |
+| GGP  | Guernsey Pound                      | `£`    |
+| GIP  | Gibraltar Pound                     | `£`    |
+| IMP  | Isle of Man Pound                   | `£`    |
+| JEP  | Jersey Pound                        | `£`    |
+| FKP  | Falkland Islands Pound              | `£`    |
+| SHP  | Saint Helena Pound                  | `£`    |
+
+### Middle East currencies
+
+| Code | Currency                    | Symbol |
+| ---- | --------------------------- | ------ |
+| AED  | United Arab Emirates Dirham | `د.إ`  |
+| SAR  | Saudi Riyal                 | `﷼`    |
+| QAR  | Qatari Riyal                | `﷼`    |
+| KWD  | Kuwaiti Dinar               | `د.ك`  |
+| BHD  | Bahraini Dinar              | `.د.ب` |
+| OMR  | Omani Rial                  | `﷼`    |
+| JOD  | Jordanian Dinar             | `د.ا`  |
+| LBP  | Lebanese Pound              | `ل.ل`  |
+| ILS  | Israeli New Shekel          | `₪`    |
+| IRR  | Iranian Rial                | `﷼`    |
+| IQD  | Iraqi Dinar                 | `ع.د`  |
+| SYP  | Syrian Pound                | `£S`   |
+| YER  | Yemeni Rial                 | `﷼`    |
+
+### African currencies
+
+| Code | Currency                    | Symbol   |
+| ---- | --------------------------- | -------- |
+| ZAR  | South African Rand          | `R`      |
+| EGP  | Egyptian Pound              | `E£`     |
+| NGN  | Nigerian Naira              | `₦`      |
+| MAD  | Moroccan Dirham             | `د.م.`   |
+| DZD  | Algerian Dinar              | `د.ج`    |
+| TND  | Tunisian Dinar              | `د.ت`    |
+| LYD  | Libyan Dinar                | `ل.د`    |
+| SDG  | Sudanese Pound              | `£`      |
+| KES  | Kenyan Shilling             | `KSh`    |
+| UGX  | Ugandan Shilling            | `USh`    |
+| TZS  | Tanzanian Shilling          | `TSh`    |
+| GHS  | Ghanaian Cedi               | `₵`      |
+| XOF  | West African CFA Franc      | `CFA`    |
+| XAF  | Central African CFA Franc   | `FCFA`   |
+| ETB  | Ethiopian Birr              | `Br`     |
+| RWF  | Rwandan Franc               | `FRw`    |
+| BIF  | Burundian Franc             | `FBu`    |
+| DJF  | Djiboutian Franc            | `Fdj`    |
+| KMF  | Comorian Franc              | `CF`     |
+| CDF  | Congolese Franc             | `FC`     |
+| GNF  | Guinean Franc               | `FG`     |
+| MGA  | Malagasy Ariary             | `Ar`     |
+| MUR  | Mauritian Rupee             | `₨`      |
+| SCR  | Seychellois Rupee           | `₨`      |
+| MWK  | Malawian Kwacha             | `MK`     |
+| ZMW  | Zambian Kwacha              | `ZK`     |
+| ZMK  | Zambian Kwacha (old)        | `ZK`     |
+| BWP  | Botswana Pula               | `P`      |
+| NAD  | Namibian Dollar             | `N$`     |
+| SZL  | Swazi Lilangeni             | `E`      |
+| LSL  | Lesotho Loti                | `L`      |
+| MZN  | Mozambican Metical          | `MT`     |
+| AOA  | Angolan Kwanza              | `Kz`     |
+| CVE  | Cape Verdean Escudo         | `$`      |
+| GMD  | Gambian Dalasi              | `D`      |
+| SLL  | Sierra Leonean Leone        | `Le`     |
+| LRD  | Liberian Dollar             | `L$`     |
+| ERN  | Eritrean Nakfa              | `Nfk`    |
+| SOS  | Somali Shilling             | `Sh.So.` |
+| MRO  | Mauritanian Ouguiya         | `UM`     |
+| STD  | São Tomé and Príncipe Dobra | `Db`     |
+
+### Asian currencies
+
+| Code | Currency            | Symbol |
+| ---- | ------------------- | ------ |
+| KRW  | South Korean Won    | `₩`    |
+| TWD  | Taiwan Dollar       | `NT$`  |
+| THB  | Thai Baht           | `฿`    |
+| MYR  | Malaysian Ringgit   | `RM`   |
+| IDR  | Indonesian Rupiah   | `Rp`   |
+| PHP  | Philippine Peso     | `₱`    |
+| VND  | Vietnamese Dong     | `₫`    |
+| PKR  | Pakistani Rupee     | `₨`    |
+| BDT  | Bangladeshi Taka    | `৳`    |
+| LKR  | Sri Lankan Rupee    | `Rs`   |
+| NPR  | Nepalese Rupee      | `₨`    |
+| MMK  | Myanmar Kyat        | `K`    |
+| KHR  | Cambodian Riel      | `៛`    |
+| LAK  | Lao Kip             | `₭`    |
+| BND  | Brunei Dollar       | `B$`   |
+| MOP  | Macanese Pataca     | `MOP$` |
+| MNT  | Mongolian Tugrik    | `₮`    |
+| KZT  | Kazakhstani Tenge   | `₸`    |
+| UZS  | Uzbekistani Som     | `soʻm` |
+| TJS  | Tajikistani Somoni  | `ЅМ`   |
+| KGS  | Kyrgyzstani Som     | `с`    |
+| TMT  | Turkmenistani Manat | `m`    |
+| AFN  | Afghan Afghani      | `؋`    |
+| BTN  | Bhutanese Ngultrum  | `Nu.`  |
+| MVR  | Maldivian Rufiyaa   | `Rf`   |
+| KPW  | North Korean Won    | `₩`    |
+
+### Americas currencies
+
+| Code | Currency                      | Symbol |
+| ---- | ----------------------------- | ------ |
+| MXN  | Mexican Peso                  | `MX$`  |
+| BRL  | Brazilian Real                | `R$`   |
+| ARS  | Argentine Peso                | `AR$`  |
+| CLP  | Chilean Peso                  | `CL$`  |
+| COP  | Colombian Peso                | `CO$`  |
+| PEN  | Peruvian Sol                  | `S/`   |
+| VEF  | Venezuelan Bolívar            | `Bs`   |
+| UYU  | Uruguayan Peso                | `$U`   |
+| PYG  | Paraguayan Guarani            | `₲`    |
+| BOB  | Bolivian Boliviano            | `Bs.`  |
+| CRC  | Costa Rican Colón             | `₡`    |
+| GTQ  | Guatemalan Quetzal            | `Q`    |
+| HNL  | Honduran Lempira              | `L`    |
+| NIO  | Nicaraguan Córdoba            | `C$`   |
+| PAB  | Panamanian Balboa             | `B/.`  |
+| DOP  | Dominican Peso                | `RD$`  |
+| CUP  | Cuban Peso                    | `₱`    |
+| CUC  | Cuban Convertible Peso        | `CUC$` |
+| HTG  | Haitian Gourde                | `G`    |
+| JMD  | Jamaican Dollar               | `J$`   |
+| TTD  | Trinidad and Tobago Dollar    | `TT$`  |
+| BBD  | Barbadian Dollar              | `Bds$` |
+| BSD  | Bahamian Dollar               | `B$`   |
+| BMD  | Bermudian Dollar              | `BD$`  |
+| KYD  | Cayman Islands Dollar         | `CI$`  |
+| XCD  | East Caribbean Dollar         | `EC$`  |
+| SVC  | Salvadoran Colón              | `₡`    |
+| AWG  | Aruban Florin                 | `Afl.` |
+| ANG  | Netherlands Antillean Guilder | `NAƒ`  |
+| SRD  | Surinamese Dollar             | `Sr$`  |
+| GYD  | Guyanese Dollar               | `G$`   |
+| CLF  | Chilean Unit of Account (UF)  | `UF`   |
+
+### Pacific currencies
+
+| Code | Currency               | Symbol |
+| ---- | ---------------------- | ------ |
+| FJD  | Fijian Dollar          | `FJ$`  |
+| PGK  | Papua New Guinean Kina | `K`    |
+| SBD  | Solomon Islands Dollar | `SI$`  |
+| VUV  | Vanuatu Vatu           | `VT`   |
+| WST  | Samoan Tala            | `WS$`  |
+| TOP  | Tongan Paʻanga         | `T$`   |
+| XPF  | CFP Franc              | `₣`    |
+
+### Turkish
+
+| Code | Currency     | Symbol |
+| ---- | ------------ | ------ |
+| TRY  | Turkish Lira | `₺`    |
+
+### Crypto
+
+| Code | Currency | Symbol |
+| ---- | -------- | ------ |
+| BTC  | Bitcoin  | `₿`    |
+
 ## Usage
 
 1. Open the [Mithqal Calculator](https://mithqal.app/) in your browser

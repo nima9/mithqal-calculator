@@ -159,7 +159,7 @@
     />
 
     <Combobox.Trigger
-      class="absolute top-1/2 right-1 -translate-y-1/2 text-base-content hover:text-secondary"
+      class="absolute end-1 top-1/2 -translate-y-1/2 text-base-content hover:text-secondary"
     />
   </div>
 
@@ -184,10 +184,10 @@
                 class="flex cursor-pointer items-center rounded px-3 py-2 text-sm text-base-content outline-hidden data-highlighted:bg-primary data-highlighted:text-primary-content"
               >
                 {#snippet children({ selected })}
-                  <Check class="mr-2 h-6 w-6 {selected ? 'text-accent' : 'text-transparent'}" />
+                  <Check class="me-2 h-6 w-6 {selected ? 'text-accent' : 'text-transparent'}" />
                   <span>{formatCurrencyLabel(currency)}</span>
                   {#if currency.name}
-                    <span class="ml-2 text-xs text-base-content/60">{currency.name}</span>
+                    <span class="ms-2 text-xs text-base-content/60">{currency.name}</span>
                   {/if}
                 {/snippet}
               </Combobox.Item>

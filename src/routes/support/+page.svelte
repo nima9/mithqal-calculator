@@ -3,9 +3,18 @@
 <script lang="ts">
   import { trackGoogleEvent } from "$lib/analytics";
   import Coffee from "$lib/components/icons/Coffee.svelte";
+  import { isRtlLocale } from "$lib/i18n";
+
+  import type { PageProps } from "./$types";
+
+  let { data }: PageProps = $props();
+
+  // Match the page's text direction to the active locale so RTL translations
+  // (Arabic, Persian, Urdu) read correctly.
+  let direction: "ltr" | "rtl" = $derived(isRtlLocale(data.locale) ? "rtl" : "ltr");
 </script>
 
-<div class="mx-auto max-w-2xl px-6 py-8 text-base-content">
+<div dir={direction} class="mx-auto max-w-2xl px-6 py-8 text-base-content">
   <h1 class="font-karla text-4xl font-medium md:text-5xl">Support</h1>
 
   <section class="mt-8">

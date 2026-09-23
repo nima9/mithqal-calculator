@@ -36,6 +36,17 @@ export const LANGUAGE_OPTIONS: ReadonlyArray<{ value: Locale; label: string }> =
   { value: "zu", label: "isiZulu" },
 ];
 
+/**
+ * Locales written right-to-left. Used to set text direction on translated prose
+ * that lives outside the calculator's sentence builder, which tracks direction
+ * per language in `$lib/sentences`.
+ */
+export const RTL_LOCALES: ReadonlySet<Locale> = new Set(["ar", "fa", "ur"]);
+
+export function isRtlLocale(locale: Locale): boolean {
+  return RTL_LOCALES.has(locale);
+}
+
 export function getLocale(value: string | null | undefined): Locale {
   if (value === null || value === undefined) return DEFAULT_LOCALE;
 

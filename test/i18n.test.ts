@@ -1,5 +1,11 @@
 import { describe, expect, test } from "bun:test";
-import { DEFAULT_LOCALE, getLocale, LANGUAGE_OPTIONS, withLocale } from "../src/lib/i18n";
+import {
+  DEFAULT_LOCALE,
+  getLocale,
+  isRtlLocale,
+  LANGUAGE_OPTIONS,
+  withLocale,
+} from "../src/lib/i18n";
 
 describe("locale helpers", () => {
   test("defaults to English for missing or unsupported locales", () => {
@@ -18,5 +24,13 @@ describe("locale helpers", () => {
     expect(withLocale("/about", "en")).toBe("/about");
     expect(withLocale("/about", "ar")).toBe("/about?lang=ar");
     expect(withLocale("/support?from=header", "fa")).toBe("/support?from=header&lang=fa");
+  });
+
+  test("identifies the right-to-left locales", () => {
+    expect(isRtlLocale("en")).toBe(false);
+    expect(isRtlLocale("de")).toBe(false);
+    expect(isRtlLocale("ar")).toBe(true);
+    expect(isRtlLocale("fa")).toBe(true);
+    expect(isRtlLocale("ur")).toBe(true);
   });
 });

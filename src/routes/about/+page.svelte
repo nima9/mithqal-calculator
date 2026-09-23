@@ -5,8 +5,17 @@
 
 <script lang="ts">
   import { trackGoogleEvent } from "$lib/analytics";
+  import { isRtlLocale } from "$lib/i18n";
   import { Accordion, Popover } from "bits-ui";
   import { slide, fly } from "svelte/transition";
+
+  import type { PageProps } from "./$types";
+
+  let { data }: PageProps = $props();
+
+  // Match the page's text direction to the active locale so RTL translations
+  // (Arabic, Persian, Urdu) read correctly.
+  let direction: "ltr" | "rtl" = $derived(isRtlLocale(data.locale) ? "rtl" : "ltr");
 
   // ============================================
   // FAQ Data
@@ -65,7 +74,7 @@
   }
 </script>
 
-<div class="mx-auto max-w-2xl px-6 py-8 text-base-content">
+<div dir={direction} class="mx-auto max-w-2xl px-6 py-8 text-base-content">
   <h1 class="font-karla text-4xl font-medium md:text-5xl">About</h1>
 
   <!-- Developer Intro -->
@@ -175,12 +184,12 @@
         <Accordion.Item value={faq.id} class="border-b border-base-300">
           <Accordion.Header>
             <Accordion.Trigger
-              class="flex w-full items-center justify-between py-4 text-left font-karla text-lg font-medium transition-colors hover:text-primary"
+              class="flex w-full items-center justify-between py-4 text-start font-karla text-lg font-medium transition-colors hover:text-primary"
             >
               <span>{faq.question}</span>
               <!-- Plus icon that rotates 45° to become X when open -->
               <span
-                class="ml-4 text-2xl transition-transform duration-200 {isOpen ? 'rotate-45' : ''}"
+                class="ms-4 text-2xl transition-transform duration-200 {isOpen ? 'rotate-45' : ''}"
               >
                 +
               </span>
