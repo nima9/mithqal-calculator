@@ -68,10 +68,12 @@
     height: 2.75rem;
     background-image:
       linear-gradient(transparent, transparent), linear-gradient(var(--primary), var(--primary));
-    background-position: 0 100%;
+    background-position: 0 calc(100% - 6px);
     background-repeat: no-repeat;
     background-size: 0 4px;
     transition: background-size 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
 
   .language-switcher-header:hover,
