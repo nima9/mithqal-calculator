@@ -449,8 +449,8 @@ msgid "Socials <0/>"
 msgstr "Réseaux sociaux <0/>"
 
 #: src/routes/about/+page.svelte
-msgid "Hi, I'm <0>Nima</0>, a software developer passionate about building useful tools for the community."
-msgstr "Bonjour, je suis <0>Nima</0>, un développeur logiciel passionné par la création d’outils utiles à la communauté."
+msgid "Hi, I'm <0>Nima</0>, a software developer passionate about building useful tools."
+msgstr "Bonjour, je suis <0>Nima</0>, un développeur logiciel passionné par la création d’outils utiles."
 
 #: src/lib/components/SettingsModal.svelte
 msgid "Grams (g)"
@@ -483,10 +483,13 @@ msgstr "La foi bahá’íe est une religion mondiale fondée par Bahá’u’ll�
 msgid "Advertisements help pay for the fees for running this website."
 msgstr "Les publicités contribuent à payer les frais de fonctionnement de ce site web."
 
-#: src/routes/support/+page.svelte
-msgid "The <0>Mithqal Calculator</0> is a free tool built to serve the community. If you find it useful and want more projects like this, consider supporting me."
-msgstr "Le <0>Calculateur de mithqáls</0> est un outil gratuit conçu au service de la communauté. S’il vous est utile et que vous souhaitez voir davantage de projets comme celui-ci, pensez à me soutenir."
+#~ msgid "The <0>Mithqal Calculator</0> is a free tool built to serve the community. If you find it useful and want more projects like this, consider supporting me."
+#~ msgstr "Le <0>Calculateur de mithqáls</0> est un outil gratuit conçu au service de la communauté. S’il vous est utile et que vous souhaitez voir davantage de projets comme celui-ci, pensez à me soutenir."
 
 #: src/routes/support/+page.svelte
 msgid "You can email me at <0>mithqal@mohajeri.dev</0>"
 msgstr "Vous pouvez m’écrire à <0>mithqal@mohajeri.dev</0>"
+
+#: src/routes/support/+page.svelte
+msgid "The <0>Mithqál Calculator</0> is a free tool. If you find it useful and want more projects like this, consider supporting me."
+msgstr "Le <0>calculateur Mithqál</0> est un outil gratuit. S’il vous est utile et que vous souhaitez davantage de projets comme celui-ci, pensez à me soutenir."

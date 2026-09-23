@@ -449,8 +449,8 @@ msgid "Socials <0/>"
 msgstr "SNS <0/>"
 
 #: src/routes/about/+page.svelte
-msgid "Hi, I'm <0>Nima</0>, a software developer passionate about building useful tools for the community."
-msgstr "안녕하세요. 저는 공동체에 유용한 도구를 만드는 데 열정을 가진 소프트웨어 개발자 <0>Nima</0>입니다."
+msgid "Hi, I'm <0>Nima</0>, a software developer passionate about building useful tools."
+msgstr "안녕하세요. 저는 유용한 도구를 만드는 데 열정을 가진 소프트웨어 개발자 <0>Nima</0>입니다."
 
 #: src/lib/components/SettingsModal.svelte
 msgid "Grams (g)"
@@ -483,10 +483,13 @@ msgstr "바하이 신앙은 19세기 페르시아에서 바하올라가 창시�
 msgid "Advertisements help pay for the fees for running this website."
 msgstr "광고는 이 웹사이트의 운영 비용을 충당하는 데 도움이 됩니다."
 
-#: src/routes/support/+page.svelte
-msgid "The <0>Mithqal Calculator</0> is a free tool built to serve the community. If you find it useful and want more projects like this, consider supporting me."
-msgstr "<0>미스칼 계산기</0>는 공동체를 위해 만든 무료 도구입니다. 유용하게 사용하고 있으며 이와 같은 프로젝트가 더 만들어지길 원한다면 저를 후원해 주세요."
+#~ msgid "The <0>Mithqal Calculator</0> is a free tool built to serve the community. If you find it useful and want more projects like this, consider supporting me."
+#~ msgstr "<0>미스칼 계산기</0>는 공동체를 위해 만든 무료 도구입니다. 유용하게 사용하고 있으며 이와 같은 프로젝트가 더 만들어지길 원한다면 저를 후원해 주세요."
 
 #: src/routes/support/+page.svelte
 msgid "You can email me at <0>mithqal@mohajeri.dev</0>"
 msgstr "<0>mithqal@mohajeri.dev</0>로 이메일을 보내 주세요"
+
+#: src/routes/support/+page.svelte
+msgid "The <0>Mithqál Calculator</0> is a free tool. If you find it useful and want more projects like this, consider supporting me."
+msgstr "<0>Mithqál 계산기</0>는 무료 도구입니다. 유용하게 사용하셨고 이와 같은 프로젝트를 더 원하신다면 저를 후원해 주세요."

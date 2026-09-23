@@ -449,8 +449,8 @@ msgid "Socials <0/>"
 msgstr "Socials <0/>"
 
 #: src/routes/about/+page.svelte
-msgid "Hi, I'm <0>Nima</0>, a software developer passionate about building useful tools for the community."
-msgstr "Hi, I'm <0>Nima</0>, a software developer passionate about building useful tools for the community."
+msgid "Hi, I'm <0>Nima</0>, a software developer passionate about building useful tools."
+msgstr "Hi, I'm <0>Nima</0>, a software developer passionate about building useful tools."
 
 #: src/lib/components/SettingsModal.svelte
 msgid "Grams (g)"
@@ -483,10 +483,13 @@ msgstr "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-
 msgid "Advertisements help pay for the fees for running this website."
 msgstr "Advertisements help pay for the fees for running this website."
 
-#: src/routes/support/+page.svelte
-msgid "The <0>Mithqal Calculator</0> is a free tool built to serve the community. If you find it useful and want more projects like this, consider supporting me."
-msgstr "The <0>Mithqal Calculator</0> is a free tool built to serve the community. If you find it useful and want more projects like this, consider supporting me."
+#~ msgid "The <0>Mithqal Calculator</0> is a free tool built to serve the community. If you find it useful and want more projects like this, consider supporting me."
+#~ msgstr "The <0>Mithqal Calculator</0> is a free tool built to serve the community. If you find it useful and want more projects like this, consider supporting me."
 
 #: src/routes/support/+page.svelte
 msgid "You can email me at <0>mithqal@mohajeri.dev</0>"
 msgstr "You can email me at <0>mithqal@mohajeri.dev</0>"
+
+#: src/routes/support/+page.svelte
+msgid "The <0>Mithqál Calculator</0> is a free tool. If you find it useful and want more projects like this, consider supporting me."
+msgstr "The <0>Mithqál Calculator</0> is a free tool. If you find it useful and want more projects like this, consider supporting me."

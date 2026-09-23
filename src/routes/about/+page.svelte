@@ -72,7 +72,7 @@
   <section class="mt-8">
     <p class="text-lg leading-relaxed text-base-content/80">
       Hi, I'm <strong class="text-base-content">Nima</strong>, a software developer passionate about
-      building useful tools for the community.
+      building useful tools.
     </p>
     <div class="mt-4">
       <Popover.Root>

@@ -449,8 +449,8 @@ msgid "Socials <0/>"
 msgstr "Redes sociales <0/>"
 
 #: src/routes/about/+page.svelte
-msgid "Hi, I'm <0>Nima</0>, a software developer passionate about building useful tools for the community."
-msgstr "Hola, soy <0>Nima</0>, un desarrollador de software apasionado por crear herramientas útiles para la comunidad."
+msgid "Hi, I'm <0>Nima</0>, a software developer passionate about building useful tools."
+msgstr "Hola, soy <0>Nima</0>, un desarrollador de software apasionado por crear herramientas útiles."
 
 #: src/lib/components/SettingsModal.svelte
 msgid "Grams (g)"
@@ -483,10 +483,13 @@ msgstr "La Fe bahá’í es una religión mundial fundada por Bahá’u’lláh 
 msgid "Advertisements help pay for the fees for running this website."
 msgstr "Los anuncios ayudan a pagar los gastos de funcionamiento de este sitio web."
 
-#: src/routes/support/+page.svelte
-msgid "The <0>Mithqal Calculator</0> is a free tool built to serve the community. If you find it useful and want more projects like this, consider supporting me."
-msgstr "La <0>Calculadora de mithqáles</0> es una herramienta gratuita creada para servir a la comunidad. Si te resulta útil y quieres más proyectos como este, considera apoyarme."
+#~ msgid "The <0>Mithqal Calculator</0> is a free tool built to serve the community. If you find it useful and want more projects like this, consider supporting me."
+#~ msgstr "La <0>Calculadora de mithqáles</0> es una herramienta gratuita creada para servir a la comunidad. Si te resulta útil y quieres más proyectos como este, considera apoyarme."
 
 #: src/routes/support/+page.svelte
 msgid "You can email me at <0>mithqal@mohajeri.dev</0>"
 msgstr "Puedes escribirme a <0>mithqal@mohajeri.dev</0>"
+
+#: src/routes/support/+page.svelte
+msgid "The <0>Mithqál Calculator</0> is a free tool. If you find it useful and want more projects like this, consider supporting me."
+msgstr "La <0>Calculadora Mithqál</0> es una herramienta gratuita. Si te resulta útil y quieres más proyectos como este, considera apoyarme."

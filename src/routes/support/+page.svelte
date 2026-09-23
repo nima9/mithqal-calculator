@@ -10,8 +10,8 @@
 
   <section class="mt-8">
     <p class="text-lg leading-relaxed text-base-content/80">
-      The <strong class="text-base-content">Mithqal Calculator</strong> is a free tool built to serve
-      the community. If you find it useful and want more projects like this, consider supporting me.
+      The <strong class="text-base-content">Mithqál Calculator</strong> is a free tool. If you find it
+      useful and want more projects like this, consider supporting me.
     </p>
   </section>
 

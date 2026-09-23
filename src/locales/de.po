@@ -449,8 +449,8 @@ msgid "Socials <0/>"
 msgstr "Soziale Netzwerke <0/>"
 
 #: src/routes/about/+page.svelte
-msgid "Hi, I'm <0>Nima</0>, a software developer passionate about building useful tools for the community."
-msgstr "Hallo, ich bin <0>Nima</0>, ein Softwareentwickler mit Leidenschaft dafür, nützliche Werkzeuge für die Gemeinschaft zu entwickeln."
+msgid "Hi, I'm <0>Nima</0>, a software developer passionate about building useful tools."
+msgstr "Hallo, ich bin <0>Nima</0>, ein Softwareentwickler mit Leidenschaft dafür, nützliche Werkzeuge zu entwickeln."
 
 #: src/lib/components/SettingsModal.svelte
 msgid "Grams (g)"
@@ -483,10 +483,13 @@ msgstr "Der Bahá’í-Glaube ist eine Weltreligion, die von Bahá’u’lláh i
 msgid "Advertisements help pay for the fees for running this website."
 msgstr "Werbung hilft dabei, die Kosten für den Betrieb dieser Website zu decken."
 
-#: src/routes/support/+page.svelte
-msgid "The <0>Mithqal Calculator</0> is a free tool built to serve the community. If you find it useful and want more projects like this, consider supporting me."
-msgstr "Der <0>Mithqál-Rechner</0> ist ein kostenloses Werkzeug für die Gemeinschaft. Wenn er dir nützlich ist und du dir weitere Projekte wie dieses wünschst, kannst du mich unterstützen."
+#~ msgid "The <0>Mithqal Calculator</0> is a free tool built to serve the community. If you find it useful and want more projects like this, consider supporting me."
+#~ msgstr "Der <0>Mithqál-Rechner</0> ist ein kostenloses Werkzeug für die Gemeinschaft. Wenn er dir nützlich ist und du dir weitere Projekte wie dieses wünschst, kannst du mich unterstützen."
 
 #: src/routes/support/+page.svelte
 msgid "You can email me at <0>mithqal@mohajeri.dev</0>"
 msgstr "Du kannst mir eine E-Mail an <0>mithqal@mohajeri.dev</0> senden"
+
+#: src/routes/support/+page.svelte
+msgid "The <0>Mithqál Calculator</0> is a free tool. If you find it useful and want more projects like this, consider supporting me."
+msgstr "Der <0>Mithqál-Rechner</0> ist ein kostenloses Tool. Wenn du ihn nützlich findest und weitere Projekte wie dieses möchtest, erwäge bitte, mich zu unterstützen."

@@ -449,8 +449,8 @@ msgid "Socials <0/>"
 msgstr "Mitandao ya kijamii <0/>"
 
 #: src/routes/about/+page.svelte
-msgid "Hi, I'm <0>Nima</0>, a software developer passionate about building useful tools for the community."
-msgstr "Habari, mimi ni <0>Nima</0>, msanidi programu ninayependa kutengeneza zana muhimu kwa jamii."
+msgid "Hi, I'm <0>Nima</0>, a software developer passionate about building useful tools."
+msgstr "Habari, mimi ni <0>Nima</0>, msanidi programu ninayependa kutengeneza zana muhimu."
 
 #: src/lib/components/SettingsModal.svelte
 msgid "Grams (g)"
@@ -483,10 +483,13 @@ msgstr "Imani ya Bahá’í ni dini ya ulimwengu iliyoanzishwa na Bahá’u’ll
 msgid "Advertisements help pay for the fees for running this website."
 msgstr "Matangazo husaidia kulipia gharama za kuendesha tovuti hii."
 
-#: src/routes/support/+page.svelte
-msgid "The <0>Mithqal Calculator</0> is a free tool built to serve the community. If you find it useful and want more projects like this, consider supporting me."
-msgstr "<0>Kikokotoo cha mithqál</0> ni zana ya bure iliyoundwa kuhudumia jamii. Ikiwa inakufaa na ungependa kuona miradi zaidi kama hii, tafadhali fikiria kunifadhili."
+#~ msgid "The <0>Mithqal Calculator</0> is a free tool built to serve the community. If you find it useful and want more projects like this, consider supporting me."
+#~ msgstr "<0>Kikokotoo cha mithqál</0> ni zana ya bure iliyoundwa kuhudumia jamii. Ikiwa inakufaa na ungependa kuona miradi zaidi kama hii, tafadhali fikiria kunifadhili."
 
 #: src/routes/support/+page.svelte
 msgid "You can email me at <0>mithqal@mohajeri.dev</0>"
 msgstr "Unaweza kunitumia barua pepe kupitia <0>mithqal@mohajeri.dev</0>"
+
+#: src/routes/support/+page.svelte
+msgid "The <0>Mithqál Calculator</0> is a free tool. If you find it useful and want more projects like this, consider supporting me."
+msgstr "<0>Kikokotoo cha Mithqál</0> ni zana ya bure. Ikiwa unaona ni muhimu na unataka miradi zaidi kama hii, fikiria kuniunga mkono."
