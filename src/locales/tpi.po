@@ -1,0 +1,453 @@
+msgid ""
+msgstr ""
+"Source-Language: en\n"
+"Language: tpi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2\n"
+"X-Plurals-Order: one, other\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+
+#: src/routes/+layout.svelte
+#: src/routes/+page.svelte
+msgid "Free mithqál calculator: convert mithqals of gold and silver to any currency with live precious metal and exchange rates."
+msgstr "Fri mithqál kalkuleta: senisim ol mithqal bilong gol na silva i go long wanem kain mani wantaim ol gutpela metal na eksens reit."
+
+#: src/routes/+layout.svelte
+msgid "Mithqál Calculator – Convert Gold & Silver to Any Currency"
+msgstr "Mithqál Kalkuleta – Senisim Gol na Silva i go long Wanem Mani"
+
+#: src/routes/+layout.svelte
+msgid "Mithqal Calculator"
+msgstr "Mithqal Kalkuleta"
+
+#: src/routes/+layout.svelte
+msgid "Mithqal Calculator - Convert mithqals to currency"
+msgstr "Mithqal Kalkuleta - Senisim mithqals i go long mani"
+
+#: src/routes/+page.svelte
+msgid "WebApplication"
+msgstr "WebAplikesen"
+
+#: src/lib/components/Header.svelte
+#: src/routes/+page.svelte
+#: src/routes/+page.svelte
+msgid "Mithqál Calculator"
+msgstr "Mithqál Kalkuleta"
+
+#: src/routes/+page.svelte
+msgid "FinanceApplication"
+msgstr "FainensAplikesen"
+
+#: src/routes/+page.svelte
+msgid "Web"
+msgstr "Web"
+
+#: src/routes/+page.svelte
+msgid "Requires JavaScript"
+msgstr "I nidim JavaScript"
+
+#: src/routes/+page.svelte
+msgid "Offer"
+msgstr "Ofa"
+
+#: src/lib/components/Calculator.svelte
+msgid "Gold"
+msgstr "Gol"
+
+#: src/lib/components/Calculator.svelte
+msgid "Silver"
+msgstr "Silva"
+
+#: src/lib/components/Calculator.svelte
+#: src/lib/components/RatesTimestamp.svelte
+msgid "America/Los_Angeles"
+msgstr "Amerika/Los_Angeles"
+
+#: src/lib/components/Calculator.svelte
+msgid "Click to copy"
+msgstr "Klikim long kopim"
+
+#: src/lib/components/Calculator.svelte
+msgid "Copied!"
+msgstr "Kopim!"
+
+#: src/lib/components/Calculator.svelte
+msgid "Failed to copy"
+msgstr "No inap long kopim"
+
+#: src/lib/components/Combobox.svelte
+msgid "Fiat currencies"
+msgstr "Fiat mani"
+
+#: src/lib/components/Combobox.svelte
+msgid "Cryptocurrencies"
+msgstr "Ol kriptomani"
+
+#: src/lib/components/Combobox.svelte
+msgid "Select..."
+msgstr "Yu mas makim..."
+
+#: src/lib/components/Combobox.svelte
+msgid "No currencies found."
+msgstr "Nogat mani i stap."
+
+#: src/lib/components/CookieConsent.svelte
+msgid "Decline"
+msgstr "Tok nogat"
+
+#: src/lib/components/CookieConsent.svelte
+msgid "Accept"
+msgstr "Kisim"
+
+#: src/lib/components/CookieConsent.svelte
+msgid "We use cookies for analytics and ads. <0>Learn more</0>"
+msgstr "Mipela i save yusim ol kukis long mekim ol wok painimaut na ol edvetaismen. <0>Lainim moa</0>"
+
+#: src/lib/components/CookieModal.svelte
+#: src/lib/components/SettingsModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Escape"
+msgstr "Ranawe"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Close cookie policy"
+msgstr "Pasim kuki polisi"
+
+#: src/lib/components/CookieModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Enter"
+msgstr "Go insait"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Close"
+msgstr "Klosim"
+
+#: src/lib/components/CookieModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Cookie Policy"
+msgstr "Polisi bilong ol kuki"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Essential (Always Active)"
+msgstr "Bikpela samting (Oltaim i wok)"
+
+#: src/lib/components/CookieModal.svelte
+msgid "These are required for the site to function. They store your preferences like theme and currency settings in your browser's local storage. No data is sent to external servers."
+msgstr "Ol dispela samting i mas i stap bilong sait i ken wok gut. Ol i save putim ol samting yu laikim olsem ol 'theme' na 'currency settings' insait long 'local storage' bilong 'browser' bilong yu. Nogat data i go long ol ekstenel seva."
+
+#: src/lib/components/CookieModal.svelte
+msgid "Analytics (Optional)"
+msgstr "Analytics (Optional)"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Google Analytics helps us understand how visitors use the site. It collects anonymized data about page views and interactions. This data is processed by Google."
+msgstr "Google Analytics i helpim mipela long save long hau ol visita i yusim sait. Em i save bungim ol data we i no gat nem long en long ol pes lukluk na ol intareksen. Google i save prosesim dispela data."
+
+#: src/lib/components/CookieModal.svelte
+msgid "Advertising (Optional)"
+msgstr "Edvetaismen (Opsenel)"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Google AdSense displays ads to support the site. It may use cookies to show personalized ads based on your browsing history. If declined, ads will not be shown."
+msgstr "Google AdSense i soim ol edvetaismen bilong sapotim sait. Em i ken yusim ol kukis long soim ol edvetaismen bilong yu yet bihainim 'browsing history' bilong yu. Sapos yu no laikim, ol edvetaismen bai no inap kamap."
+
+#: src/lib/components/CookieModal.svelte
+msgid "You can change your preference at any time by clearing your browser's local storage for this site."
+msgstr "Yu ken senisim laik bilong yu long wanem taim yu rausim long 'local storage' bilong 'browser' bilong yu long dispela sait."
+
+#: src/lib/components/CookieModal.svelte
+msgid "Decline All"
+msgstr "Sakim olgeta"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Accept All"
+msgstr "Kisim olgeta"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Something went wrong. Please try again."
+msgstr "Samting i bin rong. Plis traim gen."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification could not load. Please try again."
+msgstr "Human verification i no inap long lod. Plis traim gen."
+
+#. 0: code
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification could not run{0}. Please try again or use another browser."
+msgstr "Human verification i no inap long ranim{0}. Plis traim gen o yusim narapela 'browser'."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification expired. Please try again."
+msgstr "Human verification i pinis. Plis traim gen."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Loading..."
+msgstr "Loading..."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verifying..."
+msgstr "Verifying..."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Try again"
+msgstr "Traim gen"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+#: src/routes/about/+page.svelte
+msgid "About"
+msgstr "Long"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+#: src/routes/support/+page.svelte
+msgid "Support"
+msgstr "Sapot"
+
+#: src/lib/components/Header.svelte
+msgid "Open settings"
+msgstr "Opim ol seting"
+
+#: src/lib/components/Header.svelte
+msgid "Open menu"
+msgstr "Opim menu"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+msgid "Close menu"
+msgstr "Pasim menu"
+
+#: src/lib/components/Header.svelte
+msgid "Theme"
+msgstr "Het tok"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Settings"
+msgstr "Ol seting"
+
+#: src/lib/components/RatesTimestamp.svelte
+msgid "Unavailable"
+msgstr "Nogat"
+
+#. 0: readableRateDate
+#: src/lib/components/RatesTimestamp.svelte
+msgid "Rates retrieved: {0}"
+msgstr "Ol prais ol i kisim bek: {0}"
+
+#: src/lib/components/SettingsModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Close settings"
+msgstr "Pasim ol seting"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "With commas (1,234.56)"
+msgstr "Wantaim ol koma (1,234.56)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Without commas (1234.56)"
+msgstr "Nogat koma (1234.56)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Copy format"
+msgstr "Kopi fomat"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Done"
+msgstr "Pinis"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "Light mode"
+msgstr "Lait mode"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "Dark mode"
+msgstr "Tudak mode"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "System mode"
+msgstr "Sistem mod"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification is not configured."
+msgstr "Human verification i no stap."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verification failed. Please try again."
+msgstr "Verifikasen i no kamap. Plis traim gen."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verify you're human"
+msgstr "Sekim yu man"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Please complete the challenge to view this page."
+msgstr "Plis pinisim salens bilong lukim dispela pes."
+
+#: src/routes/about/+page.svelte
+msgid "What is a Mithqál?"
+msgstr "Mithqál em i wanem samting?"
+
+#: src/routes/about/+page.svelte
+msgid "A mithqál is a traditional unit of weight used in the Middle East, equivalent to approximately 3.642 grams. In the Bahá'í Faith, it holds special significance as it is used to calculate Huqúqu'lláh (the Right of God), a spiritual obligation for Bahá'ís to contribute 19% of their surplus wealth after essential expenses (only if the individuals net worth is worth 19 Mithqáls of gold or more)."
+msgstr "Mithqál em i wanpela 'traditional unit' bilong hevi we ol i save yusim long Midel Is, we i wankain olsem 3.642 gram. Insait long Bahá'í Bilip, em i gat bikpela mining bikos ol i save yusim long skelim Huqúqu'lláh (Rait bilong God), wanpela spiritual wok bilong ol Bahá'í long givim 19% bilong ol mani kago bilong ol bihain long ol i mas tromoi ol bikpela samting (sapos mani bilong ol yet i gat 19 mithqáls o moa long gol)."
+
+#: src/routes/about/+page.svelte
+msgid "What is the Bahá'í Faith?"
+msgstr "Wanem samting em Bahá'í Bilip?"
+
+#: src/routes/about/+page.svelte
+msgid "Why are there advertisements?"
+msgstr "Bilong wanem i gat ol edvetaismen?"
+
+#: src/routes/about/+page.svelte
+msgid "Do you have a mobile app?"
+msgstr "Yu gat wanpela mobail ap?"
+
+#: src/routes/about/+page.svelte
+msgid "In the works!"
+msgstr "Ol wok i wok long kamap!"
+
+#: src/routes/about/+page.svelte
+msgid "Where do the currency and metal rates come from?"
+msgstr "Ol mani na metal reit i kam we?"
+
+#: src/routes/about/+page.svelte
+msgid "Gold and silver prices are fetched daily from Swissquote's forex data feed. For each metal, the calculator takes the midpoint of every valid bid/ask quote and uses the median of those midpoints. Currency exchange rates come from FXRatesAPI. The displayed timestamp shows when the latest complete snapshot was successfully retrieved."
+msgstr "Ol i save kisim ol prais bilong gol na silva long olgeta de long forex data fid bilong Swissquote. Long wanwan metal, kalkuleta i save kisim namel mak bilong olgeta gutpela bid/ask kwot na yusim namel mak bilong ol dispela namel mak. Ol 'currency exchange rates' i kam long FXRatesAPI. Taimstemp we i soim i soim wanem taim ol i kisim bek laspela ful snapshot."
+
+#: src/routes/+layout.svelte
+msgid "About the Mithqal Calculator: a free tool for converting mithqals of gold and silver to any currency, used for Huqúqu'lláh calculations."
+msgstr "Long Mithqal Kalkuleta: wanpela fri tul bilong senisim ol mithqal bilong gol na silva i go long wanem kain mani, ol i save yusim long Huqúqu'lláh kalkulesen."
+
+#: src/routes/+layout.svelte
+msgid "About - Mithqal Calculator"
+msgstr "Long - Mithqal Kalkuleta"
+
+#: src/routes/about/+page.svelte
+msgid "The <0>Mithqál Calculator</0> is a free tool designed to help calculate the value of gold and silver in mithqáls, the traditional unit of weight used for <1>Huqúqu'lláh</1> calculations in the Bahá'í Faith."
+msgstr "<0>Mithqál Kalkuleta</0> em i wanpela fri tul we ol i wokim bilong helpim long skelim veliu bilong gol na silva insait long mithqáls, em i yunit bilong hevi we ol i save yusim long <1>Huqúqu'lláh</1> kalkulesen insait long Bahá'í Bilip."
+
+#: src/routes/about/+page.svelte
+msgid "I am working on a website to showcase all the great Bahai tools people have made online. The domain of the site is bahaitools.app!"
+msgstr "Mi wok long wanpela websait bilong soim olgeta gutpela tul bilong Bahai we ol manmeri i bin wokim long intanet. Domain bilong dispela sait em bahaitools.app!"
+
+#: src/routes/about/+page.svelte
+msgid "Simply enter the weight in mithqáls, select your preferred currency, and get an instant conversion based on current market rates. The calculator supports over 150 currencies worldwide."
+msgstr "Putim hevi bilong en long mithqáls, makim mani yu laikim, na kisim kwik konvesen bihainim ol reit bilong maket nau. Dispela kalkuleta i sapotim moa long 150 mani long wol."
+
+#: src/routes/about/+page.svelte
+msgid "Collapse all"
+msgstr "Putim olgeta"
+
+#: src/routes/about/+page.svelte
+msgid "Expand all"
+msgstr "Skelim olgeta"
+
+#: src/routes/about/+page.svelte
+msgid "Frequently Asked Questions"
+msgstr "Ol Kwestin we Ol Man i Save Askim Planti Taim"
+
+#: src/routes/+layout.svelte
+msgid "Support the Mithqal Calculator, a free ad-supported tool for converting gold and silver mithqals to any currency."
+msgstr "Sapotim Mithqal Kalkuleta, wanpela fri tul we i gat ol edvetaismen long en bilong senisim gol na silva mithqals i go long wanem kain mani."
+
+#: src/routes/+layout.svelte
+msgid "Support - Mithqal Calculator"
+msgstr "Sapot - Mithqal Kalkuleta"
+
+#: src/routes/support/+page.svelte
+msgid "Ko-fi"
+msgstr "Ko-fi"
+
+#: src/routes/support/+page.svelte
+msgid "Buy me a coffee"
+msgstr "Baim wanpela kopi bilong mi"
+
+#: src/routes/support/+page.svelte
+msgid "World Citizen sticker"
+msgstr "Stika bilong Wol Sitisen"
+
+#: src/routes/support/+page.svelte
+msgid "World Citizen Sticker"
+msgstr "Stika bilong Wol Sitisen"
+
+#: src/routes/support/+page.svelte
+msgid "Buy a sticker"
+msgstr "Baim wanpela stika"
+
+#: src/routes/support/+page.svelte
+msgid "Ways to Support"
+msgstr "Ol rot bilong sapotim"
+
+#: src/lib/components/LanguageSwitcher.svelte
+#: src/lib/components/LanguageSwitcher.svelte
+msgid "Language"
+msgstr "Tokples"
+
+#: src/routes/about/+page.svelte
+msgid "GitHub"
+msgstr "GitHub"
+
+#: src/routes/about/+page.svelte
+msgid "Twitter (X)"
+msgstr "Twitter (X)"
+
+#: src/routes/about/+page.svelte
+msgid "Bluesky"
+msgstr "Bluesky"
+
+#: src/routes/about/+page.svelte
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: src/routes/about/+page.svelte
+msgid "Socials <0/>"
+msgstr "Socials <0/>"
+
+#: src/routes/about/+page.svelte
+msgid "Hi, I'm <0>Nima</0>, a software developer passionate about building useful tools."
+msgstr "Gude, mi <0>Nima</0>, wanpela sofwet divelopa husat i save laikim tru long wokim ol gutpela tul."
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Grams (g)"
+msgstr "Grams (g)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Troy ounces (oz)"
+msgstr "Troy ounces (oz)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Weight unit"
+msgstr "Hevi yunit"
+
+#: src/routes/about/+page.svelte
+msgid "Email"
+msgstr "Email"
+
+#: src/routes/support/+page.svelte
+msgid "Have a suggestion? Found a bug?"
+msgstr "Yu gat wanpela tingting? Painim wanpela binatang?"
+
+#: src/routes/about/+page.svelte
+msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation, meaning that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit <0>bahai.org</0>."
+msgstr "Bahá'í bilip em i wanpela lotu bilong wol we Bahá'u'lláh i bin kirapim long Persia long 19 senseri. Em i skulim ol long olgeta lotu i mas i stap wanbel na ol manmeri i mas i stap wanbel. Ol Bahá'í i bilip long 'progressive revelation', mining olsem God i bin salim planti 'divine messenger' long olgeta taim bipo, olsem Abraham, Moses, Buddha, Jisas, Muhammad, na i no long taim i go pinis Bahá'u'lláh. Sapos yu laik kisim moa infomesen, plis go long <0>bahai.org</0>."
+
+#: src/routes/about/+page.svelte
+msgid "Advertisements help pay for the fees for running this website."
+msgstr "Ol edvetaismen i helpim long baim ol fi bilong ranim dispela websait."
+
+#: src/routes/support/+page.svelte
+msgid "You can email me at <0>mithqal@mohajeri.dev</0>"
+msgstr "Yu ken salim email i kam long mi long <0>mithqal@mohajeri.dev</0>"
+
+#: src/routes/support/+page.svelte
+msgid "The <0>Mithqál Calculator</0> is a free tool. If you find it useful and want more projects like this, consider supporting me."
+msgstr "<0>Mithqál Kalkuleta</0> em i wanpela fri tul. Sapos yu painim olsem em i gutpela na yu laikim moa projek olsem, tingim long sapotim mi."

@@ -1,0 +1,453 @@
+msgid ""
+msgstr ""
+"Source-Language: en\n"
+"Language: tl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2\n"
+"X-Plurals-Order: one, other\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+
+#: src/routes/+layout.svelte
+#: src/routes/+page.svelte
+msgid "Free mithqál calculator: convert mithqals of gold and silver to any currency with live precious metal and exchange rates."
+msgstr "Libreng mithqál calculator: i-convert ang mga mithqal ng ginto at pilak sa anumang currency na may live na mahalagang metal at mga halaga ng palitan."
+
+#: src/routes/+layout.svelte
+msgid "Mithqál Calculator – Convert Gold & Silver to Any Currency"
+msgstr "Mithqál Calculator – I-convert ang Ginto at Pilak sa Anumang Currency"
+
+#: src/routes/+layout.svelte
+msgid "Mithqal Calculator"
+msgstr "Mithqal Calculator"
+
+#: src/routes/+layout.svelte
+msgid "Mithqal Calculator - Convert mithqals to currency"
+msgstr "Mithqal Calculator - I-convert ang mga mithqal sa currency"
+
+#: src/routes/+page.svelte
+msgid "WebApplication"
+msgstr "WebApplication"
+
+#: src/lib/components/Header.svelte
+#: src/routes/+page.svelte
+#: src/routes/+page.svelte
+msgid "Mithqál Calculator"
+msgstr "Mithqál Calculator"
+
+#: src/routes/+page.svelte
+msgid "FinanceApplication"
+msgstr "Aplikasyon sa pananalapi"
+
+#: src/routes/+page.svelte
+msgid "Web"
+msgstr "Web"
+
+#: src/routes/+page.svelte
+msgid "Requires JavaScript"
+msgstr "Nangangailangan ng JavaScript"
+
+#: src/routes/+page.svelte
+msgid "Offer"
+msgstr "Alok"
+
+#: src/lib/components/Calculator.svelte
+msgid "Gold"
+msgstr "ginto"
+
+#: src/lib/components/Calculator.svelte
+msgid "Silver"
+msgstr "pilak"
+
+#: src/lib/components/Calculator.svelte
+#: src/lib/components/RatesTimestamp.svelte
+msgid "America/Los_Angeles"
+msgstr "America/Los_Angeles"
+
+#: src/lib/components/Calculator.svelte
+msgid "Click to copy"
+msgstr "I-click para kopyahin"
+
+#: src/lib/components/Calculator.svelte
+msgid "Copied!"
+msgstr "Kinopya!"
+
+#: src/lib/components/Calculator.svelte
+msgid "Failed to copy"
+msgstr "Nabigong kopyahin"
+
+#: src/lib/components/Combobox.svelte
+msgid "Fiat currencies"
+msgstr "Mga pera ng Fiat"
+
+#: src/lib/components/Combobox.svelte
+msgid "Cryptocurrencies"
+msgstr "Cryptocurrencies"
+
+#: src/lib/components/Combobox.svelte
+msgid "Select..."
+msgstr "Pumili..."
+
+#: src/lib/components/Combobox.svelte
+msgid "No currencies found."
+msgstr "Walang nakitang pera."
+
+#: src/lib/components/CookieConsent.svelte
+msgid "Decline"
+msgstr "Tanggihan"
+
+#: src/lib/components/CookieConsent.svelte
+msgid "Accept"
+msgstr "Tanggapin"
+
+#: src/lib/components/CookieConsent.svelte
+msgid "We use cookies for analytics and ads. <0>Learn more</0>"
+msgstr "Gumagamit kami ng cookies para sa analytics at mga ad. <0>Matuto nang higit pa</0>"
+
+#: src/lib/components/CookieModal.svelte
+#: src/lib/components/SettingsModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Escape"
+msgstr "tumakas"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Close cookie policy"
+msgstr "Isara ang patakaran sa cookie"
+
+#: src/lib/components/CookieModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Enter"
+msgstr "Pumasok"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Close"
+msgstr "Isara"
+
+#: src/lib/components/CookieModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Cookie Policy"
+msgstr "Patakaran sa Cookie"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Essential (Always Active)"
+msgstr "Mahalaga (Palaging Aktibo)"
+
+#: src/lib/components/CookieModal.svelte
+msgid "These are required for the site to function. They store your preferences like theme and currency settings in your browser's local storage. No data is sent to external servers."
+msgstr "Kinakailangan ang mga ito para gumana ang site. Iniimbak nila ang iyong mga kagustuhan tulad ng mga setting ng tema at pera sa lokal na storage ng iyong browser. Walang data na ipinapadala sa mga panlabas na server."
+
+#: src/lib/components/CookieModal.svelte
+msgid "Analytics (Optional)"
+msgstr "Analytics (Opsyonal)"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Google Analytics helps us understand how visitors use the site. It collects anonymized data about page views and interactions. This data is processed by Google."
+msgstr "Tinutulungan kami ng Google Analytics na maunawaan kung paano ginagamit ng mga bisita ang site. Nangongolekta ito ng hindi kilalang data tungkol sa mga page view at mga pakikipag-ugnayan. Ang data na ito ay pinoproseso ng Google."
+
+#: src/lib/components/CookieModal.svelte
+msgid "Advertising (Optional)"
+msgstr "Advertising (Opsyonal)"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Google AdSense displays ads to support the site. It may use cookies to show personalized ads based on your browsing history. If declined, ads will not be shown."
+msgstr "Ang Google AdSense ay nagpapakita ng mga ad upang suportahan ang site. Maaari itong gumamit ng cookies upang magpakita ng mga personalized na ad batay sa iyong kasaysayan ng pagba-browse. Kung tinanggihan, hindi ipapakita ang mga ad."
+
+#: src/lib/components/CookieModal.svelte
+msgid "You can change your preference at any time by clearing your browser's local storage for this site."
+msgstr "Maaari mong baguhin ang iyong kagustuhan anumang oras sa pamamagitan ng pag-clear sa lokal na storage ng iyong browser para sa site na ito."
+
+#: src/lib/components/CookieModal.svelte
+msgid "Decline All"
+msgstr "Tanggihan Lahat"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Accept All"
+msgstr "Tanggapin Lahat"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Something went wrong. Please try again."
+msgstr "Nagkaproblema. Pakisubukang muli."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification could not load. Please try again."
+msgstr "Hindi ma-load ang pag-verify ng tao. Pakisubukang muli."
+
+#. 0: code
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification could not run{0}. Please try again or use another browser."
+msgstr "Ang pag-verify ng tao ay hindi maaaring tumakbo{0}. Pakisubukang muli o gumamit ng ibang browser."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification expired. Please try again."
+msgstr "Nag-expire ang human verification. Pakisubukang muli."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Loading..."
+msgstr "Naglo-load..."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verifying..."
+msgstr "Bine-verify..."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Try again"
+msgstr "Subukan muli"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+#: src/routes/about/+page.svelte
+msgid "About"
+msgstr "Tungkol sa"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+#: src/routes/support/+page.svelte
+msgid "Support"
+msgstr "Suporta"
+
+#: src/lib/components/Header.svelte
+msgid "Open settings"
+msgstr "Buksan ang mga setting"
+
+#: src/lib/components/Header.svelte
+msgid "Open menu"
+msgstr "Buksan ang menu"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+msgid "Close menu"
+msgstr "Isara ang menu"
+
+#: src/lib/components/Header.svelte
+msgid "Theme"
+msgstr "Tema"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Settings"
+msgstr "Mga setting"
+
+#: src/lib/components/RatesTimestamp.svelte
+msgid "Unavailable"
+msgstr "Hindi magagamit"
+
+#. 0: readableRateDate
+#: src/lib/components/RatesTimestamp.svelte
+msgid "Rates retrieved: {0}"
+msgstr "Mga rate na nakuha: {0}"
+
+#: src/lib/components/SettingsModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Close settings"
+msgstr "Isara ang mga setting"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "With commas (1,234.56)"
+msgstr "May mga kuwit (1,234.56)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Without commas (1234.56)"
+msgstr "Walang mga kuwit (1234.56)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Copy format"
+msgstr "Kopyahin ang format"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Done"
+msgstr "Tapos na"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "Light mode"
+msgstr "Light mode"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "Dark mode"
+msgstr "Dark mode"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "System mode"
+msgstr "System mode"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification is not configured."
+msgstr "Hindi naka-configure ang pagpapatunay ng tao."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verification failed. Please try again."
+msgstr "Nabigo ang pag-verify. Pakisubukang muli."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verify you're human"
+msgstr "I-verify na tao ka"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Please complete the challenge to view this page."
+msgstr "Mangyaring kumpletuhin ang hamon upang tingnan ang pahinang ito."
+
+#: src/routes/about/+page.svelte
+msgid "What is a Mithqál?"
+msgstr "Ano ang Mithqál?"
+
+#: src/routes/about/+page.svelte
+msgid "A mithqál is a traditional unit of weight used in the Middle East, equivalent to approximately 3.642 grams. In the Bahá'í Faith, it holds special significance as it is used to calculate Huqúqu'lláh (the Right of God), a spiritual obligation for Bahá'ís to contribute 19% of their surplus wealth after essential expenses (only if the individuals net worth is worth 19 Mithqáls of gold or more)."
+msgstr "Ang mithqál ay isang tradisyonal na yunit ng timbang na ginagamit sa Gitnang Silangan, katumbas ng humigit-kumulang 3.642 gramo. Sa Pananampalataya ng Bahá'í, mayroon itong espesyal na kahalagahan dahil ginagamit ito para kalkulahin ang Huqúqu'lláh (ang Karapatan ng Diyos), isang espirituwal na obligasyon para sa mga Bahá'í na mag-ambag ng 19% ng kanilang labis na kayamanan pagkatapos ng mahahalagang gastusin (kung ang mga indibidwal na net worth ay nagkakahalaga ng 19 Mithqál na ginto o higit pa)."
+
+#: src/routes/about/+page.svelte
+msgid "What is the Bahá'í Faith?"
+msgstr "Ano ang Bahá'í Faith?"
+
+#: src/routes/about/+page.svelte
+msgid "Why are there advertisements?"
+msgstr "Bakit may mga patalastas?"
+
+#: src/routes/about/+page.svelte
+msgid "Do you have a mobile app?"
+msgstr "Mayroon ka bang mobile app?"
+
+#: src/routes/about/+page.svelte
+msgid "In the works!"
+msgstr "Sa mga gawa!"
+
+#: src/routes/about/+page.svelte
+msgid "Where do the currency and metal rates come from?"
+msgstr "Saan nagmula ang currency at metal rates?"
+
+#: src/routes/about/+page.svelte
+msgid "Gold and silver prices are fetched daily from Swissquote's forex data feed. For each metal, the calculator takes the midpoint of every valid bid/ask quote and uses the median of those midpoints. Currency exchange rates come from FXRatesAPI. The displayed timestamp shows when the latest complete snapshot was successfully retrieved."
+msgstr "Ang mga presyo ng ginto at pilak ay kinukuha araw-araw mula sa forex data feed ng Swissquote. Para sa bawat metal, kinukuha ng calculator ang midpoint ng bawat valid na bid/ask quote at ginagamit ang median ng mga midpoint na iyon. Ang mga halaga ng palitan ng pera ay nagmula sa FXRatesAPI. Ipinapakita ng ipinapakitang timestamp kung kailan matagumpay na nakuha ang pinakabagong kumpletong snapshot."
+
+#: src/routes/+layout.svelte
+msgid "About the Mithqal Calculator: a free tool for converting mithqals of gold and silver to any currency, used for Huqúqu'lláh calculations."
+msgstr "Tungkol sa Mithqal Calculator: isang libreng tool para sa pag-convert ng mga mithqal ng ginto at pilak sa anumang currency, na ginagamit para sa mga kalkulasyon ng Huqúqu'lláh."
+
+#: src/routes/+layout.svelte
+msgid "About - Mithqal Calculator"
+msgstr "Tungkol sa - Mithqal Calculator"
+
+#: src/routes/about/+page.svelte
+msgid "The <0>Mithqál Calculator</0> is a free tool designed to help calculate the value of gold and silver in mithqáls, the traditional unit of weight used for <1>Huqúqu'lláh</1> calculations in the Bahá'í Faith."
+msgstr "Ang <0>Mithqál Calculator</0> ay isang libreng tool na idinisenyo upang makatulong na kalkulahin ang halaga ng ginto at pilak sa mithqáls, ang tradisyonal na yunit ng timbang na ginagamit para sa <1>Huqúqu'lláh</1> kalkulasyon sa Bahá'í Faith."
+
+#: src/routes/about/+page.svelte
+msgid "I am working on a website to showcase all the great Bahai tools people have made online. The domain of the site is bahaitools.app!"
+msgstr "Nagtatrabaho ako sa isang website para ipakita ang lahat ng mahuhusay na tool ng Bahai na ginawa ng mga tao online. Ang domain ng site ay bahaitools.app!"
+
+#: src/routes/about/+page.svelte
+msgid "Simply enter the weight in mithqáls, select your preferred currency, and get an instant conversion based on current market rates. The calculator supports over 150 currencies worldwide."
+msgstr "Ilagay lamang ang timbang sa mithqáls, piliin ang iyong ginustong pera, at makakuha ng instant na conversion batay sa kasalukuyang mga rate ng merkado. Sinusuportahan ng calculator ang higit sa 150 mga pera sa buong mundo."
+
+#: src/routes/about/+page.svelte
+msgid "Collapse all"
+msgstr "I-collapse lahat"
+
+#: src/routes/about/+page.svelte
+msgid "Expand all"
+msgstr "Palawakin lahat"
+
+#: src/routes/about/+page.svelte
+msgid "Frequently Asked Questions"
+msgstr "Mga Madalas Itanong"
+
+#: src/routes/+layout.svelte
+msgid "Support the Mithqal Calculator, a free ad-supported tool for converting gold and silver mithqals to any currency."
+msgstr "Suportahan ang Mithqal Calculator, isang libreng tool na sinusuportahan ng ad para sa pag-convert ng ginto at pilak na mithqal sa anumang currency."
+
+#: src/routes/+layout.svelte
+msgid "Support - Mithqal Calculator"
+msgstr "Suporta - Mithqal Calculator"
+
+#: src/routes/support/+page.svelte
+msgid "Ko-fi"
+msgstr "Ko-fi"
+
+#: src/routes/support/+page.svelte
+msgid "Buy me a coffee"
+msgstr "Bilhan mo ako ng kape"
+
+#: src/routes/support/+page.svelte
+msgid "World Citizen sticker"
+msgstr "Sticker ng World Citizen"
+
+#: src/routes/support/+page.svelte
+msgid "World Citizen Sticker"
+msgstr "Sticker ng Mamamayan sa Mundo"
+
+#: src/routes/support/+page.svelte
+msgid "Buy a sticker"
+msgstr "Bumili ng sticker"
+
+#: src/routes/support/+page.svelte
+msgid "Ways to Support"
+msgstr "Mga Paraan para Suportahan"
+
+#: src/lib/components/LanguageSwitcher.svelte
+#: src/lib/components/LanguageSwitcher.svelte
+msgid "Language"
+msgstr "Wika"
+
+#: src/routes/about/+page.svelte
+msgid "GitHub"
+msgstr "GitHub"
+
+#: src/routes/about/+page.svelte
+msgid "Twitter (X)"
+msgstr "Twitter (X)"
+
+#: src/routes/about/+page.svelte
+msgid "Bluesky"
+msgstr "Bluesky"
+
+#: src/routes/about/+page.svelte
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: src/routes/about/+page.svelte
+msgid "Socials <0/>"
+msgstr "Socials <0/>"
+
+#: src/routes/about/+page.svelte
+msgid "Hi, I'm <0>Nima</0>, a software developer passionate about building useful tools."
+msgstr "Kumusta, ako si <0>Nima</0>, isang software developer na hilig sa pagbuo ng mga kapaki-pakinabang na tool."
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Grams (g)"
+msgstr "Gram (g)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Troy ounces (oz)"
+msgstr "Troy ounces (oz)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Weight unit"
+msgstr "Yunit ng timbang"
+
+#: src/routes/about/+page.svelte
+msgid "Email"
+msgstr "Email"
+
+#: src/routes/support/+page.svelte
+msgid "Have a suggestion? Found a bug?"
+msgstr "May mungkahi? Nakahanap ng bug?"
+
+#: src/routes/about/+page.svelte
+msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation, meaning that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit <0>bahai.org</0>."
+msgstr "Ang Bahá'í Faith ay isang relihiyon sa daigdig na itinatag ni Bahá'u'lláh sa Persia noong ika-19 na siglo. Itinuturo nito ang mahalagang pagkakaisa ng lahat ng relihiyon at ang pagkakaisa ng sangkatauhan. Naniniwala ang mga Bahá'í sa progresibong paghahayag, ibig sabihin, nagpadala ang Diyos ng serye ng mga banal na mensahero sa buong kasaysayan, kasama sina Abraham, Moses, Buddha, Jesus, Muhammad, at pinakahuling Bahá'u'lláh. Para sa higit pang impormasyon, pakibisita ang <0>bahai.org</0>."
+
+#: src/routes/about/+page.svelte
+msgid "Advertisements help pay for the fees for running this website."
+msgstr "Tumutulong ang mga advertisement na magbayad para sa mga bayarin sa pagpapatakbo ng website na ito."
+
+#: src/routes/support/+page.svelte
+msgid "You can email me at <0>mithqal@mohajeri.dev</0>"
+msgstr "Maaari mo akong i-email sa <0>mithqal@mohajeri.dev</0>"
+
+#: src/routes/support/+page.svelte
+msgid "The <0>Mithqál Calculator</0> is a free tool. If you find it useful and want more projects like this, consider supporting me."
+msgstr "Ang <0>Mithqál Calculator</0> ay isang libreng tool. Kung sa tingin mo ay kapaki-pakinabang ito at gusto mo ng higit pang mga proyektong tulad nito, isaalang-alang ang pagsuporta sa akin."

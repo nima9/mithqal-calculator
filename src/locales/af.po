@@ -1,0 +1,453 @@
+msgid ""
+msgstr ""
+"Source-Language: en\n"
+"Language: af\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2\n"
+"X-Plurals-Order: one, other\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+
+#: src/routes/+layout.svelte
+#: src/routes/+page.svelte
+msgid "Free mithqál calculator: convert mithqals of gold and silver to any currency with live precious metal and exchange rates."
+msgstr "Gratis mithqál-sakrekenaar: skakel mithqals van goud en silwer om na enige geldeenheid met lewendige edelmetale en wisselkoerse."
+
+#: src/routes/+layout.svelte
+msgid "Mithqál Calculator – Convert Gold & Silver to Any Currency"
+msgstr "Mithqál Sakrekenaar - Skakel goud en silwer om na enige geldeenheid"
+
+#: src/routes/+layout.svelte
+msgid "Mithqal Calculator"
+msgstr "Mithqal Sakrekenaar"
+
+#: src/routes/+layout.svelte
+msgid "Mithqal Calculator - Convert mithqals to currency"
+msgstr "Mithqal Sakrekenaar - Skakel mithqals na geldeenheid"
+
+#: src/routes/+page.svelte
+msgid "WebApplication"
+msgstr "Webtoepassing"
+
+#: src/lib/components/Header.svelte
+#: src/routes/+page.svelte
+#: src/routes/+page.svelte
+msgid "Mithqál Calculator"
+msgstr "Mithqál Sakrekenaar"
+
+#: src/routes/+page.svelte
+msgid "FinanceApplication"
+msgstr "Finansies Aansoek"
+
+#: src/routes/+page.svelte
+msgid "Web"
+msgstr "Web"
+
+#: src/routes/+page.svelte
+msgid "Requires JavaScript"
+msgstr "Vereis JavaScript"
+
+#: src/routes/+page.svelte
+msgid "Offer"
+msgstr "Bied aan"
+
+#: src/lib/components/Calculator.svelte
+msgid "Gold"
+msgstr "Goud"
+
+#: src/lib/components/Calculator.svelte
+msgid "Silver"
+msgstr "Silwer"
+
+#: src/lib/components/Calculator.svelte
+#: src/lib/components/RatesTimestamp.svelte
+msgid "America/Los_Angeles"
+msgstr "Amerika/Los_Angeles"
+
+#: src/lib/components/Calculator.svelte
+msgid "Click to copy"
+msgstr "Klik om te kopieer"
+
+#: src/lib/components/Calculator.svelte
+msgid "Copied!"
+msgstr "Gekopieer!"
+
+#: src/lib/components/Calculator.svelte
+msgid "Failed to copy"
+msgstr "Kon nie kopieer nie"
+
+#: src/lib/components/Combobox.svelte
+msgid "Fiat currencies"
+msgstr "Fiat geldeenhede"
+
+#: src/lib/components/Combobox.svelte
+msgid "Cryptocurrencies"
+msgstr "Kriptogeldeenhede"
+
+#: src/lib/components/Combobox.svelte
+msgid "Select..."
+msgstr "Kies..."
+
+#: src/lib/components/Combobox.svelte
+msgid "No currencies found."
+msgstr "Geen geldeenhede gevind nie."
+
+#: src/lib/components/CookieConsent.svelte
+msgid "Decline"
+msgstr "Weier"
+
+#: src/lib/components/CookieConsent.svelte
+msgid "Accept"
+msgstr "Aanvaar"
+
+#: src/lib/components/CookieConsent.svelte
+msgid "We use cookies for analytics and ads. <0>Learn more</0>"
+msgstr "Ons gebruik webkoekies vir ontledings en advertensies. <0>Leer meer</0>"
+
+#: src/lib/components/CookieModal.svelte
+#: src/lib/components/SettingsModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Escape"
+msgstr "Ontsnap"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Close cookie policy"
+msgstr "Maak koekiebeleid toe"
+
+#: src/lib/components/CookieModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Enter"
+msgstr "Voer in"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Close"
+msgstr "Maak toe"
+
+#: src/lib/components/CookieModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Cookie Policy"
+msgstr "Koekiebeleid"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Essential (Always Active)"
+msgstr "Noodsaaklik (altyd aktief)"
+
+#: src/lib/components/CookieModal.svelte
+msgid "These are required for the site to function. They store your preferences like theme and currency settings in your browser's local storage. No data is sent to external servers."
+msgstr "Dit is nodig vir die webwerf om te funksioneer. Hulle stoor jou voorkeure soos tema- en geldeenheidinstellings in jou blaaier se plaaslike berging. Geen data word na eksterne bedieners gestuur nie."
+
+#: src/lib/components/CookieModal.svelte
+msgid "Analytics (Optional)"
+msgstr "Analytics (opsioneel)"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Google Analytics helps us understand how visitors use the site. It collects anonymized data about page views and interactions. This data is processed by Google."
+msgstr "Google Analytics help ons om te verstaan hoe besoekers die webwerf gebruik. Dit versamel anonieme data oor bladsybesigtigings en interaksies. Hierdie data word deur Google verwerk."
+
+#: src/lib/components/CookieModal.svelte
+msgid "Advertising (Optional)"
+msgstr "Advertensies (opsioneel)"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Google AdSense displays ads to support the site. It may use cookies to show personalized ads based on your browsing history. If declined, ads will not be shown."
+msgstr "Google AdSense vertoon advertensies om die webwerf te ondersteun. Dit kan webkoekies gebruik om gepersonaliseerde advertensies te wys gebaseer op jou blaaigeskiedenis. As dit afgekeur word, sal advertensies nie gewys word nie."
+
+#: src/lib/components/CookieModal.svelte
+msgid "You can change your preference at any time by clearing your browser's local storage for this site."
+msgstr "Jy kan jou voorkeur enige tyd verander deur jou blaaier se plaaslike berging vir hierdie werf skoon te maak."
+
+#: src/lib/components/CookieModal.svelte
+msgid "Decline All"
+msgstr "Weier alles"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Accept All"
+msgstr "Aanvaar Almal"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Something went wrong. Please try again."
+msgstr "Iets het verkeerd geloop. Probeer asseblief weer."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification could not load. Please try again."
+msgstr "Menslike verifikasie kon nie laai nie. Probeer asseblief weer."
+
+#. 0: code
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification could not run{0}. Please try again or use another browser."
+msgstr "Menslike verifikasie kon nie {0} uitvoer nie. Probeer asseblief weer of gebruik 'n ander blaaier."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification expired. Please try again."
+msgstr "Menslike verifikasie het verval. Probeer asseblief weer."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Loading..."
+msgstr "Laai tans..."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verifying..."
+msgstr "Verifieer tans …"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Try again"
+msgstr "Probeer weer"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+#: src/routes/about/+page.svelte
+msgid "About"
+msgstr "Oor"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+#: src/routes/support/+page.svelte
+msgid "Support"
+msgstr "Ondersteuning"
+
+#: src/lib/components/Header.svelte
+msgid "Open settings"
+msgstr "Maak instellings oop"
+
+#: src/lib/components/Header.svelte
+msgid "Open menu"
+msgstr "Maak spyskaart oop"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+msgid "Close menu"
+msgstr "Maak spyskaart toe"
+
+#: src/lib/components/Header.svelte
+msgid "Theme"
+msgstr "Tema"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Settings"
+msgstr "Instellings"
+
+#: src/lib/components/RatesTimestamp.svelte
+msgid "Unavailable"
+msgstr "Onbeskikbaar"
+
+#. 0: readableRateDate
+#: src/lib/components/RatesTimestamp.svelte
+msgid "Rates retrieved: {0}"
+msgstr "Tariewe opgespoor: {0}"
+
+#: src/lib/components/SettingsModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Close settings"
+msgstr "Maak instellings toe"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "With commas (1,234.56)"
+msgstr "Met kommas (1 234,56)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Without commas (1234.56)"
+msgstr "Sonder kommas (1234,56)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Copy format"
+msgstr "Kopieer formaat"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Done"
+msgstr "Klaar"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "Light mode"
+msgstr "Ligte modus"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "Dark mode"
+msgstr "Donker modus"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "System mode"
+msgstr "Stelselmodus"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification is not configured."
+msgstr "Menslike verifikasie is nie opgestel nie."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verification failed. Please try again."
+msgstr "Verifikasie het misluk. Probeer asseblief weer."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verify you're human"
+msgstr "Verifieer dat jy 'n mens is"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Please complete the challenge to view this page."
+msgstr "Voltooi asseblief die uitdaging om hierdie bladsy te sien."
+
+#: src/routes/about/+page.svelte
+msgid "What is a Mithqál?"
+msgstr "Wat is 'n Mithqál?"
+
+#: src/routes/about/+page.svelte
+msgid "A mithqál is a traditional unit of weight used in the Middle East, equivalent to approximately 3.642 grams. In the Bahá'í Faith, it holds special significance as it is used to calculate Huqúqu'lláh (the Right of God), a spiritual obligation for Bahá'ís to contribute 19% of their surplus wealth after essential expenses (only if the individuals net worth is worth 19 Mithqáls of gold or more)."
+msgstr "'n Mithqál is 'n tradisionele gewigseenheid wat in die Midde-Ooste gebruik word, gelykstaande aan ongeveer 3,642 gram. In die Bahá'í Geloof het dit spesiale betekenis aangesien dit gebruik word om Huqúqu'lláh (die Reg van God) te bereken, 'n geestelike verpligting vir Bahá'í's om 19% van hul surplusrykdom by te dra na noodsaaklike uitgawes (slegs as die individu se netto waarde 19 Mithqál werd is of meer)."
+
+#: src/routes/about/+page.svelte
+msgid "What is the Bahá'í Faith?"
+msgstr "Wat is die Bahá'í-geloof?"
+
+#: src/routes/about/+page.svelte
+msgid "Why are there advertisements?"
+msgstr "Hoekom is daar advertensies?"
+
+#: src/routes/about/+page.svelte
+msgid "Do you have a mobile app?"
+msgstr "Het jy 'n mobiele toepassing?"
+
+#: src/routes/about/+page.svelte
+msgid "In the works!"
+msgstr "In die werke!"
+
+#: src/routes/about/+page.svelte
+msgid "Where do the currency and metal rates come from?"
+msgstr "Waar kom die valuta- en metaalkoerse vandaan?"
+
+#: src/routes/about/+page.svelte
+msgid "Gold and silver prices are fetched daily from Swissquote's forex data feed. For each metal, the calculator takes the midpoint of every valid bid/ask quote and uses the median of those midpoints. Currency exchange rates come from FXRatesAPI. The displayed timestamp shows when the latest complete snapshot was successfully retrieved."
+msgstr "Goud- en silwerpryse word daagliks van Swissquote se forex-datavoer gehaal. Vir elke metaal neem die sakrekenaar die middelpunt van elke geldige bod/vra kwotasie en gebruik die mediaan van daardie middelpunte. Geldeenheid wisselkoerse kom van FXRatesAPI. Die vertoonde tydstempel wys wanneer die jongste volledige momentopname suksesvol herwin is."
+
+#: src/routes/+layout.svelte
+msgid "About the Mithqal Calculator: a free tool for converting mithqals of gold and silver to any currency, used for Huqúqu'lláh calculations."
+msgstr "Oor die Mithqal Sakrekenaar: 'n gratis hulpmiddel vir die omskakeling van mithqals van goud en silwer na enige geldeenheid, wat gebruik word vir Huqúqu'lláh berekeninge."
+
+#: src/routes/+layout.svelte
+msgid "About - Mithqal Calculator"
+msgstr "Oor - Mithqal Sakrekenaar"
+
+#: src/routes/about/+page.svelte
+msgid "The <0>Mithqál Calculator</0> is a free tool designed to help calculate the value of gold and silver in mithqáls, the traditional unit of weight used for <1>Huqúqu'lláh</1> calculations in the Bahá'í Faith."
+msgstr "Die <0>Mithqál Sakrekenaar</0> is 'n gratis hulpmiddel wat ontwerp is om die waarde van goud en silwer in mithqáls te help bereken, die tradisionele gewigseenheid wat gebruik word vir <1>Huqúqu'lláh</1> berekeninge in die Bahá'í Geloof."
+
+#: src/routes/about/+page.svelte
+msgid "I am working on a website to showcase all the great Bahai tools people have made online. The domain of the site is bahaitools.app!"
+msgstr "Ek werk aan 'n webwerf om al die wonderlike Bahai-gereedskap wat mense aanlyn gemaak het ten toon te stel. Die domein van die webwerf is bahaitools.app!"
+
+#: src/routes/about/+page.svelte
+msgid "Simply enter the weight in mithqáls, select your preferred currency, and get an instant conversion based on current market rates. The calculator supports over 150 currencies worldwide."
+msgstr "Voer eenvoudig die gewig in mithqáls in, kies jou voorkeurgeldeenheid en kry 'n onmiddellike omskakeling gebaseer op huidige markkoerse. Die sakrekenaar ondersteun meer as 150 geldeenhede wêreldwyd."
+
+#: src/routes/about/+page.svelte
+msgid "Collapse all"
+msgstr "Vou alles in"
+
+#: src/routes/about/+page.svelte
+msgid "Expand all"
+msgstr "Brei alles uit"
+
+#: src/routes/about/+page.svelte
+msgid "Frequently Asked Questions"
+msgstr "Gereelde Vrae"
+
+#: src/routes/+layout.svelte
+msgid "Support the Mithqal Calculator, a free ad-supported tool for converting gold and silver mithqals to any currency."
+msgstr "Ondersteun die Mithqal Sakrekenaar, 'n gratis advertensie-ondersteunde hulpmiddel vir die omskakeling van goud en silwer mithqals na enige geldeenheid."
+
+#: src/routes/+layout.svelte
+msgid "Support - Mithqal Calculator"
+msgstr "Ondersteuning - Mithqal Sakrekenaar"
+
+#: src/routes/support/+page.svelte
+msgid "Ko-fi"
+msgstr "Ko-fi"
+
+#: src/routes/support/+page.svelte
+msgid "Buy me a coffee"
+msgstr "Koop vir my 'n koffie"
+
+#: src/routes/support/+page.svelte
+msgid "World Citizen sticker"
+msgstr "Wêreldburger-plakker"
+
+#: src/routes/support/+page.svelte
+msgid "World Citizen Sticker"
+msgstr "Wêreldburgerplakker"
+
+#: src/routes/support/+page.svelte
+msgid "Buy a sticker"
+msgstr "Koop 'n plakker"
+
+#: src/routes/support/+page.svelte
+msgid "Ways to Support"
+msgstr "Maniere om te ondersteun"
+
+#: src/lib/components/LanguageSwitcher.svelte
+#: src/lib/components/LanguageSwitcher.svelte
+msgid "Language"
+msgstr "Taal"
+
+#: src/routes/about/+page.svelte
+msgid "GitHub"
+msgstr "GitHub"
+
+#: src/routes/about/+page.svelte
+msgid "Twitter (X)"
+msgstr "Twitter (X)"
+
+#: src/routes/about/+page.svelte
+msgid "Bluesky"
+msgstr "Bluesky"
+
+#: src/routes/about/+page.svelte
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: src/routes/about/+page.svelte
+msgid "Socials <0/>"
+msgstr "Socials <0/>"
+
+#: src/routes/about/+page.svelte
+msgid "Hi, I'm <0>Nima</0>, a software developer passionate about building useful tools."
+msgstr "Hallo, ek is <0>Nima</0>, 'n sagteware-ontwikkelaar wat passievol is oor die bou van nuttige gereedskap."
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Grams (g)"
+msgstr "Gram (g)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Troy ounces (oz)"
+msgstr "Troy onse (ons)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Weight unit"
+msgstr "Gewig eenheid"
+
+#: src/routes/about/+page.svelte
+msgid "Email"
+msgstr "E-pos"
+
+#: src/routes/support/+page.svelte
+msgid "Have a suggestion? Found a bug?"
+msgstr "Het u 'n voorstel? Het jy 'n gogga gekry?"
+
+#: src/routes/about/+page.svelte
+msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation, meaning that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit <0>bahai.org</0>."
+msgstr "Die Bahá'í Geloof is 'n wêreldgodsdiens wat deur Bahá'u'lláh in die 19de-eeuse Persië gestig is. Dit leer die noodsaaklike eenheid van alle godsdienste en die eenheid van die mensdom. Bahá'í's glo in progressiewe openbaring, wat beteken dat God 'n reeks goddelike boodskappers deur die geskiedenis gestuur het, insluitend Abraham, Moses, Boeddha, Jesus, Mohammed, en mees onlangs Bahá'u'lláh. Vir meer inligting, besoek asseblief <0>bahai.org</0>."
+
+#: src/routes/about/+page.svelte
+msgid "Advertisements help pay for the fees for running this website."
+msgstr "Advertensies help om die fooie vir die bestuur van hierdie webwerf te betaal."
+
+#: src/routes/support/+page.svelte
+msgid "You can email me at <0>mithqal@mohajeri.dev</0>"
+msgstr "Jy kan my e-pos by <0>mithqal@mohajeri.dev</0>"
+
+#: src/routes/support/+page.svelte
+msgid "The <0>Mithqál Calculator</0> is a free tool. If you find it useful and want more projects like this, consider supporting me."
+msgstr "Die <0>Mithqál Sakrekenaar</0> is 'n gratis hulpmiddel. As jy dit nuttig vind en meer projekte soos hierdie wil hê, oorweeg dit om my te ondersteun."

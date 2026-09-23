@@ -16,6 +16,12 @@ A Mithqál is a unit of weight used to measure gold and silver. One Mithqál is 
 - **Copy to clipboard** - Click the calculated value to copy
 - **Mobile-friendly** - Responsive design with proper RTL currency support
 
+## Supported Languages
+
+The interface is currently available in English, Afrikaans, Arabic, Bemba, Burmese, Chinese,
+French, German, Hindi, Japanese, Korean, Lingala, Malay, Persian, Portuguese, Russian, Spanish,
+Swahili, Tagalog, Thai, Tok Pisin, Urdu, Vietnamese, and Zulu.
+
 ## Usage
 
 1. Open the [Mithqal Calculator](https://mithqal.app/) in your browser

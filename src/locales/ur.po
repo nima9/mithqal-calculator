@@ -1,0 +1,453 @@
+msgid ""
+msgstr ""
+"Source-Language: en\n"
+"Language: ur\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2\n"
+"X-Plurals-Order: one, other\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+
+#: src/routes/+layout.svelte
+#: src/routes/+page.svelte
+msgid "Free mithqál calculator: convert mithqals of gold and silver to any currency with live precious metal and exchange rates."
+msgstr "مفت مثقال کیلکولیٹر: سونے اور چاندی کے مثقال کو زندہ قیمتی دھات اور شرح مبادلہ کے ساتھ کسی بھی کرنسی میں تبدیل کریں۔"
+
+#: src/routes/+layout.svelte
+msgid "Mithqál Calculator – Convert Gold & Silver to Any Currency"
+msgstr "Mithqál کیلکولیٹر - سونے اور چاندی کو کسی بھی کرنسی میں تبدیل کریں۔"
+
+#: src/routes/+layout.svelte
+msgid "Mithqal Calculator"
+msgstr "Mithqal کیلکولیٹر"
+
+#: src/routes/+layout.svelte
+msgid "Mithqal Calculator - Convert mithqals to currency"
+msgstr "Mithqal کیلکولیٹر - مثقال کو کرنسی میں تبدیل کریں۔"
+
+#: src/routes/+page.svelte
+msgid "WebApplication"
+msgstr "ویب ایپلیکیشن"
+
+#: src/lib/components/Header.svelte
+#: src/routes/+page.svelte
+#: src/routes/+page.svelte
+msgid "Mithqál Calculator"
+msgstr "Mithqál کیلکولیٹر"
+
+#: src/routes/+page.svelte
+msgid "FinanceApplication"
+msgstr "فنانس ایپلی کیشن"
+
+#: src/routes/+page.svelte
+msgid "Web"
+msgstr "ویب"
+
+#: src/routes/+page.svelte
+msgid "Requires JavaScript"
+msgstr "جاوا اسکرپٹ کی ضرورت ہے۔"
+
+#: src/routes/+page.svelte
+msgid "Offer"
+msgstr "پیشکش"
+
+#: src/lib/components/Calculator.svelte
+msgid "Gold"
+msgstr "سونا"
+
+#: src/lib/components/Calculator.svelte
+msgid "Silver"
+msgstr "چاندی"
+
+#: src/lib/components/Calculator.svelte
+#: src/lib/components/RatesTimestamp.svelte
+msgid "America/Los_Angeles"
+msgstr "امریکہ/لاس_اینجلس"
+
+#: src/lib/components/Calculator.svelte
+msgid "Click to copy"
+msgstr "کاپی کرنے کے لیے کلک کریں۔"
+
+#: src/lib/components/Calculator.svelte
+msgid "Copied!"
+msgstr "کاپی کیا گیا!"
+
+#: src/lib/components/Calculator.svelte
+msgid "Failed to copy"
+msgstr "کاپی کرنے میں ناکام"
+
+#: src/lib/components/Combobox.svelte
+msgid "Fiat currencies"
+msgstr "Fiat کرنسیاں"
+
+#: src/lib/components/Combobox.svelte
+msgid "Cryptocurrencies"
+msgstr "کرپٹو کرنسی"
+
+#: src/lib/components/Combobox.svelte
+msgid "Select..."
+msgstr "منتخب کریں..."
+
+#: src/lib/components/Combobox.svelte
+msgid "No currencies found."
+msgstr "کوئی کرنسی نہیں ملی۔"
+
+#: src/lib/components/CookieConsent.svelte
+msgid "Decline"
+msgstr "رد کرنا"
+
+#: src/lib/components/CookieConsent.svelte
+msgid "Accept"
+msgstr "قبول کریں۔"
+
+#: src/lib/components/CookieConsent.svelte
+msgid "We use cookies for analytics and ads. <0>Learn more</0>"
+msgstr "ہم تجزیات اور اشتہارات کے لیے کوکیز استعمال کرتے ہیں۔ <0>مزید جانیں</0>"
+
+#: src/lib/components/CookieModal.svelte
+#: src/lib/components/SettingsModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Escape"
+msgstr "فرار"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Close cookie policy"
+msgstr "کوکی پالیسی بند کریں۔"
+
+#: src/lib/components/CookieModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Enter"
+msgstr "داخل کریں۔"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Close"
+msgstr "بند"
+
+#: src/lib/components/CookieModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Cookie Policy"
+msgstr "کوکی پالیسی"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Essential (Always Active)"
+msgstr "ضروری (ہمیشہ فعال)"
+
+#: src/lib/components/CookieModal.svelte
+msgid "These are required for the site to function. They store your preferences like theme and currency settings in your browser's local storage. No data is sent to external servers."
+msgstr "سائٹ کے کام کرنے کے لیے یہ ضروری ہیں۔ وہ آپ کی ترجیحات جیسے تھیم اور کرنسی کی ترتیبات کو آپ کے براؤزر کے مقامی اسٹوریج میں اسٹور کرتے ہیں۔ بیرونی سرورز کو کوئی ڈیٹا نہیں بھیجا جاتا ہے۔"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Analytics (Optional)"
+msgstr "تجزیات (اختیاری)"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Google Analytics helps us understand how visitors use the site. It collects anonymized data about page views and interactions. This data is processed by Google."
+msgstr "Google Analytics ہمیں یہ سمجھنے میں مدد کرتا ہے کہ زائرین سائٹ کو کس طرح استعمال کرتے ہیں۔ یہ صفحہ کے ملاحظات اور تعاملات کے بارے میں گمنام ڈیٹا اکٹھا کرتا ہے۔ یہ ڈیٹا گوگل کے ذریعہ پروسیس کیا جاتا ہے۔"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Advertising (Optional)"
+msgstr "ایڈورٹائزنگ (اختیاری)"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Google AdSense displays ads to support the site. It may use cookies to show personalized ads based on your browsing history. If declined, ads will not be shown."
+msgstr "Google AdSense سائٹ کو سپورٹ کرنے کے لیے اشتہارات دکھاتا ہے۔ یہ آپ کی براؤزنگ ہسٹری کی بنیاد پر ذاتی نوعیت کے اشتہارات دکھانے کے لیے کوکیز کا استعمال کر سکتا ہے۔ اگر مسترد کر دیا جائے تو اشتہارات نہیں دکھائے جائیں گے۔"
+
+#: src/lib/components/CookieModal.svelte
+msgid "You can change your preference at any time by clearing your browser's local storage for this site."
+msgstr "آپ اس سائٹ کے لیے اپنے براؤزر کے مقامی اسٹوریج کو صاف کر کے کسی بھی وقت اپنی ترجیح تبدیل کر سکتے ہیں۔"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Decline All"
+msgstr "سبھی کو مسترد کریں۔"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Accept All"
+msgstr "سب کو قبول کریں۔"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Something went wrong. Please try again."
+msgstr "کچھ غلط ہو گیا۔ براہ کرم دوبارہ کوشش کریں۔"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification could not load. Please try again."
+msgstr "انسانی تصدیق لوڈ نہیں ہو سکی۔ براہ کرم دوبارہ کوشش کریں۔"
+
+#. 0: code
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification could not run{0}. Please try again or use another browser."
+msgstr "انسانی تصدیق {0} نہیں چل سکی۔ براہ کرم دوبارہ کوشش کریں یا دوسرا براؤزر استعمال کریں۔"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification expired. Please try again."
+msgstr "انسانی تصدیق کی میعاد ختم ہوگئی۔ براہ کرم دوبارہ کوشش کریں۔"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Loading..."
+msgstr "لوڈ ہو رہا ہے..."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verifying..."
+msgstr "تصدیق ہو رہی ہے..."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Try again"
+msgstr "دوبارہ کوشش کریں۔"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+#: src/routes/about/+page.svelte
+msgid "About"
+msgstr "کے بارے میں"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+#: src/routes/support/+page.svelte
+msgid "Support"
+msgstr "حمایت"
+
+#: src/lib/components/Header.svelte
+msgid "Open settings"
+msgstr "ترتیبات کھولیں۔"
+
+#: src/lib/components/Header.svelte
+msgid "Open menu"
+msgstr "مینو کھولیں۔"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+msgid "Close menu"
+msgstr "مینو بند کریں۔"
+
+#: src/lib/components/Header.svelte
+msgid "Theme"
+msgstr "تھیم"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Settings"
+msgstr "ترتیبات"
+
+#: src/lib/components/RatesTimestamp.svelte
+msgid "Unavailable"
+msgstr "دستیاب نہیں"
+
+#. 0: readableRateDate
+#: src/lib/components/RatesTimestamp.svelte
+msgid "Rates retrieved: {0}"
+msgstr "قیمتیں بازیافت ہوئیں: {0}"
+
+#: src/lib/components/SettingsModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Close settings"
+msgstr "ترتیبات بند کریں۔"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "With commas (1,234.56)"
+msgstr "کوما کے ساتھ (1,234.56)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Without commas (1234.56)"
+msgstr "کوما کے بغیر (1234.56)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Copy format"
+msgstr "فارمیٹ کاپی کریں۔"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Done"
+msgstr "ہو گیا"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "Light mode"
+msgstr "لائٹ موڈ"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "Dark mode"
+msgstr "ڈارک موڈ"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "System mode"
+msgstr "سسٹم موڈ"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification is not configured."
+msgstr "انسانی تصدیق کنفیگر نہیں ہے۔"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verification failed. Please try again."
+msgstr "تصدیق ناکام ہوگئی۔ براہ کرم دوبارہ کوشش کریں۔"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verify you're human"
+msgstr "تصدیق کریں کہ آپ انسان ہیں۔"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Please complete the challenge to view this page."
+msgstr "براہ کرم اس صفحہ کو دیکھنے کے لیے چیلنج کو مکمل کریں۔"
+
+#: src/routes/about/+page.svelte
+msgid "What is a Mithqál?"
+msgstr "Mithqál کیا ہے؟"
+
+#: src/routes/about/+page.svelte
+msgid "A mithqál is a traditional unit of weight used in the Middle East, equivalent to approximately 3.642 grams. In the Bahá'í Faith, it holds special significance as it is used to calculate Huqúqu'lláh (the Right of God), a spiritual obligation for Bahá'ís to contribute 19% of their surplus wealth after essential expenses (only if the individuals net worth is worth 19 Mithqáls of gold or more)."
+msgstr "مثقال وزن کی ایک روایتی اکائی ہے جو مشرق وسطیٰ میں استعمال ہوتی ہے، جو تقریباً 3.642 گرام کے برابر ہے۔ Bahá'í عقیدے میں، یہ خاص اہمیت رکھتا ہے کیونکہ یہ Huqúqu'lláh (خدا کا حق) کا حساب لگانے کے لیے استعمال ہوتا ہے، Bahá'ís کے لیے ایک روحانی ذمہ داری ہے کہ وہ ضروری اخراجات کے بعد اپنی زائد دولت کا 19% حصہ ڈالیں (صرف اس صورت میں جب افراد کی مجموعی مالیت 19 ZXXXQs سے زیادہ سونے کی ہو)۔"
+
+#: src/routes/about/+page.svelte
+msgid "What is the Bahá'í Faith?"
+msgstr "Bahá'í ایمان کیا ہے؟"
+
+#: src/routes/about/+page.svelte
+msgid "Why are there advertisements?"
+msgstr "اشتہارات کیوں ہیں؟"
+
+#: src/routes/about/+page.svelte
+msgid "Do you have a mobile app?"
+msgstr "کیا آپ کے پاس موبائل ایپ ہے؟"
+
+#: src/routes/about/+page.svelte
+msgid "In the works!"
+msgstr "کاموں میں!"
+
+#: src/routes/about/+page.svelte
+msgid "Where do the currency and metal rates come from?"
+msgstr "کرنسی اور دھات کے نرخ کہاں سے آتے ہیں؟"
+
+#: src/routes/about/+page.svelte
+msgid "Gold and silver prices are fetched daily from Swissquote's forex data feed. For each metal, the calculator takes the midpoint of every valid bid/ask quote and uses the median of those midpoints. Currency exchange rates come from FXRatesAPI. The displayed timestamp shows when the latest complete snapshot was successfully retrieved."
+msgstr "سونے اور چاندی کی قیمتیں روزانہ Swissquote کے فاریکس ڈیٹا فیڈ سے حاصل کی جاتی ہیں۔ ہر دھات کے لیے، کیلکولیٹر ہر درست بولی/پوچھنے والے اقتباس کا مڈ پوائنٹ لیتا ہے اور ان مڈ پوائنٹس کا میڈین استعمال کرتا ہے۔ کرنسی کی شرح تبادلہ FXRatesAPI سے آتی ہے۔ دکھائے گئے ٹائم اسٹیمپ سے پتہ چلتا ہے کہ تازہ ترین مکمل سنیپ شاٹ کب کامیابی کے ساتھ حاصل کیا گیا تھا۔"
+
+#: src/routes/+layout.svelte
+msgid "About the Mithqal Calculator: a free tool for converting mithqals of gold and silver to any currency, used for Huqúqu'lláh calculations."
+msgstr "Mithqal کیلکولیٹر کے بارے میں: سونے اور چاندی کے مثقال کو کسی بھی کرنسی میں تبدیل کرنے کا ایک مفت ٹول، Huqúqu'lláh حساب کے لیے استعمال ہوتا ہے۔"
+
+#: src/routes/+layout.svelte
+msgid "About - Mithqal Calculator"
+msgstr "کے بارے میں - Mithqal کیلکولیٹر"
+
+#: src/routes/about/+page.svelte
+msgid "The <0>Mithqál Calculator</0> is a free tool designed to help calculate the value of gold and silver in mithqáls, the traditional unit of weight used for <1>Huqúqu'lláh</1> calculations in the Bahá'í Faith."
+msgstr "<0>Mithqál کیلکولیٹر</0> ایک مفت ٹول ہے جو سونے اور چاندی کی قدر مثقال میں شمار کرنے میں مدد دیتا ہے، جو <1>Huqúqu'lláh</1> کے حساب کے لیے بہائی مذہب میں استعمال ہونے والی وزن کی روایتی اکائی ہے۔"
+
+#: src/routes/about/+page.svelte
+msgid "I am working on a website to showcase all the great Bahai tools people have made online. The domain of the site is bahaitools.app!"
+msgstr "میں ایک ویب سائٹ پر کام کر رہا ہوں تاکہ لوگوں نے آن لائن بنائے ہوئے تمام عظیم بہائی ٹولز کو ظاہر کیا جا سکے۔ سائٹ کا ڈومین bahaitools.app ہے!"
+
+#: src/routes/about/+page.svelte
+msgid "Simply enter the weight in mithqáls, select your preferred currency, and get an instant conversion based on current market rates. The calculator supports over 150 currencies worldwide."
+msgstr "صرف مثقال میں وزن درج کریں، اپنی پسندیدہ کرنسی کا انتخاب کریں، اور موجودہ مارکیٹ ریٹ کی بنیاد پر فوری تبدیلی حاصل کریں۔ کیلکولیٹر دنیا بھر میں 150 سے زیادہ کرنسیوں کو سپورٹ کرتا ہے۔"
+
+#: src/routes/about/+page.svelte
+msgid "Collapse all"
+msgstr "سب کو سمیٹیں۔"
+
+#: src/routes/about/+page.svelte
+msgid "Expand all"
+msgstr "سبھی کو پھیلائیں۔"
+
+#: src/routes/about/+page.svelte
+msgid "Frequently Asked Questions"
+msgstr "اکثر پوچھے گئے سوالات"
+
+#: src/routes/+layout.svelte
+msgid "Support the Mithqal Calculator, a free ad-supported tool for converting gold and silver mithqals to any currency."
+msgstr "Mithqal کیلکولیٹر کو سپورٹ کریں، سونے اور چاندی کے مثقال کو کسی بھی کرنسی میں تبدیل کرنے کے لیے ایک مفت اشتہار سے تعاون یافتہ ٹول۔"
+
+#: src/routes/+layout.svelte
+msgid "Support - Mithqal Calculator"
+msgstr "سپورٹ - Mithqal کیلکولیٹر"
+
+#: src/routes/support/+page.svelte
+msgid "Ko-fi"
+msgstr "Ko-fi"
+
+#: src/routes/support/+page.svelte
+msgid "Buy me a coffee"
+msgstr "مجھے ایک کافی خرید دو"
+
+#: src/routes/support/+page.svelte
+msgid "World Citizen sticker"
+msgstr "عالمی شہری اسٹیکر"
+
+#: src/routes/support/+page.svelte
+msgid "World Citizen Sticker"
+msgstr "عالمی شہری اسٹیکر"
+
+#: src/routes/support/+page.svelte
+msgid "Buy a sticker"
+msgstr "ایک اسٹیکر خریدیں۔"
+
+#: src/routes/support/+page.svelte
+msgid "Ways to Support"
+msgstr "سپورٹ کرنے کے طریقے"
+
+#: src/lib/components/LanguageSwitcher.svelte
+#: src/lib/components/LanguageSwitcher.svelte
+msgid "Language"
+msgstr "زبان"
+
+#: src/routes/about/+page.svelte
+msgid "GitHub"
+msgstr "GitHub"
+
+#: src/routes/about/+page.svelte
+msgid "Twitter (X)"
+msgstr "Twitter (X)"
+
+#: src/routes/about/+page.svelte
+msgid "Bluesky"
+msgstr "Bluesky"
+
+#: src/routes/about/+page.svelte
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: src/routes/about/+page.svelte
+msgid "Socials <0/>"
+msgstr "سوشلز <0/>"
+
+#: src/routes/about/+page.svelte
+msgid "Hi, I'm <0>Nima</0>, a software developer passionate about building useful tools."
+msgstr "ہائے، میں <0>Nima</0> ہوں، ایک سافٹ ویئر ڈویلپر ہوں جو مفید ٹولز بنانے کا شوق رکھتا ہے۔"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Grams (g)"
+msgstr "گرام (g)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Troy ounces (oz)"
+msgstr "ٹرائے اونس (اونس)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Weight unit"
+msgstr "وزن کی اکائی"
+
+#: src/routes/about/+page.svelte
+msgid "Email"
+msgstr "ای میل"
+
+#: src/routes/support/+page.svelte
+msgid "Have a suggestion? Found a bug?"
+msgstr "کوئی تجویز ہے؟ ایک بگ ملا؟"
+
+#: src/routes/about/+page.svelte
+msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation, meaning that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit <0>bahai.org</0>."
+msgstr "Bahá'í عقیدہ ایک عالمی مذہب ہے جس کی بنیاد Bahá'u'lláh نے 19ویں صدی کے فارس میں رکھی تھی۔ یہ تمام مذاہب کی لازمی یکجہتی اور انسانیت کے اتحاد کا درس دیتا ہے۔ Bahá'ís ترقی پسند وحی پر یقین رکھتے ہیں، مطلب یہ ہے کہ خدا نے پوری تاریخ میں الہی رسولوں کا ایک سلسلہ بھیجا ہے، بشمول ابراہیم، موسیٰ، بدھ، عیسیٰ، محمد، اور حال ہی میں Bahá'u'lláh۔ مزید معلومات کے لیے، براہ کرم <0>bahai.org</0> ملاحظہ کریں۔"
+
+#: src/routes/about/+page.svelte
+msgid "Advertisements help pay for the fees for running this website."
+msgstr "اشتہارات اس ویب سائٹ کو چلانے کے لیے فیس کی ادائیگی میں مدد کرتے ہیں۔"
+
+#: src/routes/support/+page.svelte
+msgid "You can email me at <0>mithqal@mohajeri.dev</0>"
+msgstr "آپ مجھے <0>mithqal@mohajeri.dev</0> پر ای میل کر سکتے ہیں"
+
+#: src/routes/support/+page.svelte
+msgid "The <0>Mithqál Calculator</0> is a free tool. If you find it useful and want more projects like this, consider supporting me."
+msgstr "<0>Mithqál کیلکولیٹر</0> ایک مفت ٹول ہے۔ اگر آپ کو یہ کارآمد لگتا ہے اور اس طرح کے مزید پروجیکٹس چاہتے ہیں تو میری مدد کرنے پر غور کریں۔"

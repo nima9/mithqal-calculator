@@ -1,4 +1,5 @@
 import { describe, expect, test } from "bun:test";
+import { LANGUAGE_OPTIONS } from "../src/lib/i18n";
 import {
   DEFAULT_SENTENCE_LANGUAGE,
   getSentenceLanguage,
@@ -10,25 +11,17 @@ const SLOTS: SentenceSlot[] = ["amount", "mithqalLabel", "metal", "currency"];
 
 describe("getSentenceLanguage", () => {
   test("returns the requested language", () => {
-    for (const id of [
-      "en",
-      "ar",
-      "fa",
-      "es",
-      "fr",
-      "zh",
-      "ja",
-      "ko",
-      "hi",
-      "sw",
-      "pt",
-      "ru",
-      "de",
-    ]) {
+    for (const { value: id } of LANGUAGE_OPTIONS) {
       expect(getSentenceLanguage(id)).toBe(
         SENTENCE_LANGUAGES[id as keyof typeof SENTENCE_LANGUAGES],
       );
     }
+  });
+
+  test("matches every language offered by the picker", () => {
+    expect(Object.keys(SENTENCE_LANGUAGES).sort()).toEqual(
+      LANGUAGE_OPTIONS.map(({ value }) => value).sort(),
+    );
   });
 
   test("falls back to the default for unknown or missing ids", () => {

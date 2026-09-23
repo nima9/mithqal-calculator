@@ -1,0 +1,453 @@
+msgid ""
+msgstr ""
+"Source-Language: en\n"
+"Language: bem\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2\n"
+"X-Plurals-Order: one, other\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+
+#: src/routes/+layout.svelte
+#: src/routes/+page.svelte
+msgid "Free mithqál calculator: convert mithqals of gold and silver to any currency with live precious metal and exchange rates."
+msgstr "Icipendo ca mithqál icabula ukulipila: ukupilibula imithqal ya golde na silfere ku ndalama iili yonse iyakwata ifyuma fya mutengo ifya mweo ne mitengo ya kupilibula."
+
+#: src/routes/+layout.svelte
+msgid "Mithqál Calculator – Convert Gold & Silver to Any Currency"
+msgstr "Icipendo ca Mithqál – Ukupilibula Golide na Siliva ku Ndalama Iili Yonse"
+
+#: src/routes/+layout.svelte
+msgid "Mithqal Calculator"
+msgstr "Icipendo ca Mithqal"
+
+#: src/routes/+layout.svelte
+msgid "Mithqal Calculator - Convert mithqals to currency"
+msgstr "Icipendo ca Mithqal - Ukupilibula amano ku ndalama"
+
+#: src/routes/+page.svelte
+msgid "WebApplication"
+msgstr "Icibombelo ca pa webu"
+
+#: src/lib/components/Header.svelte
+#: src/routes/+page.svelte
+#: src/routes/+page.svelte
+msgid "Mithqál Calculator"
+msgstr "Icipendo ca Mithqál"
+
+#: src/routes/+page.svelte
+msgid "FinanceApplication"
+msgstr "Ipepo lya fya ndalama"
+
+#: src/routes/+page.svelte
+msgid "Web"
+msgstr "Webu"
+
+#: src/routes/+page.svelte
+msgid "Requires JavaScript"
+msgstr "Ifilefwaikwa ifilembo fya Java"
+
+#: src/routes/+page.svelte
+msgid "Offer"
+msgstr "Ukupeela"
+
+#: src/lib/components/Calculator.svelte
+msgid "Gold"
+msgstr "Golide"
+
+#: src/lib/components/Calculator.svelte
+msgid "Silver"
+msgstr "Siliva"
+
+#: src/lib/components/Calculator.svelte
+#: src/lib/components/RatesTimestamp.svelte
+msgid "America/Los_Angeles"
+msgstr "Amerika/Icalo ca Los"
+
+#: src/lib/components/Calculator.svelte
+msgid "Click to copy"
+msgstr "Tinikeni pakukopa"
+
+#: src/lib/components/Calculator.svelte
+msgid "Copied!"
+msgstr "Cakopwa!"
+
+#: src/lib/components/Calculator.svelte
+msgid "Failed to copy"
+msgstr "Cafilwa ukukopa"
+
+#: src/lib/components/Combobox.svelte
+msgid "Fiat currencies"
+msgstr "Indalama sha Fiat"
+
+#: src/lib/components/Combobox.svelte
+msgid "Cryptocurrencies"
+msgstr "Amalipilo ya crypto"
+
+#: src/lib/components/Combobox.svelte
+msgid "Select..."
+msgstr "Saleni..."
+
+#: src/lib/components/Combobox.svelte
+msgid "No currencies found."
+msgstr "Tapali indalama ishisangilwe."
+
+#: src/lib/components/CookieConsent.svelte
+msgid "Decline"
+msgstr "Ukukana"
+
+#: src/lib/components/CookieConsent.svelte
+msgid "Accept"
+msgstr "Pokeleleni"
+
+#: src/lib/components/CookieConsent.svelte
+msgid "We use cookies for analytics and ads. <0>Learn more</0>"
+msgstr "Tubomfya ama cookies ku kufwailisha no kusabankanya. <0>Sambilileni ifingi</0>"
+
+#: src/lib/components/CookieModal.svelte
+#: src/lib/components/SettingsModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Escape"
+msgstr "Ukubutuka"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Close cookie policy"
+msgstr "Isaleni inshila shakubomfya"
+
+#: src/lib/components/CookieModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Enter"
+msgstr "Ingisha"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Close"
+msgstr "Isaleni"
+
+#: src/lib/components/CookieModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Cookie Policy"
+msgstr "Ifunde lya fyakupangapanga"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Essential (Always Active)"
+msgstr "Icacindama (Lyonse Icibomba)"
+
+#: src/lib/components/CookieModal.svelte
+msgid "These are required for the site to function. They store your preferences like theme and currency settings in your browser's local storage. No data is sent to external servers."
+msgstr "Ifi filekabilwa pa kuti incende ibombe. Basunga ifyo mwatemwa pamo nga umutwe ne mipangilwe ya ndalama mu cifulo ca kusungilamo ifyakubomfya. Tapali amashiwi ayatumwa ku batumikishi ba kunse."
+
+#: src/lib/components/CookieModal.svelte
+msgid "Analytics (Optional)"
+msgstr "Ukupitulukamo (Nga mulefwaya)"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Google Analytics helps us understand how visitors use the site. It collects anonymized data about page views and interactions. This data is processed by Google."
+msgstr "Google Analytics ilatwafwa ukwishiba ifyo abatandashi babomfya incende. Ilonganika ifyebo ifishiishibikwe pa lwa mimonekele ya mabuula no kulanshanya. Iyi data ilabomfiwa na Google."
+
+#: src/lib/components/CookieModal.svelte
+msgid "Advertising (Optional)"
+msgstr "Ukusabankanya (Nga mulefwaya)"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Google AdSense displays ads to support the site. It may use cookies to show personalized ads based on your browsing history. If declined, ads will not be shown."
+msgstr "Google AdSense ilalanga ifyakusabankanya ifya kwafwilisha incende. Kuti yabomfya ama cookies pakulangisha ifyakusabankanya ifyalinga ukulingana nefyo mwafwaile. Ngacakanishiwa, ifyakusabankanya tafikalangishiwe."
+
+#: src/lib/components/CookieModal.svelte
+msgid "You can change your preference at any time by clearing your browser's local storage for this site."
+msgstr "Kuti wacinja ifyo ulefwaya inshita iili yonse ukupitila mu kufumyapo ifipe fyakubikamo ifyakubomfya pali iyi incende."
+
+#: src/lib/components/CookieModal.svelte
+msgid "Decline All"
+msgstr "Kaana Fyonse"
+
+#: src/lib/components/CookieModal.svelte
+msgid "Accept All"
+msgstr "Pokeleleni Fyonse"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Something went wrong. Please try again."
+msgstr "Pali fimo ifyalubene. Mukwai esheniko nakabili."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification could not load. Please try again."
+msgstr "Ukushininkisha kwa muntu tekuti kusende. Mukwai esheniko nakabili."
+
+#. 0: code
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification could not run{0}. Please try again or use another browser."
+msgstr "Ukushininkisha kwa muntu tekuti kucite{0}. Mukwai esheniko nakabili nangu bomfyeni icakufwailako cimbi."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification expired. Please try again."
+msgstr "Ukushininkisha kwa muntu kwapwa. Mukwai esheniko nakabili."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Loading..."
+msgstr "Ukubika..."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verifying..."
+msgstr "Ukushininkisha..."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Try again"
+msgstr "Esheni nakabili"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+#: src/routes/about/+page.svelte
+msgid "About"
+msgstr "Pa lwa"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+#: src/routes/support/+page.svelte
+msgid "Support"
+msgstr "Ukwafwilisha"
+
+#: src/lib/components/Header.svelte
+msgid "Open settings"
+msgstr "Isuleni imitantikile"
+
+#: src/lib/components/Header.svelte
+msgid "Open menu"
+msgstr "Isuleni menyu"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/Header.svelte
+msgid "Close menu"
+msgstr "Isaleni menyu"
+
+#: src/lib/components/Header.svelte
+msgid "Theme"
+msgstr "Umutwe"
+
+#: src/lib/components/Header.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Settings"
+msgstr "Imitantikile"
+
+#: src/lib/components/RatesTimestamp.svelte
+msgid "Unavailable"
+msgstr "Tacisangwa"
+
+#. 0: readableRateDate
+#: src/lib/components/RatesTimestamp.svelte
+msgid "Rates retrieved: {0}"
+msgstr "Imitengo yasangwa: {0}"
+
+#: src/lib/components/SettingsModal.svelte
+#: src/lib/components/SettingsModal.svelte
+msgid "Close settings"
+msgstr "Isaleni imitantikile"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "With commas (1,234.56)"
+msgstr "Na makoma (1,234,56)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Without commas (1234.56)"
+msgstr "Ukwabula amakoma (1234.56)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Copy format"
+msgstr "Imipangile ya kopa"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Done"
+msgstr "Napwisha"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "Light mode"
+msgstr "Umusango wa lubuuto"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "Dark mode"
+msgstr "Umusango wafiita"
+
+#: src/lib/components/ThemeSwitcher.svelte
+msgid "System mode"
+msgstr "Umusango wa mibombele"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Human verification is not configured."
+msgstr "Ukushininkisha kwa muntu takwapangwa."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verification failed. Please try again."
+msgstr "Ukushininkisha kwafilwa. Mukwai esheniko nakabili."
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Verify you're human"
+msgstr "Shininkisheni ukuti muli muntu"
+
+#: src/lib/components/TurnstileGate.svelte
+msgid "Please complete the challenge to view this page."
+msgstr "Mukwai pwisheni ukukansana pakuti mumone ili ibuula."
+
+#: src/routes/about/+page.svelte
+msgid "What is a Mithqál?"
+msgstr "Bushe Mithqál ni shani?"
+
+#: src/routes/about/+page.svelte
+msgid "A mithqál is a traditional unit of weight used in the Middle East, equivalent to approximately 3.642 grams. In the Bahá'í Faith, it holds special significance as it is used to calculate Huqúqu'lláh (the Right of God), a spiritual obligation for Bahá'ís to contribute 19% of their surplus wealth after essential expenses (only if the individuals net worth is worth 19 Mithqáls of gold or more)."
+msgstr "Mithqál ni cipimo ca cifyalilwa ica kupiminako icabomfiwa ku Kabanga ka Pakati, icalingana na ma gram 3.642. Mu Citetekelo ca Bahá'í, cikwata ubucindami bwa pa lwakwe nga fintu cibomfiwa ku kupenda Huqúqu'lláh (Ubuteko bwa kwa Lesa), umulimo wa ku mupashi uwa ba Bahá'í ukusangwilako 19% iya bunonshi bwabo ubwashala pa numa ya kubomfya indalama shacindama (nga ca kuti fye umuntu umo umo umutengo wa bunonshi bwacilapo nelyo 19)."
+
+#: src/routes/about/+page.svelte
+msgid "What is the Bahá'í Faith?"
+msgstr "Bushe Icitetekelo ca Bahá'í ni shani?"
+
+#: src/routes/about/+page.svelte
+msgid "Why are there advertisements?"
+msgstr "Bushe mulandu nshi kuli ukubilisha?"
+
+#: src/routes/about/+page.svelte
+msgid "Do you have a mobile app?"
+msgstr "Bushe muli na app iya pa foni?"
+
+#: src/routes/about/+page.svelte
+msgid "In the works!"
+msgstr "Mu milimo!"
+
+#: src/routes/about/+page.svelte
+msgid "Where do the currency and metal rates come from?"
+msgstr "Bushe indalama ne mitengo ya fya mukuba fyafuma kwi?"
+
+#: src/routes/about/+page.svelte
+msgid "Gold and silver prices are fetched daily from Swissquote's forex data feed. For each metal, the calculator takes the midpoint of every valid bid/ask quote and uses the median of those midpoints. Currency exchange rates come from FXRatesAPI. The displayed timestamp shows when the latest complete snapshot was successfully retrieved."
+msgstr "Imitengo ya golde na silfere ilasendwa cila bushiku ukufuma ku fya kulya fya ku nse ifya Swissquote. Pa cimuti cimo na cimo, icakupendapo cipoka umupaka wa cila cipimo icalinga icakubikapo/ukuipusha no kubomfya umupaka wa pakati ka iyo miputule. Imitantikile ya ndalama sha kwalula ifuma ku FXRatesAPI. Icilangililo ca nshita icalangishiwa cilanga ilyo icikope ica nomba line icapwililika casangilwe bwino bwino."
+
+#: src/routes/+layout.svelte
+msgid "About the Mithqal Calculator: a free tool for converting mithqals of gold and silver to any currency, used for Huqúqu'lláh calculations."
+msgstr "Pa lwa cipe ca kupendapo: icibombelo ca buntunse ica kwalula imithqals ya golde na silfere ku ndalama iili yonse, iyabomfiwa ku kupendapo kwa Huqúqu'lláh."
+
+#: src/routes/+layout.svelte
+msgid "About - Mithqal Calculator"
+msgstr "Pa lwa - Icipendo ca Mithqal"
+
+#: src/routes/about/+page.svelte
+msgid "The <0>Mithqál Calculator</0> is a free tool designed to help calculate the value of gold and silver in mithqáls, the traditional unit of weight used for <1>Huqúqu'lláh</1> calculations in the Bahá'í Faith."
+msgstr "<0>Icipe ca kupendapo ica Mithqál</0> cibombelo ca fye icapangwa ku kwafwilisha ukupenda umutengo wa golde na silfere mu mithqáls, icipimo ca cifyalilwa ica bupimo icabomfiwa ku kupenda kwa <1>Huqúqu'lláh</1> mu Citetekelo ca Bahá'í."
+
+#: src/routes/about/+page.svelte
+msgid "I am working on a website to showcase all the great Bahai tools people have made online. The domain of the site is bahaitools.app!"
+msgstr "Nalebomba pa webusaiti ku kulanga ifibombelo fyonse ifisuma ifya Bahai ifyo abantu bapanga pa Intaneti. Iciputulwa ca ncende ni ifibombelo.app!"
+
+#: src/routes/about/+page.svelte
+msgid "Simply enter the weight in mithqáls, select your preferred currency, and get an instant conversion based on current market rates. The calculator supports over 150 currencies worldwide."
+msgstr "Ingisheni fye ubukata mu mithqáls, saleni indalama mulefwaya, no kusanga ukwaluka kwa bwangu ukulingana ne mitengo ya nomba iya mushiika. Icipendo cilasuminisha indalama ukucila pali 150 mu calo conse."
+
+#: src/routes/about/+page.svelte
+msgid "Collapse all"
+msgstr "Ukuonaula fyonse"
+
+#: src/routes/about/+page.svelte
+msgid "Expand all"
+msgstr "Ukusansamusha fyonse"
+
+#: src/routes/about/+page.svelte
+msgid "Frequently Asked Questions"
+msgstr "Ifipusho Ifipushiwa Ilingi"
+
+#: src/routes/+layout.svelte
+msgid "Support the Mithqal Calculator, a free ad-supported tool for converting gold and silver mithqals to any currency."
+msgstr "Ukutungilila Mithqal Icipendo, icibombelo icabula ukulipila ica kwalukila ku ndalama sha golde na silfere ku ndalama iili yonse."
+
+#: src/routes/+layout.svelte
+msgid "Support - Mithqal Calculator"
+msgstr "Ubwafwilisho - Icipendo ca Mithqal"
+
+#: src/routes/support/+page.svelte
+msgid "Ko-fi"
+msgstr "Ko-fi"
+
+#: src/routes/support/+page.svelte
+msgid "Buy me a coffee"
+msgstr "Mundetele koofi"
+
+#: src/routes/support/+page.svelte
+msgid "World Citizen sticker"
+msgstr "Icipampa ca Mwikashi wa Calo"
+
+#: src/routes/support/+page.svelte
+msgid "World Citizen Sticker"
+msgstr "Icikope ca Mwikashi wa Calo"
+
+#: src/routes/support/+page.svelte
+msgid "Buy a sticker"
+msgstr "Shiteni icikope"
+
+#: src/routes/support/+page.svelte
+msgid "Ways to Support"
+msgstr "Inshila sha kwafwilishamo"
+
+#: src/lib/components/LanguageSwitcher.svelte
+#: src/lib/components/LanguageSwitcher.svelte
+msgid "Language"
+msgstr "Ululimi"
+
+#: src/routes/about/+page.svelte
+msgid "GitHub"
+msgstr "GitHub"
+
+#: src/routes/about/+page.svelte
+msgid "Twitter (X)"
+msgstr "Twitter (X)"
+
+#: src/routes/about/+page.svelte
+msgid "Bluesky"
+msgstr "Bluesky"
+
+#: src/routes/about/+page.svelte
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: src/routes/about/+page.svelte
+msgid "Socials <0/>"
+msgstr "Imibele ya cikaya <0/>"
+
+#: src/routes/about/+page.svelte
+msgid "Hi, I'm <0>Nima</0>, a software developer passionate about building useful tools."
+msgstr "Mwapoleni, nine <0>Nima</0>, kapanga wa mapulogalamu ya kompyuta uwatemwa sana ukupanga ifibombelo fyacindama."
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Grams (g)"
+msgstr "Amagilamu (g)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Troy ounces (oz)"
+msgstr "Ama ounsi ya troy (oz)"
+
+#: src/lib/components/SettingsModal.svelte
+msgid "Weight unit"
+msgstr "Icipimilo ca bupiina"
+
+#: src/routes/about/+page.svelte
+msgid "Email"
+msgstr "Imeli"
+
+#: src/routes/support/+page.svelte
+msgid "Have a suggestion? Found a bug?"
+msgstr "Bushe muli no kupanda amano? Bushe mwasanga icipuupu?"
+
+#: src/routes/about/+page.svelte
+msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation, meaning that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit <0>bahai.org</0>."
+msgstr "Icitetekelo ca mu calo conse icatendeke mu Persia mu mwanda wa myaka uwalenga 19. Isambilisha ubumo bwacindama ubwa mapepo yonse no bumo bwa bantunse. Aba Bahá'ís basumina mu kusokolola ukwalunduluka, ukupilibula ukuti Lesa atumine umutande wa batumwa ba bulesa mu lyashi lya kale lyonse, ukusanshako Abrahamu, Mose, Buda, Yesu, Muhamadi, kabili nomba line Bahá'u'lláh. Pa lwa fyebo na fimbi, mukwai kabiyeni ku <0>bahai.org</0>."
+
+#: src/routes/about/+page.svelte
+msgid "Advertisements help pay for the fees for running this website."
+msgstr "Ukubilisha kwa kwafwilisha ukulipila indalama sha kubomfya iyi webusaiti."
+
+#: src/routes/support/+page.svelte
+msgid "You can email me at <0>mithqal@mohajeri.dev</0>"
+msgstr "Kuti mwantumina imelo ku <0>mithqal@mohajeri.dev</0>"
+
+#: src/routes/support/+page.svelte
+msgid "The <0>Mithqál Calculator</0> is a free tool. If you find it useful and want more projects like this, consider supporting me."
+msgstr "<0>Icipe ca kupendapo ica Mithqál</0> ni cibombelo ca fye. Nga mwasanga ukuti calicindama kabili mulefwaya imilimo iingi nga iyi, tontonkanyeni pa kunsuminisha."

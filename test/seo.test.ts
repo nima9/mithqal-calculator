@@ -25,7 +25,7 @@ describe("localized SEO URLs", () => {
 
   test("maps every supported language to an Open Graph locale", () => {
     for (const language of LANGUAGE_OPTIONS) {
-      expect(OPEN_GRAPH_LOCALES[language.value]).toMatch(/^[a-z]{2}_[A-Z]{2}$/);
+      expect(OPEN_GRAPH_LOCALES[language.value]).toMatch(/^[a-z]{2,3}_[A-Z]{2}$/);
     }
   });
 });
