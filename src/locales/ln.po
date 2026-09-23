@@ -7,12 +7,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2\n"
 "X-Plurals-Order: one, other\n"
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
 
 #: src/routes/+layout.svelte
 #: src/routes/+page.svelte
@@ -35,7 +29,6 @@ msgstr "Mithqal Calculator - Convert mithqals to currency"
 msgid "WebApplication"
 msgstr "Application ya Web"
 
-#: src/lib/components/Header.svelte
 #: src/routes/+page.svelte
 #: src/routes/+page.svelte
 msgid "Mithqál Calculator"
@@ -170,9 +163,15 @@ msgstr "Boboya Nionso"
 msgid "Accept All"
 msgstr "Ndima Nyonso"
 
+#~ msgid "Failed to get contact email."
+#~ msgstr ""
+
 #: src/lib/components/TurnstileGate.svelte
 msgid "Something went wrong. Please try again."
 msgstr "Eloko moko ekendeki mabe. Svp meka lisusu."
+
+#~ msgid "Contact verification is not configured."
+#~ msgstr ""
 
 #: src/lib/components/TurnstileGate.svelte
 msgid "Human verification could not load. Please try again."
@@ -187,6 +186,9 @@ msgstr "Vérification ya moto ekokaki te kosala{0}. Svp meka lisusu to salela na
 msgid "Human verification expired. Please try again."
 msgstr "Vérification ya bato esilaki. Svp meka lisusu."
 
+#~ msgid "Copy failed"
+#~ msgstr ""
+
 #: src/lib/components/TurnstileGate.svelte
 msgid "Loading..."
 msgstr "Ezali ko charger..."
@@ -198,6 +200,21 @@ msgstr "Ko vérifier..."
 #: src/lib/components/TurnstileGate.svelte
 msgid "Try again"
 msgstr "Meká lisusu"
+
+#~ msgid "Email {0}"
+#~ msgstr ""
+
+#~ msgid "Copy email address"
+#~ msgstr ""
+
+#~ msgid "Reach out!"
+#~ msgstr ""
+
+#~ msgid "Special Sponsor"
+#~ msgstr ""
+
+#~ msgid "We're looking for sponsors to keep this project alive and perhaps ad-free"
+#~ msgstr ""
 
 #: src/lib/components/Header.svelte
 #: src/lib/components/Header.svelte
@@ -303,9 +320,15 @@ msgstr "Mithqál ezali kilo ya bonkɔkɔ oyo basalelaka na Moyen-Orient, ekokani
 msgid "What is the Bahá'í Faith?"
 msgstr "Kondima ya Bahá'í ezali nini?"
 
+#~ msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation—that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit bahai.org"
+#~ msgstr ""
+
 #: src/routes/about/+page.svelte
 msgid "Why are there advertisements?"
 msgstr "Mpo na nini bapiblisite ezali?"
+
+#~ msgid "Currently, there are no advertisements on this site. The Mithqál Calculator is provided as a free service to the community. If ads are ever introduced, they would be to help cover hosting and maintenance costs while keeping the calculator freely accessible to everyone."
+#~ msgstr ""
 
 #: src/routes/about/+page.svelte
 msgid "Do you have a mobile app?"
@@ -363,6 +386,9 @@ msgstr "Bosunga Calculateur Mithqal, esaleli ya ofele oyo esungami na piblisite 
 msgid "Support - Mithqal Calculator"
 msgstr "Lisungi - Calculateur Mithqal"
 
+#~ msgid "The <0>Mithqal Calculator</0> is a free, ad-free tool built to serve the community. If you find it useful and would like to help keep it running, consider supporting the project."
+#~ msgstr ""
+
 #: src/routes/support/+page.svelte
 msgid "Ko-fi"
 msgstr "Ko-fi ezali na ntina mingi"
@@ -383,9 +409,18 @@ msgstr "Sticker ya mwana mboka ya mokili mobimba"
 msgid "Buy a sticker"
 msgstr "Somba sticker moko"
 
+#~ msgid "PayPal"
+#~ msgstr ""
+
+#~ msgid "One-time donation"
+#~ msgstr ""
+
 #: src/routes/support/+page.svelte
 msgid "Ways to Support"
 msgstr "Banzela ya kosunga"
+
+#~ msgid "Your support helps cover hosting and domain costs and allows me to continue improving the calculator."
+#~ msgstr ""
 
 #: src/lib/components/LanguageSwitcher.svelte
 #: src/lib/components/LanguageSwitcher.svelte
@@ -436,6 +471,9 @@ msgstr "Email na nzela ya email"
 msgid "Have a suggestion? Found a bug?"
 msgstr "Ozali na likanisi moko? Ozwi likambo moko ya mabe?"
 
+#~ msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
+#~ msgstr ""
+
 #: src/routes/about/+page.svelte
 msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation, meaning that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit <0>bahai.org</0>."
 msgstr "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Ba Bahá'ís bandimaka emoniseli ya bokende liboso, elingi koloba ete Nzambe atindaki molɔngɔ ya bamemi-nsango ya bonzambe na boumeli ya lisolo mobimba, bakisa mpe Abraham, Moize, Bouddha, Yesu, Muhammad, mpe kala mingi te Bahá'u'lláh. For more information, please visit <0>bahai.org</0>."
@@ -443,6 +481,9 @@ msgstr "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-
 #: src/routes/about/+page.svelte
 msgid "Advertisements help pay for the fees for running this website."
 msgstr "Advertisements help pay for the fees for running this website."
+
+#~ msgid "The <0>Mithqal Calculator</0> is a free tool built to serve the community. If you find it useful and want more projects like this, consider supporting me."
+#~ msgstr ""
 
 #: src/routes/support/+page.svelte
 msgid "You can email me at <0>mithqal@mohajeri.dev</0>"

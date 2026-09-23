@@ -7,12 +7,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2\n"
 "X-Plurals-Order: one, other\n"
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
 
 #: src/routes/+layout.svelte
 #: src/routes/+page.svelte
@@ -35,7 +29,6 @@ msgstr "Mithqal کیلکولیٹر - مثقال کو کرنسی میں تبدی�
 msgid "WebApplication"
 msgstr "ویب ایپلیکیشن"
 
-#: src/lib/components/Header.svelte
 #: src/routes/+page.svelte
 #: src/routes/+page.svelte
 msgid "Mithqál Calculator"
@@ -170,9 +163,15 @@ msgstr "سبھی کو مسترد کریں۔"
 msgid "Accept All"
 msgstr "سب کو قبول کریں۔"
 
+#~ msgid "Failed to get contact email."
+#~ msgstr ""
+
 #: src/lib/components/TurnstileGate.svelte
 msgid "Something went wrong. Please try again."
 msgstr "کچھ غلط ہو گیا۔ براہ کرم دوبارہ کوشش کریں۔"
+
+#~ msgid "Contact verification is not configured."
+#~ msgstr ""
 
 #: src/lib/components/TurnstileGate.svelte
 msgid "Human verification could not load. Please try again."
@@ -187,6 +186,9 @@ msgstr "انسانی تصدیق {0} نہیں چل سکی۔ براہ کرم دو�
 msgid "Human verification expired. Please try again."
 msgstr "انسانی تصدیق کی میعاد ختم ہوگئی۔ براہ کرم دوبارہ کوشش کریں۔"
 
+#~ msgid "Copy failed"
+#~ msgstr ""
+
 #: src/lib/components/TurnstileGate.svelte
 msgid "Loading..."
 msgstr "لوڈ ہو رہا ہے..."
@@ -198,6 +200,21 @@ msgstr "تصدیق ہو رہی ہے..."
 #: src/lib/components/TurnstileGate.svelte
 msgid "Try again"
 msgstr "دوبارہ کوشش کریں۔"
+
+#~ msgid "Email {0}"
+#~ msgstr ""
+
+#~ msgid "Copy email address"
+#~ msgstr ""
+
+#~ msgid "Reach out!"
+#~ msgstr ""
+
+#~ msgid "Special Sponsor"
+#~ msgstr ""
+
+#~ msgid "We're looking for sponsors to keep this project alive and perhaps ad-free"
+#~ msgstr ""
 
 #: src/lib/components/Header.svelte
 #: src/lib/components/Header.svelte
@@ -303,9 +320,15 @@ msgstr "مثقال وزن کی ایک روایتی اکائی ہے جو مشرق
 msgid "What is the Bahá'í Faith?"
 msgstr "Bahá'í ایمان کیا ہے؟"
 
+#~ msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation—that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit bahai.org"
+#~ msgstr ""
+
 #: src/routes/about/+page.svelte
 msgid "Why are there advertisements?"
 msgstr "اشتہارات کیوں ہیں؟"
+
+#~ msgid "Currently, there are no advertisements on this site. The Mithqál Calculator is provided as a free service to the community. If ads are ever introduced, they would be to help cover hosting and maintenance costs while keeping the calculator freely accessible to everyone."
+#~ msgstr ""
 
 #: src/routes/about/+page.svelte
 msgid "Do you have a mobile app?"
@@ -363,6 +386,9 @@ msgstr "Mithqal کیلکولیٹر کو سپورٹ کریں، سونے اور چ
 msgid "Support - Mithqal Calculator"
 msgstr "سپورٹ - Mithqal کیلکولیٹر"
 
+#~ msgid "The <0>Mithqal Calculator</0> is a free, ad-free tool built to serve the community. If you find it useful and would like to help keep it running, consider supporting the project."
+#~ msgstr ""
+
 #: src/routes/support/+page.svelte
 msgid "Ko-fi"
 msgstr "Ko-fi"
@@ -383,9 +409,18 @@ msgstr "عالمی شہری اسٹیکر"
 msgid "Buy a sticker"
 msgstr "ایک اسٹیکر خریدیں۔"
 
+#~ msgid "PayPal"
+#~ msgstr ""
+
+#~ msgid "One-time donation"
+#~ msgstr ""
+
 #: src/routes/support/+page.svelte
 msgid "Ways to Support"
 msgstr "سپورٹ کرنے کے طریقے"
+
+#~ msgid "Your support helps cover hosting and domain costs and allows me to continue improving the calculator."
+#~ msgstr ""
 
 #: src/lib/components/LanguageSwitcher.svelte
 #: src/lib/components/LanguageSwitcher.svelte
@@ -436,6 +471,9 @@ msgstr "ای میل"
 msgid "Have a suggestion? Found a bug?"
 msgstr "کوئی تجویز ہے؟ ایک بگ ملا؟"
 
+#~ msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
+#~ msgstr ""
+
 #: src/routes/about/+page.svelte
 msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation, meaning that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit <0>bahai.org</0>."
 msgstr "Bahá'í عقیدہ ایک عالمی مذہب ہے جس کی بنیاد Bahá'u'lláh نے 19ویں صدی کے فارس میں رکھی تھی۔ یہ تمام مذاہب کی لازمی یکجہتی اور انسانیت کے اتحاد کا درس دیتا ہے۔ Bahá'ís ترقی پسند وحی پر یقین رکھتے ہیں، مطلب یہ ہے کہ خدا نے پوری تاریخ میں الہی رسولوں کا ایک سلسلہ بھیجا ہے، بشمول ابراہیم، موسیٰ، بدھ، عیسیٰ، محمد، اور حال ہی میں Bahá'u'lláh۔ مزید معلومات کے لیے، براہ کرم <0>bahai.org</0> ملاحظہ کریں۔"
@@ -443,6 +481,9 @@ msgstr "Bahá'í عقیدہ ایک عالمی مذہب ہے جس کی بنیاد
 #: src/routes/about/+page.svelte
 msgid "Advertisements help pay for the fees for running this website."
 msgstr "اشتہارات اس ویب سائٹ کو چلانے کے لیے فیس کی ادائیگی میں مدد کرتے ہیں۔"
+
+#~ msgid "The <0>Mithqal Calculator</0> is a free tool built to serve the community. If you find it useful and want more projects like this, consider supporting me."
+#~ msgstr ""
 
 #: src/routes/support/+page.svelte
 msgid "You can email me at <0>mithqal@mohajeri.dev</0>"

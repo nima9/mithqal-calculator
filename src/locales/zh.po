@@ -29,7 +29,6 @@ msgstr "密斯卡勒计算器 - 将密斯卡勒换算为货币"
 msgid "WebApplication"
 msgstr "WebApplication"
 
-#: src/lib/components/Header.svelte
 #: src/routes/+page.svelte
 #: src/routes/+page.svelte
 msgid "Mithqál Calculator"

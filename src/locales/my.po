@@ -5,14 +5,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2\n"
-"X-Plurals-Order: one, other\n"
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
+"Plural-Forms: nplurals=1\n"
+"X-Plurals-Order: other\n"
 
 #: src/routes/+layout.svelte
 #: src/routes/+page.svelte
@@ -35,7 +29,6 @@ msgstr "Mithqal ဂဏန်းတွက်စက် - mithqals ကို ငွ
 msgid "WebApplication"
 msgstr "Web Application"
 
-#: src/lib/components/Header.svelte
 #: src/routes/+page.svelte
 #: src/routes/+page.svelte
 msgid "Mithqál Calculator"
@@ -170,9 +163,15 @@ msgstr "အားလုံးကို ငြင်းပယ်ပါ။"
 msgid "Accept All"
 msgstr "အားလုံးလက်ခံပါ။"
 
+#~ msgid "Failed to get contact email."
+#~ msgstr ""
+
 #: src/lib/components/TurnstileGate.svelte
 msgid "Something went wrong. Please try again."
 msgstr "တစ်ခုခုမှားသွားသည်။ ထပ်စမ်းကြည့်ပါ။"
+
+#~ msgid "Contact verification is not configured."
+#~ msgstr ""
 
 #: src/lib/components/TurnstileGate.svelte
 msgid "Human verification could not load. Please try again."
@@ -187,6 +186,9 @@ msgstr "လူသားစိစစ်ခြင်း{0} ကို မလုပ�
 msgid "Human verification expired. Please try again."
 msgstr "လူသားစိစစ်မှု သက်တမ်းကုန်သွားပါပြီ။ ထပ်စမ်းကြည့်ပါ။"
 
+#~ msgid "Copy failed"
+#~ msgstr ""
+
 #: src/lib/components/TurnstileGate.svelte
 msgid "Loading..."
 msgstr "ဖွင့်နေသည်..."
@@ -198,6 +200,21 @@ msgstr "အတည်ပြုနေသည်..."
 #: src/lib/components/TurnstileGate.svelte
 msgid "Try again"
 msgstr "ထပ်ကြိုးစားပါ။"
+
+#~ msgid "Email {0}"
+#~ msgstr ""
+
+#~ msgid "Copy email address"
+#~ msgstr ""
+
+#~ msgid "Reach out!"
+#~ msgstr ""
+
+#~ msgid "Special Sponsor"
+#~ msgstr ""
+
+#~ msgid "We're looking for sponsors to keep this project alive and perhaps ad-free"
+#~ msgstr ""
 
 #: src/lib/components/Header.svelte
 #: src/lib/components/Header.svelte
@@ -303,9 +320,15 @@ msgstr "Mithqál သည် ခန့်မှန်းခြေအားဖြ�
 msgid "What is the Bahá'í Faith?"
 msgstr "Bahá'í ယုံကြည်ခြင်းဟူသည် အဘယ်နည်း။"
 
+#~ msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation—that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit bahai.org"
+#~ msgstr ""
+
 #: src/routes/about/+page.svelte
 msgid "Why are there advertisements?"
 msgstr "ကြော်ငြာတွေဘာကြောင့်ရှိတာလဲ။"
+
+#~ msgid "Currently, there are no advertisements on this site. The Mithqál Calculator is provided as a free service to the community. If ads are ever introduced, they would be to help cover hosting and maintenance costs while keeping the calculator freely accessible to everyone."
+#~ msgstr ""
 
 #: src/routes/about/+page.svelte
 msgid "Do you have a mobile app?"
@@ -363,6 +386,9 @@ msgstr "ရွှေနှင့်ငွေ mithqals ကိုမည်သည�
 msgid "Support - Mithqal Calculator"
 msgstr "ပံ့ပိုးမှု - Mithqal ဂဏန်းတွက်စက်"
 
+#~ msgid "The <0>Mithqal Calculator</0> is a free, ad-free tool built to serve the community. If you find it useful and would like to help keep it running, consider supporting the project."
+#~ msgstr ""
+
 #: src/routes/support/+page.svelte
 msgid "Ko-fi"
 msgstr "Ko-fi"
@@ -383,9 +409,18 @@ msgstr "ကမ္ဘာ့နိုင်ငံသားစတစ်ကာ"
 msgid "Buy a sticker"
 msgstr "စတစ်ကာဝယ်ပါ။"
 
+#~ msgid "PayPal"
+#~ msgstr ""
+
+#~ msgid "One-time donation"
+#~ msgstr ""
+
 #: src/routes/support/+page.svelte
 msgid "Ways to Support"
 msgstr "ပံ့ပိုးရန်နည်းလမ်းများ"
+
+#~ msgid "Your support helps cover hosting and domain costs and allows me to continue improving the calculator."
+#~ msgstr ""
 
 #: src/lib/components/LanguageSwitcher.svelte
 #: src/lib/components/LanguageSwitcher.svelte
@@ -436,6 +471,9 @@ msgstr "အီးမေးလ်"
 msgid "Have a suggestion? Found a bug?"
 msgstr "အကြံပြုချက်ရှိပါသလား။ ပိုးတွေ့သလား။"
 
+#~ msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
+#~ msgstr ""
+
 #: src/routes/about/+page.svelte
 msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation, meaning that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit <0>bahai.org</0>."
 msgstr "Bahá'í ယုံကြည်ခြင်းသည် 19 ရာစုပါရှားတွင် Bahá'u'lláh မှတည်ထောင်ခဲ့သောကမ္ဘာ့ဘာသာတရားဖြစ်သည်။ ဘာသာတရားအားလုံး၏ မရှိမဖြစ်လိုအပ်သော တစ်သားတည်းဖြစ်မှုနှင့် လူသားစည်းလုံးညီညွတ်မှုကို သင်ကြားပေးသည်။ Bahá'ís များသည် အာဗြဟံ၊ မောရှေ၊ ဗုဒ္ဓ၊ ယေရှု၊ မုဟမ္မဒ်နှင့် မကြာသေးမီက Bahá'u'lláh အပါအဝင် သမိုင်းတစ်လျှောက် ဘုရားသခင်က ကောင်းကင်တမန်များ ဆက်တိုက်စေလွှတ်ခဲ့သည်ဟု ဆိုလိုသည်မှာ တိုးတက်သော ဗျာဒိတ်တော်ကို ယုံကြည်ကြသည်။ ပိုမိုသိရှိလိုပါက၊ <0>bahai.org</0> သို့ ဝင်ရောက်ကြည့်ရှုပါ။"
@@ -443,6 +481,9 @@ msgstr "Bahá'í ယုံကြည်ခြင်းသည် 19 ရာစု�
 #: src/routes/about/+page.svelte
 msgid "Advertisements help pay for the fees for running this website."
 msgstr "ကြော်ငြာများသည် ဤဝဘ်ဆိုဒ်ကိုလည်ပတ်ရန်အတွက် အခကြေးငွေပေးချေရန် ကူညီပေးပါသည်။"
+
+#~ msgid "The <0>Mithqal Calculator</0> is a free tool built to serve the community. If you find it useful and want more projects like this, consider supporting me."
+#~ msgstr ""
 
 #: src/routes/support/+page.svelte
 msgid "You can email me at <0>mithqal@mohajeri.dev</0>"

@@ -29,7 +29,6 @@ msgstr "Калькулятор мискалей — перевод мискал�
 msgid "WebApplication"
 msgstr "WebApplication"
 
-#: src/lib/components/Header.svelte
 #: src/routes/+page.svelte
 #: src/routes/+page.svelte
 msgid "Mithqál Calculator"

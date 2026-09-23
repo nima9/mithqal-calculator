@@ -29,7 +29,6 @@ msgstr "मिस्क़ाल कैलकुलेटर - मिस्क�
 msgid "WebApplication"
 msgstr "WebApplication"
 
-#: src/lib/components/Header.svelte
 #: src/routes/+page.svelte
 #: src/routes/+page.svelte
 msgid "Mithqál Calculator"

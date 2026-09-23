@@ -29,7 +29,6 @@ msgstr "ミスカール計算機 - ミスカールを通貨に換算"
 msgid "WebApplication"
 msgstr "WebApplication"
 
-#: src/lib/components/Header.svelte
 #: src/routes/+page.svelte
 #: src/routes/+page.svelte
 msgid "Mithqál Calculator"

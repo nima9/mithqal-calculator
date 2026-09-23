@@ -5,14 +5,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2\n"
-"X-Plurals-Order: one, other\n"
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
+"Plural-Forms: nplurals=1\n"
+"X-Plurals-Order: other\n"
 
 #: src/routes/+layout.svelte
 #: src/routes/+page.svelte
@@ -35,7 +29,6 @@ msgstr "Kalkulator Mithqal - Tukar mithqals kepada mata wang"
 msgid "WebApplication"
 msgstr "WebApplication"
 
-#: src/lib/components/Header.svelte
 #: src/routes/+page.svelte
 #: src/routes/+page.svelte
 msgid "Mithqál Calculator"
@@ -170,9 +163,15 @@ msgstr "Tolak Semua"
 msgid "Accept All"
 msgstr "Terima Semua"
 
+#~ msgid "Failed to get contact email."
+#~ msgstr ""
+
 #: src/lib/components/TurnstileGate.svelte
 msgid "Something went wrong. Please try again."
 msgstr "Sesuatu telah berlaku. Sila cuba lagi."
+
+#~ msgid "Contact verification is not configured."
+#~ msgstr ""
 
 #: src/lib/components/TurnstileGate.svelte
 msgid "Human verification could not load. Please try again."
@@ -187,6 +186,9 @@ msgstr "Pengesahan manusia tidak dapat dijalankan{0}. Sila cuba lagi atau gunaka
 msgid "Human verification expired. Please try again."
 msgstr "Pengesahan manusia tamat tempoh. Sila cuba lagi."
 
+#~ msgid "Copy failed"
+#~ msgstr ""
+
 #: src/lib/components/TurnstileGate.svelte
 msgid "Loading..."
 msgstr "Memuatkan..."
@@ -198,6 +200,21 @@ msgstr "Mengesahkan..."
 #: src/lib/components/TurnstileGate.svelte
 msgid "Try again"
 msgstr "Cuba lagi"
+
+#~ msgid "Email {0}"
+#~ msgstr ""
+
+#~ msgid "Copy email address"
+#~ msgstr ""
+
+#~ msgid "Reach out!"
+#~ msgstr ""
+
+#~ msgid "Special Sponsor"
+#~ msgstr ""
+
+#~ msgid "We're looking for sponsors to keep this project alive and perhaps ad-free"
+#~ msgstr ""
 
 #: src/lib/components/Header.svelte
 #: src/lib/components/Header.svelte
@@ -303,9 +320,15 @@ msgstr "Mithqál ialah unit berat tradisional yang digunakan di Timur Tengah, be
 msgid "What is the Bahá'í Faith?"
 msgstr "Apakah Iman Bahá'í?"
 
+#~ msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation—that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit bahai.org"
+#~ msgstr ""
+
 #: src/routes/about/+page.svelte
 msgid "Why are there advertisements?"
 msgstr "Kenapa ada iklan?"
+
+#~ msgid "Currently, there are no advertisements on this site. The Mithqál Calculator is provided as a free service to the community. If ads are ever introduced, they would be to help cover hosting and maintenance costs while keeping the calculator freely accessible to everyone."
+#~ msgstr ""
 
 #: src/routes/about/+page.svelte
 msgid "Do you have a mobile app?"
@@ -363,6 +386,9 @@ msgstr "Sokong Kalkulator Mithqal, alat percuma yang disokong iklan untuk menuka
 msgid "Support - Mithqal Calculator"
 msgstr "Sokongan - Kalkulator Mithqal"
 
+#~ msgid "The <0>Mithqal Calculator</0> is a free, ad-free tool built to serve the community. If you find it useful and would like to help keep it running, consider supporting the project."
+#~ msgstr ""
+
 #: src/routes/support/+page.svelte
 msgid "Ko-fi"
 msgstr "Ko-fi"
@@ -383,9 +409,18 @@ msgstr "Pelekat Warganegara Dunia"
 msgid "Buy a sticker"
 msgstr "Beli pelekat"
 
+#~ msgid "PayPal"
+#~ msgstr ""
+
+#~ msgid "One-time donation"
+#~ msgstr ""
+
 #: src/routes/support/+page.svelte
 msgid "Ways to Support"
 msgstr "Cara Menyokong"
+
+#~ msgid "Your support helps cover hosting and domain costs and allows me to continue improving the calculator."
+#~ msgstr ""
 
 #: src/lib/components/LanguageSwitcher.svelte
 #: src/lib/components/LanguageSwitcher.svelte
@@ -436,6 +471,9 @@ msgstr "E-mel"
 msgid "Have a suggestion? Found a bug?"
 msgstr "Ada cadangan? Menemui pepijat?"
 
+#~ msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
+#~ msgstr ""
+
 #: src/routes/about/+page.svelte
 msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation, meaning that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit <0>bahai.org</0>."
 msgstr "Iman Bahá'í ialah agama dunia yang diasaskan oleh Bahá'u'lláh di Parsi abad ke-19. Ia mengajarkan kesatuan penting semua agama dan kesatuan manusia. Bahá'í percaya kepada wahyu progresif, bermakna Tuhan telah menghantar satu siri utusan ilahi sepanjang sejarah, termasuk Abraham, Musa, Buddha, Yesus, Muhammad dan yang terbaru Bahá'u'lláh. Untuk maklumat lanjut, sila lawati <0>bahai.org</0>."
@@ -443,6 +481,9 @@ msgstr "Iman Bahá'í ialah agama dunia yang diasaskan oleh Bahá'u'lláh di Par
 #: src/routes/about/+page.svelte
 msgid "Advertisements help pay for the fees for running this website."
 msgstr "Iklan membantu membayar yuran untuk menjalankan laman web ini."
+
+#~ msgid "The <0>Mithqal Calculator</0> is a free tool built to serve the community. If you find it useful and want more projects like this, consider supporting me."
+#~ msgstr ""
 
 #: src/routes/support/+page.svelte
 msgid "You can email me at <0>mithqal@mohajeri.dev</0>"

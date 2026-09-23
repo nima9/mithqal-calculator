@@ -5,14 +5,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2\n"
-"X-Plurals-Order: one, other\n"
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
+"Plural-Forms: nplurals=1\n"
+"X-Plurals-Order: other\n"
 
 #: src/routes/+layout.svelte
 #: src/routes/+page.svelte
@@ -35,7 +29,6 @@ msgstr "Máy tính Mithqal - Chuyển đổi mithqal sang tiền tệ"
 msgid "WebApplication"
 msgstr "Ứng dụng web"
 
-#: src/lib/components/Header.svelte
 #: src/routes/+page.svelte
 #: src/routes/+page.svelte
 msgid "Mithqál Calculator"
@@ -170,9 +163,15 @@ msgstr "Từ chối tất cả"
 msgid "Accept All"
 msgstr "Chấp nhận tất cả"
 
+#~ msgid "Failed to get contact email."
+#~ msgstr ""
+
 #: src/lib/components/TurnstileGate.svelte
 msgid "Something went wrong. Please try again."
 msgstr "Đã xảy ra lỗi. Vui lòng thử lại."
+
+#~ msgid "Contact verification is not configured."
+#~ msgstr ""
 
 #: src/lib/components/TurnstileGate.svelte
 msgid "Human verification could not load. Please try again."
@@ -187,6 +186,9 @@ msgstr "Xác minh của con người không thể chạy{0}. Vui lòng thử l�
 msgid "Human verification expired. Please try again."
 msgstr "Xác minh con người đã hết hạn. Vui lòng thử lại."
 
+#~ msgid "Copy failed"
+#~ msgstr ""
+
 #: src/lib/components/TurnstileGate.svelte
 msgid "Loading..."
 msgstr "Đang tải..."
@@ -198,6 +200,21 @@ msgstr "Đang xác minh..."
 #: src/lib/components/TurnstileGate.svelte
 msgid "Try again"
 msgstr "Thử lại"
+
+#~ msgid "Email {0}"
+#~ msgstr ""
+
+#~ msgid "Copy email address"
+#~ msgstr ""
+
+#~ msgid "Reach out!"
+#~ msgstr ""
+
+#~ msgid "Special Sponsor"
+#~ msgstr ""
+
+#~ msgid "We're looking for sponsors to keep this project alive and perhaps ad-free"
+#~ msgstr ""
 
 #: src/lib/components/Header.svelte
 #: src/lib/components/Header.svelte
@@ -303,9 +320,15 @@ msgstr "Mithqal là đơn vị trọng lượng truyền thống được sử d
 msgid "What is the Bahá'í Faith?"
 msgstr "Đức tin Bahá'í là gì?"
 
+#~ msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation—that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit bahai.org"
+#~ msgstr ""
+
 #: src/routes/about/+page.svelte
 msgid "Why are there advertisements?"
 msgstr "Tại sao có quảng cáo?"
+
+#~ msgid "Currently, there are no advertisements on this site. The Mithqál Calculator is provided as a free service to the community. If ads are ever introduced, they would be to help cover hosting and maintenance costs while keeping the calculator freely accessible to everyone."
+#~ msgstr ""
 
 #: src/routes/about/+page.svelte
 msgid "Do you have a mobile app?"
@@ -363,6 +386,9 @@ msgstr "Hỗ trợ Máy tính Mithqal, một công cụ miễn phí có hỗ tr�
 msgid "Support - Mithqal Calculator"
 msgstr "Hỗ trợ - Máy tính Mithqal"
 
+#~ msgid "The <0>Mithqal Calculator</0> is a free, ad-free tool built to serve the community. If you find it useful and would like to help keep it running, consider supporting the project."
+#~ msgstr ""
+
 #: src/routes/support/+page.svelte
 msgid "Ko-fi"
 msgstr "Ko-fi"
@@ -383,9 +409,18 @@ msgstr "Hình dán công dân thế giới"
 msgid "Buy a sticker"
 msgstr "Mua một nhãn dán"
 
+#~ msgid "PayPal"
+#~ msgstr ""
+
+#~ msgid "One-time donation"
+#~ msgstr ""
+
 #: src/routes/support/+page.svelte
 msgid "Ways to Support"
 msgstr "Cách hỗ trợ"
+
+#~ msgid "Your support helps cover hosting and domain costs and allows me to continue improving the calculator."
+#~ msgstr ""
 
 #: src/lib/components/LanguageSwitcher.svelte
 #: src/lib/components/LanguageSwitcher.svelte
@@ -436,6 +471,9 @@ msgstr "Email"
 msgid "Have a suggestion? Found a bug?"
 msgstr "Có một gợi ý? Tìm thấy một lỗi?"
 
+#~ msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
+#~ msgstr ""
+
 #: src/routes/about/+page.svelte
 msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation, meaning that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit <0>bahai.org</0>."
 msgstr "Đức tin Bahá'í là một tôn giáo thế giới được thành lập bởi Bahá'u'lláh ở Ba Tư thế kỷ 19. Nó dạy về sự thống nhất thiết yếu của tất cả các tôn giáo và sự thống nhất của nhân loại. Bahá'í tin vào sự mặc khải lũy tiến, nghĩa là Chúa đã gửi một loạt sứ giả thần thánh trong suốt lịch sử, bao gồm Áp-ra-ham, Môi-se, Đức Phật, Chúa Giê-su, Muhammad và gần đây nhất là Bahá'u'lláh. Để biết thêm thông tin, vui lòng truy cập <0>bahai.org</0>."
@@ -443,6 +481,9 @@ msgstr "Đức tin Bahá'í là một tôn giáo thế giới được thành l�
 #: src/routes/about/+page.svelte
 msgid "Advertisements help pay for the fees for running this website."
 msgstr "Quảng cáo giúp thanh toán phí vận hành trang web này."
+
+#~ msgid "The <0>Mithqal Calculator</0> is a free tool built to serve the community. If you find it useful and want more projects like this, consider supporting me."
+#~ msgstr ""
 
 #: src/routes/support/+page.svelte
 msgid "You can email me at <0>mithqal@mohajeri.dev</0>"

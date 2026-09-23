@@ -5,14 +5,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2\n"
-"X-Plurals-Order: one, other\n"
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
+"Plural-Forms: nplurals=1\n"
+"X-Plurals-Order: other\n"
 
 #: src/routes/+layout.svelte
 #: src/routes/+page.svelte
@@ -35,7 +29,6 @@ msgstr "Mithqal Kalkuleta - Senisim mithqals i go long mani"
 msgid "WebApplication"
 msgstr "WebAplikesen"
 
-#: src/lib/components/Header.svelte
 #: src/routes/+page.svelte
 #: src/routes/+page.svelte
 msgid "Mithqál Calculator"
@@ -170,9 +163,15 @@ msgstr "Sakim olgeta"
 msgid "Accept All"
 msgstr "Kisim olgeta"
 
+#~ msgid "Failed to get contact email."
+#~ msgstr ""
+
 #: src/lib/components/TurnstileGate.svelte
 msgid "Something went wrong. Please try again."
 msgstr "Samting i bin rong. Plis traim gen."
+
+#~ msgid "Contact verification is not configured."
+#~ msgstr ""
 
 #: src/lib/components/TurnstileGate.svelte
 msgid "Human verification could not load. Please try again."
@@ -187,6 +186,9 @@ msgstr "Human verification i no inap long ranim{0}. Plis traim gen o yusim narap
 msgid "Human verification expired. Please try again."
 msgstr "Human verification i pinis. Plis traim gen."
 
+#~ msgid "Copy failed"
+#~ msgstr ""
+
 #: src/lib/components/TurnstileGate.svelte
 msgid "Loading..."
 msgstr "Loading..."
@@ -198,6 +200,21 @@ msgstr "Verifying..."
 #: src/lib/components/TurnstileGate.svelte
 msgid "Try again"
 msgstr "Traim gen"
+
+#~ msgid "Email {0}"
+#~ msgstr ""
+
+#~ msgid "Copy email address"
+#~ msgstr ""
+
+#~ msgid "Reach out!"
+#~ msgstr ""
+
+#~ msgid "Special Sponsor"
+#~ msgstr ""
+
+#~ msgid "We're looking for sponsors to keep this project alive and perhaps ad-free"
+#~ msgstr ""
 
 #: src/lib/components/Header.svelte
 #: src/lib/components/Header.svelte
@@ -303,9 +320,15 @@ msgstr "Mithqál em i wanpela 'traditional unit' bilong hevi we ol i save yusim 
 msgid "What is the Bahá'í Faith?"
 msgstr "Wanem samting em Bahá'í Bilip?"
 
+#~ msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation—that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit bahai.org"
+#~ msgstr ""
+
 #: src/routes/about/+page.svelte
 msgid "Why are there advertisements?"
 msgstr "Bilong wanem i gat ol edvetaismen?"
+
+#~ msgid "Currently, there are no advertisements on this site. The Mithqál Calculator is provided as a free service to the community. If ads are ever introduced, they would be to help cover hosting and maintenance costs while keeping the calculator freely accessible to everyone."
+#~ msgstr ""
 
 #: src/routes/about/+page.svelte
 msgid "Do you have a mobile app?"
@@ -363,6 +386,9 @@ msgstr "Sapotim Mithqal Kalkuleta, wanpela fri tul we i gat ol edvetaismen long 
 msgid "Support - Mithqal Calculator"
 msgstr "Sapot - Mithqal Kalkuleta"
 
+#~ msgid "The <0>Mithqal Calculator</0> is a free, ad-free tool built to serve the community. If you find it useful and would like to help keep it running, consider supporting the project."
+#~ msgstr ""
+
 #: src/routes/support/+page.svelte
 msgid "Ko-fi"
 msgstr "Ko-fi"
@@ -383,9 +409,18 @@ msgstr "Stika bilong Wol Sitisen"
 msgid "Buy a sticker"
 msgstr "Baim wanpela stika"
 
+#~ msgid "PayPal"
+#~ msgstr ""
+
+#~ msgid "One-time donation"
+#~ msgstr ""
+
 #: src/routes/support/+page.svelte
 msgid "Ways to Support"
 msgstr "Ol rot bilong sapotim"
+
+#~ msgid "Your support helps cover hosting and domain costs and allows me to continue improving the calculator."
+#~ msgstr ""
 
 #: src/lib/components/LanguageSwitcher.svelte
 #: src/lib/components/LanguageSwitcher.svelte
@@ -436,6 +471,9 @@ msgstr "Email"
 msgid "Have a suggestion? Found a bug?"
 msgstr "Yu gat wanpela tingting? Painim wanpela binatang?"
 
+#~ msgid "You can email me at <0>mithqal@mohajeri.dev</0>."
+#~ msgstr ""
+
 #: src/routes/about/+page.svelte
 msgid "The Bahá'í Faith is a world religion founded by Bahá'u'lláh in 19th-century Persia. It teaches the essential oneness of all religions and the unity of humanity. Bahá'ís believe in progressive revelation, meaning that God has sent a series of divine messengers throughout history, including Abraham, Moses, Buddha, Jesus, Muhammad, and most recently Bahá'u'lláh. For more information, please visit <0>bahai.org</0>."
 msgstr "Bahá'í bilip em i wanpela lotu bilong wol we Bahá'u'lláh i bin kirapim long Persia long 19 senseri. Em i skulim ol long olgeta lotu i mas i stap wanbel na ol manmeri i mas i stap wanbel. Ol Bahá'í i bilip long 'progressive revelation', mining olsem God i bin salim planti 'divine messenger' long olgeta taim bipo, olsem Abraham, Moses, Buddha, Jisas, Muhammad, na i no long taim i go pinis Bahá'u'lláh. Sapos yu laik kisim moa infomesen, plis go long <0>bahai.org</0>."
@@ -443,6 +481,9 @@ msgstr "Bahá'í bilip em i wanpela lotu bilong wol we Bahá'u'lláh i bin kirap
 #: src/routes/about/+page.svelte
 msgid "Advertisements help pay for the fees for running this website."
 msgstr "Ol edvetaismen i helpim long baim ol fi bilong ranim dispela websait."
+
+#~ msgid "The <0>Mithqal Calculator</0> is a free tool built to serve the community. If you find it useful and want more projects like this, consider supporting me."
+#~ msgstr ""
 
 #: src/routes/support/+page.svelte
 msgid "You can email me at <0>mithqal@mohajeri.dev</0>"

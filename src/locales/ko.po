@@ -29,7 +29,6 @@ msgstr "미스칼 계산기 - 미스칼을 통화로 환산"
 msgid "WebApplication"
 msgstr "WebApplication"
 
-#: src/lib/components/Header.svelte
 #: src/routes/+page.svelte
 #: src/routes/+page.svelte
 msgid "Mithqál Calculator"
