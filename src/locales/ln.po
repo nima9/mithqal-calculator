@@ -17,11 +17,11 @@ msgstr ""
 #: src/routes/+layout.svelte
 #: src/routes/+page.svelte
 msgid "Free mithqál calculator: convert mithqals of gold and silver to any currency with live precious metal and exchange rates."
-msgstr "Free mithqál calculator: convert mithqals of gold and silver to any currency with live precious metal and exchange rates."
+msgstr "Calculateur ya mithqál ya ofele: bongola mithqál ya wolo mpe palata na mbongo nyonso na kosaleláká ntalo ya sika ya bibende ya motuya mpe taux ya change."
 
 #: src/routes/+layout.svelte
 msgid "Mithqál Calculator – Convert Gold & Silver to Any Currency"
-msgstr "Mithqál Calculator – Convert Gold & Silver to Any Currency"
+msgstr "Calculateur ya mithqál – Kobongola wolo mpe palata na mbongo nyonso"
 
 #: src/routes/+layout.svelte
 msgid "Mithqal Calculator"

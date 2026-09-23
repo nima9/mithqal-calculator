@@ -69,7 +69,7 @@
     href={homeHref}
     class="min-w-0 font-karla text-4xl font-medium text-base-content md:text-5xl 2xl:text-6xl"
   >
-    <span class="link-underline">Mithqál Calculator</span>
+    <span class="link-underline" lang="en"><!-- @wc-ignore -->Mithqál Calculator</span>
   </a>
 
   <!-- Desktop Navigation (hidden on mobile) -->
